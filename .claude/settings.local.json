@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(conda info:*)",
+      "Read(//Users/hyojungyang/anaconda3/**)",
+      "Read(//Users/hyojungyang/miniconda3/envs/**)",
+      "Bash(conda run:*)",
+      "Bash(1 conda:*)",
+      "Bash(python3)",
+      "Bash(python3 -m py_compile src/visualise.py run_cifar.py)",
+      "WebSearch",
+      "Bash(curl -s -r 0-500 \"https://raw.githubusercontent.com/IBM/cdfsl-benchmark/master/filelists/CUB/CUB_200_2011/attributes/class_attribute_labels_continuous.txt\")",
+      "Bash(curl -s -r 0-500 \"https://raw.githubusercontent.com/IBM/cdfsl-benchmark/master/filelists/CUB/CUB_200_2011/attributes/image_attribute_labels.txt\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/IBM/cdfsl-benchmark/master/filelists/CUB/CUB_200_2011/attributes/certainties.txt\")",
+      "Bash(curl -sL \"https://api.github.com/repos/yewsiang/ConceptBottleneck/contents/CUB\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/yewsiang/ConceptBottleneck/master/CUB/data_processing.py\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/yewsiang/ConceptBottleneck/master/CUB/config.py\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('check_concepts.py'\\).read\\(\\)\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('/home/hy381/project/concept_intervention.py'\\).read\\(\\)\\)\")",
+      "Bash(/home/hy381/.conda/envs/xai_env/bin/python train_cbm.py -d cifar100 --gated --epochs 5 --seeds 0)"
+    ]
+  }
+}

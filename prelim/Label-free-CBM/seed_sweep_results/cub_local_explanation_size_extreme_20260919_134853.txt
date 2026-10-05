@@ -1,0 +1,1345 @@
+example 3304  pred=Chipping Sparrow  label=Chipping Sparrow  correct=True  k_suff=1  n_nonzero=118  k_mass@0.9=68
+    +0.7317  A black body
+    +0.7253  a brown streak down its back
+    +0.6365  a black and white striped back
+    +0.5909  a small, sparrow-like body
+    +0.5564  a brownish back
+    +0.4638  All-dark plumage
+    +0.3421  a brown or reddish cap
+    +0.3307  three toes on each foot
+    -0.2915  webbed toes
+    +0.2599  a black back and tail
+    -0.2436  gray body with black spots
+    +0.2257  a rusty cap
+    -0.2254  brownish wings with white bars
+    +0.2240  red and yellow wingtips
+    +0.2193  White wingtips
+    +0.2069  black wings with orange bars
+    +0.1754  a large, black spider
+    +0.1683  a trackpad or mouse
+    -0.1597  a large blue-grey bird
+    +0.1592  iridescent feathers
+    +0.1540  a dark, glossy bill
+    +0.1532  large black bird
+    +0.1525  a streaked head
+    +0.1471  a yellow body with black wings
+    +0.1388  long tail feathers
+    +0.1352  a black throat
+    +0.1300  a dark coloration
+    +0.1295  a black breast
+    +0.1289  orange or yellow eyes
+    -0.1287  a grey back
+    +0.1233  black and orange plumage
+    +0.1215  a large, orange bill
+    -0.1155  black mask
+    +0.1154  fast, erratic flight patterns
+    +0.1143  short, black legs
+    +0.1141  a black head and upperparts
+    +0.1132  a small, white bird
+    +0.1129  a black band across the belly
+    +0.1086  a white front
+    +0.1060  a small to medium size
+    +0.1026  a streaked back
+    -0.0985  blue plumage
+    -0.0858  mottled grey and white plumage
+    +0.0793  long hind legs for jumping
+    +0.0780  a thin, curved bill
+    +0.0779  a long, thick bill
+    -0.0757  a white ring around the neck
+    -0.0740  a rosy breast
+    +0.0737  a black bill with a yellow tip
+    +0.0726  red feathers
+    +0.0703  a white bar on the wing
+    +0.0688  dark brown stripes on the back
+    +0.0667  a pointy crest on the head
+    +0.0660  white wingbars
+    +0.0653  black wings with white spots
+    +0.0650  shy and secretive behavior
+    +0.0645  yellow or white "eyebrows"
+    +0.0618  a black and white coloring
+    +0.0614  a black band across the chest
+    +0.0613  hooked beak
+    -0.0585  a small, conical bill
+    +0.0581  dark blue-gray upperparts
+    -0.0579  a white eye-ring
+    +0.0573  a black cheek patch
+    +0.0564  white undertail feathers
+    -0.0527  a yellowish bill
+    +0.0514  a raucous voice
+    +0.0511  a small songbird
+
+example 3280  pred=Chipping Sparrow  label=Chipping Sparrow  correct=True  k_suff=1  n_nonzero=118  k_mass@0.9=67
+    +1.4060  A black body
+    +0.8589  fast, erratic flight patterns
+    +0.8463  a brown or reddish cap
+    -0.7399  webbed toes
+    +0.7018  All-dark plumage
+    -0.6449  a grey back
+    -0.6055  gray body with black spots
+    +0.6024  long hind legs for jumping
+    +0.5836  a large, hooked bill
+    +0.5378  a pointy crest on the head
+    +0.5009  a black throat
+    +0.4992  a black back and tail
+    -0.4612  mottled grey and white plumage
+    +0.4354  a dark coloration
+    +0.4282  a large, black spider
+    -0.4106  a black and white striped back
+    +0.4028  red and yellow wingtips
+    +0.4001  a brownish back
+    -0.3988  long tail feathers
+    -0.3823  white undertail feathers
+    +0.3656  black wings with orange bars
+    +0.3513  a yellow body with black wings
+    -0.3479  a thin, pointy bill
+    -0.3214  black mask
+    +0.3132  a black band across the belly
+    +0.3130  a brown streak down its back
+    +0.3022  a black cheek patch
+    +0.2899  a dark, glossy bill
+    +0.2891  a black band across the chest
+    +0.2731  large black bird
+    +0.2697  a small, sparrow-like body
+    +0.2690  three toes on each foot
+    -0.2460  orange or yellow eyes
+    +0.2423  red feathers
+    +0.2353  dark blue-gray upperparts
+    +0.2254  white patch on neck
+    +0.2225  a white eye-ring
+    +0.2161  a black head and upperparts
+    +0.2116  a long, thick bill
+    -0.2086  a large blue-grey bird
+    +0.2009  short, black legs
+    -0.2009  a white ring around the neck
+    +0.2004  yellow bill
+    -0.1980  a streaked head
+    +0.1963  a black bib with white border
+    -0.1962  a small, green body
+    +0.1801  a black crest on the head
+    +0.1737  a black breast
+    +0.1714  a small to medium size
+    +0.1584  a black back
+    +0.1566  a small, white bird
+    -0.1532  a black and white coloring
+    -0.1497  a long tail with white bars
+    +0.1485  White wingtips
+    +0.1475  a red throat pouch
+    +0.1459  black wings with white spots
+    -0.1434  a light-colored belly
+    +0.1423  a white front
+    +0.1417  a dark blue-black upper body
+    +0.1380  a large, orange bill
+    -0.1376  a rosy breast
+    +0.1374  a yellowish bill
+    -0.1289  blue plumage
+    -0.1212  a thin, curved bill
+    +0.1183  brownish wings with white bars
+    -0.1105  black streaks on the wings
+    +0.1079  a long, pointed wings
+
+example 3282  pred=Chipping Sparrow  label=Chipping Sparrow  correct=True  k_suff=1  n_nonzero=118  k_mass@0.9=67
+    +1.0752  A black body
+    +0.7828  long hind legs for jumping
+    +0.7816  a brown or reddish cap
+    +0.6791  three toes on each foot
+    +0.6609  a brown streak down its back
+    -0.5896  webbed toes
+    +0.5893  a yellow body with black wings
+    +0.5734  a black and white striped back
+    +0.5710  All-dark plumage
+    +0.5509  a black throat
+    +0.4948  a pointy crest on the head
+    +0.4829  a large, hooked bill
+    +0.4746  a brownish back
+    +0.4383  a rusty cap
+    +0.4311  a black back and tail
+    +0.4213  long tail feathers
+    +0.3931  a small, sparrow-like body
+    +0.3847  a large, orange bill
+    -0.3529  grey legs and feet
+    +0.3391  white undertail feathers
+    -0.3357  orange or yellow eyes
+    -0.3345  brownish wings with white bars
+    -0.3321  a grey back
+    +0.3293  a yellowish bill
+    +0.3169  a large, black spider
+    +0.3136  a dark, glossy bill
+    +0.3091  a white eye-ring
+    +0.3085  short, black legs
+    +0.3068  black wings with orange bars
+    +0.2917  yellow bill
+    +0.2813  a trackpad or mouse
+    +0.2716  a small to medium size
+    -0.2652  a thin, pointy bill
+    +0.2405  a black cheek patch
+    +0.2379  mottled grey and white plumage
+    +0.2363  black and orange plumage
+    +0.2362  red and yellow wingtips
+    +0.2342  a white front
+    +0.2297  a small, white bird
+    -0.2284  yellow or white "eyebrows"
+    +0.2282  a black band across the belly
+    +0.2259  a black breast
+    +0.2118  large black bird
+    -0.2110  black mask
+    +0.2013  a black band across the chest
+    -0.1957  a large blue-grey bird
+    +0.1883  a long, thick bill
+    -0.1845  blue plumage
+    +0.1815  a black head and upperparts
+    +0.1757  a black bill with a yellow tip
+    -0.1687  gray body with black spots
+    +0.1611  a pink bill
+    -0.1569  green plumage
+    +0.1445  a red cap on the male
+    +0.1377  a black bib with white border
+    +0.1366  a black back
+    -0.1356  a white ring around the neck
+    +0.1328  hooked beak
+    +0.1298  a dark blue-black upper body
+    +0.1264  a rusty-brown back
+    +0.1218  a long, pointed wings
+    +0.1204  a streaked back
+    -0.1171  yellow feet
+    +0.0994  dark blue-gray upperparts
+    +0.0985  white wingbars
+    -0.0948  a black cap and back
+    +0.0935  a black crest on the head
+
+example 3283  pred=Chipping Sparrow  label=Chipping Sparrow  correct=True  k_suff=1  n_nonzero=118  k_mass@0.9=66
+    +1.0111  a brown or reddish cap
+    +0.8041  a brown streak down its back
+    +0.7034  a rusty cap
+    +0.6426  a black and white striped back
+    +0.6398  A black body
+    +0.6353  a small, sparrow-like body
+    +0.4628  white undertail feathers
+    -0.4545  a rosy breast
+    +0.4349  a brownish back
+    +0.3748  mottled grey and white plumage
+    +0.3001  a small, white bird
+    +0.2933  All-dark plumage
+    +0.2740  webbed toes
+    +0.2659  iridescent feathers
+    +0.2629  a yellow body with black wings
+    +0.2564  black wings with orange bars
+    -0.2431  a small, green body
+    -0.2084  a white eye-ring
+    -0.1955  a pink bill
+    +0.1932  a grey back
+    -0.1852  three toes on each foot
+    +0.1812  a white bar on the wing
+    +0.1757  fast, erratic flight patterns
+    -0.1753  black mask
+    +0.1729  a black back and tail
+    +0.1719  black and orange plumage
+    +0.1692  long tail feathers
+    +0.1641  a dark, glossy bill
+    +0.1546  a black throat
+    +0.1522  grey legs and feet
+    +0.1491  a streaked head
+    -0.1384  a black bib with white border
+    +0.1371  a large, orange bill
+    +0.1320  red and yellow wingtips
+    +0.1313  gray body with black spots
+    +0.1292  large black bird
+    +0.1265  a long tail with white bars
+    -0.1224  long hind legs for jumping
+    +0.1209  a large, hooked bill
+    +0.1139  a thin, curved bill
+    +0.1047  a streaked back
+    +0.0930  a black breast
+    +0.0925  a red throat pouch
+    -0.0916  pale brown upperparts
+    +0.0888  red feathers
+    +0.0881  green plumage
+    +0.0845  a dark coloration
+    -0.0819  yellow or white "eyebrows"
+    +0.0800  a long, thick bill
+    +0.0779  large size
+    -0.0765  a trackpad or mouse
+    -0.0740  brownish wings with white bars
+    -0.0739  a small, thrush-like bird
+    +0.0721  a black head and upperparts
+    +0.0713  a white stripe above the eye
+    +0.0698  a black cap and back
+    -0.0695  blue plumage
+    +0.0683  White wingtips
+    +0.0664  a black and white coloring
+    +0.0662  a red belly
+    +0.0660  a black back
+    +0.0622  a light-colored belly
+    +0.0619  black wings with white spots
+    -0.0567  a pointy crest on the head
+    +0.0536  a small songbird
+    +0.0532  orange feet
+
+example 3321  pred=Chipping Sparrow  label=Clay colored Sparrow  correct=False  k_suff=1  n_nonzero=118  k_mass@0.9=66
+    +0.9948  a brown streak down its back
+    +0.9326  A black body
+    +0.6406  a small, sparrow-like body
+    +0.6215  webbed toes
+    +0.5672  a white eye-ring
+    -0.5400  three toes on each foot
+    +0.4801  a brown or reddish cap
+    +0.4654  grey legs and feet
+    +0.4187  All-dark plumage
+    +0.4032  long tail feathers
+    -0.3965  orange or yellow eyes
+    +0.3639  a black throat
+    +0.3595  a brownish back
+    +0.3512  mottled grey and white plumage
+    +0.3440  a rusty cap
+    -0.2898  a long, pointed wings
+    +0.2856  a black bib with white border
+    +0.2768  a streaked head
+    +0.2716  a dark coloration
+    -0.2659  fast, erratic flight patterns
+    -0.2640  brownish wings with white bars
+    +0.2638  a black and white striped back
+    +0.2514  a black band across the belly
+    +0.2495  red and yellow wingtips
+    +0.2345  a dark, glossy bill
+    -0.2290  green plumage
+    -0.2287  white undertail feathers
+    +0.2257  a large, orange bill
+    +0.2073  large size
+    +0.2036  large black bird
+    -0.1962  long hind legs for jumping
+    -0.1926  black mask
+    +0.1897  a black band across the chest
+    -0.1745  White wingtips
+    +0.1735  a small, white bird
+    +0.1563  dark blue-gray upperparts
+    -0.1515  a small, thrush-like bird
+    -0.1510  a large blue-grey bird
+    -0.1401  blue plumage
+    +0.1374  a black breast
+    -0.1353  a small to medium size
+    +0.1256  a large, hooked bill
+    +0.1253  gray body with black spots
+    +0.1214  a light-colored belly
+    +0.1191  a black head and upperparts
+    +0.1137  a streaked back
+    +0.1133  a wingspan of about 3 feet
+    -0.1083  a black cap and back
+    +0.1071  a yellowish bill
+    -0.1030  short, black legs
+    -0.0975  a grey back
+    +0.0934  a rosy breast
+    -0.0924  a trackpad or mouse
+    +0.0910  a long tail with white bars
+    -0.0910  a pointy crest on the head
+    +0.0894  white patch on neck
+    +0.0835  a pink bill
+    +0.0823  spotted plumage
+    +0.0762  a black bill with a yellow tip
+    -0.0762  a thin, curved bill
+    +0.0745  a black back
+    +0.0736  a streaked breast
+    -0.0732  pale brown upperparts
+    +0.0677  a black cheek patch
+    +0.0677  yellow feet
+    -0.0677  a black back and tail
+
+example 3500  pred=Henslow Sparrow  label=Henslow Sparrow  correct=True  k_suff=2  n_nonzero=115  k_mass@0.9=66
+    +0.9325  a black band across the belly
+    +0.8731  a white front
+    +0.6692  a black ring around the bill
+    +0.6130  dark brown stripes on the back
+    +0.5716  streaked upperparts
+    +0.5635  a white tail with a black tip
+    +0.5145  pale gray or white color
+    +0.5107  a white ring around the neck
+    +0.4120  a white collar around the neck
+    +0.3894  a black cap and back
+    +0.3717  a black bill with a yellow tip
+    +0.3673  white underwings
+    +0.3634  a large, hawk-like body
+    +0.3587  a pale grayish-white underbody
+    +0.3370  a red ring around the eye
+    +0.3179  a large blue-grey bird
+    +0.3092  shaggy feathers
+    +0.2979  relatively long wings and tail
+    +0.2950  a small, blue bird
+    +0.2880  pale pink legs
+    +0.2862  a white stripe on the wings
+    +0.2856  a pink bill
+    +0.2803  a streaked head
+    +0.2672  a black and white barred tail
+    -0.2658  a black cheek patch
+    +0.2646  a grayish-white body
+    +0.2584  a black wings and tail
+    +0.2521  yellow or orange plumage
+    +0.2427  a white belly
+    +0.2277  white plumage
+    +0.2268  black cap and white "eyeline"
+    +0.2232  long black tail
+    -0.2200  a small, slim bird
+    +0.2140  a bright orange breast
+    -0.2111  a rosy breast
+    +0.1957  a white eyebrow
+    +0.1892  a stout, conical bill
+    +0.1774  a black collar
+    +0.1745  a streaked back
+    +0.1719  a tail with a distinct V-shape
+    +0.1642  a white rump
+    +0.1538  black feet
+    +0.1504  a black cap on its head
+    +0.1502  size
+    -0.1471  a white breast
+    +0.1454  iridescent feathers
+    +0.1444  a white head and neck
+    +0.1360  a black tail
+    +0.1338  a white underbelly
+    +0.1324  three toes on each foot
+    +0.1251  a black breast
+    +0.1247  a short, stout bill
+    -0.1174  a black patch on the back
+    +0.1166  white stripes above the eyes
+    -0.1156  a small, green body
+    +0.1132  a yellow throat and breast
+    +0.1053  a white throat and breast
+    -0.1041  webbed toes
+    +0.1040  long tail with white stripes
+    -0.1030  a pointy crest on the head
+    -0.0938  a Scarlet-red body
+    +0.0917  a violet ear patch
+    -0.0894  a buffy breast
+    -0.0871  a red throat pouch
+    +0.0868  a thin, curved bill
+    +0.0852  a raucous voice
+
+example 1664  pred=Glaucous winged Gull  label=Glaucous winged Gull  correct=True  k_suff=1  n_nonzero=123  k_mass@0.9=65
+    +1.0944  a black collar
+    +0.7670  a small, white bird
+    +0.7335  a large, stocky bird
+    +0.6810  a large blue-grey bird
+    +0.6758  a pale grayish-white underbody
+    +0.6300  White wingtips
+    +0.5872  long tail feathers
+    +0.5778  a violet ear patch
+    +0.5449  a white wingbar
+    -0.4761  a pointy crest on the head
+    +0.4707  large webbed feet
+    -0.4502  a white chest and belly
+    +0.4460  mottled grey and white plumage
+    +0.4044  beak is curved and pointed
+    +0.3970  three toes on each foot
+    +0.3845  white underwings
+    +0.3756  pale pink legs
+    +0.3655  a large, white body
+    +0.3427  a white head and neck
+    +0.3202  a long, thin beak
+    +0.3150  white body with gray wings
+    +0.2854  a grayish-white body
+    +0.2833  a white front
+    +0.2585  a white collar around the neck
+    -0.2538  a short, stout bill
+    +0.2508  a long, tapered tail
+    +0.2327  a dark brown or black color
+    +0.2320  a dark blue-black upper body
+    +0.2263  a trackpad or mouse
+    -0.2193  blue eyes
+    +0.2141  a white stripe on the wings
+    +0.2086  a white underbelly
+    +0.2051  grayish wings and tail
+    +0.2047  a medium-sized duck
+    -0.2025  short, black legs
+    +0.2023  white body
+    -0.1943  a white tail with a black tip
+    -0.1920  a black crest on the head
+    -0.1868  black cap and white "eyeline"
+    +0.1858  a white face and underparts
+    +0.1845  long, thin antennae
+    +0.1840  a small, slim bird
+    +0.1378  black and orange plumage
+    +0.1351  a blue-gray body
+    +0.1336  long, black ear tufts
+    +0.1293  a light-colored belly
+    +0.1290  a long tail with white bars
+    +0.1259  long, thin legs
+    +0.1233  a black or dark grey plumage
+    +0.1233  long, blue-gray wings
+    +0.1229  a red throat pouch
+    +0.1214  blue upperparts
+    -0.1205  a high refractive index
+    +0.1151  a white chin and throat
+    -0.1087  a yellow body with black wings
+    -0.1062  a stout, conical bill
+    +0.1035  a black band across the chest
+    -0.1022  yellow or orange plumage
+    +0.1002  a black V on the back
+    -0.0974  red and yellow wingtips
+    -0.0965  rusty-brown feathers
+    +0.0909  yellowish eyes
+    -0.0858  long wingspan
+    -0.0833  white and black coloration
+    +0.0827  a dark blue or black back
+
+example 1673  pred=Glaucous winged Gull  label=Glaucous winged Gull  correct=True  k_suff=2  n_nonzero=123  k_mass@0.9=65
+    +0.8223  a black collar
+    +0.6336  long wingspan
+    +0.5794  a dark blue-black upper body
+    +0.4552  a large, stocky bird
+    +0.4531  long, black ear tufts
+    +0.4179  a small, slim bird
+    +0.4167  a pointy crest on the head
+    +0.3996  a red throat pouch
+    +0.3934  white underwings
+    +0.3801  a pale grayish-white underbody
+    +0.3776  a long, tapered tail
+    +0.3643  White wingtips
+    +0.3569  a black V on the back
+    -0.3409  a violet ear patch
+    +0.3394  pale pink legs
+    -0.3338  iridescent feathers
+    +0.3323  a red cap on the male
+    +0.3029  a dark brown or black color
+    +0.3004  a small, white bird
+    +0.2962  long tail feathers
+    +0.2914  black streaks on the sides
+    +0.2842  spotted feathers
+    +0.2838  long, thin antennae
+    +0.2815  a white head and neck
+    +0.2768  a black mask over its eyes
+    +0.2564  a white wingbar
+    +0.2498  beak is curved and pointed
+    +0.2427  long, thin legs
+    +0.2336  a streaked breast
+    +0.2329  a long tail with a white tip
+    +0.2318  a black band across the chest
+    +0.2292  a black crest on the head
+    +0.2204  a white chest and belly
+    +0.2170  a long, thin beak
+    +0.2124  a stout, conical bill
+    +0.1885  a long tail with white bars
+    +0.1844  a white front
+    +0.1749  a large, white body
+    +0.1693  mottled grey and white plumage
+    +0.1686  a white collar around the neck
+    +0.1675  brown streaks on the chest
+    +0.1584  a medium-sized duck
+    -0.1531  a small, blue bird
+    +0.1485  a dark blue or black back
+    +0.1394  a red cap on the head
+    -0.1377  a blue-gray body
+    +0.1374  a white tail with a black tip
+    +0.1365  a long, thin neck
+    +0.1352  olive upperparts
+    +0.1270  large webbed feet
+    +0.1248  a black streak on the breast
+    +0.1242  a white underbelly
+    +0.1217  black cap and white "eyeline"
+    -0.1214  blue upperparts
+    +0.1124  black and orange plumage
+    +0.1098  a white chin and throat
+    -0.1015  a black or dark grey plumage
+    +0.0969  yellowish eyes
+    -0.0896  long, blue-gray wings
+    +0.0888  a high refractive index
+    -0.0825  a large, hooked bill
+    +0.0822  three toes on each foot
+    +0.0819  a white face and underparts
+    -0.0811  yellow or orange plumage
+    -0.0779  pale brown upperparts
+
+example 1678  pred=Glaucous winged Gull  label=Glaucous winged Gull  correct=True  k_suff=3  n_nonzero=123  k_mass@0.9=65
+    +0.7464  a black collar
+    +0.6889  white patch on neck
+    +0.6297  a large, stocky bird
+    +0.5579  a large blue-grey bird
+    +0.5559  a red throat pouch
+    +0.4785  large webbed feet
+    +0.4723  long tail feathers
+    +0.4529  a white wingbar
+    +0.4376  a pale grayish-white underbody
+    +0.4366  pale pink legs
+    +0.4151  three toes on each foot
+    +0.4147  White wingtips
+    +0.4089  a violet ear patch
+    +0.3872  a small, white bird
+    +0.3469  spotted feathers
+    +0.3455  a long, tapered tail
+    +0.3416  mottled grey and white plumage
+    +0.3394  a white head and neck
+    +0.3251  a long, thin beak
+    +0.3228  a black mask over its eyes
+    +0.3073  white body with gray wings
+    -0.2939  iridescent feathers
+    +0.2908  long wingspan
+    +0.2905  a dark blue-black upper body
+    +0.2832  a medium-sized duck
+    +0.2800  a large, white body
+    +0.2699  white underwings
+    +0.2686  long, thin legs
+    +0.2644  a black crest on the head
+    +0.2495  long, black ear tufts
+    +0.2315  a grayish-white body
+    +0.2155  a black V on the back
+    +0.2151  a black or dark grey plumage
+    +0.2054  a white front
+    +0.1988  a long tail with white bars
+    -0.1981  a short, stout bill
+    +0.1784  long, blue-gray wings
+    +0.1722  a trackpad or mouse
+    +0.1663  grayish wings and tail
+    +0.1600  a long, thin neck
+    +0.1574  a black band across the chest
+    +0.1566  a pointy crest on the head
+    +0.1535  a white collar around the neck
+    -0.1529  short, black legs
+    +0.1508  black and orange plumage
+    +0.1487  beak is curved and pointed
+    +0.1439  a dark brown or black color
+    +0.1404  black streaks on the sides
+    +0.1400  a white tail with a black tip
+    +0.1390  a long tail with a white tip
+    +0.1385  long, thin antennae
+    +0.1381  large feet
+    +0.1338  a white underbelly
+    +0.1280  a red cap on the male
+    -0.1168  yellowish eyes
+    +0.1152  a red cap on the head
+    +0.1115  a stout, conical bill
+    +0.1097  white body
+    -0.1089  a yellow bill with a red spot
+    -0.1044  large body
+    +0.0993  a white face and underparts
+    -0.0983  a high refractive index
+    +0.0933  olive upperparts
+    -0.0901  a large, hooked bill
+    +0.0888  a blue-gray body
+
+example 1684  pred=Glaucous winged Gull  label=Glaucous winged Gull  correct=True  k_suff=4  n_nonzero=123  k_mass@0.9=65
+    +0.9022  three toes on each foot
+    +0.8891  pale pink legs
+    +0.7693  a large, stocky bird
+    +0.7187  long, thin legs
+    +0.6878  a black collar
+    +0.6819  a small, white bird
+    +0.6364  large webbed feet
+    +0.6267  a pale grayish-white underbody
+    +0.5914  White wingtips
+    -0.5591  a white tail with a black tip
+    +0.5540  long tail feathers
+    +0.5538  a medium-sized duck
+    +0.5315  a red cap on the male
+    +0.4459  a long, thin beak
+    +0.4440  a black or dark grey plumage
+    +0.4338  a large blue-grey bird
+    -0.4326  short, black legs
+    +0.4130  a pointy crest on the head
+    +0.3889  a white wingbar
+    +0.3809  a red cap on the head
+    +0.3647  beak is curved and pointed
+    +0.3463  white body with gray wings
+    +0.3349  white patch on neck
+    +0.2997  a large, white body
+    +0.2845  a white head and neck
+    -0.2838  a short, stout bill
+    +0.2807  mottled grey and white plumage
+    +0.2605  a trackpad or mouse
+    +0.2485  a black crest on the head
+    +0.2429  a long, thin neck
+    +0.2428  a grayish-white body
+    +0.2421  spotted feathers
+    -0.2390  a high refractive index
+    +0.2371  a black band across the chest
+    +0.2223  a long, tapered tail
+    +0.2201  large feet
+    +0.2187  a streaked breast
+    +0.2142  grayish wings and tail
+    +0.2129  a white front
+    +0.2113  a black mask over its eyes
+    +0.2105  black streaks on the sides
+    +0.2040  long, black ear tufts
+    +0.2023  long wingspan
+    -0.2022  iridescent feathers
+    +0.1987  a violet ear patch
+    +0.1811  a dark blue-black upper body
+    +0.1804  brown streaks on the chest
+    -0.1766  a yellow bill with a red spot
+    -0.1734  a large, hooked bill
+    +0.1695  a white collar around the neck
+    +0.1664  white underwings
+    +0.1582  a long, thin tail
+    +0.1578  yellowish eyes
+    +0.1419  long, blue-gray wings
+    +0.1409  a pink bill
+    +0.1376  white body
+    +0.1238  a white underbelly
+    -0.1124  a rusty-brown back
+    +0.1054  black cap and white "eyeline"
+    -0.1031  large body
+    +0.0996  a blue-gray body
+    +0.0993  a long tail with white bars
+    -0.0960  a long tail with a white tip
+    +0.0956  color
+    +0.0941  a black streak on the breast
+
+example 1835  pred=Glaucous winged Gull  label=Western Gull  correct=False  k_suff=3  n_nonzero=123  k_mass@0.9=65
+    +0.8984  long tail feathers
+    +0.7438  a red throat pouch
+    +0.7222  a pointy crest on the head
+    +0.6995  a white wingbar
+    +0.5298  a large, stocky bird
+    +0.5016  white patch on neck
+    +0.4473  large webbed feet
+    +0.4013  long, black ear tufts
+    +0.3709  a black crest on the head
+    +0.3552  a medium-sized duck
+    +0.3330  a black mask over its eyes
+    +0.3262  three toes on each foot
+    +0.3258  spotted feathers
+    +0.3227  White wingtips
+    +0.3142  a pale grayish-white underbody
+    +0.3118  a long, thin neck
+    +0.2936  a dark blue-black upper body
+    +0.2697  a streaked breast
+    +0.2458  long, thin legs
+    +0.2386  a red cap on the male
+    +0.2339  pale pink legs
+    +0.2332  a small, slim bird
+    -0.2310  short, black legs
+    +0.2222  black streaks on the sides
+    +0.2189  a black V on the back
+    +0.2142  a long, thin beak
+    +0.2093  a black band across the chest
+    +0.2085  a large, white body
+    +0.2034  a small, white bird
+    +0.1970  a grayish-white body
+    +0.1965  yellowish eyes
+    -0.1936  a black and white color scheme
+    +0.1888  a long, tapered tail
+    +0.1767  mottled grey and white plumage
+    +0.1726  loud, rasping voice
+    +0.1703  brown streaks on the chest
+    +0.1691  a long tail with a white tip
+    +0.1649  a high refractive index
+    +0.1623  a trackpad or mouse
+    +0.1593  white body with gray wings
+    +0.1519  a white collar around the neck
+    +0.1513  a white head and neck
+    +0.1439  a white front
+    +0.1342  a white face and underparts
+    -0.1339  blue upperparts
+    +0.1286  white underwings
+    +0.1250  a black collar
+    +0.1240  streaked upperparts
+    +0.1222  long, thin antennae
+    -0.1169  white and black coloration
+    -0.1093  a yellow body with black wings
+    +0.1059  white body
+    -0.1004  pale brown upperparts
+    +0.0993  a white underbelly
+    +0.0934  olive upperparts
+    -0.0930  a large, hooked bill
+    +0.0885  large feet
+    -0.0821  a white stripe on the wings
+    -0.0795  a large blue-grey bird
+    -0.0789  a short, stout bill
+    -0.0770  rusty-brown feathers
+    +0.0763  a yellow bill with a red spot
+    +0.0756  grayish wings and tail
+    -0.0735  a black and white body
+    +0.0684  a black streak on the breast
+
+example 2491  pred=Chipping Sparrow  label=Western Meadowlark  correct=False  k_suff=2  n_nonzero=118  k_mass@0.9=65
+    +0.9303  orange or yellow eyes
+    +0.6028  a brown streak down its back
+    +0.5283  mottled grey and white plumage
+    +0.5072  a brownish back
+    +0.4660  a black throat
+    +0.4176  A black body
+    -0.3936  long hind legs for jumping
+    +0.3421  gray body with black spots
+    +0.3030  a black cheek patch
+    +0.2943  long tail feathers
+    -0.2918  fast, erratic flight patterns
+    +0.2913  a black crest on the head
+    +0.2882  All-dark plumage
+    +0.2739  a pointy crest on the head
+    +0.2636  a black bib with white border
+    +0.2493  red and yellow wingtips
+    +0.2358  a thin, pointy bill
+    -0.2265  yellow bill
+    +0.2209  a small, white bird
+    -0.2192  webbed toes
+    +0.2071  black wings with orange bars
+    -0.2063  a yellowish bill
+    +0.2023  a large blue-grey bird
+    +0.2019  a grey back
+    +0.1825  three toes on each foot
+    +0.1804  a rusty cap
+    +0.1782  a black band across the chest
+    -0.1736  a pink bill
+    +0.1649  a black breast
+    -0.1552  a streaked head
+    -0.1420  a small to medium size
+    -0.1397  shy and secretive behavior
+    +0.1362  white undertail feathers
+    +0.1359  a black head and upperparts
+    +0.1315  a long tail with white bars
+    +0.1294  a black back and tail
+    +0.1262  a dark, glossy bill
+    -0.1220  a small, green body
+    +0.1151  grey legs and feet
+    +0.1148  green plumage
+    -0.1146  a brown or reddish cap
+    -0.1082  a red throat pouch
+    +0.1052  a light-colored belly
+    +0.1034  a streaked back
+    +0.1011  black and orange plumage
+    +0.0989  yellow or white "eyebrows"
+    +0.0981  yellow feet
+    +0.0953  large size
+    -0.0952  brownish wings with white bars
+    -0.0944  a yellow body with black wings
+    +0.0937  a long, pointed wings
+    -0.0914  pale brown upperparts
+    +0.0912  a black and white striped back
+    +0.0901  a white bar on the wing
+    +0.0899  a small, blue body
+    -0.0877  a red spot on the beak
+    +0.0873  spotted plumage
+    +0.0792  a black back
+    -0.0788  a long, thick bill
+    -0.0782  a trackpad or mouse
+    -0.0757  a large, orange bill
+    +0.0740  a large, black spider
+    -0.0697  black mask
+    -0.0665  black streaks on the wings
+    +0.0658  white patch on neck
+
+example 2784  pred=Scott Oriole  label=Scott Oriole  correct=True  k_suff=1  n_nonzero=119  k_mass@0.9=65
+    +1.5327  a buffy breast
+    +1.2618  yellow wings with black bars
+    +1.0156  a long, pointed wings
+    +1.0071  a slender, white body
+    -0.9630  spotted plumage
+    +0.8388  White wingtips
+    +0.6438  yellow or orange plumage
+    -0.6305  a short, pointed tail
+    +0.6056  black wings with orange bars
+    +0.6000  gray feathers
+    +0.5627  silky, brown feathers
+    +0.5408  a small, forked tail
+    +0.5139  grayish-white underparts
+    +0.5000  a brown streak down its back
+    +0.4832  red shoulders
+    +0.4794  a small, brown bill
+    -0.4710  a streaked breast
+    +0.4655  gray wings
+    +0.4351  a long tail with white bars
+    +0.4184  long, thin antennae
+    -0.4168  a large, cone-shaped bill
+    -0.4108  green wings
+    +0.4069  large size
+    +0.3835  a small mouth
+    +0.3779  yellow wings
+    +0.3601  loud, rasping voice
+    +0.3545  a white eyebrow
+    -0.3299  white undertail coverts
+    -0.3145  a red cap on the male
+    -0.3034  a long, thin tail
+    +0.2810  a brown cap and white eyebrows
+    +0.2635  brownish plumage
+    +0.2629  a pointy crest on the head
+    -0.2594  white underwings
+    -0.2533  beak and legs are black
+    +0.2516  a yellow body with black wings
+    +0.2475  long, white legs
+    -0.2348  a pale orange or brown breast
+    +0.2340  a high refractive index
+    +0.2335  long, powerful wings
+    +0.2300  a black stripe on the head
+    +0.2286  a small, green body
+    +0.2278  orange or yellow eyes
+    -0.2248  long hind legs for jumping
+    -0.2237  a tail with a distinct V-shape
+    +0.2213  a brown and white color scheme
+    -0.2075  spotted feathers
+    +0.2074  a gray breast
+    +0.2074  shaggy feathers
+    +0.1966  white undersides
+    +0.1939  white stripes above the eyes
+    +0.1894  a loud caw
+    -0.1826  a black V on the back
+    +0.1767  orange feet
+    -0.1636  a black hood and back
+    -0.1627  relatively long wings and tail
+    +0.1604  a thin, pointy bill
+    -0.1602  a pointed bill
+    -0.1574  a black head and upperparts
+    +0.1493  a large blue-grey bird
+    +0.1462  a pale grayish-white underbody
+    +0.1397  a black cap and bib
+    +0.1354  a yellow head
+    +0.1334  grey sides
+    -0.1325  orange-yellow legs
+
+example 3068  pred=Pacific Loon  label=White necked Raven  correct=False  k_suff=1  n_nonzero=109  k_mass@0.9=65
+    +1.5020  a tail with a distinct V-shape
+    +1.0839  spotted plumage
+    +0.9459  black head, neck, and back
+    +0.9225  a medium-sized duck
+    +0.9069  black wings with white spots
+    +0.7591  long black tail
+    +0.7255  a long, tapered tail
+    -0.6838  a black beak
+    -0.6297  a red crest on the head
+    +0.5635  a black head with a white beak
+    +0.4800  a small, black head
+    -0.4660  a pointy crest on the head
+    +0.4322  a long, thin body
+    +0.4296  a clear or translucent color
+    -0.4227  a small, black bird
+    +0.4167  a white face and underparts
+    +0.4154  dark wingtips
+    +0.4110  Glossy black wings
+    +0.4020  black and white plumage
+    +0.3885  a small, conical bill
+    +0.3724  green plumage
+    +0.3512  a slender, white body
+    +0.3369  a black head and upperparts
+    -0.3307  streaked upperparts
+    +0.3265  a stout body
+    -0.3202  long, thin antennae
+    +0.3155  a white rump
+    +0.3149  white patch on neck
+    +0.3112  a glossy sheen to its feathers
+    -0.2745  a black cap on its head
+    -0.2729  black feet
+    -0.2625  grey legs and feet
+    -0.2581  a rusty-red throat and breast
+    -0.2514  a large, black spider
+    +0.2475  large webbed feet
+    -0.2435  a greenish back
+    +0.2359  a violet ear patch
+    +0.2349  All-dark plumage
+    -0.2312  black wings with orange bars
+    +0.2182  brownish plumage
+    +0.2005  a small to medium size
+    -0.1941  hooked beak
+    +0.1933  a pointed bill
+    -0.1912  olive upperparts
+    +0.1896  a black band across the chest
+    +0.1869  a duck-like bird
+    -0.1820  a pinkish breast
+    -0.1756  a white eye-ring
+    -0.1733  yellow bar on wing
+    -0.1705  a yellow eye
+    +0.1691  a black and white barred tail
+    +0.1656  a dark, glossy bill
+    -0.1656  a stocky body
+    -0.1600  white underwings
+    -0.1585  large eyes
+    -0.1534  a red cap on the head
+    +0.1499  pale brown upperparts
+    +0.1477  a yellow-tipped tail
+    -0.1397  red legs
+    -0.1387  color
+    -0.1379  a large, hawk-like body
+    +0.1366  long wingspan
+    -0.1316  a red breast
+    +0.1309  a small, brown body
+    -0.1256  yellowish eyes
+
+example 4249  pred=Green tailed Towhee  label=Green tailed Towhee  correct=True  k_suff=1  n_nonzero=115  k_mass@0.9=65
+    +1.2174  a rusty-red throat and breast
+    +1.1530  a greenish back
+    +0.6867  a black and white color scheme
+    +0.6749  a large, gray body
+    +0.5966  a large, cone-shaped bill
+    +0.5515  a light gray or white chest
+    +0.4886  a small, greenish-gray bird
+    +0.4193  a brownish-olive upper body
+    +0.3694  a yellow throat and breast
+    +0.3320  a small, sparrow-like body
+    -0.3311  a black cap on the female
+    +0.3166  green plumage
+    +0.3161  a black and white body
+    +0.3069  greenish-yellow back and wings
+    +0.3065  dark wingtips
+    +0.3012  yellow tips on the wings
+    +0.2962  a black bib with white stripes
+    +0.2937  a green tail with a white edge
+    -0.2800  red and yellow wingtips
+    +0.2796  gray body with black spots
+    +0.2792  a brown and white color scheme
+    -0.2618  pale pink legs
+    -0.2561  a white chin and throat
+    +0.2551  black and white plumage
+    +0.2460  a gray crown
+    +0.2403  a yellowish breast
+    +0.2369  a rust-colored cap and nape
+    +0.2038  a black band across the chest
+    +0.2032  a brown or reddish cap
+    +0.2002  wing bars
+    -0.1973  a white eyebrow
+    -0.1874  orange throat
+    +0.1873  a red head
+    -0.1837  white coloration on the body
+    +0.1822  All-dark plumage
+    +0.1821  a gray back with black streaks
+    +0.1803  a dark, glossy bill
+    -0.1786  a clear or translucent color
+    +0.1755  a red cap on the head
+    -0.1745  a black crest on the head
+    +0.1696  a black and white coloring
+    +0.1661  a glossy sheen to its feathers
+    -0.1564  a long, thin body
+    +0.1483  a long, tapered tail
+    +0.1455  blue eyes
+    +0.1428  a raucous voice
+    +0.1332  iridescent blue-green back
+    -0.1310  a high refractive index
+    +0.1296  long tail
+    -0.1255  yellowish-brown wings
+    +0.1253  gray upperparts
+    +0.1230  a dark brown or black color
+    +0.1192  green head
+    +0.1191  black wings with white bars
+    +0.1186  a gray breast
+    -0.1185  streaked upperparts
+    -0.1184  yellow wings
+    +0.1176  a red ring around the eye
+    +0.1149  a streaked breast
+    +0.1130  a large, hooked bill
+    -0.1075  a small, thrush-like bird
+    +0.1021  a black band across its eyes
+    +0.1018  hooked beak
+    +0.1009  yellowish sides and flanks
+    +0.1005  a red cap on the male
+
+example 4303  pred=Sage Thrasher  label=Sage Thrasher  correct=True  k_suff=2  n_nonzero=111  k_mass@0.9=65
+    +0.9540  a buffy breast
+    +0.5871  a small, thrush-like bird
+    +0.4743  A blue sheen on the wings
+    +0.3708  a light-colored belly
+    +0.3490  a small, brown bird
+    +0.3477  orange-yellow legs
+    +0.3304  a long, thin neck
+    +0.3025  a black bill with a yellow tip
+    +0.2958  a brown streak down its back
+    +0.2778  a long, thin body
+    +0.2746  long tail
+    +0.2547  orange and black wings
+    +0.2473  a red spot on the beak
+    +0.2437  a brownish-olive upper body
+    +0.2390  a black wings and tail
+    +0.2162  a yellow throat and breast
+    +0.2126  a small, forked tail
+    +0.2126  black mask
+    +0.2050  Glossy black wings
+    +0.1901  a brown and white color scheme
+    -0.1893  gray head
+    +0.1884  red and yellow wingtips
+    +0.1733  long black tail
+    +0.1695  a thin, pointy bill
+    -0.1515  a loud caw
+    +0.1512  short wings
+    -0.1484  a large, gray body
+    +0.1454  a red throat pouch
+    +0.1453  large eyes
+    +0.1446  a brown or grayish body
+    +0.1358  a grayish-brown head
+    +0.1329  long, thin antennae
+    +0.1302  a small, conical bill
+    +0.1283  a white stripe on the wings
+    +0.1254  a whitish throat
+    +0.1222  a large bill
+    +0.1201  a long tail with a white tip
+    +0.1186  grey legs and feet
+    +0.1172  a white breast
+    +0.1167  a small to medium size
+    +0.1145  a brown back and white belly
+    +0.1134  small, slim body
+    +0.1050  relatively long wings and tail
+    +0.1019  dark brown stripes on the back
+    +0.1011  a black streak on the breast
+    +0.0998  rufous (red-brown) color
+    +0.0993  long hind legs for jumping
+    +0.0987  a thin, curved bill
+    +0.0983  long, thin legs
+    +0.0978  a pointy crest on the head
+    +0.0976  yellow tips on the wings
+    +0.0970  dark wingtips
+    -0.0963  spotted feathers
+    +0.0957  a duck-like bird
+    +0.0935  a black mask over its eyes
+    -0.0858  streaks of white on its wings
+    +0.0856  a streaked back
+    +0.0751  a rusty brown color
+    +0.0738  green head
+    +0.0733  a small, black head
+    +0.0714  three toes on each foot
+    +0.0704  a black cap on the female
+    +0.0690  beak is curved and pointed
+    +0.0649  a white front
+    -0.0595  black feet
+
+example 1165  pred=Pine Warbler  label=Yellow bellied Flycatcher  correct=False  k_suff=1  n_nonzero=115  k_mass@0.9=64
+    +1.1306  iridescent feathers
+    +0.8526  a yellow head
+    -0.6023  fast, erratic flight patterns
+    +0.5737  a brown and white color scheme
+    +0.5605  orange and black wings
+    +0.5328  a yellow cap on the head
+    -0.4889  rufous (red-brown) color
+    +0.4753  a brown back and wings
+    +0.4495  green plumage
+    +0.4249  a black crest on the head
+    +0.4008  a long, thin neck
+    +0.3869  blue wings
+    +0.3430  bright golden-yellow plumage
+    -0.3388  a black eye-stripe
+    +0.3359  a black and white body
+    +0.3220  a violet ear patch
+    +0.3052  long hind legs for jumping
+    -0.3040  a black patch on the back
+    -0.2927  a short, stout bill
+    -0.2803  a black bib with white border
+    +0.2582  a black streak on the breast
+    +0.2582  white breast with brown spots
+    +0.2281  a pointy crest on the head
+    +0.2245  a small, slim bird
+    +0.2237  white stripes on the wings
+    +0.2142  green head
+    +0.2022  black feathers
+    +0.2021  a black back
+    -0.1998  a white bar on the wing
+    +0.1890  a pink bill
+    +0.1816  yellow or white "eyebrows"
+    +0.1788  long, thin antennae
+    +0.1730  a black wingtip
+    -0.1703  a brown or gray back
+    +0.1683  shy and secretive behavior
+    -0.1631  a high refractive index
+    -0.1562  a black ring around the bill
+    +0.1549  a thin, black bill
+    +0.1510  iridescent blue-green back
+    +0.1437  blue plumage
+    +0.1336  a large blue-grey bird
+    -0.1334  a yellow throat and breast
+    +0.1292  white underwings
+    +0.1270  shaggy feathers
+    -0.1244  long wingspan
+    +0.1205  a long, pointed wings
+    +0.1190  yellowish underparts
+    +0.1180  a large, cone-shaped bill
+    +0.1163  a large, black spider
+    -0.1160  a clear or translucent color
+    -0.1147  long, thin legs
+    +0.1138  a black throat
+    +0.1129  a small songbird
+    +0.1076  a yellowish belly
+    +0.1046  a greenish-yellow back
+    -0.1040  white belly and undertail
+    +0.0978  brownish wings with white bars
+    +0.0956  long black tail
+    +0.0946  a long tail with a white tip
+    +0.0946  yellow tips on the wings
+    +0.0943  a black beak
+    +0.0911  white plumage
+    +0.0879  a streaked back
+    -0.0871  a slimmer body than most crows
+
+example 1730  pred=Glaucous winged Gull  label=Herring Gull  correct=False  k_suff=2  n_nonzero=123  k_mass@0.9=64
+    +1.0521  a black collar
+    +1.0107  white patch on neck
+    +0.8137  a white wingbar
+    +0.7325  a red throat pouch
+    +0.6350  White wingtips
+    +0.6290  a long, thin neck
+    +0.6147  a pale grayish-white underbody
+    +0.5973  a small, white bird
+    +0.5896  a large, stocky bird
+    +0.5072  a white head and neck
+    +0.4927  a long, thin beak
+    +0.4909  long tail feathers
+    +0.4383  a large, white body
+    +0.4245  mottled grey and white plumage
+    +0.4220  white body with gray wings
+    +0.3934  large webbed feet
+    +0.3818  white underwings
+    +0.3655  a grayish-white body
+    +0.3539  a white front
+    +0.3478  a large blue-grey bird
+    +0.3467  a white collar around the neck
+    +0.3169  a medium-sized duck
+    +0.3031  a black or dark grey plumage
+    +0.2995  a black mask over its eyes
+    -0.2950  short, black legs
+    +0.2943  three toes on each foot
+    +0.2911  pale pink legs
+    +0.2559  long, black ear tufts
+    +0.2549  beak is curved and pointed
+    +0.2534  a streaked breast
+    -0.2480  iridescent feathers
+    +0.2402  a long, tapered tail
+    -0.2366  a short, stout bill
+    +0.2331  long, thin antennae
+    -0.2313  a red cap on the head
+    +0.2194  grayish wings and tail
+    +0.2191  white body
+    +0.2152  long, blue-gray wings
+    +0.2148  a dark blue-black upper body
+    +0.2127  a small, slim bird
+    +0.2076  spotted feathers
+    +0.2073  long, thin legs
+    -0.2064  rusty-brown feathers
+    +0.2049  a black V on the back
+    +0.1754  a white underbelly
+    -0.1682  a rusty-brown back
+    +0.1681  a trackpad or mouse
+    +0.1635  a white face and underparts
+    +0.1520  olive upperparts
+    -0.1513  a white tail with a black tip
+    -0.1449  blue eyes
+    +0.1431  brown streaks on the chest
+    +0.1431  black streaks on the sides
+    +0.1317  a blue-gray body
+    +0.1314  a high refractive index
+    +0.1306  black and orange plumage
+    +0.1290  a long tail with a white tip
+    -0.1263  a black and white color scheme
+    -0.1234  blue upperparts
+    -0.1118  white and black coloration
+    +0.1050  a loud caw
+    -0.1036  a white chest and belly
+    -0.0977  yellow or white "eyebrows"
+    +0.0925  large feet
+
+example 1731  pred=Glaucous winged Gull  label=Herring Gull  correct=False  k_suff=3  n_nonzero=123  k_mass@0.9=64
+    +0.9384  a black collar
+    +0.8485  a white wingbar
+    +0.7822  a large, stocky bird
+    +0.7171  a long, thin neck
+    +0.6812  a violet ear patch
+    +0.6694  white patch on neck
+    +0.5896  a long, thin beak
+    +0.5311  a pale grayish-white underbody
+    +0.4524  long tail feathers
+    +0.4297  three toes on each foot
+    -0.4231  a short, stout bill
+    +0.4035  white underwings
+    +0.4000  large webbed feet
+    +0.3949  beak is curved and pointed
+    +0.3754  pale pink legs
+    +0.3745  a small, white bird
+    -0.3574  a white chest and belly
+    +0.3307  long, thin legs
+    +0.3281  a medium-sized duck
+    +0.3123  White wingtips
+    -0.3023  a red cap on the head
+    -0.2957  a stout, conical bill
+    +0.2916  mottled grey and white plumage
+    +0.2634  a large, white body
+    -0.2617  short, black legs
+    +0.2589  a yellow bill with a red spot
+    +0.2317  a trackpad or mouse
+    +0.2304  a white head and neck
+    -0.2204  blue eyes
+    +0.2120  a red throat pouch
+    +0.1994  white body with gray wings
+    +0.1946  iridescent feathers
+    +0.1901  a grayish-white body
+    +0.1886  a white front
+    -0.1856  a large, hooked bill
+    +0.1821  a black or dark grey plumage
+    +0.1816  a large blue-grey bird
+    +0.1809  a white collar around the neck
+    -0.1651  a white tail with a black tip
+    +0.1575  grayish wings and tail
+    +0.1449  blue upperparts
+    +0.1414  a white face and underparts
+    +0.1388  white body
+    -0.1348  a small, slim bird
+    -0.1331  yellow or orange plumage
+    -0.1324  loud, rasping voice
+    +0.1322  a loud caw
+    +0.1294  a white underbelly
+    -0.1293  long wingspan
+    -0.1259  a yellow body with black wings
+    +0.1219  a small, blue bird
+    +0.1215  a white stripe on the wings
+    -0.1213  a black and white color scheme
+    +0.1153  a black mask over its eyes
+    +0.1137  wing bars
+    +0.1004  a white chin and throat
+    -0.0981  white and black coloration
+    +0.0977  a high refractive index
+    +0.0976  long, blue-gray wings
+    +0.0951  large size
+    +0.0871  spotted feathers
+    +0.0857  a black beak
+    -0.0806  a pointy crest on the head
+    +0.0796  a pink bill
+
+example 3802  pred=Sage Thrasher  label=White throated Sparrow  correct=False  k_suff=4  n_nonzero=111  k_mass@0.9=64
+    +0.9546  a black bill with a yellow tip
+    +0.7544  shaggy feathers
+    +0.5373  a small, thrush-like bird
+    -0.4572  a light-colored belly
+    +0.4151  long tail
+    +0.4045  orange-yellow legs
+    +0.3578  a red spot on the beak
+    +0.3537  a thin, curved bill
+    +0.3437  a white stripe on the wings
+    +0.3414  a small, forked tail
+    -0.3361  a loud caw
+    +0.3243  a gray crown
+    +0.3208  long, thin antennae
+    +0.3046  short wings
+    +0.2813  A blue sheen on the wings
+    +0.2753  orange and black wings
+    +0.2690  relatively long wings and tail
+    +0.2572  long black tail
+    +0.2487  a brown back and white belly
+    +0.2389  a streaked back
+    +0.2258  a large, gray body
+    +0.2213  a small, black head
+    +0.2184  beak is curved and pointed
+    +0.2107  a black wings and tail
+    +0.2099  a brown and white color scheme
+    +0.1940  a brown or grayish body
+    +0.1939  streaks of white on its wings
+    +0.1934  a red throat pouch
+    +0.1887  a black cap on the female
+    +0.1870  a long tail with a white tip
+    +0.1810  a grayish-brown head
+    +0.1756  a streaked head
+    +0.1672  a yellow throat and breast
+    -0.1648  a thin, pointy bill
+    -0.1604  small, slim body
+    +0.1592  Glossy black wings
+    -0.1581  a long, thin neck
+    +0.1571  a small, conical bill
+    +0.1399  spotted feathers
+    +0.1348  a small, brown bird
+    +0.1333  a high refractive index
+    -0.1331  black feet
+    +0.1271  red and yellow wingtips
+    -0.1221  a long, thick bill
+    -0.1202  a long, thin body
+    +0.1185  large body
+    +0.1112  yellow tips on the wings
+    -0.1102  long hind legs for jumping
+    -0.1099  a white breast
+    +0.1036  a grey back
+    +0.0980  gray feathers
+    +0.0980  gray head
+    +0.0960  dark brown stripes on the back
+    +0.0911  a black mask over its eyes
+    -0.0908  blue eyes
+    +0.0891  a small to medium size
+    +0.0888  a brown streak down its back
+    +0.0876  black mask
+    -0.0827  a pointy crest on the head
+    -0.0822  white stripes above the eyes
+    -0.0782  a slender, white body
+    +0.0776  brown streaks on the chest
+    -0.0751  large eyes
+    +0.0738  black eyes

@@ -1,0 +1,39 @@
+{
+  "dataset": "places365",
+  "concept_set": "data/concept_sets/places365_filtered.txt",
+  "shared_from": null,
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 2165,
+  "lam": 0.0003,
+  "gate_lam": 0.0001,
+  "gate_epochs": 20,
+  "gate_forward": "hard",
+  "arm": "baseline",
+  "baseline": {
+    "acc_per_seed": [
+      0.4370136857032776,
+      0.43684932589530945,
+      0.43619176745414734,
+      0.43660274147987366,
+      0.43682190775871277
+    ],
+    "acc_mean": 0.43669588565826417,
+    "acc_std": 0.00028398357221731717,
+    "n_open_per_seed": [
+      2162,
+      2164,
+      2164,
+      2165,
+      2018
+    ],
+    "n_open_mean": 2134.6,
+    "n_open_std": 58.30814694363044
+  },
+  "session_dir": null
+}

@@ -1,0 +1,64 @@
+{
+  "dataset": "cifar100",
+  "backbone": "resnet50_v2",
+  "concept_data": "concepts_1000_64",
+  "n_concepts_total": 1000,
+  "n_classes": 100,
+  "lambda_gates": [
+    0.0001
+  ],
+  "seeds": [
+    0
+  ],
+  "beta": 0.25,
+  "val_accuracy": [
+    0.4442000091075897
+  ],
+  "val_accuracy_std": [
+    0.0
+  ],
+  "val_accuracy_per_seed": [
+    [
+      0.4442000091075897
+    ]
+  ],
+  "test_accuracy": [
+    0.43059998750686646
+  ],
+  "test_accuracy_std": [
+    0.0
+  ],
+  "test_accuracy_per_seed": [
+    [
+      0.43059998750686646
+    ]
+  ],
+  "open_gates": [
+    894.0
+  ],
+  "open_gates_std": [
+    0.0
+  ],
+  "open_gates_per_seed": [
+    [
+      894
+    ]
+  ],
+  "cea": [
+    0.3249380886554718
+  ],
+  "cea_std": [
+    0.0
+  ],
+  "cea_per_seed": [
+    [
+      0.32493808527864837
+    ]
+  ],
+  "baseline_val_accuracy": 0.4065999984741211,
+  "baseline_val_accuracy_std": 0.0,
+  "baseline_test_accuracy": 0.3961000144481659,
+  "baseline_test_accuracy_std": 0.0,
+  "baseline_cea": 0.2962196171283722,
+  "baseline_cea_std": 0.0
+}

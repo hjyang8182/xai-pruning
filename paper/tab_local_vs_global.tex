@@ -1,0 +1,28 @@
+\begin{table}[h]
+  \centering
+  \begin{tabular}{llrrr}
+    \toprule
+    \textbf{Dataset} & \textbf{Model} & \textbf{Per image} & \textbf{Across Dataset} & \textbf{Total} \\
+    \midrule
+    \multirow{4}{*}{CUB}
+      & LF-CBM            & $92.8 \pm 15.4$  &  351 (100\%) &  351 \\
+      & UCBM              & $27.0 \pm \phantom{0}6.3$   &  200 (100\%) &  200 \\
+      & VLG-CBM$^\dagger$ & $\phantom{0}4.7 \pm \phantom{0}1.3$    &  617 \phantom{0}(92\%) &  671 \\
+      & DN-CBM            & $579.3 \pm 55.0$ & 5047 \phantom{0}(62\%) & 8192 \\
+    \midrule
+    \multirow{4}{*}{CIFAR-100}
+      & LF-CBM            & $87.5 \pm \phantom{0}22.4$  &  877 \phantom{0}(98\%) &  892 \\
+      & UCBM              & $229.0 \pm 103.6$ &  981 \phantom{0}(98\%) & 1000 \\
+      & VLG-CBM           & $\phantom{0}6.8 \pm \phantom{00}3.3$    &  533 \phantom{0}(68\%) &  780 \\
+      & DN-CBM            & $636.2 \pm \phantom{0}88.4$ & 6313 \phantom{0}(77\%) & 8192 \\
+    \midrule
+    \multirow{4}{*}{Places365}
+      & LF-CBM            & $26.1 \pm 8.3$  & 1952 \phantom{0}(90\%) & 2159 \\
+      & UCBM              & $39.0 \pm 7.1$  &  213 \phantom{00}(6\%) & 3650 \\
+      & VLG-CBM           & $\phantom{0}5.4 \pm 2.2$   & 1579 \phantom{0}(72\%) & 2186 \\
+      & DN-CBM$^\ddagger$ & $\phantom{0}4.3 \pm 2.0$   &  648 \phantom{00}(8\%) & 8192 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Number of concepts with a non-zero contribution to the predicted-class logit, mean $\pm$ std over test images (\textbf{Per image}), the union of these sets over the test set (\textbf{Across Dataset}, with the fraction of the full concept dictionary in parentheses), and the dictionary size (\textbf{Total}). $^\dagger$VLG-CBM on CUB is evaluated on its 10\% held-out validation split of the training set rather than the test set, as only these concept activations are cached; the classifier fits this split perfectly, so the row is not directly comparable to the other test-set numbers. $^\ddagger$The DN-CBM Places365 probe converges to an effectively sparse head whose remaining weights sit at the $\ell_1$ floor ($|w|\approx10^{-4}$); weights are counted as non-zero at $|w|>10^{-3}$ for this row and $|w|>10^{-5}$ elsewhere, where the two thresholds agree.}
+  \label{tab:local_vs_global}
+\end{table}

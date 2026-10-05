@@ -1,0 +1,38 @@
+{
+  "dataset": "cub",
+  "backbone": "cub_rn18",
+  "concept_data": "concepts_200_64",
+  "gated": false,
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 200,
+  "lam_pi": 0.0001,
+  "lambda_gate": 0.0003,
+  "lam_w": 0.0001,
+  "epochs": 150,
+  "baseline": {
+    "acc_per_seed": [
+      0.750431478023529,
+      0.7493959069252014,
+      0.7511218786239624,
+      0.7497411370277405,
+      0.749568521976471
+    ],
+    "acc_mean": 0.7500517845153809,
+    "acc_std": 0.0006402325386515962,
+    "n_open_per_seed": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "n_open_mean": 200.0,
+    "n_open_std": 0.0
+  }
+}

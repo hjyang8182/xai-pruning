@@ -1,0 +1,40 @@
+{
+  "dataset": "cub",
+  "backbone": "cub_rn18",
+  "concept_data": "concepts_200_64",
+  "gated": false,
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 200,
+  "lam_pi": 0.0001,
+  "lambda_gate": 0.0005,
+  "gate_forward": "hard",
+  "lam_w": 0.0001,
+  "epochs": 150,
+  "baseline": {
+    "acc_per_seed": [
+      0.7483603954315186,
+      0.7464618682861328,
+      0.7462892532348633,
+      0.7478426098823547,
+      0.7476699948310852
+    ],
+    "acc_mean": 0.7473248243331909,
+    "acc_std": 0.0008095372364600202,
+    "n_open_per_seed": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "n_open_mean": 200.0,
+    "n_open_std": 0.0
+  },
+  "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cub-cub_rn18/classifier/concepts_200_64/baseline_seed_sweep_2026_09_17_22_46"
+}

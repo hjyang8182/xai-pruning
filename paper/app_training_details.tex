@@ -1,0 +1,179 @@
+% Reproducibility appendix. Every value below was read off the training code and the logged
+% per-run configs (probe_config.json / seed-sweep JSONs). Items wrapped in \chk{...} disagree
+% between the logs and tab_hyperparams.tex, or could not be verified -- resolve, then delete
+% the macro.
+\providecommand{\chk}[1]{\textcolor{red}{[CHECK: #1]}}
+
+\subsection{Experimental setup and training details}
+\label{app:hyperparam}
+
+\paragraph{Shared protocol.}
+All four pipelines are \emph{post-hoc}: the image backbone and the concept extractor are
+frozen, concept activations $c(x)\in\mathbb{R}^{|\mathcal{C}|}$ are computed once and cached,
+and only the final linear layer (baseline) or the gated head (GCG) is trained on the cached
+activations. For each (model, dataset) pair, the baseline and the GCG head are trained on
+\emph{identical} cached activations. Only the seed-dependent final stage (head initialisation
+and minibatch order) is repeated for each seed $s\in\{0,10,20,30,40\}$. Before each run we
+call \texttt{torch.manual\_seed}$(s)$, and for UCBM we also seed Python/NumPy/CUDA and set
+cuDNN to deterministic mode. Seed-independent stages (concept discovery, the projection or
+concept layer, activation caching) run once, using the seed of the original implementation.
+We report top-1 accuracy on the official test split (Places-365: the official validation
+split), as the mean $\pm$ std over the five seeds.
+
+\paragraph{GCG head.}
+The head is $\hat y = W\,(c(x)\odot m) + b$ with one gate logit $\mu_j$ per concept and
+$g_j=\sigma(\mu_j/T)$, $T=1$. We use the \emph{hard-forward} straight-through estimator for
+every run: the forward pass uses $m_j=\mathbb{1}[g_j>0.5]$ and the backward pass uses
+$\partial m_j/\partial g_j=1$. All logits are initialised to $\mu_j=2$ ($g_j\approx0.88$, so
+every gate starts open). The weights are initialised with the PyTorch \texttt{nn.Linear}
+default. The per-minibatch objective is
+\[
+\mathcal{L} = \mathrm{CE}(\hat y, y) \;+\; \lambda_{\text{gate}}\sum_{j}\sigma(\mu_j)
+\;+\; \mathcal{R}_{\text{model}}(W),
+\]
+where CE is averaged over the minibatch and the gate penalty is \emph{not} normalised by the
+batch or by $|\mathcal{C}|$. $\mathcal{R}_{\text{model}}$ is the backbone-specific weight
+penalty given below. It is zero for LF-CBM and VLG-CBM. We apply no warm-up of
+$\lambda_{\text{gate}}$, no temperature annealing, and no early stopping; the head from the
+last epoch is used. A concept is \emph{open} if $g_j>0.5$.
+
+\paragraph{Mask-and-refit.}
+After gated training we keep $K=\{j: g_j>\tau\}$ with $\tau=0.5$, delete every other
+concept, and retrain a plain linear head on $c(x)_K$ with no gate and no regulariser. The head
+is warm-started from the gated weights with the gate folded in ($W_{:,K}\odot g_K$). We use
+Adam with learning rate $10^{-3}$, no weight decay, 20 epochs, the same batch size as gated
+training, and refit seed $=s$. The refit head has exactly $|K|$ non-zero columns.
+
+\paragraph{Counting concepts in the baselines.}
+The sparse baselines have no gate, so a concept counts as used if any class has
+$|W_{kj}|>10^{-5}$ on it (LF-CBM, UCBM, VLG-CBM), or if its weight clears the
+\texttt{concept\_usage\_report} threshold for DN-CBM \chk{state the DN-CBM threshold}.
+
+\subsubsection{Per-backbone details}
+
+\paragraph{DN-CBM.}
+\emph{Concepts:} We use the released CLIP-RN50 sparse autoencoder of DN-CBM (1024-d image
+embedding $\to$ 8192 latents). Latents are named by their nearest CLIP text embedding in the
+20k CLIP-Dissect vocabulary. \emph{Data:} From the training split we hold out a stratified 20\%
+(split seed 42). It is used only to select $\lambda_{\text{gate}}$, and all heads are trained
+on the remaining 80\%.
+\emph{Baseline:} A linear probe with $\lambda_{\ell_1}\sum_{kj}|W_{kj}|$, $\lambda_{\ell_1}=10^{-4}$,
+Adam at a constant learning rate of $10^{-3}$, 100 epochs.
+\emph{GCG:} Same optimiser and learning rate, with $\mathcal{R}_{\text{model}}=\lambda_{\ell_1}\cdot
+\mathrm{mean}_{kj}|W_{kj}|$ and $\lambda_{\ell_1}=10^{-4}$. Note that the gated arm uses the
+\emph{mean}, not the sum, so its weight penalty is $|\mathcal{C}|\cdot K$ times weaker than
+the baseline's. Epochs: 100 (CIFAR-100), 150 (CUB, Places-365).
+\emph{Batch size:} 64 (CIFAR-100, CUB) and 4096 (Places-365, 1.44M training images).
+\chk{The latest Places-365 baseline on disk used 150 epochs and $\lambda_{\ell_1}=10^{-5}$ (47.6\%);
+the 100-epoch/$10^{-4}$ run gives 36.8\%. Say which one the paper reports.}
+
+\paragraph{LF-CBM.}
+\emph{Concepts:} GPT-3 concept sets from the original release (\texttt{<dataset>\_filtered.txt}).
+Concept targets are CLIP ViT-B/16 image--text similarities. We drop concepts whose mean top-5
+CLIP activation is $\le$ 0.25 / 0.26 / 0.28 (CIFAR-100 / CUB / Places-365), and concepts
+whose projection similarity on the validation set is $\le 0.45$.
+\emph{Projection:} A bias-free linear map from backbone features to concepts, trained to
+maximise $\cos^3$ similarity to the CLIP targets. Adam, learning rate $10^{-3}$, batch
+$\min(50000, n)$, at most 1000 steps, early-stopped on validation similarity (checked every 50
+steps, patience 1). Concept activations are standardised with the training-set mean and std.
+\emph{Backbones and layers:} CLIP-RN50 image encoder (CIFAR-100); CUB-trained ResNet-18,
+\texttt{features.final\_pool} (CUB); Places-365 ResNet-50, \texttt{layer4} (Places-365).
+Features are average-pooled.
+\emph{Baseline:} GLM-SAGA elastic net ($\alpha=0.99$, step size 0.1, a single $\lambda$ on the
+path), batch 64, with $\lambda$ / iterations of $7\times10^{-4}$/1000 (CIFAR-100),
+$2\times10^{-4}$/5000 (CUB) and $3\times10^{-4}$/80 (Places-365). Weights and bias are
+initialised to zero.
+\emph{GCG:} Adam at a constant learning rate of $10^{-3}$, batch 64, no weight penalty.
+Epochs: 100 (CIFAR-100), 150 (CUB), \chk{20 in the Places-365 hard-forward run on disk; the
+caption says 150}.
+
+\paragraph{UCBM.}
+\emph{Concepts:} UCBM concept banks of 1000 / 200 / 3650 unsupervised concept vectors
+(\texttt{concepts\_1000\_64}, \texttt{concepts\_200\_64}, \texttt{concepts\_3650\_64})
+\chk{describe how the banks were extracted}. Concept activations are the cosine similarity of
+backbone features to each concept vector, standardised when \texttt{normalize} is on
+(CIFAR-100, CUB).
+\emph{Backbones:} ImageNet ResNet-50 (torchvision V2 weights) for CIFAR-100, CUB ResNet-18,
+Places-365 ResNet-18.
+\emph{Classifier:} A per-concept learned scale $e^{s_j}$ ($s_j$ initialised to 0; disabled on
+CUB) and offset $e^{o_j}$ ($o_j$ initialised to $-10$), then ReLU, then concept dropout ($p=0.1$
+on CIFAR-100, $0.2$ otherwise), then a linear layer. Regularisers: an elastic net
+($\alpha=0.99$) on post-ReLU activations with $\lambda_\pi=10^{-4}$, and an elastic net on $W$
+with $\lambda_w=10^{-4}$. In the gated runs $\mathcal{R}_{\text{model}}$ keeps the $\lambda_w$
+term, and the gate is applied after the ReLU and before dropout. Adam, learning rate
+$10^{-3}$, batch 64.
+\emph{Baseline:} Cosine learning-rate decay over 20 / 150 / 20 epochs.
+\emph{GCG:} Constant learning rate. Epochs: 100 (CIFAR-100), 150 (CUB), 20 (Places-365). On
+Places-365 the gated run sets $\lambda_\pi=0$.
+\chk{The CUB recipe passes \texttt{--k 66}, but with the default ReLU selector the top-$k$
+branch is never reached, so no top-$k$ is applied. Drop it from the description, or rerun with
+\texttt{--relu no}.}
+
+\paragraph{VLG-CBM.}
+\emph{Concepts:} Concept sets from the original release, filtered by Grounding-DINO
+annotations (confidence threshold 0.15). A concept-bottleneck layer (CBL) is trained with
+multi-label BCE, Adam, learning rate $5\times10^{-4}$ and weight decay $10^{-5}$. Settings for
+CIFAR-100 / CUB / Places-365: epochs 40/75/4, batch 32/32/128, hidden layers 1/0/1, positive
+weight 0.2 (auto) / 1.0 / 50.0, crop-to-concept probability 0/0.5/0.5. The backbone is not
+fine-tuned, and the shared-stage seeds are 28527 / 6885 / 42. CBL outputs are standardised with
+training-set statistics. A fraction 0.1 / 0.1 / \chk{0.05 in config, 0.1 in the sweep recipe}
+of the training set is held out for validation.
+\emph{Backbones:} CLIP-RN50 (penultimate layer) for CIFAR-100, CUB ResNet-18
+(\texttt{features.final\_pool}) for CUB, ResNet-50 (\texttt{layer4}) for Places-365
+\chk{the table says CLIP RN50 for Places-365, but the config and logged args say ResNet-50}.
+\emph{Baseline:} GLM-SAGA ($\alpha=0.99$, step size 0.1, batch 512) with
+$\lambda=7\times10^{-4}$ / $2\times10^{-4}$ / $7\times10^{-4}$ and 2000 / 4000 / 200
+iterations.
+\emph{GCG:} Adam with learning rate $10^{-3}$, cosine-annealed over training, batch 512, no
+weight penalty. The number of epochs equals the GLM-SAGA iteration count, i.e.\ 2000
+(CIFAR-100) and 4000 (CUB) epochs.
+\chk{No Places-365 VLG-CBM seed-sweep results are on disk; confirm $\lambda_{\text{gate}}$,
+epochs, and that the run exists.}
+
+\begin{table}[!h]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Full per-run settings. ``Base.\ reg.'' is the baseline's sparsity strength
+(DN-CBM: $\ell_1$ sum; LF-CBM/VLG-CBM: GLM-SAGA elastic net; UCBM: $\lambda_w$/$\lambda_\pi$
+elastic net). ``Base.\ it.'' is epochs (DN-CBM, UCBM) or GLM-SAGA iterations (LF-CBM,
+VLG-CBM). All GCG heads use hard-forward STE, $\mu_j(0)=2$, $T=1$, Adam, and
+mask-and-refit at $\tau=0.5$ (20 epochs, learning rate $10^{-3}$).}
+\label{tab:hyperparams_full}
+\begin{tabular}{llrlrrrrrl}
+\toprule
+& & & & \multicolumn{2}{c}{\textbf{Baseline}} & \multicolumn{4}{c}{\textbf{GCG}} \\
+\cmidrule(lr){5-6}\cmidrule(lr){7-10}
+\textbf{Model} & \textbf{Data} & $|\mathcal{C}|$ & \textbf{Backbone} & Base.\ reg. & Base.\ it. &
+$\lambda_{\text{gate}}$ & Ep. & Batch & LR \\
+\midrule
+DN-CBM  & C100 & 8192 & CLIP RN50    & $10^{-4}$ & 100 & $5\!\times\!10^{-4}$ & 100 & 64   & $10^{-3}$ const \\
+        & CUB  & 8192 & CLIP RN50    & $10^{-4}$ & 100 & $3\!\times\!10^{-3}$ & 150 & 64   & $10^{-3}$ const \\
+        & P365 & 8192 & CLIP RN50    & \chk{} & \chk{} & $1\!\times\!10^{-4}$ & 150 & 4096 & $10^{-3}$ const \\
+\midrule
+LF-CBM  & C100 & 829  & CLIP RN50    & $7\!\times\!10^{-4}$ & 1000 & $1\!\times\!10^{-4}$ & 100 & 64 & $10^{-3}$ const \\
+        & CUB  & 370  & ResNet-18    & $2\!\times\!10^{-4}$ & 5000 & $7\!\times\!10^{-4}$ & 150 & 64 & $10^{-3}$ const \\
+        & P365 & \chk{2161} & ResNet-50 & $3\!\times\!10^{-4}$ & 80 & \chk{$1\!\times\!10^{-4}$} & \chk{20} & 64 & $10^{-3}$ const \\
+\midrule
+UCBM    & C100 & 1000 & ResNet-50    & $10^{-4}$/$10^{-4}$ & 20  & $1\!\times\!10^{-4}$ & 100 & 64 & $10^{-3}$ const \\
+        & CUB  & 200  & ResNet-18    & $10^{-4}$/$10^{-4}$ & 150 & $5\!\times\!10^{-4}$ & 150 & 64 & $10^{-3}$ const \\
+        & P365 & 3650 & ResNet-18    & $10^{-4}$/$10^{-4}$ & 20  & \chk{$1\!\times\!10^{-4}$} & 20 & 64 & $10^{-3}$ const \\
+\midrule
+VLG-CBM & C100 & 780  & CLIP RN50    & $7\!\times\!10^{-4}$ & 2000 & $5\!\times\!10^{-5}$ & 2000 & 512 & $10^{-3}$ cos \\
+        & CUB  & 671  & ResNet-18    & $2\!\times\!10^{-4}$ & 4000 & $5\!\times\!10^{-5}$ & 4000 & 512 & $10^{-3}$ cos \\
+        & P365 & \chk{2186} & \chk{ResNet-50} & $7\!\times\!10^{-4}$ & 200 & \chk{} & \chk{} & 512 & $10^{-3}$ cos \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Selecting $\lambda_{\text{gate}}$.}
+\chk{State the grid and the criterion, e.g.\ ``the largest $\lambda_{\text{gate}}$ in
+$\{\dots\}$ whose held-out accuracy is within $x$ points of the baseline'', and which split it
+is selected on. For DN-CBM this is the 20\% held-out split; LF-CBM and UCBM have no separate
+validation split in these scripts.}
+
+\paragraph{Software and compute.}
+\chk{GPU model, PyTorch/CUDA versions, and wall-clock per run.} There is one conda environment
+per pipeline, because the original repositories pin incompatible dependencies. Code, configs,
+and the single launcher that reproduces every seed sweep (\texttt{run\_seed\_sweeps.py}) will
+be released.

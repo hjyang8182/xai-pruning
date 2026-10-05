@@ -1,0 +1,610 @@
+example 10658  pred=television studio  label=television studio  correct=True  k_suff=2  n_nonzero=51  k_mass@0.9=31
+    +0.8360  often has a sandy bottom
+    +0.6811  protected from bad weather
+    +0.3902  a videographer
+    +0.3525  mats
+    +0.2804  a microphone
+    +0.2731  a television in the center
+    +0.2134  lots of people visiting
+    +0.2118  a straw hat
+    +0.1927  Hebrew writing on the front
+    +0.1839  production
+    +0.1774  mannequins
+    +0.1639  a hunter's cap
+    +0.1563  a band
+    +0.1523  a mannequin
+    +0.1383  a mezuzah
+    +0.1369  rows of stained glass windows
+    +0.1342  a control room
+    +0.1335  a pool table
+    +0.1275  a small population
+    +0.1262  a large number of flowers
+    +0.1199  boots
+    +0.1196  exhibits
+    +0.1172  bar stools
+    +0.1121  a stage with bright lights
+    +0.1114  stools
+    +0.1048  a sound booth
+    +0.0955  a throne
+    +0.0862  shoes
+    +0.0827  a variety of colors
+    +0.0825  a platform or car inside
+    +0.0791  pebbles
+
+example 13553  pred=television studio  label=television studio  correct=True  k_suff=2  n_nonzero=51  k_mass@0.9=31
+    +0.9164  often has a sandy bottom
+    +0.6198  protected from bad weather
+    +0.4023  a microphone
+    +0.3284  a videographer
+    +0.3076  bar stools
+    +0.2899  mats
+    +0.2732  a television in the center
+    +0.2483  mannequins
+    +0.2252  Hebrew writing on the front
+    +0.2157  stools
+    +0.1881  a mannequin
+    +0.1867  a band
+    +0.1732  a hunter's cap
+    +0.1542  a sound booth
+    +0.1478  a straw hat
+    +0.1449  production
+    +0.1366  a soccer ball
+    +0.1365  a control room
+    +0.1339  a small population
+    +0.1320  a large number of flowers
+    +0.1160  boots
+    +0.1115  a platform or car inside
+    +0.1073  rows of stained glass windows
+    +0.1029  pebbles
+    +0.0915  a throne
+    +0.0880  a mezuzah
+    +0.0824  robots
+    +0.0801  shoes
+    +0.0796  a pool table
+    +0.0795  a stage with bright lights
+    +0.0780  lots of people visiting
+
+example 30024  pred=gazebo, exterior  label=gazebo, exterior  correct=True  k_suff=4  n_nonzero=44  k_mass@0.9=30
+    +0.5637  some sort of shelter or canopy
+    +0.4520  a stone lantern
+    +0.4453  a lantern
+    +0.2690  a domed roof
+    +0.2581  a bride and groom
+    +0.2416  often has a garden or fountain
+    +0.2405  often located in a park
+    +0.2219  a pedestal
+    +0.2212  may have cracks or fissures
+    +0.2198  a tent
+    +0.2153  gloves
+    +0.2143  outdoor structure
+    +0.1896  slippers
+    +0.1671  beach umbrellas
+    +0.1645  hangers
+    +0.1595  a wall
+    +0.1407  a trellis
+    +0.1405  a grandstand
+    +0.1390  a picnic
+    +0.1331  playground equipment
+    +0.1180  fruit
+    +0.1114  may have graffiti on the walls
+    +0.1049  a bench
+    +0.1037  a fire
+    +0.1019  a golf cart
+    +0.0867  a beam
+    +0.0855  a fire pit
+    +0.0848  a cleat
+    +0.0765  may have picnic tables
+    +0.0762  outdoor furniture
+
+example 13324  pred=television studio  label=repair shop  correct=False  k_suff=2  n_nonzero=51  k_mass@0.9=29
+    +0.8526  a videographer
+    +0.5289  often has a sandy bottom
+    +0.4413  protected from bad weather
+    +0.4315  a microphone
+    +0.3313  a straw hat
+    +0.3084  a television in the center
+    +0.2751  production
+    +0.2489  lots of people visiting
+    +0.1855  a sound booth
+    +0.1763  a control room
+    +0.1740  baby clothes
+    +0.1484  a band
+    -0.1430  a stage with bright lights
+    +0.1378  rows of stained glass windows
+    +0.1370  a large number of flowers
+    -0.1334  shoes
+    +0.1142  a small population
+    +0.1094  robots
+    +0.1008  a hunter's cap
+    -0.0961  a throne
+    +0.0879  pebbles
+    +0.0722  a soccer ball
+    -0.0721  exhibits
+    +0.0675  a variety of colors
+    +0.0634  a mezuzah
+    +0.0603  lots of parking spaces
+    +0.0595  lighting and sound equipment
+    -0.0526  boots
+    +0.0497  Hebrew writing on the front
+
+example 31531  pred=television studio  label=booth, indoor  correct=False  k_suff=3  n_nonzero=51  k_mass@0.9=29
+    +0.6006  often has a sandy bottom
+    +0.5257  protected from bad weather
+    +0.2551  mannequins
+    +0.2449  a band
+    +0.2229  a microphone
+    +0.2172  a television in the center
+    +0.1782  a large number of flowers
+    +0.1737  a sound booth
+    +0.1683  a soccer ball
+    +0.1506  a mannequin
+    +0.1336  a straw hat
+    +0.1241  lots of people visiting
+    +0.1126  baby clothes
+    +0.1092  a hunter's cap
+    +0.1038  a control room
+    +0.1021  mats
+    +0.0998  a small population
+    +0.0954  Hebrew writing on the front
+    +0.0899  boots
+    +0.0749  robots
+    +0.0749  a variety of colors
+    -0.0658  lighting and sound equipment
+    +0.0657  lots of parking spaces
+    +0.0616  a mezuzah
+    +0.0590  production
+    -0.0476  a platform or car inside
+    +0.0440  rows of stained glass windows
+    +0.0430  Fungi
+    -0.0418  a pool table
+
+example 33963  pred=booth, indoor  label=reception  correct=False  k_suff=3  n_nonzero=50  k_mass@0.9=29
+    +0.9058  golden color
+    +0.7681  pews
+    +0.7284  a slowly moving body
+    +0.4876  a rocky or sandy bottom
+    +0.4076  a wide variety of exhibits
+    +0.3990  greenish color
+    +0.3092  a catering truck
+    +0.2926  located in front of a stage
+    +0.2821  a sales counter
+    +0.2790  a merchandise stand
+    +0.2526  motion
+    +0.2349  exhibits
+    +0.2160  a whiteboard
+    +0.1907  signs with bus schedules
+    +0.1746  a copier
+    +0.1723  menus
+    +0.1718  a yellow or green color
+    +0.1712  oars
+    +0.1595  a stall
+    +0.1586  a football
+    +0.1408  an exhibit
+    +0.1168  a chain
+    +0.1116  booths
+    +0.1071  loud, cheerful music
+    +0.1060  a soloist
+    +0.1029  business
+    +0.0951  sanitizer
+    +0.0951  a display
+    +0.0912  event
+
+example 1408  pred=booth, indoor  label=booth, indoor  correct=True  k_suff=3  n_nonzero=50  k_mass@0.9=28
+    +0.7474  golden color
+    +0.6522  a wide variety of exhibits
+    +0.6364  a rocky or sandy bottom
+    +0.5246  exhibits
+    +0.4916  pews
+    +0.3333  a whiteboard
+    +0.3159  located in front of a stage
+    +0.3120  a slowly moving body
+    +0.3090  menus
+    +0.2416  a football
+    +0.2400  greenish color
+    +0.2350  a merchandise stand
+    +0.2177  an exhibit
+    +0.2091  a sales counter
+    +0.1948  manufacturing
+    +0.1890  a stall
+    +0.1886  oars
+    +0.1795  event
+    +0.1787  a copier
+    +0.1660  booths
+    +0.1494  a display
+    +0.1402  motion
+    +0.1233  a soloist
+    +0.1048  a bowl
+    +0.1042  a yellow or green color
+    +0.1034  business
+    +0.0970  a chain
+    +0.0912  sanitizer
+
+example 2723  pred=booth, indoor  label=booth, indoor  correct=True  k_suff=8  n_nonzero=50  k_mass@0.9=28
+    +0.8390  golden color
+    +0.5815  a wide variety of exhibits
+    +0.5048  exhibits
+    +0.4730  a rocky or sandy bottom
+    +0.4292  a slowly moving body
+    +0.4208  greenish color
+    +0.3412  event
+    +0.2760  pews
+    +0.2391  an exhibit
+    +0.1963  a merchandise stand
+    +0.1796  a whiteboard
+    +0.1795  located in front of a stage
+    +0.1745  a yellow or green color
+    +0.1726  booths
+    +0.1649  a sales counter
+    +0.1587  business
+    +0.1409  video games
+    +0.1368  signs with bus schedules
+    +0.1141  menus
+    +0.1056  loud, cheerful music
+    +0.0976  motion
+    +0.0884  a copier
+    +0.0829  red or orange color
+    +0.0801  oars
+    +0.0750  pebbles
+    +0.0716  a stall
+    +0.0716  a display
+    +0.0677  a boarding pass
+
+example 4187  pred=television studio  label=art studio  correct=False  k_suff=4  n_nonzero=51  k_mass@0.9=28
+    +0.4408  often has a sandy bottom
+    +0.3879  a videographer
+    +0.3792  protected from bad weather
+    +0.3134  a microphone
+    +0.2978  production
+    +0.2296  a sound booth
+    +0.1816  a band
+    +0.1765  mannequins
+    +0.1534  a soccer ball
+    +0.1471  bar stools
+    +0.1468  a control room
+    +0.1247  a mannequin
+    +0.0833  a hunter's cap
+    +0.0810  baby clothes
+    +0.0771  a small population
+    +0.0721  Hebrew writing on the front
+    +0.0720  lighting and sound equipment
+    +0.0706  a large number of flowers
+    +0.0685  pebbles
+    +0.0664  rows of stained glass windows
+    +0.0567  a variety of colors
+    +0.0561  lots of parking spaces
+    +0.0489  robots
+    +0.0452  exhibits
+    +0.0414  stools
+    +0.0401  overhead compartments
+    +0.0397  a straw hat
+    +0.0388  usually found in cemeteries
+
+example 6737  pred=television studio  label=beauty salon  correct=False  k_suff=3  n_nonzero=51  k_mass@0.9=28
+    +0.6122  often has a sandy bottom
+    +0.5884  protected from bad weather
+    +0.3961  a band
+    +0.3388  mannequins
+    +0.3242  a microphone
+    +0.2900  bar stools
+    +0.2664  production
+    +0.2555  a mannequin
+    +0.2423  a television in the center
+    +0.2105  a videographer
+    +0.1465  Hebrew writing on the front
+    +0.1243  rows of stained glass windows
+    +0.1180  stools
+    +0.1088  robots
+    +0.1068  a straw hat
+    +0.1036  a hunter's cap
+    +0.0937  a stage with bright lights
+    +0.0897  a mezuzah
+    +0.0836  lighting and sound equipment
+    +0.0699  pebbles
+    +0.0615  a small population
+    -0.0612  lots of people visiting
+    +0.0610  usually found in cemeteries
+    +0.0598  baby clothes
+    +0.0595  a large number of flowers
+    +0.0580  mats
+    +0.0577  a soccer ball
+    -0.0541  a pool table
+
+example 7779  pred=gazebo, exterior  label=gazebo, exterior  correct=True  k_suff=2  n_nonzero=44  k_mass@0.9=28
+    +1.0544  some sort of shelter or canopy
+    +0.5154  a domed roof
+    +0.4686  a tent
+    +0.4122  a lantern
+    +0.4015  a stone lantern
+    +0.3913  a pedestal
+    +0.3497  a grandstand
+    +0.2814  outdoor structure
+    +0.2631  may have cracks or fissures
+    +0.2086  a bride and groom
+    +0.1891  gloves
+    +0.1879  fruit
+    +0.1865  a bench
+    +0.1826  hangers
+    +0.1809  a canopy
+    +0.1677  a wall
+    +0.1657  slippers
+    +0.1612  playground equipment
+    +0.1576  a trellis
+    +0.1571  often has a garden or fountain
+    +0.1457  outdoor furniture
+    +0.1396  may have graffiti on the walls
+    +0.1393  a deck or patio area
+    +0.1212  may have picnic tables
+    +0.1156  a picnic
+    +0.1063  beach umbrellas
+    +0.1060  a cleat
+    +0.0998  a beam
+
+example 9500  pred=television studio  label=physics laboratory  correct=False  k_suff=6  n_nonzero=51  k_mass@0.9=28
+    +0.4268  often has a sandy bottom
+    +0.2641  a straw hat
+    +0.2219  lots of people visiting
+    +0.1974  a soccer ball
+    +0.1850  Hebrew writing on the front
+    +0.1765  rows of stained glass windows
+    +0.1742  a large number of flowers
+    +0.1701  protected from bad weather
+    +0.1516  a band
+    +0.1491  a microphone
+    -0.1455  a television in the center
+    +0.1377  a mezuzah
+    +0.1251  a hunter's cap
+    -0.1166  a sound booth
+    +0.1150  a small population
+    -0.1039  a throne
+    +0.1002  pebbles
+    +0.0864  robots
+    +0.0838  a variety of colors
+    +0.0802  exhibits
+    +0.0625  lots of parking spaces
+    +0.0596  bar stools
+    +0.0474  mats
+    +0.0434  rows of parking spaces
+    +0.0406  mannequins
+    +0.0381  a paintbrush
+    +0.0379  a mannequin
+    +0.0378  baby clothes
+
+example 9891  pred=booth, indoor  label=booth, indoor  correct=True  k_suff=3  n_nonzero=50  k_mass@0.9=28
+    +1.0567  pews
+    +0.7431  golden color
+    +0.7364  a slowly moving body
+    +0.5733  a wide variety of exhibits
+    +0.5251  exhibits
+    +0.4784  a rocky or sandy bottom
+    +0.4477  greenish color
+    +0.3208  menus
+    +0.2946  located in front of a stage
+    +0.2280  motion
+    +0.2190  a sales counter
+    +0.2127  signs with bus schedules
+    +0.1962  a football
+    +0.1838  an exhibit
+    +0.1804  oars
+    +0.1660  a merchandise stand
+    +0.1593  a yellow or green color
+    +0.1387  a copier
+    +0.1378  video games
+    +0.1369  a chain
+    +0.1222  a catering truck
+    +0.1190  a display
+    +0.1059  pebbles
+    +0.0977  a punching bag
+    +0.0872  a soloist
+    +0.0870  loud, cheerful music
+    +0.0867  a bowl
+    +0.0866  a boarding pass
+
+example 10235  pred=booth, indoor  label=booth, indoor  correct=True  k_suff=3  n_nonzero=50  k_mass@0.9=28
+    +0.9348  golden color
+    +0.7188  pews
+    +0.7047  a slowly moving body
+    +0.4984  a wide variety of exhibits
+    +0.4966  a rocky or sandy bottom
+    +0.4698  greenish color
+    +0.3629  exhibits
+    +0.2011  a merchandise stand
+    +0.1953  signs with bus schedules
+    +0.1893  a football
+    +0.1736  motion
+    +0.1687  a sales counter
+    +0.1686  a yellow or green color
+    +0.1623  event
+    +0.1605  an exhibit
+    +0.1499  manufacturing
+    +0.1178  a copier
+    +0.1136  oars
+    +0.1040  booths
+    +0.1026  pebbles
+    +0.0983  loud, cheerful music
+    +0.0959  located in front of a stage
+    +0.0937  red or orange color
+    +0.0930  a boarding pass
+    +0.0905  a chain
+    +0.0885  menus
+    +0.0858  a display
+    +0.0752  a whiteboard
+
+example 16632  pred=booth, indoor  label=general store, indoor  correct=False  k_suff=3  n_nonzero=50  k_mass@0.9=28
+    +0.7302  pews
+    +0.6696  golden color
+    +0.5520  a slowly moving body
+    +0.3727  a wide variety of exhibits
+    +0.3622  greenish color
+    +0.3276  a rocky or sandy bottom
+    +0.2237  a merchandise stand
+    +0.2149  signs with bus schedules
+    +0.1493  menus
+    +0.1451  a catering truck
+    -0.1395  a whiteboard
+    +0.1350  motion
+    +0.1312  a yellow or green color
+    +0.1112  an exhibit
+    +0.1082  a sales counter
+    -0.1071  located in front of a stage
+    +0.1049  pebbles
+    +0.1010  booths
+    +0.0948  loud, cheerful music
+    -0.0897  a copier
+    +0.0849  a football
+    +0.0829  a stall
+    +0.0811  red or orange color
+    +0.0786  video games
+    +0.0761  manufacturing
+    +0.0692  a boarding pass
+    +0.0635  oars
+    -0.0630  a washing machine
+
+example 20104  pred=booth, indoor  label=amusement arcade  correct=False  k_suff=12  n_nonzero=50  k_mass@0.9=28
+    +0.6865  golden color
+    +0.5705  a rocky or sandy bottom
+    +0.5117  a wide variety of exhibits
+    +0.5003  exhibits
+    +0.2924  event
+    +0.2510  a merchandise stand
+    +0.2429  located in front of a stage
+    +0.1962  greenish color
+    +0.1940  an exhibit
+    +0.1807  a slowly moving body
+    +0.1539  a sales counter
+    +0.1427  a whiteboard
+    +0.1340  oars
+    +0.1281  signs with bus schedules
+    +0.1258  artwork on display
+    +0.1234  video games
+    +0.1230  booths
+    +0.1116  menus
+    +0.1073  manufacturing
+    +0.0945  a yellow or green color
+    +0.0935  a football
+    +0.0934  merchandise
+    +0.0926  a display
+    +0.0917  a stall
+    +0.0830  business
+    +0.0795  a punching bag
+    +0.0765  red or orange color
+    +0.0686  a catering truck
+
+example 25141  pred=booth, indoor  label=market, indoor  correct=False  k_suff=3  n_nonzero=50  k_mass@0.9=28
+    +0.8420  pews
+    +0.6735  a slowly moving body
+    +0.5768  golden color
+    +0.4650  a wide variety of exhibits
+    +0.4421  a rocky or sandy bottom
+    +0.4393  greenish color
+    +0.3554  exhibits
+    +0.2617  a merchandise stand
+    +0.2546  a stall
+    +0.2288  located in front of a stage
+    +0.2135  a sales counter
+    +0.2006  a yellow or green color
+    +0.1770  a football
+    +0.1738  an exhibit
+    +0.1673  menus
+    +0.1642  motion
+    +0.1314  oars
+    +0.1278  a display
+    +0.1203  loud, cheerful music
+    +0.1168  a bowl
+    +0.1136  booths
+    +0.1110  merchandise
+    +0.1014  a copier
+    +0.0989  manufacturing
+    +0.0927  a punching bag
+    +0.0874  pebbles
+    +0.0842  a soloist
+    +0.0793  signs with bus schedules
+
+example 25656  pred=booth, indoor  label=booth, indoor  correct=True  k_suff=9  n_nonzero=50  k_mass@0.9=28
+    +0.6713  golden color
+    +0.6336  a wide variety of exhibits
+    +0.5632  exhibits
+    +0.5536  a rocky or sandy bottom
+    +0.4092  greenish color
+    +0.3670  located in front of a stage
+    +0.3420  a slowly moving body
+    +0.3267  a sales counter
+    +0.3109  an exhibit
+    +0.3031  a catering truck
+    +0.2704  menus
+    +0.2659  booths
+    +0.2522  business
+    +0.2331  a whiteboard
+    +0.2321  a merchandise stand
+    +0.2310  a stall
+    +0.2276  event
+    +0.2143  oars
+    +0.1585  a yellow or green color
+    +0.1520  manufacturing
+    +0.1352  video games
+    +0.1317  artwork on display
+    +0.1298  a copier
+    +0.1273  a display
+    +0.1021  a football
+    +0.1009  motion
+    +0.0840  a washing machine
+    +0.0837  a soloist
+
+example 28489  pred=television studio  label=beauty salon  correct=False  k_suff=3  n_nonzero=51  k_mass@0.9=28
+    +0.7617  protected from bad weather
+    +0.5309  often has a sandy bottom
+    +0.4989  a band
+    +0.4574  a microphone
+    +0.4524  a stage with bright lights
+    +0.3990  a videographer
+    +0.3241  lighting and sound equipment
+    +0.2755  exhibits
+    +0.2080  mannequins
+    +0.2031  a sound booth
+    +0.1780  production
+    +0.1494  a soccer ball
+    +0.1409  baby clothes
+    +0.1368  boots
+    +0.1344  Hebrew writing on the front
+    +0.1201  a television in the center
+    -0.1191  mats
+    +0.0934  a hunter's cap
+    +0.0927  robots
+    +0.0916  a control room
+    -0.0848  lots of people visiting
+    +0.0711  shoes
+    -0.0694  people dancing
+    -0.0669  a platform or car inside
+    +0.0604  rows of stained glass windows
+    +0.0593  a large number of flowers
+    +0.0588  a straw hat
+    -0.0572  overhead compartments
+
+example 34330  pred=television studio  label=pharmacy  correct=False  k_suff=3  n_nonzero=51  k_mass@0.9=28
+    +0.7236  often has a sandy bottom
+    +0.3952  protected from bad weather
+    +0.3272  production
+    +0.2116  a control room
+    +0.1976  a television in the center
+    +0.1884  mannequins
+    +0.1879  a straw hat
+    +0.1813  a videographer
+    +0.1807  Hebrew writing on the front
+    +0.1647  robots
+    +0.1534  a mannequin
+    +0.1371  a hunter's cap
+    +0.1368  lighting and sound equipment
+    +0.1331  a stage with bright lights
+    +0.1320  exhibits
+    +0.1058  a small population
+    +0.0970  a soccer ball
+    +0.0966  a band
+    +0.0862  a microphone
+    -0.0816  a throne
+    -0.0768  mats
+    +0.0709  a sound booth
+    +0.0663  usually found in cemeteries
+    +0.0660  pebbles
+    +0.0632  rows of stained glass windows
+    +0.0513  a large number of flowers
+    +0.0511  overhead compartments
+    -0.0499  lots of people visiting

@@ -1,0 +1,82 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDE / editors
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# ML / experiment outputs
+# =========================
+wandb/
+runs/
+logs/
+checkpoints/
+outputs/
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# =========================
+# Datasets
+# =========================
+data/
+dataset/
+prelim/	
+Discover-then-Name/
+img/
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.log
+
+# =========================
+# Python packaging
+# =========================
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+sweep_logs/
+*.dat
+*.mmap
+prelim/VLG-CBM/
+*.tgz

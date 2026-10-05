@@ -1,0 +1,141 @@
+accelerate==1.13.0
+addict==2.4.0
+aiohappyeyeballs==2.6.1
+aiohttp==3.13.3
+aiosignal==1.4.0
+albucore==0.0.23
+albumentations==1.4.24
+annotated-doc==0.0.4
+annotated-types==0.7.0
+anyio==4.12.1
+appnope @ file:///home/conda/feedstock_root/build_artifacts/appnope_1733332318622/work
+asttokens @ file:///home/conda/feedstock_root/build_artifacts/asttokens_1763409923949/work
+attrs==25.4.0
+beartype==0.14.1
+better-abc==0.0.3
+braceexpand==0.1.7
+certifi==2026.2.25
+charset-normalizer==3.4.5
+click==8.3.1
+clip==0.2.0
+comm @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_comm_1753453984/work
+contourpy @ file:///opt/miniconda3/conda-bld/contourpy_1763643921048/work
+cycler @ file:///Users/ec2-user/croot/cycler_1766067937020/work
+dataclasses==0.6
+datasets==4.6.1
+debugpy @ file:///opt/miniconda3/conda-bld/debugpy_1762421636036/work
+decorator @ file:///home/conda/feedstock_root/build_artifacts/decorator_1740384970518/work
+dill==0.4.0
+-e git+https://github.com/neuroexplicit-saar/Discover-then-Name.git@03484baef77747596712cf971e402f77b9da5a9a#egg=dncbm
+einops==0.8.2
+executing @ file:///home/conda/feedstock_root/build_artifacts/executing_1756729339227/work
+ExifRead-nocycle==3.0.1
+fancy-einsum==0.0.3
+filelock==3.25.0
+fire==0.7.1
+fonttools @ file:///opt/miniconda3/conda-bld/fonttools_1765445183405/work
+frozenlist==1.8.0
+fsspec==2026.2.0
+ftfy==6.3.1
+gitdb==4.0.12
+GitPython==3.1.46
+h11==0.16.0
+hf-xet==1.3.2
+httpcore==1.0.9
+httpx==0.28.1
+huggingface_hub==0.36.2
+idna==3.11
+img2dataset==1.47.0
+ipykernel @ file:///Users/runner/miniforge3/conda-bld/bld/rattler-build_ipykernel_1770566135/work
+ipython @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_ipython_1770040907/work
+ipython_pygments_lexers @ file:///home/conda/feedstock_root/build_artifacts/ipython_pygments_lexers_1737123620466/work
+jaxtyping==0.3.9
+jedi @ file:///home/conda/feedstock_root/build_artifacts/jedi_1733300866624/work
+Jinja2==3.1.6
+joblib==1.5.3
+jupyter_client @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_jupyter_client_1767954655/work
+jupyter_core @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_jupyter_core_1760643864/work
+kiwisolver @ file:///opt/miniconda3/conda-bld/kiwisolver_1764159426452/work
+markdown-it-py==4.0.0
+MarkupSafe==3.0.3
+matplotlib==3.10.8
+matplotlib-inline @ file:///home/conda/feedstock_root/build_artifacts/matplotlib-inline_1761214490209/work
+mdurl==0.1.2
+mmcv==2.2.0
+mmengine==0.10.7
+mpmath==1.3.0
+multidict==6.7.1
+multiprocess==0.70.18
+nest_asyncio @ file:///home/conda/feedstock_root/build_artifacts/nest-asyncio_1733325553580/work
+networkx==3.6.1
+nltk==3.9.3
+numpy==1.26.3
+open_clip_torch==3.3.0
+openai-clip==1.0.1
+opencv-python==4.13.0.92
+opencv-python-headless==4.13.0.92
+packaging @ file:///opt/miniconda3/conda-bld/packaging_1761049079066/work
+pandas @ file:///Users/ec2-user/croot/pandas_1773246071761/work
+parso @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_parso_1770676243/work
+pexpect @ file:///home/conda/feedstock_root/build_artifacts/pexpect_1733301927746/work
+pillow @ file:///Users/ec2-user/croot/pillow_1772475248595/work
+platformdirs @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_platformdirs_1773199142/work
+prompt_toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1756321756983/work
+propcache==0.4.1
+protobuf==6.33.5
+psutil @ file:///opt/miniconda3/conda-bld/psutil_1761896323688/work
+ptyprocess @ file:///home/conda/feedstock_root/build_artifacts/ptyprocess_1733302279685/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl#sha256=92c32ff62b5fd8cf325bec5ab90d7be3d2a8ca8c8a3813ff487a8d2002630d1f
+pure_eval @ file:///home/conda/feedstock_root/build_artifacts/pure_eval_1733569405015/work
+pyarrow==23.0.1
+pydantic==2.12.5
+pydantic_core==2.41.5
+Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1750615794071/work
+pyparsing @ file:///opt/miniconda3/conda-bld/pyparsing_1763973786267/work
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_python-dateutil_1751104122/work
+pytz==2026.1.post1
+PyYAML==6.0.3
+pyzmq @ file:///opt/miniconda3/conda-bld/pyzmq_1762375616040/work
+regex==2026.2.28
+requests==2.32.5
+rich==14.3.3
+safetensors==0.7.0
+scikit-learn==1.9.0
+scipy==1.17.1
+seaborn @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_74n8m1zz4r/croot/seaborn_1749110344248/work
+sentencepiece==0.2.1
+sentry-sdk==2.54.0
+shellingham==1.5.4
+simsimd==6.5.16
+six @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_six_1753199211/work
+smmap==5.0.2
+-e git+https://github.com/neuroexplicit-saar/Discover-then-Name.git@03484baef77747596712cf971e402f77b9da5a9a#egg=sparse_autoencoder&subdirectory=sparse_autoencoder
+stack_data @ file:///home/conda/feedstock_root/build_artifacts/stack_data_1733569443808/work
+StrEnum==0.4.15
+stringzilla==4.6.0
+sympy==1.14.0
+termcolor==3.3.0
+timm==1.0.25
+tokenizers==0.22.2
+torch==2.10.0
+torchvision==0.25.0
+tornado @ file:///Users/ec2-user/croot/tornado_1765992648472/work
+tqdm==4.67.3
+traitlets @ file:///home/conda/feedstock_root/build_artifacts/traitlets_1733367359838/work
+transformer-lens==2.17.0
+transformers==4.57.6
+transformers-stream-generator==0.0.5
+typeguard==4.5.1
+typer==0.24.1
+typing-inspection==0.4.2
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1756220668/work
+tzdata==2025.3
+urllib3==2.6.3
+wadler_lindig==0.1.7
+wandb==0.25.0
+wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_1770634525285/work
+webdataset==0.2.111
+wordcloud==1.9.6
+xxhash==3.6.0
+yapf==0.43.0
+yarl==1.23.0
+zstandard==0.25.0

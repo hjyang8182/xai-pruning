@@ -1,0 +1,22 @@
+{
+  "amount of concepts": 0,
+  "gated": true,
+  "amount of classes": 365,
+  "train acc": 0.5476140379905701,
+  "test acc": 0.5058082342147827,
+  "avg non zero concept ratio": 0.0,
+  "learning rate": 0.001,
+  "lambda pi": 0.0,
+  "lambda gate": 0.0003,
+  "gate temperature start": 1.0,
+  "gate temperature final": null,
+  "gate temperature": 1.0,
+  "lambda w": 0.0001,
+  "epochs": 50,
+  "dropout p": 0.2,
+  "scale mode": "learn",
+  "bias mode": "learn",
+  "multilabel": false,
+  "normalize": false,
+  "k": -1
+}

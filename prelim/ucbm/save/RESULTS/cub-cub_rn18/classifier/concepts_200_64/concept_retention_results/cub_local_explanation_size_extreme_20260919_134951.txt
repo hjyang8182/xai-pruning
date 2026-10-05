@@ -1,0 +1,393 @@
+example 762  pred=Shiny_Cowbird  label=American_Crow  correct=False  k_suff=2  n_nonzero=35  k_mass@0.9=18  seed_index=1
+    +1.8753  c53
+    +1.5564  c62
+    +1.5477  c6
+    +0.8768  c90
+    +0.8209  c134
+    +0.8165  c39
+    +0.4737  c142
+    +0.4663  c58
+    +0.4545  c152
+    +0.3825  c161
+    +0.3706  c143
+    +0.3569  c19
+    +0.3263  c82
+    +0.2869  c79
+    +0.2842  c28
+    +0.2636  c50
+    +0.2046  c84
+    +0.1946  c96
+
+example 981  pred=Red_eyed_Vireo  label=Acadian_Flycatcher  correct=False  k_suff=1  n_nonzero=44  k_mass@0.9=18  seed_index=1
+    +1.9424  c73
+    +1.5339  c27
+    +1.1524  c198
+    +0.7248  c61
+    +0.6782  c102
+    +0.6383  c120
+    +0.6246  c54
+    +0.4541  c155
+    +0.3333  c194
+    +0.3262  c167
+    -0.3227  c130
+    +0.2992  c86
+    +0.2991  c21
+    +0.2897  c72
+    +0.2324  c193
+    +0.2185  c199
+    +0.2017  c187
+    +0.1910  c95
+
+example 2821  pred=Ovenbird  label=Ovenbird  correct=True  k_suff=3  n_nonzero=31  k_mass@0.9=18  seed_index=1
+    +1.7864  c7
+    +1.2431  c47
+    +1.1095  c118
+    +0.9868  c72
+    +0.8550  c150
+    +0.7736  c199
+    +0.6799  c163
+    +0.5999  c154
+    +0.5877  c141
+    +0.5040  c110
+    +0.4423  c22
+    +0.3497  c39
+    +0.3300  c112
+    +0.2940  c50
+    +0.2638  c133
+    +0.2552  c94
+    +0.2378  c14
+    +0.2373  c194
+
+example 5371  pred=Red_eyed_Vireo  label=Cedar_Waxwing  correct=False  k_suff=2  n_nonzero=50  k_mass@0.9=18  seed_index=2
+    +2.1763  c102
+    +1.7504  c86
+    +1.2371  c73
+    +1.2039  c61
+    -0.7046  c126
+    +0.5690  c198
+    +0.5341  c21
+    +0.5199  c194
+    +0.4898  c75
+    +0.4132  c27
+    +0.3673  c155
+    +0.3108  c193
+    +0.2787  c187
+    -0.2764  c160
+    +0.2632  c199
+    +0.2592  c41
+    +0.2534  c28
+    +0.2029  c167
+
+example 72  pred=Western_Gull  label=Sooty_Albatross  correct=False  k_suff=2  n_nonzero=45  k_mass@0.9=18  seed_index=3
+    +2.8560  c117
+    +1.5128  c171
+    +1.4524  c136
+    +1.1568  c91
+    +0.7979  c43
+    +0.7408  c40
+    +0.6441  c115
+    +0.3719  c11
+    +0.3587  c101
+    -0.3462  c195
+    +0.2731  c27
+    -0.2603  c118
+    +0.2546  c96
+    -0.2469  c82
+    -0.2198  c191
+    +0.1982  c56
+    -0.1874  c19
+    -0.1866  c190
+
+example 106  pred=Shiny_Cowbird  label=Groove_billed_Ani  correct=False  k_suff=6  n_nonzero=32  k_mass@0.9=18  seed_index=3
+    +1.0012  c6
+    +0.8243  c152
+    +0.7473  c62
+    +0.6460  c44
+    +0.6274  c90
+    +0.5994  c50
+    +0.5615  c53
+    +0.5321  c28
+    +0.5243  c79
+    +0.4758  c82
+    +0.4483  c19
+    +0.4222  c134
+    +0.3377  c142
+    +0.3058  c187
+    +0.2584  c161
+    +0.2509  c143
+    +0.2234  c96
+    +0.1898  c168
+
+example 708  pred=Shiny_Cowbird  label=Shiny_Cowbird  correct=True  k_suff=2  n_nonzero=35  k_mass@0.9=18  seed_index=3
+    +2.2450  c53
+    +1.9975  c62
+    +1.5494  c6
+    +1.0014  c152
+    +0.9596  c19
+    +0.8705  c90
+    +0.7682  c44
+    +0.4778  c39
+    +0.4239  c142
+    +0.4193  c161
+    +0.4033  c134
+    +0.3589  c58
+    +0.3529  c28
+    +0.3080  c82
+    +0.2764  c187
+    +0.2407  c96
+    +0.2303  c155
+    +0.2199  c168
+
+example 747  pred=Shiny_Cowbird  label=American_Crow  correct=False  k_suff=2  n_nonzero=33  k_mass@0.9=18  seed_index=3
+    +2.1655  c6
+    +1.9468  c53
+    +1.4173  c62
+    +0.9930  c90
+    +0.5378  c152
+    +0.5240  c44
+    +0.4776  c58
+    +0.3902  c19
+    +0.3862  c28
+    +0.3168  c143
+    +0.3131  c161
+    +0.3047  c184
+    +0.2838  c134
+    +0.2809  c168
+    +0.2665  c79
+    +0.2441  c96
+    +0.2440  c187
+    +0.2429  c39
+
+example 106  pred=Shiny_Cowbird  label=Groove_billed_Ani  correct=False  k_suff=3  n_nonzero=33  k_mass@0.9=18  seed_index=4
+    +1.0424  c152
+    +0.9806  c6
+    +0.7216  c62
+    +0.6065  c28
+    +0.6042  c50
+    +0.5690  c90
+    +0.5583  c53
+    +0.5546  c79
+    +0.5413  c44
+    +0.5135  c82
+    +0.4726  c19
+    +0.4289  c134
+    +0.3510  c142
+    +0.2667  c161
+    +0.2548  c187
+    +0.2418  c143
+    +0.1919  c155
+    +0.1845  c96
+
+example 248  pred=Shiny_Cowbird  label=Rusty_Blackbird  correct=False  k_suff=2  n_nonzero=37  k_mass@0.9=18  seed_index=4
+    +2.4172  c53
+    +1.9081  c6
+    +1.4586  c62
+    +1.1306  c90
+    +0.8857  c152
+    +0.8175  c155
+    +0.6513  c19
+    +0.5271  c184
+    +0.4891  c58
+    +0.4456  c187
+    +0.3937  c28
+    +0.3743  c161
+    +0.3641  c44
+    +0.3578  c79
+    +0.3288  c82
+    +0.3195  c50
+    +0.3172  c168
+    +0.2822  c39
+
+example 708  pred=Shiny_Cowbird  label=Shiny_Cowbird  correct=True  k_suff=2  n_nonzero=37  k_mass@0.9=18  seed_index=4
+    +2.2324  c53
+    +1.9138  c62
+    +1.5146  c6
+    +1.2602  c152
+    +1.0116  c19
+    +0.7895  c90
+    +0.6440  c44
+    +0.4406  c142
+    +0.4327  c161
+    +0.4097  c134
+    +0.4026  c28
+    +0.3833  c39
+    +0.3364  c58
+    +0.3324  c82
+    +0.2714  c84
+    +0.2343  c155
+    +0.2303  c187
+    +0.2048  c79
+
+example 747  pred=Shiny_Cowbird  label=American_Crow  correct=False  k_suff=2  n_nonzero=36  k_mass@0.9=18  seed_index=4
+    +2.1147  c6
+    +1.9358  c53
+    +1.3605  c62
+    +0.9006  c90
+    +0.6902  c152
+    +0.4480  c58
+    +0.4405  c28
+    +0.4389  c44
+    +0.4114  c19
+    +0.3259  c184
+    +0.3232  c161
+    +0.3054  c143
+    +0.2882  c134
+    +0.2819  c79
+    +0.2487  c168
+    +0.2329  c50
+    +0.2249  c155
+    +0.2034  c187
+
+example 762  pred=Shiny_Cowbird  label=American_Crow  correct=False  k_suff=2  n_nonzero=37  k_mass@0.9=18  seed_index=4
+    +1.8531  c53
+    +1.4687  c6
+    +1.4466  c62
+    +0.8371  c90
+    +0.6520  c134
+    +0.6487  c39
+    +0.5410  c161
+    +0.5307  c143
+    +0.5085  c142
+    +0.4749  c152
+    +0.4348  c58
+    +0.3643  c19
+    +0.3473  c50
+    +0.3316  c28
+    +0.3239  c82
+    +0.3202  c79
+    +0.3003  c96
+    +0.2124  c84
+
+example 4992  pred=Orange_crowned_Warbler  label=Orange_crowned_Warbler  correct=True  k_suff=2  n_nonzero=33  k_mass@0.9=18  seed_index=4
+    +2.9859  c54
+    +2.7938  c98
+    +1.1780  c132
+    +0.8818  c86
+    +0.8733  c126
+    +0.8439  c53
+    +0.6682  c69
+    +0.6476  c89
+    +0.6303  c50
+    +0.5201  c34
+    +0.3842  c174
+    +0.3705  c110
+    +0.3332  c8
+    +0.3235  c1
+    +0.2870  c23
+    +0.2784  c167
+    +0.2625  c154
+    +0.2578  c170
+
+example 762  pred=Shiny_Cowbird  label=American_Crow  correct=False  k_suff=2  n_nonzero=33  k_mass@0.9=17  seed_index=0
+    +2.0002  c53
+    +1.7142  c62
+    +1.5492  c6
+    +0.7789  c90
+    +0.6949  c134
+    +0.5312  c142
+    +0.5271  c161
+    +0.5237  c39
+    +0.4315  c58
+    +0.4211  c152
+    +0.3386  c79
+    +0.3253  c143
+    +0.3246  c28
+    +0.3208  c19
+    +0.2781  c82
+    +0.2216  c44
+    +0.1873  c84
+
+example 981  pred=Red_eyed_Vireo  label=Acadian_Flycatcher  correct=False  k_suff=1  n_nonzero=44  k_mass@0.9=17  seed_index=0
+    +1.9905  c73
+    +1.5272  c27
+    +1.0510  c198
+    +0.7870  c61
+    +0.6322  c54
+    +0.6300  c102
+    +0.5276  c120
+    +0.4490  c155
+    +0.3680  c193
+    +0.3529  c167
+    +0.3233  c86
+    +0.3054  c21
+    -0.2800  c130
+    -0.2042  c169
+    +0.1938  c194
+    +0.1833  c187
+    +0.1720  c28
+
+example 1533  pred=Evening_Grosbeak  label=Evening_Grosbeak  correct=True  k_suff=1  n_nonzero=55  k_mass@0.9=17  seed_index=0
+    +3.5281  c188
+    +2.2548  c21
+    +1.9544  c10
+    +0.8884  c40
+    +0.7529  c4
+    +0.6093  c177
+    -0.6036  c0
+    +0.5338  c134
+    +0.5011  c8
+    +0.4364  c51
+    +0.4268  c1
+    -0.3844  c157
+    +0.3616  c84
+    +0.3368  c196
+    -0.3221  c130
+    +0.3086  c11
+    +0.2897  c86
+
+example 1848  pred=Glaucous_winged_Gull  label=Western_Gull  correct=False  k_suff=3  n_nonzero=40  k_mass@0.9=17  seed_index=0
+    +2.7126  c91
+    +2.6091  c171
+    +1.3614  c115
+    +0.9841  c107
+    +0.7017  c18
+    +0.5287  c190
+    +0.4512  c136
+    +0.4512  c150
+    +0.4395  c11
+    -0.3749  c99
+    +0.3667  c143
+    +0.3610  c138
+    +0.3053  c50
+    +0.2940  c119
+    +0.2636  c43
+    -0.2476  c40
+    -0.2446  c161
+
+example 2806  pred=Ovenbird  label=Ovenbird  correct=True  k_suff=1  n_nonzero=31  k_mass@0.9=17  seed_index=0
+    +2.7764  c7
+    +1.2419  c47
+    +1.2204  c163
+    +1.0562  c199
+    +0.9156  c118
+    +0.8475  c154
+    +0.7895  c72
+    +0.6505  c150
+    +0.5276  c141
+    +0.4828  c39
+    +0.4194  c32
+    +0.3797  c84
+    +0.3726  c194
+    +0.3379  c50
+    +0.3058  c110
+    +0.2983  c61
+    +0.2941  c14
+
+example 2810  pred=Ovenbird  label=Ovenbird  correct=True  k_suff=1  n_nonzero=32  k_mass@0.9=17  seed_index=0
+    +3.4737  c7
+    +1.7162  c47
+    +1.5547  c118
+    +0.9265  c150
+    +0.7770  c199
+    +0.6669  c72
+    +0.5628  c163
+    +0.3980  c84
+    +0.3562  c154
+    +0.3508  c110
+    +0.3496  c61
+    +0.3435  c133
+    +0.3266  c22
+    +0.3228  c194
+    +0.2819  c141
+    +0.2691  c14
+    +0.2673  c50

@@ -1,0 +1,17 @@
+\begin{table}[h]
+  \centering
+  \begin{tabular}{lrrrr}
+    \toprule
+    \textbf{Gate init} $\mu_j(0)$ & $\sigma(\mu_j(0))$ & \textbf{Open gates} & \textbf{Task Acc.\ (\%)} & \textbf{Task Acc.\ refit (\%)} \\
+    \midrule
+    $-4$                       & 0.02 & $0$              & $\phantom{0}1.0 \pm 0.0$ & $\phantom{0}1.0 \pm 0.0$ \\
+    $-2$                       & 0.12 & $0$              & $\phantom{0}1.0 \pm 0.0$ & $\phantom{0}1.0 \pm 0.0$ \\
+    $\phantom{-}0$             & 0.50 & $0$              & $\phantom{0}1.0 \pm 0.0$ & $\phantom{0}1.0 \pm 0.0$ \\
+    $\phantom{-}2$ (default)   & 0.88 & $791.7 \pm 3.4$  & $66.2 \pm 0.1$ & $66.5 \pm 0.1$ \\
+    $\phantom{-}4$             & 0.98 & $824.7 \pm 1.7$  & $66.5 \pm 0.1$ & $66.7 \pm 0.1$ \\
+    $\mathcal{N}(0, 2^2)$      & --   & $605.3 \pm 5.0$  & $63.2 \pm 0.2$ & $63.7 \pm 0.2$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Gate-initialisation ablation for DN-CBM w/ GCG on CIFAR-100 ($\lambda_{\text{gate}} = 5\times10^{-4}$, hard-forward gate, 100 epochs, mean $\pm$ std over 3 seeds; 8{,}192 concepts). Every gate logit starts at the constant $\mu_j(0)$, or at i.i.d.\ Gaussian noise in the last row (about half the gates start closed). Any gate that starts closed ($\sigma(\mu_j(0)) \le 0.5$) never opens: the masked concept receives no task gradient and the sparsity penalty only pushes its logit down, so the model collapses to chance. Among all-open starts the result is insensitive to the exact value.}
+  \label{tab:gate_init}
+\end{table}

@@ -1,0 +1,38 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrr}
+\toprule
+\textbf{Model} & \textbf{Dataset} & $|\mathcal{C}|$ & $|\mathcal{K}|$ &
+\textbf{Gated Acc.\ (\%)} & \textbf{Refit Acc.\ (\%)} & $\Delta$ \\
+\midrule
+\multirow{3}{*}{DN-CBM} & CIFAR-100 & 8192 & $791.67_{\pm 3.40}$ & $66.19_{\pm 0.10}$ & $66.50_{\pm 0.11}$ & $+0.32$ \\
+ & CUB & 8192 & $242.20_{\pm 0.40}$ & $68.38_{\pm 0.07}$ & $68.65_{\pm 0.08}$ & $+0.26$ \\
+ & Places-365 & 8192 & $1694.80_{\pm 13.48}$ & $52.82_{\pm 0.04}$ & $53.02_{\pm 0.07}$ & $+0.20$ \\
+\midrule
+\multirow{3}{*}{LF-CBM} & CIFAR-100 & 829 & $598.80_{\pm 0.40}$ & $67.15_{\pm 0.10}$ & $67.17_{\pm 0.16}$ & $+0.02$ \\
+ & CUB & 370 & $267.00_{\pm 1.26}$ & $63.25_{\pm 0.24}$ & $63.77_{\pm 0.08}$ & $+0.51$ \\
+ & Places-365 & 2161 & $166.80_{\pm 3.60}$ & $41.06_{\pm 0.49}$ & $43.38_{\pm 0.12}$ & $+2.32$ \\
+\midrule
+\multirow{3}{*}{UCBM} & CIFAR-100 & 1000 & $204.20_{\pm 1.17}$ & $57.91_{\pm 0.09}$ & $60.41_{\pm 0.13}$ & $+2.49$ \\
+ & CUB & 200 & $173.60_{\pm 3.14}$ & $73.43_{\pm 0.24}$ & $74.57_{\pm 0.26}$ & $+1.14$ \\
+ & Places-365 & 3650 & $430.20_{\pm 4.07}$ & $50.53_{\pm 0.15}$ & $48.63_{\pm 0.16}$ & $-1.89$ \\
+\midrule
+\multirow{3}{*}{VLG-CBM} & CIFAR-100 & 780 & $697.60_{\pm 1.50}$ & $67.77_{\pm 0.02}$ & $67.39_{\pm 0.14}$ & $-0.38$ \\
+ & CUB & 671 & $44.80_{\pm 1.47}$ & $72.80_{\pm 0.15}$ & $72.33_{\pm 0.20}$ & $-0.47$ \\
+ & Places-365 & 2186 & $107.80_{\pm 0.40}$ & $43.98_{\pm 0.08}$ & $43.57_{\pm 0.09}$ & $-0.41$ \\
+\bottomrule
+\end{tabular}
+\caption{Gated head vs.\ mask-and-refit head for every GCG run. \emph{Gated} is
+the test accuracy of the trained gated head (hard-forward STE gate) evaluated as
+is; \emph{Refit} is the accuracy after fixing the open set
+$\mathcal{K} = \{j : g_j > \tau\}$ at $\tau = 0.5$ and refitting a plain linear
+head on those $|\mathcal{K}|$ concepts alone (20 epochs). $|\mathcal{C}|$ is the
+concept dictionary size; $\Delta$ is Refit $-$ Gated in accuracy points. Mean
+$_{\pm}$ std over 5 seeds (DN-CBM/CIFAR-100: 3 seeds);
+$\lambda_{\text{gate}}$ as in Table~\ref{tab:hyperparams}. For VLG-CBM the refit
+SAGA head additionally zeroes some open concepts, so the concepts it actually
+uses number $38.60 \pm 1.36$ on CUB and $107.40 \pm 0.80$ on Places-365.}
+\label{tab:gated_vs_refit}
+\end{table}

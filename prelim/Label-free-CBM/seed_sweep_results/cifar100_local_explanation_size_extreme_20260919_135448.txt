@@ -1,0 +1,1399 @@
+example 4483  pred=beaver  label=skunk  correct=False  k_suff=7  n_nonzero=130  k_mass@0.9=70
+    +0.7305  long, brown fur
+    +0.3471  a black, fur-covered nose
+    -0.3119  storage
+    +0.2841  a calf
+    +0.2229  a swimmer
+    +0.1866  a red, green, or yellow color
+    +0.1745  primate
+    +0.1644  a mottled brown or black coat
+    +0.1576  a red or orange color
+    +0.1572  a office
+    +0.1498  a pointed end
+    -0.1479  an open bed in the back
+    +0.1409  a alarm clock
+    +0.1370  a box spring
+    +0.1260  logs
+    +0.1216  a TV
+    +0.1210  a small, pointed top
+    +0.1157  a large, rectangular body
+    +0.1135  a caravan
+    +0.1133  a mongoose
+    +0.1113  cubs
+    -0.1103  a nut
+    +0.1052  often has towers and turrets
+    +0.1023  no pattern or design
+    +0.1012  a bright, red color
+    +0.0964  a slender body
+    -0.0934  a crib
+    +0.0917  a wet suit
+    +0.0872  a career
+    -0.0714  buttons
+    -0.0705  a rocket ship
+    +0.0686  a small mouth
+    +0.0661  a slime trail
+    +0.0660  a dock
+    -0.0648  an electrical outlet
+    +0.0641  a gas tank
+    +0.0640  a sweet, juicy flesh
+    -0.0620  a fridge
+    +0.0604  carnivore
+    +0.0603  milk
+    -0.0588  a remote control
+    -0.0569  nuts
+    +0.0548  a diaper
+    +0.0531  a watering can
+    -0.0517  butter
+    -0.0492  a street
+    -0.0465  a small, rodent-like body
+    +0.0423  large, four-legged mammal
+    +0.0403  a net
+    +0.0392  a wreath
+    +0.0388  lightning
+    +0.0380  container
+    +0.0373  a door
+    +0.0365  lemon
+    -0.0353  a silvery-green color
+    -0.0345  large eyes
+    +0.0344  time
+    +0.0343  a set of function keys
+    -0.0338  way
+    -0.0337  a mattress
+    +0.0334  a white or brown color
+    +0.0311  a triangular shape
+    +0.0308  a tower
+    +0.0302  a tall, rectangular shape
+    +0.0299  water
+    -0.0295  a lead
+    +0.0295  a deep blue or green color
+    +0.0286  a comforter
+    +0.0282  a rim
+    +0.0282  a glass
+
+example 1312  pred=beaver  label=beaver  correct=True  k_suff=4  n_nonzero=130  k_mass@0.9=69
+    +1.5155  long, brown fur
+    +0.5373  a black, fur-covered nose
+    +0.4775  a pointed end
+    +0.4554  a bright, red color
+    +0.4017  a mongoose
+    +0.4003  a office
+    +0.3310  a mottled brown or black coat
+    +0.3183  a swimmer
+    +0.2764  a hitch
+    -0.2754  a remote control
+    +0.2726  a black and white color scheme
+    +0.2416  often has towers and turrets
+    +0.2343  a calf
+    -0.2240  storage
+    +0.2212  primate
+    +0.2133  a tawny or yellowish color
+    +0.2119  hooves
+    +0.2042  a small, pointed top
+    +0.1828  a red or orange color
+    -0.1750  an open bed in the back
+    +0.1715  a alarm clock
+    -0.1652  an acorn
+    -0.1387  a dock
+    +0.1323  time
+    +0.1253  cubs
+    +0.1206  carnivore
+    +0.1158  no pattern or design
+    -0.1137  a comforter
+    +0.1127  a gas tank
+    +0.1118  a slender body
+    -0.1100  a frame
+    -0.1033  a fridge
+    +0.0976  large, four-legged mammal
+    -0.0972  a lead
+    +0.0969  a diaper
+    -0.0968  a bus stop
+    -0.0961  a caravan
+    +0.0957  a small mouth
+    +0.0954  several towers or turrets
+    -0.0937  a spoon
+    +0.0935  a small, rodent-like body
+    +0.0930  a wet suit
+    +0.0915  sand
+    +0.0905  logs
+    +0.0903  milk
+    +0.0898  a large, rectangular body
+    +0.0886  a TV
+    +0.0869  seagulls
+    +0.0852  a control room
+    -0.0845  large eyes
+    +0.0820  a mattress
+    +0.0818  a red, green, or yellow color
+    +0.0808  a sweet, juicy flesh
+    +0.0804  a net
+    +0.0782  lemon
+    +0.0720  a tower
+    +0.0716  a box spring
+    +0.0688  insurance
+    -0.0675  a mask
+    -0.0670  a set of function keys
+    -0.0655  a wreath
+    -0.0650  a water bottle
+    +0.0629  a coffee table
+    +0.0624  a triangular shape
+    -0.0601  a trash can
+    +0.0569  a career
+    +0.0556  Australia
+    +0.0549  a rim
+    -0.0547  a large, ocean-dwelling mammal
+
+example 2671  pred=beaver  label=beaver  correct=True  k_suff=2  n_nonzero=130  k_mass@0.9=69
+    +1.1458  long, brown fur
+    +0.5829  a black and white color scheme
+    +0.4334  a black, fur-covered nose
+    +0.3869  a office
+    +0.3564  a mongoose
+    +0.3141  an acorn
+    -0.3098  a remote control
+    +0.2731  a swimmer
+    +0.2579  a calf
+    +0.2501  a large, ocean-dwelling mammal
+    +0.2219  a large, rectangular body
+    +0.2071  a box spring
+    -0.2015  storage
+    +0.1659  often has towers and turrets
+    +0.1624  a mottled brown or black coat
+    +0.1557  a slender body
+    +0.1556  a red, green, or yellow color
+    -0.1539  a comforter
+    +0.1529  carnivore
+    -0.1520  gray or blue color
+    -0.1422  a caravan
+    -0.1422  a mask
+    -0.1404  a crib
+    +0.1390  a small mouth
+    +0.1380  a alarm clock
+    -0.1373  horns
+    -0.1362  a bus stop
+    +0.1359  a pointed end
+    +0.1296  lightning
+    +0.1264  no pattern or design
+    -0.1250  a dock
+    +0.1215  a small, pointed top
+    +0.1202  a nut
+    -0.1191  a wreath
+    +0.1190  usually electric power
+    +0.1173  butter
+    +0.1147  logs
+    +0.1125  a tawny or yellowish color
+    +0.1057  time
+    +0.1054  an aquarium
+    +0.1035  a tower
+    -0.0990  a deep blue or green color
+    +0.0966  a hitch
+    +0.0963  cubs
+    +0.0925  a TV
+    +0.0919  a lettuce
+    +0.0822  a small, rodent-like body
+    -0.0764  a watering can
+    +0.0717  a mattress
+    +0.0713  large, four-legged mammal
+    -0.0694  a fridge
+    -0.0675  an open bed in the back
+    +0.0663  a wet suit
+    +0.0661  a coffee table
+    -0.0654  a red or orange color
+    +0.0629  a white or brown color
+    -0.0585  Australia
+    +0.0570  buttons
+    +0.0558  cables
+    +0.0556  a career
+    +0.0541  insurance
+    +0.0519  nuts
+    -0.0502  a pen
+    +0.0500  a tall, rectangular shape
+    +0.0493  primate
+    +0.0487  milk
+    +0.0463  several towers or turrets
+    +0.0420  a control room
+    +0.0408  a Christmas tree
+
+example 3487  pred=wolf  label=wolf  correct=True  k_suff=6  n_nonzero=132  k_mass@0.9=69
+    +0.5350  a pop-top or screw-top lid
+    +0.3866  may have an air pump or filter
+    +0.3531  a tire
+    -0.3521  a rake
+    +0.3331  a parking lot
+    +0.3145  pups
+    +0.3049  a net
+    -0.2992  registration
+    +0.2932  gray or brown fur
+    +0.2859  a large, rocky mass
+    +0.2410  a dirty kitchen
+    -0.2301  a fence
+    +0.2228  a battery
+    +0.2160  a deer
+    +0.2118  thunder
+    +0.2049  large wheels
+    +0.1914  a alarm clock
+    -0.1899  a lodge
+    +0.1888  a red or dark brown color
+    -0.1695  a water bottle
+    +0.1655  a toy
+    +0.1645  a sunset
+    -0.1645  a large, predatory fish
+    +0.1615  usually electric power
+    -0.1447  a sleek, gray body
+    +0.1438  a soft surface
+    +0.1434  a triangular shape
+    +0.1389  intended for sleeping on
+    +0.1269  a tow rope
+    +0.1260  orange fins
+    +0.1255  a greenhouse
+    +0.1201  a launchpad
+    +0.1179  a garage
+    -0.1173  a crisp texture
+    +0.1094  a pair of wings
+    +0.1044  a vixen
+    -0.0992  snow-capped peaks
+    -0.0971  machine
+    +0.0957  long, powerful hind legs
+    +0.0957  a sunny windowsill
+    +0.0899  can be a variety of colors
+    +0.0893  webbed feet
+    +0.0890  a pack
+    +0.0869  a wormery
+    -0.0853  5-7 black rings on the tail
+    -0.0844  made of metal or glass
+    -0.0843  a mouse pad
+    +0.0822  a basket
+    -0.0795  a large, spiral shell
+    -0.0788  a fin on the back
+    -0.0761  a smoker
+    +0.0743  a long, tapered tail
+    +0.0738  a stroller
+    -0.0730  a river
+    +0.0729  a sweet, juicy flesh
+    +0.0680  a headboard
+    -0.0644  a can opener
+    -0.0625  a military vehicle
+    +0.0607  a steering wheel
+    +0.0599  a living room
+    +0.0591  a tall, upright posture
+    -0.0564  timepiece
+    +0.0561  pedals
+    +0.0530  a rock
+    +0.0519  a bird
+    +0.0479  slime
+    +0.0466  a stove
+    -0.0421  a hump
+    +0.0399  a shadow
+
+example 3659  pred=raccoon  label=clock  correct=False  k_suff=2  n_nonzero=129  k_mass@0.9=69
+    +0.9605  a bandit
+    +0.7088  a saddle
+    +0.3466  striped fur
+    +0.3192  a bright, red color
+    +0.3027  a bib
+    +0.2905  tram
+    -0.2758  a light purple or white color
+    -0.2743  a hump
+    +0.2733  a backpack
+    +0.2684  a bee suit
+    +0.2521  narrow hips
+    +0.2428  a light
+    -0.2417  a phone
+    +0.2367  a red, green, or yellow color
+    -0.2292  broad shoulders
+    +0.2270  a segmented body
+    -0.2269  a motorcycle license
+    +0.2212  a male human child
+    -0.2101  a tweezers
+    +0.2083  a frame connecting the wheels
+    +0.2050  time
+    -0.2028  legs to support the seat
+    +0.1976  a stop sign
+    -0.1964  wooden bark
+    -0.1956  a soft, upholstered surface
+    +0.1918  a battery
+    +0.1817  cubs
+    +0.1814  a hutch
+    +0.1783  tracks for wheels
+    -0.1777  a can of Raid
+    +0.1775  a sunset
+    -0.1683  a hitch for pulling trailers
+    -0.1679  a door
+    +0.1588  a trainer
+    +0.1567  a crib
+    +0.1452  a trailer
+    +0.1427  a small, pointed top
+    -0.1424  a load of hay
+    -0.1421  lots of small keys
+    +0.1397  a bird
+    -0.1377  communication device
+    -0.1250  a path
+    -0.1174  way
+    -0.1173  a fridge
+    +0.1164  a moat
+    +0.1077  pedals
+    +0.1053  a net
+    +0.1003  a yellow or gold color
+    +0.0999  good night vision
+    -0.0974  large, sharp teeth
+    +0.0950  Australia
+    +0.0940  many legs
+    -0.0922  a bus lane
+    +0.0891  tool
+    -0.0843  a magnifying glass
+    +0.0817  a long, thin antennae
+    -0.0805  hangers
+    +0.0789  a launch
+    +0.0700  a suit
+    +0.0687  primate
+    -0.0682  a safari
+    +0.0677  a snake charmer
+    -0.0648  tiny mouth
+    -0.0644  garden equipment
+    -0.0631  numbers
+    +0.0615  made of metal or glass
+    +0.0590  a desk
+    +0.0581  gray or brown fur
+    +0.0573  large wheels
+
+example 8893  pred=flatfish  label=flatfish  correct=True  k_suff=1  n_nonzero=135  k_mass@0.9=69
+    +1.4954  a crabbing net
+    +0.9295  a recycling bin
+    +0.6496  unadorned
+    +0.6197  a pond
+    +0.5241  a small mouth
+    +0.4927  a captain
+    +0.4730  a can of Raid
+    -0.4464  a dirty kitchen
+    +0.4450  machine
+    +0.4145  a nightstand
+    -0.3998  a slender body
+    +0.3962  a tap
+    -0.3957  a dirty floor
+    +0.3945  a spile
+    +0.3941  a predator
+    +0.3921  ordinary
+    -0.3779  a tall, upright posture
+    +0.3612  electronic device
+    +0.3464  time
+    -0.3180  a spoon
+    -0.3151  a cow
+    +0.3105  a stream
+    +0.3085  a large, lobster-like creature
+    -0.3071  a book
+    +0.3003  a coffee cup
+    +0.2983  a oasis
+    +0.2940  pillows
+    +0.2744  many legs
+    +0.2670  seaweed
+    +0.2562  a skateboard
+    +0.2540  crustacean
+    -0.2460  a moon
+    +0.2309  a tunnel
+    -0.2252  a hive
+    +0.2182  a pacifier
+    +0.2107  a bracelet
+    +0.2087  a school
+    +0.1956  a phone
+    +0.1952  a deer
+    -0.1844  a streamlined body
+    +0.1823  a jungle
+    +0.1663  a bug
+    -0.1649  a fish
+    +0.1479  a den
+    -0.1466  a shovel
+    -0.1434  markings for lanes
+    +0.1425  a soldier
+    +0.1361  a lawn
+    -0.1340  a lettuce
+    +0.1325  a deep, dark color
+    -0.1308  a rocket engine
+    -0.1276  flowers
+    +0.1259  a large, rocky mass
+    +0.1235  a street
+    +0.1192  habitat
+    -0.1183  a hitch
+    -0.1155  a Christmas tree
+    +0.1085  a diving suit
+    +0.1001  a label
+    -0.0994  a star
+    +0.0981  usually electric power
+    +0.0949  a stroller
+    +0.0945  pointed leaves
+    -0.0944  a tree
+    -0.0888  a drink
+    +0.0843  legs to support the seat
+    -0.0801  a super
+    +0.0795  a cupboard
+    -0.0792  broad shoulders
+
+example 9145  pred=beaver  label=raccoon  correct=False  k_suff=1  n_nonzero=130  k_mass@0.9=69
+    +1.1128  a black and white color scheme
+    +0.6460  a large, ocean-dwelling mammal
+    +0.5908  a bright, red color
+    -0.5231  an acorn
+    +0.4794  long, brown fur
+    +0.4238  a office
+    +0.4223  a pointed end
+    +0.4047  a red, green, or yellow color
+    +0.3802  hooves
+    +0.3705  a mongoose
+    -0.3308  usually electric power
+    +0.3205  milk
+    +0.2938  no pattern or design
+    -0.2871  butter
+    +0.2839  a frame
+    +0.2497  often has towers and turrets
+    +0.2359  time
+    -0.2294  a black, fur-covered nose
+    +0.2289  a swimmer
+    -0.2269  a calf
+    +0.2165  horns
+    +0.2118  a mask
+    +0.2072  a TV
+    +0.2007  a tower
+    +0.1796  a small, pointed top
+    +0.1729  a crib
+    -0.1681  a lettuce
+    +0.1604  a large, rectangular body
+    -0.1590  an electrical outlet
+    -0.1538  a caravan
+    -0.1479  buttons
+    +0.1332  a wreath
+    +0.1329  coffee
+    +0.1304  a control room
+    +0.1266  a lead
+    -0.1253  a mottled brown or black coat
+    +0.1223  large eyes
+    -0.1208  a spoon
+    -0.1184  a pen
+    +0.1176  sand
+    -0.1169  a mattress
+    -0.1151  a nut
+    +0.1119  a street
+    -0.1109  insurance
+    -0.1086  a net
+    -0.1082  a career
+    +0.1016  several towers or turrets
+    -0.1010  cables
+    +0.0998  a slender body
+    -0.0962  a watering can
+    +0.0947  a white or brown color
+    -0.0943  lightning
+    -0.0923  storage
+    -0.0896  a fridge
+    -0.0890  a slime trail
+    -0.0886  a tawny or yellowish color
+    -0.0885  speakers
+    +0.0860  a diaper
+    -0.0857  gray or blue color
+    +0.0829  a kit
+    -0.0795  primate
+    -0.0770  a dock
+    +0.0754  a rim
+    -0.0729  a hitch
+    +0.0714  a silvery-green color
+    +0.0688  a Christmas tree
+    -0.0665  a deep blue or green color
+    -0.0645  lemon
+    +0.0629  container
+
+example 9473  pred=flatfish  label=flatfish  correct=True  k_suff=1  n_nonzero=135  k_mass@0.9=69
+    -1.1494  a crabbing net
+    -1.0056  a fish
+    -0.7741  a small mouth
+    -0.6545  seaweed
+    +0.6538  unadorned
+    +0.4550  a pond
+    +0.4260  a deep, dark color
+    +0.3670  a phone
+    -0.3641  a dirty floor
+    +0.3343  electronic device
+    +0.3307  a nightstand
+    +0.3075  a predator
+    +0.3019  a spile
+    +0.3006  a recycling bin
+    +0.2827  a bracelet
+    +0.2456  a crew of astronauts
+    +0.2365  a book
+    +0.2365  pillows
+    -0.2305  a spoon
+    +0.2278  ordinary
+    -0.2276  a hook
+    -0.2180  can live in a confined space
+    -0.2146  a dirty kitchen
+    +0.1977  a pacifier
+    -0.1974  a moon
+    +0.1952  a tap
+    +0.1793  broad shoulders
+    +0.1694  a can of Raid
+    +0.1603  a cow
+    +0.1584  a stream
+    +0.1557  crustacean
+    +0.1533  a tunnel
+    +0.1532  a captain
+    -0.1438  a streamlined body
+    +0.1434  a jungle
+    +0.1431  no breasts
+    +0.1411  a mattress
+    -0.1358  a shovel
+    +0.1335  a school
+    -0.1324  markings for lanes
+    +0.1307  a skateboard
+    +0.1294  a large, lobster-like creature
+    +0.1260  a lawn
+    +0.1250  a coffee cup
+    +0.1230  a den
+    +0.1191  machine
+    +0.1186  a black and white color scheme
+    +0.1158  a bug
+    +0.1127  a military vehicle
+    -0.1044  a lettuce
+    -0.1036  a hive
+    -0.1034  large scales
+    +0.1008  a label
+    -0.0907  a star
+    +0.0898  can change color
+    +0.0858  legs to support the seat
+    +0.0854  a seat
+    +0.0809  a diving suit
+    +0.0777  habitat
+    +0.0769  a soldier
+    +0.0754  a drawbridge
+    +0.0743  cables
+    +0.0732  pointed leaves
+    -0.0692  a tree
+    -0.0689  flowers
+    -0.0679  a large, rocky mass
+    +0.0675  usually electric power
+    +0.0665  a deer
+    +0.0596  a plant
+
+example 846  pred=flatfish  label=flatfish  correct=True  k_suff=1  n_nonzero=135  k_mass@0.9=68
+    +0.9849  unadorned
+    +0.5834  a crabbing net
+    -0.5145  a fish
+    +0.4828  a captain
+    -0.4280  seaweed
+    +0.4260  a bracelet
+    +0.4104  a pond
+    +0.3857  a cow
+    +0.3262  a nightstand
+    +0.3252  a recycling bin
+    +0.3155  electronic device
+    +0.2928  a deep, dark color
+    +0.2880  a large, lobster-like creature
+    +0.2693  crustacean
+    -0.2685  a small mouth
+    +0.2676  a tall, upright posture
+    -0.2586  pillows
+    +0.2394  a spile
+    -0.2379  can live in a confined space
+    -0.2235  a hive
+    +0.2103  a mattress
+    +0.2044  a oasis
+    -0.1964  a slender body
+    -0.1920  a spoon
+    -0.1912  a hook
+    +0.1564  a tunnel
+    +0.1553  a coffee cup
+    +0.1530  a bug
+    +0.1336  a den
+    +0.1330  a jungle
+    -0.1323  a book
+    +0.1313  ordinary
+    +0.1305  a crew of astronauts
+    +0.1282  a pacifier
+    +0.1257  broad shoulders
+    +0.1195  a dirty kitchen
+    +0.1173  a stream
+    +0.1018  a drawbridge
+    +0.1009  time
+    +0.1000  many legs
+    -0.0989  a shovel
+    -0.0907  a lettuce
+    +0.0847  a rocket engine
+    -0.0835  a moon
+    +0.0818  machine
+    +0.0780  a bathing suit
+    +0.0750  large, four-legged mammal
+    +0.0738  habitat
+    +0.0728  a school
+    -0.0720  a Christmas tree
+    +0.0690  a black and white color scheme
+    +0.0675  pointed leaves
+    -0.0653  a shark fin
+    -0.0638  a hitch
+    +0.0635  a lawn
+    +0.0616  terrain
+    +0.0615  a phone
+    +0.0586  legs to support the seat
+    +0.0583  a cupboard
+    +0.0572  markings for lanes
+    +0.0563  a can of Raid
+    +0.0548  a stroller
+    +0.0548  two wheels of equal size
+    -0.0534  insurance
+    +0.0492  a label
+    +0.0490  black and yellow stripes
+    -0.0481  a star
+    -0.0480  a diving suit
+
+example 1996  pred=beaver  label=tiger  correct=False  k_suff=2  n_nonzero=130  k_mass@0.9=68
+    +0.6701  long, brown fur
+    +0.6350  an acorn
+    +0.5998  a mongoose
+    +0.5987  a hitch
+    +0.4079  a black and white color scheme
+    +0.3998  a dock
+    +0.3932  a swimmer
+    +0.3756  a large, ocean-dwelling mammal
+    -0.2861  sand
+    +0.2743  logs
+    +0.2630  a black, fur-covered nose
+    +0.2508  a bright, red color
+    +0.2388  a net
+    +0.2327  a calf
+    +0.2212  a small mouth
+    +0.2027  storage
+    +0.2026  a nut
+    -0.1979  a office
+    -0.1928  a box spring
+    +0.1698  usually electric power
+    -0.1537  hooves
+    +0.1468  a spoon
+    +0.1465  butter
+    +0.1454  a remote control
+    -0.1445  a large, rectangular body
+    +0.1342  a caravan
+    +0.1335  a mottled brown or black coat
+    -0.1319  a coffee table
+    -0.1262  a gas tank
+    +0.1245  an electrical outlet
+    -0.1232  a kit
+    +0.1167  a bus stop
+    +0.1145  a small, rodent-like body
+    +0.1135  water
+    -0.1099  a red or orange color
+    +0.1099  a lettuce
+    +0.1094  a wet suit
+    +0.1085  primate
+    +0.1070  an aquarium
+    -0.1066  large eyes
+    -0.1066  a mask
+    -0.0964  milk
+    +0.0946  a watering can
+    -0.0936  a lead
+    -0.0925  a comforter
+    -0.0887  a TV
+    +0.0870  carnivore
+    -0.0868  coffee
+    +0.0839  a tawny or yellowish color
+    +0.0838  a slime trail
+    -0.0800  a control room
+    -0.0792  a diaper
+    -0.0787  a alarm clock
+    +0.0746  a pen
+    +0.0683  often has towers and turrets
+    +0.0628  a pointed end
+    +0.0584  nuts
+    -0.0562  container
+    +0.0539  a glass
+    +0.0531  a crib
+    +0.0529  a shovel
+    +0.0521  lightning
+    +0.0507  cubs
+    +0.0474  cables
+    -0.0471  a rim
+    +0.0457  a trash can
+    -0.0454  gray or blue color
+    +0.0422  a crabbing line
+
+example 9227  pred=flatfish  label=flatfish  correct=True  k_suff=1  n_nonzero=135  k_mass@0.9=68
+    +0.9292  a captain
+    +0.8659  unadorned
+    +0.7350  a tall, upright posture
+    +0.7141  a crabbing net
+    -0.5629  a fish
+    +0.4362  broad shoulders
+    +0.3521  a large, rocky mass
+    +0.3256  electronic device
+    +0.2871  a diving suit
+    +0.2407  a nightstand
+    +0.2316  a beard (in some cases)
+    +0.2041  a drawbridge
+    +0.2025  a mattress
+    +0.2024  no breasts
+    +0.2020  a deep, dark color
+    +0.2011  a cow
+    +0.1973  a bracelet
+    +0.1964  large scales
+    +0.1944  a crew of astronauts
+    +0.1886  a pond
+    +0.1787  many legs
+    +0.1751  a slender body
+    +0.1698  a oasis
+    +0.1677  a phone
+    +0.1606  a pacifier
+    +0.1583  a military vehicle
+    -0.1575  a spoon
+    -0.1524  a dirty floor
+    +0.1512  a coffee cup
+    +0.1433  a dirty kitchen
+    -0.1321  can live in a confined space
+    +0.1260  time
+    +0.1147  a tunnel
+    +0.1130  a large, lobster-like creature
+    +0.1109  a jungle
+    +0.1040  a stream
+    +0.1028  a spile
+    +0.1007  crustacean
+    -0.0996  a moon
+    +0.0979  a skateboard
+    +0.0948  can change color
+    -0.0926  a book
+    -0.0901  a small mouth
+    +0.0846  a Christmas tree
+    -0.0845  a soldier
+    +0.0840  a stroller
+    +0.0779  a can of Raid
+    +0.0761  ordinary
+    +0.0744  a super
+    +0.0740  a rocket engine
+    -0.0737  a plane
+    +0.0709  large, four-legged mammal
+    +0.0706  a recycling bin
+    -0.0702  a star
+    +0.0683  a sandy or brown coloration
+    +0.0672  a den
+    -0.0670  a shovel
+    -0.0641  a hive
+    +0.0640  a bug
+    +0.0591  a deer
+    +0.0587  pointed leaves
+    +0.0579  a streamlined body
+    +0.0555  gray or blue color
+    +0.0548  a predator
+    +0.0540  a tap
+    -0.0539  insurance
+    -0.0501  a hook
+    +0.0460  a school
+
+example 631  pred=crocodile  label=willow tree  correct=False  k_suff=3  n_nonzero=126  k_mass@0.9=67
+    +2.2733  large scales
+    +1.1555  a reptilian appearance
+    +1.0103  large, sharp teeth
+    +0.9785  made of stone or brick
+    -0.7961  gills on the underside
+    +0.7120  a pond
+    +0.6974  chordate
+    +0.6543  a python
+    +0.5994  a soft surface
+    +0.5777  between the ages of 0 and 12
+    -0.5550  passengers
+    +0.5065  a rugged, uneven surface
+    -0.4744  a hair brush
+    +0.4711  a hawk
+    -0.4672  a deep, dark color
+    +0.4512  may have an air pump or filter
+    -0.3860  a floor
+    +0.3773  a log
+    +0.3416  a coffee cup
+    +0.3323  a blowhole
+    +0.3294  reptilian skin
+    -0.3244  cables
+    +0.3184  a harpoon
+    -0.2915  a bib
+    +0.2855  an open bed in the back
+    +0.2829  a label
+    -0.2826  a small opening at the top
+    +0.2721  a large, lobster-like creature
+    +0.2636  amphibian
+    +0.2577  brightly colored wings
+    +0.2519  a joey
+    -0.2474  a helmet
+    -0.2471  a rake
+    -0.2402  long hair
+    +0.2367  a cat
+    -0.2363  a pop-top or screw-top lid
+    +0.2322  a shark fin
+    +0.2251  gray or brown fur
+    -0.2201  a traffic light
+    +0.2116  a small, narrow neck
+    +0.2035  a river
+    -0.2013  broad shoulders
+    +0.2010  lightning
+    -0.1910  a soft, upholstered surface
+    +0.1882  a sunny windowsill
+    +0.1859  pups
+    +0.1838  communication device
+    -0.1830  can live in a confined space
+    -0.1795  facial hair
+    +0.1739  a bird
+    -0.1681  a magnifying glass
+    +0.1650  a bus schedule
+    +0.1641  gastropod
+    +0.1637  short, coarse fur
+    +0.1629  a saw
+    -0.1575  a stand
+    +0.1563  intended for sleeping on
+    +0.1544  a mate
+    -0.1395  a bright, red color
+    +0.1336  a tree
+    -0.1321  a suit
+    -0.1303  cars
+    +0.1283  a bat
+    -0.1195  a keep
+    +0.1128  crustacean
+    +0.1109  a cord or wireless connection
+    -0.1070  earrings
+
+example 3183  pred=flatfish  label=flatfish  correct=True  k_suff=1  n_nonzero=135  k_mass@0.9=67
+    +0.8301  a captain
+    +0.5262  unadorned
+    +0.3220  ordinary
+    +0.2695  time
+    -0.2262  seaweed
+    +0.2124  a spile
+    +0.2077  a crabbing net
+    +0.2024  pillows
+    +0.1856  a military vehicle
+    +0.1856  a large, rocky mass
+    +0.1779  a small mouth
+    +0.1735  broad shoulders
+    +0.1647  a fish
+    -0.1617  can live in a confined space
+    +0.1573  a crew of astronauts
+    +0.1443  a phone
+    +0.1338  a diving suit
+    -0.1329  a slender body
+    -0.1321  many legs
+    -0.1307  a can of Raid
+    +0.1239  large scales
+    -0.1170  insurance
+    -0.1163  a nightstand
+    -0.1151  a sandy or brown coloration
+    +0.1117  a deep, dark color
+    -0.1100  a recycling bin
+    +0.0941  a tall, upright posture
+    +0.0905  a book
+    +0.0884  electronic device
+    +0.0829  gray or blue color
+    +0.0809  a lawn
+    +0.0802  markings for lanes
+    +0.0774  a rocket engine
+    -0.0755  a hive
+    +0.0748  a cow
+    -0.0716  a large, lobster-like creature
+    +0.0667  a hitch
+    +0.0626  a stream
+    -0.0605  a spoon
+    -0.0600  cables
+    -0.0586  a predator
+    -0.0572  love
+    +0.0568  a drawbridge
+    -0.0566  a star
+    +0.0561  a black and white color scheme
+    +0.0550  a tunnel
+    +0.0505  a bracelet
+    -0.0502  sand
+    +0.0460  a deer
+    -0.0454  machine
+    +0.0430  chordate
+    +0.0417  a pond
+    +0.0412  no breasts
+    -0.0406  a bus lane
+    -0.0401  a coffee cup
+    +0.0393  a jungle
+    +0.0375  a label
+    -0.0375  can change color
+    -0.0369  crustacean
+    -0.0353  a bus sign
+    +0.0352  a den
+    -0.0343  a soldier
+    -0.0341  a shark fin
+    -0.0331  flowers
+    +0.0331  habitat
+    +0.0328  pointed leaves
+    +0.0311  a bathing suit
+
+example 3565  pred=wolf  label=raccoon  correct=False  k_suff=4  n_nonzero=132  k_mass@0.9=67
+    +0.9248  pups
+    +0.6602  a pop-top or screw-top lid
+    +0.6540  a long, tapered tail
+    +0.6023  gray or brown fur
+    +0.5334  a deer
+    +0.4506  a short muzzle
+    +0.3537  a battery
+    +0.3239  long, powerful hind legs
+    +0.3214  a striped coat
+    +0.3193  a net
+    -0.3170  a rake
+    +0.2931  a tall, upright posture
+    +0.2629  four legs
+    +0.2552  thunder
+    +0.2341  a tire
+    +0.2232  a sunset
+    +0.1942  a large, rocky mass
+    -0.1893  a stove
+    +0.1757  large wheels
+    +0.1733  a smoker
+    +0.1604  a dirty kitchen
+    +0.1530  a parking lot
+    -0.1456  a bicyclist
+    -0.1434  a large, predatory fish
+    -0.1418  a crisp texture
+    +0.1322  orange fins
+    +0.1313  may have an air pump or filter
+    +0.1294  a launchpad
+    +0.1272  a pack
+    -0.1249  made of metal or glass
+    -0.1205  a can opener
+    +0.1167  a suit
+    -0.1112  a long, slender trunk
+    +0.1109  a pacifier
+    +0.1104  a tow rope
+    +0.1101  a sunny windowsill
+    +0.1053  a vixen
+    +0.1052  a toy
+    -0.1030  a large, spiral shell
+    -0.0957  registration
+    -0.0948  machine
+    -0.0905  a water bottle
+    +0.0888  a ticket
+    -0.0864  a vase
+    +0.0857  human
+    -0.0856  a socket
+    +0.0807  a alarm clock
+    +0.0714  a red or dark brown color
+    -0.0706  a fin on the back
+    +0.0689  a steering wheel
+    -0.0655  a river
+    +0.0640  lightning
+    +0.0624  slime
+    +0.0621  sharp front teeth
+    +0.0611  a triangular shape
+    +0.0589  a sleek, gray body
+    +0.0576  a headboard
+    +0.0571  a sweet, juicy flesh
+    -0.0555  a shell
+    +0.0542  a wormery
+    +0.0542  a garage
+    +0.0519  a recycling bin
+    +0.0500  fur covering the body
+    +0.0491  black and yellow stripes
+    +0.0485  snow-capped peaks
+    +0.0464  a basket
+    -0.0438  a military vehicle
+
+example 3886  pred=beaver  label=wolf  correct=False  k_suff=2  n_nonzero=130  k_mass@0.9=67
+    +0.6603  a hitch
+    +0.6366  a bright, red color
+    +0.5485  long, brown fur
+    +0.5319  a nut
+    +0.4288  a black and white color scheme
+    +0.3845  a large, ocean-dwelling mammal
+    +0.3773  a red, green, or yellow color
+    +0.3677  an open bed in the back
+    -0.3572  a alarm clock
+    +0.3399  primate
+    +0.3395  a swimmer
+    +0.3371  no pattern or design
+    -0.3351  a calf
+    +0.2978  usually electric power
+    -0.2847  hooves
+    +0.2831  a large, rectangular body
+    -0.2720  a frame
+    +0.2490  a small, pointed top
+    +0.2304  a pointed end
+    +0.2257  often has towers and turrets
+    +0.2198  an electrical outlet
+    -0.2142  large eyes
+    +0.2092  nuts
+    +0.1951  a wet suit
+    -0.1948  time
+    +0.1925  a career
+    +0.1712  an acorn
+    -0.1677  a mattress
+    +0.1657  a remote control
+    +0.1587  logs
+    -0.1562  a dock
+    +0.1527  a mongoose
+    +0.1496  a slender body
+    +0.1494  buttons
+    +0.1491  several towers or turrets
+    -0.1408  milk
+    +0.1365  a tower
+    -0.1225  a tawny or yellowish color
+    -0.1211  a diaper
+    +0.1210  a lettuce
+    +0.1157  a office
+    +0.1136  carnivore
+    -0.1091  human
+    +0.1064  a red or orange color
+    +0.1047  a spoon
+    +0.1045  a white or brown color
+    -0.1008  a control room
+    +0.0991  a small mouth
+    -0.0960  a rocket ship
+    +0.0873  labels on the keys
+    +0.0840  large, four-legged mammal
+    -0.0831  a sweet, juicy flesh
+    +0.0814  a small, rodent-like body
+    -0.0780  a mottled brown or black coat
+    +0.0776  a pen
+    +0.0765  a fridge
+    -0.0748  a caravan
+    -0.0744  gray or blue color
+    -0.0741  Australia
+    -0.0734  a bus stop
+    -0.0699  a TV
+    +0.0693  an aquarium
+    -0.0692  butter
+    +0.0679  storage
+    +0.0657  a triangular shape
+    +0.0651  cables
+    +0.0648  a street
+
+example 4784  pred=seal  label=seal  correct=True  k_suff=1  n_nonzero=124  k_mass@0.9=67
+    +0.8529  a large, ocean-dwelling mammal
+    +0.7060  a television stand
+    -0.6020  butter
+    +0.5217  good night vision
+    +0.5018  a blowhole
+    +0.4505  a seagull
+    +0.4291  a mask
+    +0.4125  hairy or spiny legs
+    -0.3507  object
+    +0.3506  a book
+    +0.3404  a hutch
+    +0.3370  a rounded crown of leaves
+    -0.3240  a camera
+    +0.3201  a pair of wings
+    +0.3099  lightning
+    -0.3093  a soldier
+    -0.3060  a soft, upholstered surface
+    +0.2854  pups
+    +0.2780  a bicyclist
+    +0.2766  a farmer
+    -0.2686  container
+    +0.2631  a diaper
+    +0.2582  a male human child
+    +0.2498  a lobster cracker
+    +0.2452  a milkmaid
+    -0.2293  facial hair
+    +0.2181  a wide opening
+    -0.2120  large wheels
+    -0.2102  a long hood
+    +0.2034  a black, fur-covered nose
+    +0.2014  a motorcycle license
+    -0.1972  way
+    -0.1674  a smoker
+    +0.1668  short hair
+    +0.1640  a garland
+    +0.1638  a sprinkler
+    +0.1515  a sturdy base
+    +0.1463  long, brown fur
+    +0.1419  a coaster
+    -0.1412  a dirty floor
+    -0.1375  a small, slimy body
+    +0.1359  a coat of sharp quills
+    -0.1352  a water bottle
+    -0.1295  streets
+    +0.1290  a phone book
+    -0.1288  a monitor
+    +0.1241  a pair of antennae
+    -0.1188  a stand
+    +0.1187  a uniform
+    +0.1017  a sturdy material
+    +0.1011  seagulls
+    +0.1008  a rock
+    +0.0972  a box spring
+    +0.0956  a computer
+    +0.0955  electronic device
+    -0.0922  nuts
+    +0.0907  a base unit with a speaker
+    -0.0878  lemon
+    +0.0864  a lock
+    -0.0850  a swimmer
+    -0.0846  a captain
+    +0.0804  pedals
+    -0.0780  a set of function keys
+    +0.0761  a crib
+    +0.0746  a kit
+    +0.0744  aquatic animal
+    -0.0732  a bucket
+
+example 7808  pred=raccoon  label=porcupine  correct=False  k_suff=1  n_nonzero=129  k_mass@0.9=67
+    +3.3649  a bandit
+    -1.1866  a saddle
+    +0.9354  a pair of shoes
+    +0.8682  striped fur
+    +0.7185  wooden bark
+    +0.5740  Australia
+    +0.5405  a door
+    +0.5246  primate
+    +0.4800  a sleek, gray body
+    -0.4434  a bird
+    +0.4388  a stop sign
+    -0.4236  a moat
+    +0.4179  cubs
+    -0.3930  a long, thin antennae
+    -0.3681  a crib
+    +0.3539  a hitch for pulling trailers
+    +0.3431  gray or brown fur
+    +0.3279  a hump
+    +0.3253  a tweezers
+    +0.3234  way
+    -0.3208  a backpack
+    -0.3162  a segmented body
+    +0.3034  a hair brush
+    +0.2987  broad shoulders
+    -0.2983  a light
+    -0.2967  a net
+    -0.2857  a trainer
+    +0.2839  good night vision
+    -0.2800  a male human child
+    +0.2789  a frame connecting the wheels
+    +0.2736  a phone
+    +0.2604  a bee suit
+    +0.2547  a bus lane
+    +0.2490  legs to support the seat
+    -0.2447  a battery
+    +0.2434  large, sharp teeth
+    -0.2403  hangers
+    +0.2334  a ring
+    +0.2215  a path
+    -0.2192  narrow hips
+    -0.2122  a launch
+    +0.1984  a can opener
+    -0.1927  a trailer
+    +0.1914  communication device
+    +0.1846  a sunset
+    +0.1774  many legs
+    +0.1753  a soft, upholstered surface
+    -0.1749  tram
+    +0.1732  a bus sign
+    -0.1686  a magnifying glass
+    +0.1666  tracks for wheels
+    -0.1651  a bib
+    -0.1548  a QWERTY layout
+    -0.1516  a museum
+    +0.1506  flatware
+    +0.1496  marsupial
+    -0.1467  a rider
+    +0.1459  a can of Raid
+    +0.1414  garden equipment
+    -0.1411  a rocket ship
+    +0.1388  a light purple or white color
+    +0.1230  a cord
+    -0.1182  a pedestrian
+    +0.1182  a bright, red color
+    +0.1114  a yellow or gold color
+    -0.1027  a motorcycle license
+    +0.1012  tiny mouth
+
+example 8107  pred=flatfish  label=shark  correct=False  k_suff=1  n_nonzero=135  k_mass@0.9=67
+    +1.4203  a crabbing net
+    +0.4798  a captain
+    +0.4247  pillows
+    +0.3183  unadorned
+    +0.3000  a phone
+    +0.2950  a drawbridge
+    +0.2857  large scales
+    -0.2764  time
+    +0.2650  a military vehicle
+    +0.2373  a large, rocky mass
+    +0.2336  gray or blue color
+    +0.2184  a bracelet
+    +0.2161  a nightstand
+    -0.2027  a large, lobster-like creature
+    +0.1992  a deep, dark color
+    +0.1956  a small mouth
+    -0.1918  a hive
+    +0.1833  electronic device
+    +0.1671  a tall, upright posture
+    +0.1480  a diving suit
+    -0.1405  crustacean
+    +0.1304  broad shoulders
+    +0.1237  a bug
+    -0.1233  a book
+    +0.1203  a crew of astronauts
+    -0.1186  a can of Raid
+    -0.1178  seaweed
+    -0.1162  a spoon
+    +0.1120  a streamlined body
+    -0.1102  a moon
+    -0.1073  a mattress
+    +0.1046  a coffee cup
+    +0.1038  a tap
+    -0.1034  flowers
+    +0.0968  a dirty kitchen
+    -0.0964  machine
+    +0.0925  a tunnel
+    +0.0865  a skateboard
+    +0.0864  a black and white color scheme
+    +0.0860  a spile
+    -0.0826  a lettuce
+    +0.0817  a predator
+    -0.0797  a drink
+    -0.0793  a hook
+    -0.0759  a star
+    +0.0672  a oasis
+    +0.0668  a cow
+    -0.0641  insurance
+    +0.0619  a label
+    +0.0573  large, four-legged mammal
+    +0.0562  no breasts
+    -0.0561  a shovel
+    -0.0530  a hitch
+    +0.0514  a slender body
+    -0.0499  a bus lane
+    -0.0485  a sandy or brown coloration
+    -0.0453  a school
+    +0.0444  a jungle
+    +0.0444  pointed leaves
+    -0.0438  a stroller
+    +0.0417  a phone book
+    -0.0405  large, sharp teeth
+    +0.0403  a cupboard
+    -0.0400  a tree
+    +0.0396  habitat
+    +0.0377  a rocket engine
+    +0.0369  black and yellow stripes
+
+example 8296  pred=seal  label=otter  correct=False  k_suff=1  n_nonzero=124  k_mass@0.9=67
+    +0.9184  a seagull
+    +0.5714  a large, ocean-dwelling mammal
+    +0.4642  a blowhole
+    +0.4356  a lobster cracker
+    +0.4137  a rounded crown of leaves
+    +0.4107  a space shuttle
+    +0.3522  a hutch
+    +0.3188  a long hood
+    +0.2936  a television stand
+    +0.2525  long, brown fur
+    +0.2375  a mask
+    +0.2291  pups
+    +0.2100  a farmer
+    -0.2044  butter
+    -0.1964  a camera
+    -0.1960  a monitor
+    -0.1864  a soldier
+    +0.1824  a crabbing line
+    +0.1773  a swimmer
+    -0.1756  large wheels
+    +0.1718  a black, fur-covered nose
+    +0.1669  a sturdy base
+    -0.1605  lightning
+    +0.1584  way
+    -0.1515  container
+    +0.1312  a garland
+    +0.1189  a sturdy material
+    -0.1181  gastropod
+    +0.1059  a long, thin neck
+    +0.1055  a coat of sharp quills
+    -0.0973  a bicyclist
+    +0.0967  a phone book
+    +0.0908  a diaper
+    -0.0877  ecosystem
+    +0.0858  seagulls
+    +0.0858  a base unit with a speaker
+    +0.0770  a motorcycle license
+    +0.0766  a sprinkler
+    +0.0743  short hair
+    +0.0733  a book
+    +0.0717  a soft, upholstered surface
+    -0.0712  a mongoose
+    -0.0710  object
+    +0.0706  a male human child
+    -0.0699  a triangular shape
+    +0.0672  a coaster
+    +0.0671  orange fins
+    +0.0670  facial hair
+    +0.0656  a box spring
+    -0.0642  a captain
+    -0.0641  marsupial
+    +0.0640  a kit
+    -0.0613  a milkmaid
+    -0.0613  a pair of wings
+    +0.0610  a pair of antennae
+    +0.0610  a smaller stature than a man
+    -0.0591  a stand
+    +0.0579  a water bottle
+    -0.0573  acorns on the ground beneath
+    +0.0568  a computer
+    +0.0556  aquatic animal
+    +0.0509  streets
+    +0.0507  a motor
+    -0.0507  no pattern or design
+    +0.0506  passengers
+    -0.0490  nuts
+    -0.0478  hangers
+
+example 9004  pred=beaver  label=bear  correct=False  k_suff=1  n_nonzero=130  k_mass@0.9=67
+    +1.0117  a black and white color scheme
+    +0.8581  long, brown fur
+    -0.4222  a dock
+    +0.4146  a pointed end
+    +0.3884  a office
+    +0.3514  no pattern or design
+    +0.3311  a mongoose
+    +0.3297  a black, fur-covered nose
+    +0.2885  a large, rectangular body
+    -0.2852  storage
+    +0.2640  a swimmer
+    +0.2511  an acorn
+    -0.2471  gray or blue color
+    +0.2469  a red, green, or yellow color
+    -0.2422  a alarm clock
+    +0.2401  often has towers and turrets
+    +0.2255  a small, pointed top
+    +0.2253  primate
+    -0.2196  a net
+    +0.2090  a slender body
+    +0.2050  usually electric power
+    +0.2022  a box spring
+    -0.1855  butter
+    +0.1799  cubs
+    +0.1562  a white or brown color
+    +0.1500  hooves
+    -0.1320  large eyes
+    +0.1318  a large, ocean-dwelling mammal
+    -0.1223  a remote control
+    +0.1206  a bright, red color
+    +0.1169  a street
+    +0.1106  carnivore
+    +0.1098  lightning
+    +0.1088  a wet suit
+    +0.1063  a frame
+    +0.1024  a small mouth
+    -0.1021  an open bed in the back
+    +0.1019  a gas tank
+    -0.1015  an electrical outlet
+    +0.0948  sand
+    +0.0915  seagulls
+    +0.0904  a red or orange color
+    +0.0883  several towers or turrets
+    +0.0862  horns
+    +0.0823  a comforter
+    +0.0792  a mattress
+    -0.0766  a spoon
+    +0.0722  coffee
+    -0.0714  Australia
+    +0.0697  a diaper
+    +0.0679  a tower
+    +0.0654  milk
+    +0.0646  a nut
+    +0.0645  a small, rodent-like body
+    +0.0634  a kit
+    +0.0633  a career
+    +0.0595  a hitch
+    -0.0594  a watering can
+    +0.0583  a tall, rectangular shape
+    +0.0555  a sweet, juicy flesh
+    -0.0553  a deep blue or green color
+    +0.0551  a lead
+    +0.0548  a TV
+    -0.0547  human
+    +0.0540  large, four-legged mammal
+    -0.0537  a set of function keys
+    -0.0533  a fridge

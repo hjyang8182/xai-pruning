@@ -1,0 +1,68 @@
+{
+  "dataset": "cifar100",
+  "backbone": "resnet50_v2",
+  "concept_data": "concepts_1000_64",
+  "gated": {
+    "acc_per_seed": [
+      0.5778999924659729,
+      0.579200029373169,
+      0.578499972820282,
+      0.5795999765396118,
+      0.5803999900817871
+    ],
+    "acc_mean": 0.5791199922561645,
+    "acc_std": 0.0008657954579452409,
+    "n_open_per_seed": [
+      205,
+      203,
+      203,
+      204,
+      206
+    ],
+    "n_open_mean": 204.2,
+    "n_open_std": 1.1661903789690602
+  },
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 1000,
+  "lam_pi": 0.0001,
+  "lambda_gate": 0.0001,
+  "gate_forward": "hard",
+  "lam_w": 0.0001,
+  "epochs": 100,
+  "refit_tau": 0.5,
+  "gated_refit": {
+    "acc_per_seed": [
+      0.6032,
+      0.6027,
+      0.6031,
+      0.6052,
+      0.6061
+    ],
+    "acc_mean": 0.6040599999999999,
+    "acc_std": 0.0013395521639712198,
+    "n_open_per_seed": [
+      205,
+      203,
+      203,
+      204,
+      206
+    ],
+    "n_open_mean": 204.2,
+    "n_open_std": 1.1661903789690602,
+    "masked_acc_per_seed": [
+      0.5779,
+      0.5792,
+      0.5785,
+      0.5796,
+      0.5804
+    ],
+    "masked_acc_mean": 0.57912
+  },
+  "session_dir": null
+}

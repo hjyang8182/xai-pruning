@@ -1,0 +1,66 @@
+{
+  "dataset": "cifar100",
+  "concept_set": "data/concept_sets/cifar100_filtered.txt",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 825,
+  "lam": 0.0007,
+  "gate_lam": 0.0005,
+  "gate_epochs": 150,
+  "gate_forward": "hard",
+  "arm": "gated",
+  "gated": {
+    "acc_per_seed": [
+      0.6653000116348267,
+      0.6607000231742859,
+      0.6657000184059143,
+      0.6607000231742859,
+      0.6662999987602234
+    ],
+    "acc_mean": 0.6637400150299072,
+    "acc_std": 0.0025024715904597558,
+    "n_open_per_seed": [
+      213,
+      209,
+      213,
+      211,
+      212
+    ],
+    "n_open_mean": 211.6,
+    "n_open_std": 1.4966629547095767
+  },
+  "refit_tau": 0.5,
+  "gated_refit": {
+    "acc_per_seed": [
+      0.6719,
+      0.6735,
+      0.672,
+      0.6735,
+      0.6749
+    ],
+    "acc_mean": 0.67316,
+    "acc_std": 0.0011128342194594797,
+    "n_open_per_seed": [
+      213,
+      209,
+      213,
+      211,
+      212
+    ],
+    "n_open_mean": 211.6,
+    "n_open_std": 1.4966629547095767,
+    "masked_acc_per_seed": [
+      0.6653,
+      0.6607,
+      0.6657,
+      0.6607,
+      0.6663
+    ],
+    "masked_acc_mean": 0.66374
+  }
+}

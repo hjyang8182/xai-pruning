@@ -1,0 +1,51 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}
+\toprule
+\textbf{Model} & \textbf{Dataset} & \textbf{Backbone} & $|\mathcal{C}|$ &
+\textbf{Baseline epochs} & $\lambda_{\text{gate}}$ \\
+\midrule
+
+\multirow{3}{*}{DN-CBM}
+& CIFAR-100  & CLIP RN50 & 8192 & 100 & $5\times10^{-4}$ \\
+& CUB        & CLIP RN50 & 8192 & 100 & $3\times10^{-3}$ \\
+& Places-365 & CLIP RN50 & 8192 & 100 & $1\times10^{-4}$ \\
+
+\midrule
+
+\multirow{3}{*}{LF-CBM}
+& CIFAR-100  & CLIP RN50 & 829  & -- & $1\times10^{-4}$ \\
+& CUB        & ResNet-18 & 370  & -- & $7\times10^{-4}$ \\
+& Places-365 & ResNet-50 & 2165 & -- & $5\times10^{-4}$ \\
+
+\midrule
+
+\multirow{3}{*}{UCBM}
+& CIFAR-100  & ResNet-50 & 1000 & 20  & $1\times10^{-4}$ \\
+& CUB        & ResNet-18 & 200  & 150 & $5\times10^{-4}$ \\
+& Places-365 & ResNet-18 & 3650 & 20  & $3\times10^{-4}$ \\
+
+\midrule
+
+\multirow{3}{*}{VLG-CBM}
+& CIFAR-100  & CLIP RN50 & 780  & -- & $5\times10^{-5}$ \\
+& CUB        & ResNet-18 & 671  & -- & $5\times10^{-5}$ \\
+& Places-365 & CLIP RN50 & 2186 & -- & $1\times10^{-4}$ \\
+
+\bottomrule
+\end{tabular}
+
+\caption{Hyperparameters of the sparse baselines and the gated (GCG) head
+trained on top of each backbone. $|\mathcal{C}|$ is the concept dictionary
+size and $\lambda_{\text{gate}}$ the gate penalty of the GCG head. For every
+GCG run, the gate uses the hard-forward straight-through estimator with all
+gates initialised open ($\mu_j(0)=2$), temperature $T=1$, and the
+mask-and-refit stage at $\tau=0.5$ (20 refit epochs). DN-CBM and UCBM retain
+the baseline $\ell_1$ weight penalty during gated training. The gate is
+trained for 100 epochs on CIFAR-100 and 150 epochs on CUB and Places-365,
+except where otherwise specified. All results are means over 5 seeds
+$\{0,10,20,30,40\}$.}
+\label{tab:hyperparams}
+\end{table}

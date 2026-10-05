@@ -1,0 +1,21 @@
+{
+  "amount of concepts": 213,
+  "gated": false,
+  "amount of classes": 100,
+  "train acc": 0.6174200177192688,
+  "test acc": 0.585863999724388123,
+  "train auroc": 0.9684100151062012,
+  "test auroc": 0.9655096530914307,
+  "avg non zero concept ratio": 0.07333640019893646,
+  "learning rate": 0.001,
+  "lambda gate": 0.0001,
+  "gated probe lambda": 0.0001,
+  "lambda w": 0.0001,
+  "epochs": 150,
+  "dropout p": 0.2,
+  "scale mode": "learn",
+  "bias mode": "learn",
+  "multilabel": false,
+  "normalize": false,
+  "k": -1
+}
