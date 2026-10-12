@@ -1,0 +1,12 @@
+{
+  "dataset": "cifar100",
+  "concept_set": "data/concept_sets/cifar100_filtered.txt",
+  "backbone": "clip_RN50",
+  "clip_name": "ViT-B/16",
+  "proj_batch_size": 50000,
+  "feature_layer": "layer4",
+  "clip_cutoff": 0.25,
+  "proj_steps": 1000,
+  "interpretability_cutoff": 0.45,
+  "no_filter": false
+}

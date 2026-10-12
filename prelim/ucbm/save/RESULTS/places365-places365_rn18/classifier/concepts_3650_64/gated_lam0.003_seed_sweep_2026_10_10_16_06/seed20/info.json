@@ -1,0 +1,61 @@
+{
+  "amount of concepts": 92,
+  "gated": true,
+  "concept_usage": {
+    "n_concepts_total": 3650,
+    "n_classes": 365,
+    "weight_threshold": 1e-05,
+    "gated": true,
+    "n_used_union": 111,
+    "used_union_frac": 0.030410958904109588,
+    "nec": 110.93698630136986,
+    "nec_median": 111.0,
+    "contribution_norm": "l1",
+    "contribution_weighted_by_acts": true,
+    "n_effective_mass": {
+      "0.9": 78,
+      "0.95": 84,
+      "0.99": 90
+    },
+    "participation_ratio": 84.33488828101602,
+    "act_threshold": 1e-08,
+    "active_per_image_mean": 47.64282191780822,
+    "active_per_image_std": 8.13200756918444,
+    "active_per_image_median": 48.0
+  },
+  "amount of classes": 365,
+  "train acc": 0.448947012424469,
+  "test acc": 0.41600000858306885,
+  "avg non zero concept ratio": 0.013052827915100202,
+  "learning rate": 0.001,
+  "lambda pi": 0.0,
+  "lambda gate": 0.003,
+  "gate temperature start": 1.0,
+  "gate temperature final": null,
+  "gate forward": "hard",
+  "gate temperature": 1.0,
+  "lambda w": 0.0001,
+  "epochs": 20,
+  "dropout p": 0.2,
+  "scale mode": "learn",
+  "bias mode": "learn",
+  "multilabel": false,
+  "normalize": false,
+  "k": -1,
+  "refit": {
+    "tau": 0.5,
+    "n_concepts": 92,
+    "masked_accuracy_no_refit": 0.416,
+    "test_accuracy": 0.4556986301369863,
+    "random_control": {
+      "gated_cold": {
+        "acc": 0.456,
+        "n_concepts": 92
+      },
+      "random": {
+        "acc": 0.023671232876712328,
+        "n_concepts": 92
+      }
+    }
+  }
+}

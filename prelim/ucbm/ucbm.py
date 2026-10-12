@@ -17,7 +17,7 @@ from concept_auxiliaries.concept_auxiliaries import raw_concept_sims, PDataset
 import sys as _sys
 _sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 from concept_usage import concept_usage_report  # noqa: E402  (shared backbone-agnostic metric at repo root)
-from gating import prune_and_refit as _prune_and_refit, masked_accuracy as _masked_accuracy, evaluate_head as _evaluate_head, hard_gate_ste  # noqa: E402
+from gating import prune_and_refit as _prune_and_refit, masked_accuracy as _masked_accuracy, evaluate_head as _evaluate_head, hard_gate_ste, matched_random_refits as _matched_random_refits  # noqa: E402
 from torcheval.metrics.functional import multilabel_accuracy, \
     multiclass_accuracy, multiclass_auprc, multilabel_auprc, binary_auroc, \
     multiclass_auroc, binary_auprc
@@ -1392,11 +1392,13 @@ class UCBM:
         return self._classifier.gate_probs().detach()
 
     def prune_and_refit(self, training_data, test_data, saved_activation_path, tau=0.5,
-                        epochs=20, lr=1e-3, seed=0):
+                        epochs=20, lr=1e-3, seed=0, random_control=False):
         """Mask-and-refit of a gated classifier: K = gate > tau, linear head refit on the
         post-selection (pre-gate) concept signal restricted to K. Returns a dict with the
         refit head (`W_refit` applies to the pre-gate signal, no gate at inference), the
-        concept set, and test accuracy of the hard cut with and without the refit."""
+        concept set, and test accuracy of the hard cut with and without the refit.
+        random_control adds "random_control": cold-start refits on K and on |K| random
+        concepts (gating.matched_random_refits)."""
         assert self._gated, "prune_and_refit needs a gated classifier"
         gate = self.get_gate_values().detach().cpu().float().clamp_min(1e-12)
         # _get_concept_activations returns the post-gate signal; divide the gate back out.
@@ -1411,8 +1413,13 @@ class UCBM:
                                           epochs=epochs, lr=lr, batch_size=self._batch_size,
                                           device=self._device, seed=seed)
         acc = _evaluate_head(W_r, b_r, pre_test, y_test, device=self._device)
-        return {"tau": tau, "n_concepts": int(keep.sum()), "masked_accuracy_no_refit": masked_acc,
-                "test_accuracy": acc, "W_refit": W_r, "b_refit": b_r, "keep": keep}
+        out = {"tau": tau, "n_concepts": int(keep.sum()), "masked_accuracy_no_refit": masked_acc,
+               "test_accuracy": acc, "W_refit": W_r, "b_refit": b_r, "keep": keep}
+        if random_control:
+            out["random_control"] = _matched_random_refits(
+                W, b, gate, pre_train, y_train, pre_test, y_test, tau=tau, fold_gate=True,
+                epochs=epochs, lr=lr, batch_size=self._batch_size, device=self._device, seed=seed)
+        return out
 
     def get_info_dict(self,
                       training_data: ImageFolder, 

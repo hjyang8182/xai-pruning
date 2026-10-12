@@ -1,0 +1,39 @@
+{
+  "dataset": "cub",
+  "concept_set": "data/concept_sets/cub_filtered.txt",
+  "shared_from": "seed_sweep_results/shared_cub_20261005_225326",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 208,
+  "lam": 0.01,
+  "gate_lam": 0.0001,
+  "gate_epochs": 20,
+  "gate_forward": "soft",
+  "arm": "baseline",
+  "baseline": {
+    "acc_per_seed": [
+      0.15595854818820953,
+      0.15595854818820953,
+      0.15595854818820953,
+      0.15595854818820953,
+      0.15595854818820953
+    ],
+    "acc_mean": 0.15595854818820953,
+    "acc_std": 0.0,
+    "n_open_per_seed": [
+      142,
+      142,
+      142,
+      142,
+      142
+    ],
+    "n_open_mean": 142.0,
+    "n_open_std": 0.0
+  },
+  "session_dir": "seed_sweep_results/cub_baseline_lam0.01_seed_sweep_2026_10_07_12_45"
+}

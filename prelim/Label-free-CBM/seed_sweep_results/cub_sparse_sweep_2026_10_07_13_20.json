@@ -1,0 +1,297 @@
+{
+  "model": "lfcbm",
+  "dataset": "cub",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 208,
+  "lams": [
+    1e-05,
+    3e-05,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01
+  ],
+  "n_iters": 5000,
+  "points": [
+    {
+      "lam": 1e-05,
+      "dataset": "cub",
+      "concept_set": "data/concept_sets/cub_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cub_20261005_225326",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 208,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.7450777292251587,
+          0.7443868517875671,
+          0.7454231381416321,
+          0.745250403881073,
+          0.7450777292251587
+        ],
+        "acc_mean": 0.7450431704521179,
+        "acc_std": 0.0003522680644557768,
+        "n_open_per_seed": [
+          208,
+          208,
+          208,
+          208,
+          208
+        ],
+        "n_open_mean": 208.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cub_baseline_lam1e-05_seed_sweep_2026_10_06_12_51"
+    },
+    {
+      "lam": 3e-05,
+      "dataset": "cub",
+      "concept_set": "data/concept_sets/cub_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cub_20261005_225326",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 208,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.7476683855056763,
+          0.7478411197662354,
+          0.7476683855056763,
+          0.7480137944221497,
+          0.7476683855056763
+        ],
+        "acc_mean": 0.7477720141410827,
+        "acc_std": 0.00013816654730371806,
+        "n_open_per_seed": [
+          208,
+          208,
+          208,
+          208,
+          208
+        ],
+        "n_open_mean": 208.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cub_baseline_lam3e-05_seed_sweep_2026_10_06_14_28"
+    },
+    {
+      "lam": 0.0001,
+      "dataset": "cub",
+      "concept_set": "data/concept_sets/cub_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cub_20261005_225326",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 208,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.7442141771316528,
+          0.7443868517875671,
+          0.7442141771316528,
+          0.7443868517875671,
+          0.7442141771316528
+        ],
+        "acc_mean": 0.7442832469940186,
+        "acc_std": 8.459295970014175e-05,
+        "n_open_per_seed": [
+          208,
+          208,
+          208,
+          208,
+          208
+        ],
+        "n_open_mean": 208.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cub_baseline_lam0.0001_seed_sweep_2026_10_06_19_08"
+    },
+    {
+      "lam": 0.0003,
+      "dataset": "cub",
+      "concept_set": "data/concept_sets/cub_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cub_20261005_225326",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 208,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.7388601303100586,
+          0.7388601303100586,
+          0.7388601303100586,
+          0.7388601303100586,
+          0.7388601303100586
+        ],
+        "acc_mean": 0.7388601303100586,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          208,
+          208,
+          208,
+          208,
+          208
+        ],
+        "n_open_mean": 208.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cub_baseline_lam0.0003_seed_sweep_2026_10_07_02_25"
+    },
+    {
+      "lam": 0.001,
+      "dataset": "cub",
+      "concept_set": "data/concept_sets/cub_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cub_20261005_225326",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 208,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.7260794639587402,
+          0.7260794639587402,
+          0.7260794639587402,
+          0.7260794639587402,
+          0.7260794639587402
+        ],
+        "acc_mean": 0.7260794639587402,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          208,
+          208,
+          208,
+          208,
+          208
+        ],
+        "n_open_mean": 208.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cub_baseline_lam0.001_seed_sweep_2026_10_07_08_06"
+    },
+    {
+      "lam": 0.003,
+      "dataset": "cub",
+      "concept_set": "data/concept_sets/cub_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cub_20261005_225326",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 208,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.7032815217971802,
+          0.7032815217971802,
+          0.7032815217971802,
+          0.7032815217971802,
+          0.7032815217971802
+        ],
+        "acc_mean": 0.7032815217971802,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          208,
+          208,
+          208,
+          208,
+          208
+        ],
+        "n_open_mean": 208.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cub_baseline_lam0.003_seed_sweep_2026_10_07_11_11"
+    },
+    {
+      "lam": 0.01,
+      "dataset": "cub",
+      "concept_set": "data/concept_sets/cub_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cub_20261005_225326",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 208,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.15595854818820953,
+          0.15595854818820953,
+          0.15595854818820953,
+          0.15595854818820953,
+          0.15595854818820953
+        ],
+        "acc_mean": 0.15595854818820953,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          142,
+          142,
+          142,
+          142,
+          142
+        ],
+        "n_open_mean": 142.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cub_baseline_lam0.01_seed_sweep_2026_10_07_12_45"
+    }
+  ]
+}

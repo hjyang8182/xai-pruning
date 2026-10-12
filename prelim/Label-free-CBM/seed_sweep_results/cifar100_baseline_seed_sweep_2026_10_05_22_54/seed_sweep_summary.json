@@ -1,0 +1,39 @@
+{
+  "dataset": "cifar100",
+  "concept_set": "data/concept_sets/cifar100_filtered.txt",
+  "shared_from": null,
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 830,
+  "lam": 0.0007,
+  "gate_lam": 0.0001,
+  "gate_epochs": 20,
+  "gate_forward": "soft",
+  "arm": "baseline",
+  "baseline": {
+    "acc_per_seed": [
+      0.6539000272750854,
+      0.6538000106811523,
+      0.6538000106811523,
+      0.6538000106811523,
+      0.6538000106811523
+    ],
+    "acc_mean": 0.6538200139999389,
+    "acc_std": 4.000663757324219e-05,
+    "n_open_per_seed": [
+      742,
+      741,
+      741,
+      741,
+      741
+    ],
+    "n_open_mean": 741.2,
+    "n_open_std": 0.4
+  },
+  "session_dir": "seed_sweep_results/cifar100_baseline_seed_sweep_2026_10_05_22_54"
+}

@@ -1,0 +1,108 @@
+{
+  "dataset": "cifar100",
+  "backbone": "resnet50_v2",
+  "concept_data": "concepts_1000_64",
+  "gated": {
+    "acc_per_seed": [
+      0.6211000084877014,
+      0.621399998664856,
+      0.6208999752998352,
+      0.620199978351593,
+      0.6209999918937683
+    ],
+    "acc_mean": 0.6209199905395508,
+    "acc_std": 0.00039699688646652897,
+    "n_open_per_seed": [
+      257,
+      257,
+      257,
+      254,
+      262
+    ],
+    "n_open_mean": 257.4,
+    "n_open_std": 2.5768197453450252
+  },
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 1000,
+  "lam_pi": 0.0001,
+  "lambda_gate": 0.0003,
+  "gate_forward": "hard",
+  "lam_w": 0.0001,
+  "epochs": 20,
+  "refit_tau": 0.5,
+  "gated_refit": {
+    "acc_per_seed": [
+      0.6323,
+      0.627,
+      0.6314,
+      0.6305,
+      0.6321
+    ],
+    "acc_mean": 0.63066,
+    "acc_std": 0.0019355619339096253,
+    "n_open_per_seed": [
+      257,
+      257,
+      257,
+      254,
+      262
+    ],
+    "n_open_mean": 257.4,
+    "n_open_std": 2.5768197453450252,
+    "masked_acc_per_seed": [
+      0.6211,
+      0.6214,
+      0.6209,
+      0.6202,
+      0.621
+    ],
+    "masked_acc_mean": 0.62092
+  },
+  "gated_refit_cold": {
+    "acc_per_seed": [
+      0.6328,
+      0.6283,
+      0.6306,
+      0.6297,
+      0.6297
+    ],
+    "acc_mean": 0.63022,
+    "acc_std": 0.0014851262572589728,
+    "n_open_per_seed": [
+      257,
+      257,
+      257,
+      254,
+      262
+    ],
+    "n_open_mean": 257.4,
+    "n_open_std": 2.5768197453450252
+  },
+  "random_refit": {
+    "acc_per_seed": [
+      0.4918,
+      0.441,
+      0.4661,
+      0.4466,
+      0.4465
+    ],
+    "acc_mean": 0.4584,
+    "acc_std": 0.018753453015378264,
+    "n_open_per_seed": [
+      257,
+      257,
+      257,
+      254,
+      262
+    ],
+    "n_open_mean": 257.4,
+    "n_open_std": 2.5768197453450252
+  },
+  "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.0003_seed_sweep_2026_10_06_06_20"
+}

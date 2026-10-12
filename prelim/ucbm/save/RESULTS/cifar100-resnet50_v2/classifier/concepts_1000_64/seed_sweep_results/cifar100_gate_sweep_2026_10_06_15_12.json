@@ -1,0 +1,782 @@
+{
+  "model": "ucbm",
+  "dataset": "cifar100",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 1000,
+  "lambda_gates": [
+    1e-05,
+    3e-05,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01
+  ],
+  "refit_tau": 0.5,
+  "refit_epochs": 20,
+  "gate_forward": "hard",
+  "points": [
+    {
+      "lambda_gate": 1e-05,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6272000074386597,
+          0.6262999773025513,
+          0.6244000196456909,
+          0.6266999840736389,
+          0.6297000050544739
+        ],
+        "acc_mean": 0.6268599987030029,
+        "acc_std": 0.0017071594904815573,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6413,
+          0.6434,
+          0.6411,
+          0.6444,
+          0.643
+        ],
+        "acc_mean": 0.64264,
+        "acc_std": 0.001262695529413161,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275,
+        "masked_acc_per_seed": [
+          0.6272,
+          0.6263,
+          0.6244,
+          0.6267,
+          0.6297
+        ],
+        "masked_acc_mean": 0.62686
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6409,
+          0.6434,
+          0.6426,
+          0.643,
+          0.6416
+        ],
+        "acc_mean": 0.6423,
+        "acc_std": 0.0009208691546576997,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.5562,
+          0.55,
+          0.5512,
+          0.5473,
+          0.5361
+        ],
+        "acc_mean": 0.54816,
+        "acc_std": 0.006685087882743206,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam1e-05_seed_sweep_2026_10_05_23_23"
+    },
+    {
+      "lambda_gate": 3e-05,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6262999773025513,
+          0.6269000172615051,
+          0.6233000159263611,
+          0.626800000667572,
+          0.630299985408783
+        ],
+        "acc_mean": 0.6267199993133545,
+        "acc_std": 0.0022238620451216955,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6438,
+          0.6408,
+          0.6425,
+          0.6421,
+          0.644
+        ],
+        "acc_mean": 0.64264,
+        "acc_std": 0.0011740528097151344,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146,
+        "masked_acc_per_seed": [
+          0.6263,
+          0.6269,
+          0.6233,
+          0.6268,
+          0.6303
+        ],
+        "masked_acc_mean": 0.6267199999999999
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6427,
+          0.6424,
+          0.6402,
+          0.641,
+          0.6428
+        ],
+        "acc_mean": 0.6418200000000001,
+        "acc_std": 0.0010361467077591024,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.5549,
+          0.5474,
+          0.5501,
+          0.5419,
+          0.5325
+        ],
+        "acc_mean": 0.54536,
+        "acc_std": 0.0076810415960337,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam3e-05_seed_sweep_2026_10_06_02_28"
+    },
+    {
+      "lambda_gate": 0.0001,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6255000233650208,
+          0.6255999803543091,
+          0.6218000054359436,
+          0.6237000226974487,
+          0.6281999945640564
+        ],
+        "acc_mean": 0.6249600052833557,
+        "acc_std": 0.002134098091065905,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.639,
+          0.639,
+          0.6402,
+          0.6384,
+          0.6398
+        ],
+        "acc_mean": 0.6392800000000001,
+        "acc_std": 0.00064000000000001,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424,
+        "masked_acc_per_seed": [
+          0.6255,
+          0.6256,
+          0.6218,
+          0.6237,
+          0.6282
+        ],
+        "masked_acc_mean": 0.62496
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6382,
+          0.6391,
+          0.6383,
+          0.6388,
+          0.6386
+        ],
+        "acc_mean": 0.6386000000000001,
+        "acc_std": 0.00032863353450311077,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.541,
+          0.514,
+          0.5233,
+          0.5073,
+          0.5076
+        ],
+        "acc_mean": 0.51864,
+        "acc_std": 0.012599142827986362,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.0001_seed_sweep_2026_10_06_04_05"
+    },
+    {
+      "lambda_gate": 0.0003,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6211000084877014,
+          0.621399998664856,
+          0.6208999752998352,
+          0.620199978351593,
+          0.6209999918937683
+        ],
+        "acc_mean": 0.6209199905395508,
+        "acc_std": 0.00039699688646652897,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6323,
+          0.627,
+          0.6314,
+          0.6305,
+          0.6321
+        ],
+        "acc_mean": 0.63066,
+        "acc_std": 0.0019355619339096253,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252,
+        "masked_acc_per_seed": [
+          0.6211,
+          0.6214,
+          0.6209,
+          0.6202,
+          0.621
+        ],
+        "masked_acc_mean": 0.62092
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6328,
+          0.6283,
+          0.6306,
+          0.6297,
+          0.6297
+        ],
+        "acc_mean": 0.63022,
+        "acc_std": 0.0014851262572589728,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.4918,
+          0.441,
+          0.4661,
+          0.4466,
+          0.4465
+        ],
+        "acc_mean": 0.4584,
+        "acc_std": 0.018753453015378264,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.0003_seed_sweep_2026_10_06_06_20"
+    },
+    {
+      "lambda_gate": 0.001,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6008999943733215,
+          0.5978999733924866,
+          0.597599983215332,
+          0.5990999937057495,
+          0.5950999855995178
+        ],
+        "acc_mean": 0.5981199860572814,
+        "acc_std": 0.001904104646363012,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6063,
+          0.6057,
+          0.6063,
+          0.6096,
+          0.6103
+        ],
+        "acc_mean": 0.60764,
+        "acc_std": 0.0019116485032557673,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253,
+        "masked_acc_per_seed": [
+          0.6009,
+          0.5979,
+          0.5976,
+          0.5991,
+          0.5951
+        ],
+        "masked_acc_mean": 0.59812
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6084,
+          0.607,
+          0.6085,
+          0.6074,
+          0.6097
+        ],
+        "acc_mean": 0.6082000000000001,
+        "acc_std": 0.0009444575162494141,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.3607,
+          0.2777,
+          0.3207,
+          0.3153,
+          0.3192
+        ],
+        "acc_mean": 0.31872,
+        "acc_std": 0.026308964251752675,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.001_seed_sweep_2026_10_06_08_11"
+    },
+    {
+      "lambda_gate": 0.003,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.5461999773979187,
+          0.5454000234603882,
+          0.5286999940872192,
+          0.5357000231742859,
+          0.5476999878883362
+        ],
+        "acc_mean": 0.5407400012016297,
+        "acc_std": 0.007352981871682555,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.5714,
+          0.5742,
+          0.5744,
+          0.5694,
+          0.5776
+        ],
+        "acc_mean": 0.5734,
+        "acc_std": 0.0028028556866167734,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536,
+        "masked_acc_per_seed": [
+          0.5462,
+          0.5454,
+          0.5287,
+          0.5357,
+          0.5477
+        ],
+        "masked_acc_mean": 0.54074
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.572,
+          0.5726,
+          0.5739,
+          0.5698,
+          0.5754
+        ],
+        "acc_mean": 0.5727399999999999,
+        "acc_std": 0.0018778711350888946,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.1827,
+          0.1766,
+          0.1062,
+          0.1733,
+          0.1235
+        ],
+        "acc_mean": 0.15245999999999998,
+        "acc_std": 0.03133742810123384,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.003_seed_sweep_2026_10_06_10_38"
+    },
+    {
+      "lambda_gate": 0.01,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.45570001006126404,
+          0.4309999942779541,
+          0.4336000084877014,
+          0.44510000944137573,
+          0.42890000343322754
+        ],
+        "acc_mean": 0.43886000514030454,
+        "acc_std": 0.010111106655178422,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.4915,
+          0.4958,
+          0.4916,
+          0.4923,
+          0.4811
+        ],
+        "acc_mean": 0.49046,
+        "acc_std": 0.004937448733911061,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593,
+        "masked_acc_per_seed": [
+          0.4557,
+          0.431,
+          0.4336,
+          0.4451,
+          0.4289
+        ],
+        "masked_acc_mean": 0.43886000000000003
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.4927,
+          0.4949,
+          0.4909,
+          0.4909,
+          0.4815
+        ],
+        "acc_mean": 0.49017999999999995,
+        "acc_std": 0.004582750265942941,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.0611,
+          0.0434,
+          0.0291,
+          0.0741,
+          0.052
+        ],
+        "acc_mean": 0.05194,
+        "acc_std": 0.015294260361325094,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.01_seed_sweep_2026_10_06_12_53"
+    }
+  ]
+}

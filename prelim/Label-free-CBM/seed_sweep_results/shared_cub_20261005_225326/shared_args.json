@@ -1,0 +1,12 @@
+{
+  "dataset": "cub",
+  "concept_set": "data/concept_sets/cub_filtered.txt",
+  "backbone": "resnet18_cub",
+  "clip_name": "ViT-B/16",
+  "proj_batch_size": 50000,
+  "feature_layer": "features.final_pool",
+  "clip_cutoff": 0.26,
+  "proj_steps": 1000,
+  "interpretability_cutoff": 0.45,
+  "no_filter": false
+}

@@ -1,0 +1,108 @@
+{
+  "dataset": "cifar100",
+  "concept_set": "data/concept_sets/cifar100_filtered.txt",
+  "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 830,
+  "lam": 0.0007,
+  "gate_lam": 1e-05,
+  "gate_epochs": 150,
+  "gate_forward": "hard",
+  "arm": "gated",
+  "gated": {
+    "acc_per_seed": [
+      0.6665999889373779,
+      0.6699000000953674,
+      0.6669999957084656,
+      0.6646999716758728,
+      0.6632000207901001
+    ],
+    "acc_mean": 0.6662799954414368,
+    "acc_std": 0.0022675073922291517,
+    "n_open_per_seed": [
+      704,
+      706,
+      704,
+      697,
+      699
+    ],
+    "n_open_mean": 702.0,
+    "n_open_std": 3.4058772731852804
+  },
+  "refit_tau": 0.5,
+  "gated_refit": {
+    "acc_per_seed": [
+      0.6664,
+      0.6664,
+      0.6655,
+      0.6676,
+      0.6678
+    ],
+    "acc_mean": 0.66674,
+    "acc_std": 0.0008522910301064892,
+    "n_open_per_seed": [
+      704,
+      706,
+      704,
+      697,
+      699
+    ],
+    "n_open_mean": 702.0,
+    "n_open_std": 3.4058772731852804,
+    "masked_acc_per_seed": [
+      0.6666,
+      0.6699,
+      0.667,
+      0.6647,
+      0.6632
+    ],
+    "masked_acc_mean": 0.66628
+  },
+  "gated_refit_cold": {
+    "acc_per_seed": [
+      0.6689,
+      0.6711,
+      0.6729,
+      0.6716,
+      0.6707
+    ],
+    "acc_mean": 0.67104,
+    "acc_std": 0.0013016912076218373,
+    "n_open_per_seed": [
+      704,
+      706,
+      704,
+      697,
+      699
+    ],
+    "n_open_mean": 702.0,
+    "n_open_std": 3.4058772731852804
+  },
+  "random_refit": {
+    "acc_per_seed": [
+      0.6679,
+      0.6688,
+      0.6724,
+      0.6694,
+      0.6685
+    ],
+    "acc_mean": 0.6694,
+    "acc_std": 0.0015760710643876392,
+    "n_open_per_seed": [
+      704,
+      706,
+      704,
+      697,
+      699
+    ],
+    "n_open_mean": 702.0,
+    "n_open_std": 3.4058772731852804
+  },
+  "session_dir": "seed_sweep_results/cifar100_gated_lam1e-05_seed_sweep_2026_10_06_01_24"
+}

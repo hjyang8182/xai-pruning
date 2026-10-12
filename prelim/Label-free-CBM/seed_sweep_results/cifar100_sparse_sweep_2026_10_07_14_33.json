@@ -1,0 +1,297 @@
+{
+  "model": "lfcbm",
+  "dataset": "cifar100",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 830,
+  "lams": [
+    1e-05,
+    3e-05,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01
+  ],
+  "n_iters": 1000,
+  "points": [
+    {
+      "lam": 1e-05,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.6827999949455261,
+          0.6825000047683716,
+          0.6826000213623047,
+          0.682699978351593,
+          0.682699978351593
+        ],
+        "acc_mean": 0.6826599955558776,
+        "acc_std": 0.00010197159701595104,
+        "n_open_per_seed": [
+          830,
+          830,
+          830,
+          830,
+          830
+        ],
+        "n_open_mean": 830.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cifar100_baseline_lam1e-05_seed_sweep_2026_10_06_18_28"
+    },
+    {
+      "lam": 3e-05,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.6908000111579895,
+          0.6908000111579895,
+          0.6906999945640564,
+          0.6906999945640564,
+          0.6908000111579895
+        ],
+        "acc_mean": 0.6907600045204163,
+        "acc_std": 4.899792418945042e-05,
+        "n_open_per_seed": [
+          830,
+          830,
+          830,
+          830,
+          830
+        ],
+        "n_open_mean": 830.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cifar100_baseline_lam3e-05_seed_sweep_2026_10_07_05_58"
+    },
+    {
+      "lam": 0.0001,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.6913999915122986,
+          0.6916000247001648,
+          0.6913999915122986,
+          0.6915000081062317,
+          0.6913999915122986
+        ],
+        "acc_mean": 0.6914600014686585,
+        "acc_std": 8.001327514648438e-05,
+        "n_open_per_seed": [
+          830,
+          830,
+          830,
+          830,
+          830
+        ],
+        "n_open_mean": 830.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/cifar100_baseline_lam0.0001_seed_sweep_2026_10_07_10_23"
+    },
+    {
+      "lam": 0.0003,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.6735000014305115,
+          0.67330002784729,
+          0.6735000014305115,
+          0.6733999848365784,
+          0.6733999848365784
+        ],
+        "acc_mean": 0.673420000076294,
+        "acc_std": 7.482645084084486e-05,
+        "n_open_per_seed": [
+          806,
+          806,
+          806,
+          806,
+          807
+        ],
+        "n_open_mean": 806.2,
+        "n_open_std": 0.4
+      },
+      "session_dir": "seed_sweep_results/cifar100_baseline_lam0.0003_seed_sweep_2026_10_07_11_55"
+    },
+    {
+      "lam": 0.001,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.6392999887466431,
+          0.63919997215271,
+          0.6394000053405762,
+          0.6394000053405762,
+          0.6394000053405762
+        ],
+        "acc_mean": 0.6393399953842163,
+        "acc_std": 8.001327514648438e-05,
+        "n_open_per_seed": [
+          703,
+          702,
+          703,
+          704,
+          704
+        ],
+        "n_open_mean": 703.2,
+        "n_open_std": 0.7483314773547883
+      },
+      "session_dir": "seed_sweep_results/cifar100_baseline_lam0.001_seed_sweep_2026_10_07_13_19"
+    },
+    {
+      "lam": 0.003,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.5922999978065491,
+          0.5922999978065491,
+          0.592199981212616,
+          0.5922999978065491,
+          0.592199981212616
+        ],
+        "acc_mean": 0.5922599911689759,
+        "acc_std": 4.899792418945042e-05,
+        "n_open_per_seed": [
+          476,
+          475,
+          477,
+          477,
+          477
+        ],
+        "n_open_mean": 476.4,
+        "n_open_std": 0.8
+      },
+      "session_dir": "seed_sweep_results/cifar100_baseline_lam0.003_seed_sweep_2026_10_07_13_56"
+    },
+    {
+      "lam": 0.01,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.5182999968528748,
+          0.5184000134468079,
+          0.5184000134468079,
+          0.5181999802589417,
+          0.5181999802589417
+        ],
+        "acc_mean": 0.5182999968528748,
+        "acc_std": 8.945756116496676e-05,
+        "n_open_per_seed": [
+          236,
+          237,
+          236,
+          236,
+          236
+        ],
+        "n_open_mean": 236.2,
+        "n_open_std": 0.4
+      },
+      "session_dir": "seed_sweep_results/cifar100_baseline_lam0.01_seed_sweep_2026_10_07_14_20"
+    }
+  ]
+}

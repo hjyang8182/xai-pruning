@@ -6,6 +6,9 @@
     python run_seed_sweeps.py --arms gated --gate-forward soft  # gated only, soft gate
     python run_seed_sweeps.py --lambda-gate ucbm:cub=3e-4 --extra ucbm "--epochs 100"
     python run_seed_sweeps.py --dry-run                         # just print the commands
+    python run_seed_sweeps.py -m lfcbm ucbm vlgcbm -a gated --random-control \
+        --lambda-gates 1e-5 3e-5 1e-4 3e-4 1e-3 3e-3 1e-2       # lambda_gate sweep + matched random concepts
+    python run_seed_sweeps.py -m lfcbm ucbm vlgcbm -a baseline --sparse-sweep  # native sparsity sweep (SPARSE_GRIDS)
 
 Each (model, dataset, arm) is launched as a subprocess in that pipeline's own conda env and
 working directory, exactly as you would run it by hand; the per-model flag recipes live in
@@ -19,6 +22,9 @@ Where the pipelines write their own results (unchanged by this script):
   lfcbm   prelim/Label-free-CBM/seed_sweep_results/<dataset>_<arm>_seed_sweep_<stamp>.json
   ucbm    prelim/ucbm/save/RESULTS/<dataset>-<backbone>/classifier/<concepts>/seed_sweep_results/
   vlgcbm  prelim/VLG-CBM/saved_models/<dataset>/seed_sweep_results/
+With --lambda-gates, each gated run also writes <dataset>_gate_sweep_<stamp>.json next to those
+(one entry per lambda_gate; plot with plot_gate_sweep_vs_random_subset.py), and with --sparse-sweep each
+baseline run writes <dataset>_sparse_sweep_<stamp>.json (plot with plot_gate_vs_native_sparsity.py).
 """
 import argparse
 import glob
@@ -51,16 +57,19 @@ MODELS = {
     'lfcbm': dict(
         cwd=ROOT / 'prelim' / 'Label-free-CBM', env='lfcbm', script='train_cbm_seed_sweep.py',
         seeds_flag='--seeds', lambda_gate_flag='--gate_lam', gate_forward_flag='--gate_forward',
+        lambda_gates_flag='--gate_lams', sparse_lams_flag='--lams',
         arms={'baseline': [], 'gated': ['-g']}, common=['--save_probes'],
     ),
     'ucbm': dict(
         cwd=ROOT / 'prelim' / 'ucbm', env='ucbm', script='train_cbm_seed_sweep.py',
         seeds_flag='--seeds', lambda_gate_flag='--lambda_gate', gate_forward_flag='--gate_forward',
+        lambda_gates_flag='--lambda_gates', sparse_lams_flag='--lam_ws',
         arms={'baseline': [], 'gated': ['-g']}, common=['--save_classifiers'],
     ),
     'vlgcbm': dict(
         cwd=ROOT / 'prelim' / 'VLG-CBM', env='vlg-cbm', script='train_cbm_seed_sweep.py',
         seeds_flag='--seeds', lambda_gate_flag='--lambda_gate', gate_forward_flag='--gate_forward',
+        lambda_gates_flag='--lambda_gates', sparse_lams_flag='--saga_lams',
         arms={'baseline': 'sparse', 'gated': 'gated'}, joint_arms=True, common=['--save_probes'],
     ),
 }
@@ -111,6 +120,15 @@ RECIPES = {
     },
 }
 
+# Default --sparse-sweep grid of each pipeline's own sparsity knob on the baseline arm (the counterpart
+# of the gated arm's lambda_gate sweep): GLM-SAGA elastic-net strength for LF-CBM (--lam) and VLG-CBM
+# (--saga_lam), the final-layer weight elastic net for UCBM (--lam_w). Spans dense -> very sparse.
+SPARSE_GRIDS = {
+    'lfcbm': [1e-5, 3e-5, 1e-4, 3e-4, 1e-3, 3e-3, 1e-2],
+    'vlgcbm': [1e-5, 3e-5, 1e-4, 3e-4, 1e-3, 3e-3, 1e-2],
+    'ucbm': [0.0, 1e-5, 1e-4, 3e-4, 1e-3, 3e-3, 1e-2],
+}
+
 ALL_DATASETS = sorted({d for m in RECIPES.values() for d in m})
 
 
@@ -125,6 +143,17 @@ def parse_args():
                    help='Gate forward pass for every gated arm (STE hard mask by default)')
     p.add_argument('--lambda-gate', action='append', default=[], metavar='MODEL[:DATASET]=VALUE',
                    help='Override the recipe lambda_gate, e.g. "ucbm:cub=3e-4" or "lfcbm=1e-4" (all its datasets). Repeatable.')
+    p.add_argument('--lambda-gates', type=float, nargs='+', default=None, metavar='VALUE',
+                   help='lambda_gate sweep: train the gated arm at each value in one invocation per (model, dataset), '
+                        'replacing the recipe lambda_gate. Not supported for dncbm (use sweep_lambda_gate.py there)')
+    p.add_argument('--random-control', action='store_true',
+                   help='Gated arm: also refit a fresh head on the gate-selected concepts and on the same number of '
+                        'uniformly random concepts (gating.matched_random_refits). Not supported for dncbm')
+    p.add_argument('--sparse-sweep', action='store_true',
+                   help="Baseline arm: sweep the pipeline's own sparsity strength over SPARSE_GRIDS[model] in one "
+                        "invocation per (model, dataset). Not supported for dncbm (use sweep_lambda_sparse.py there)")
+    p.add_argument('--sparse-lams', type=float, nargs='+', default=None, metavar='VALUE',
+                   help='Override the --sparse-sweep grid (same values for every model; implies --sparse-sweep)')
     p.add_argument('--extra', nargs=2, action='append', default=[], metavar=('MODEL', 'ARGS'),
                    help='Extra flags appended verbatim to every run of MODEL, e.g. --extra ucbm "--epochs 100". Repeatable.')
     p.add_argument('--gpu', default=None, help='Value for CUDA_VISIBLE_DEVICES (default: inherit)')
@@ -161,6 +190,7 @@ def python_for(model):
 
 def build_runs(args, lambda_overrides, extra_by_model, stamp):
     """Expand the requested grid into an ordered list of run dicts (one subprocess each)."""
+    args.sparse_sweep = args.sparse_sweep or args.sparse_lams is not None  # --sparse-lams implies it
     runs = []
     for model in args.models:
         spec = MODELS[model]
@@ -169,17 +199,29 @@ def build_runs(args, lambda_overrides, extra_by_model, stamp):
             if recipe is None:
                 print(f'[skip] {model}/{dataset}: no recipe in RECIPES')
                 continue
-            lam = lambda_gate_for(lambda_overrides, model, dataset, recipe)
+            sweep = args.lambda_gates is not None or args.random_control or args.sparse_sweep
+            if sweep and 'lambda_gates_flag' not in spec:
+                print(f'[skip] {model}/{dataset}: --lambda-gates/--random-control/--sparse-sweep not supported '
+                      f'(DN-CBM: sweep_lambda_gate.py, random_concept_baseline.py, sweep_lambda_sparse.py)')
+                continue
+            sparse_flags = ([spec['sparse_lams_flag'], *map(repr, args.sparse_lams or SPARSE_GRIDS[model])]
+                            if args.sparse_sweep else [])
+            lam = args.lambda_gates or lambda_gate_for(lambda_overrides, model, dataset, recipe)
             base = [python_for(model), spec['script'], *recipe['args'], spec['seeds_flag'],
                     *map(str, args.seeds), *spec['common'], *extra_by_model.get(model, [])]
-            gated_flags = [spec['lambda_gate_flag'], repr(lam), spec['gate_forward_flag'], args.gate_forward,
-                           *recipe.get('gated_args', [])]
+            lam_flags = ([spec['lambda_gates_flag'], *map(repr, lam)] if args.lambda_gates
+                         else [spec['lambda_gate_flag'], repr(lam)])
+            gated_flags = [*lam_flags, spec['gate_forward_flag'], args.gate_forward, *recipe.get('gated_args', [])]
+            if args.random_control:
+                gated_flags.append('--random_control')
 
             if spec.get('joint_arms'):
                 arm_names = [spec['arms'][a] for a in args.arms]
                 cmd = base + ['--arms', *arm_names]
                 if 'gated' in args.arms:
                     cmd += gated_flags
+                if 'baseline' in args.arms:
+                    cmd += sparse_flags
                 runs.append(dict(model=model, dataset=dataset, arm='+'.join(args.arms), cmd=cmd,
                                  cwd=spec['cwd'], lambda_gate=lam if 'gated' in args.arms else None))
                 continue
@@ -191,6 +233,8 @@ def build_runs(args, lambda_overrides, extra_by_model, stamp):
                 cmd = base + spec['arms'][arm]
                 if arm == 'gated':
                     cmd += gated_flags
+                else:
+                    cmd += sparse_flags
                 if shared_dir:
                     cmd += ['--save_shared', shared_dir] if arm == 'baseline' else ['--load_shared', shared_dir]
                 runs.append(dict(model=model, dataset=dataset, arm=arm, cmd=cmd, cwd=spec['cwd'],
@@ -199,8 +243,9 @@ def build_runs(args, lambda_overrides, extra_by_model, stamp):
 
 
 def run_one(run, log_path, env):
-    """Stream the subprocess's combined output to the terminal and the log; return rc + 'Saved results to' path."""
-    saved = None
+    """Stream the subprocess's combined output to the terminal and the log; return rc + the results path
+    (the lambda_gate sweep json if the run wrote one, else the last 'Saved results to')."""
+    saved = sweep = None
     with open(log_path, 'w') as log:
         proc = subprocess.Popen(run['cmd'], cwd=run['cwd'], env=env, stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT, text=True, bufsize=1)
@@ -210,8 +255,11 @@ def run_one(run, log_path, env):
             m = re.search(r'Saved results to (\S+)', line)
             if m:
                 saved = m.group(1)
+            m = re.search(r'Saved (?:lambda_gate|sparsity) sweep to (\S+)', line)
+            if m:
+                sweep = m.group(1)
         proc.wait()
-    return proc.returncode, saved
+    return proc.returncode, sweep or saved
 
 
 # ---------------------------------------------------------------------------------------------
@@ -238,9 +286,15 @@ def summarise_result(model, run, result_path):
             rows.append(dict(arm='gated_refit', acc_mean=d['refit_accuracy_mean'], acc_std=d.get('refit_accuracy_std'),
                              n_open=d.get('refit_n_concepts_mean', n_open)))
         return rows
-    for arm in ('baseline', 'sparse', 'dense', 'gated', 'gated_refit'):
-        if isinstance(d.get(arm), dict) and 'acc_mean' in d[arm]:
-            rows.append(dict(arm=arm, acc_mean=d[arm]['acc_mean'], acc_std=d[arm].get('acc_std'), n_open=d[arm].get('n_open_mean')))
+    arms = ('baseline', 'sparse', 'dense', 'gated', 'gated_refit', 'gated_refit_cold', 'random_refit')
+    points = d['points'] if 'points' in d else [d]  # a lambda_gate sweep json has one entry per value
+    for point in points:
+        lam = next((point[k] for k in ('lambda_gate', 'lam', 'lam_w', 'saga_lam') if k in point), None)
+        at = f"@{lam:g}" if lam is not None else ''
+        for arm in arms:
+            if isinstance(point.get(arm), dict) and 'acc_mean' in point[arm]:
+                rows.append(dict(arm=arm + at, acc_mean=point[arm]['acc_mean'], acc_std=point[arm].get('acc_std'),
+                                 n_open=point[arm].get('n_open_mean')))
     return rows
 
 
@@ -333,9 +387,9 @@ def main():
         json.dump(manifest, f, indent=2)
 
     print(f'\n{"=" * 100}\nSUMMARY  (seeds {args.seeds}, gate_forward={args.gate_forward})\n{"=" * 100}')
-    print(f'{"model":8s} {"dataset":11s} {"arm":12s} {"acc":>8s} {"std":>8s} {"n_open":>8s}  status')
+    print(f'{"model":8s} {"dataset":11s} {"arm":24s} {"acc":>8s} {"std":>8s} {"n_open":>8s}  status')
     for r in table:
-        print(f'{r["model"]:8s} {r["dataset"]:11s} {r["arm"]:12s} {fmt(r["acc_mean"]):>8s} {fmt(r["acc_std"]):>8s} '
+        print(f'{r["model"]:8s} {r["dataset"]:11s} {r["arm"]:24s} {fmt(r["acc_mean"]):>8s} {fmt(r["acc_std"]):>8s} '
               f'{fmt(r["n_open"], 1):>8s}  {r["status"]}')
     print(f'\nmanifest: {manifest_path}')
     n_failed = sum(r['status'] == 'FAILED' for r in table)

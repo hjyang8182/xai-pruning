@@ -7,7 +7,7 @@ import torch
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.lines import Line2D
-from matplotlib.ticker import PercentFormatter, MaxNLocator
+from matplotlib.ticker import PercentFormatter, MaxNLocator, NullFormatter
 
 from src.config import DATA_PATH, N_LEARNED_FEATURES
 
@@ -1264,7 +1264,8 @@ def plot_gated_vs_random(open_gates, gated_test_acc, gated_test_acc_std,
 
 
 def _plot_acc_vs_count_grid(results_by_dataset, comparator_label, dataset_order=None, ncols=None,
-                            sharey=True, counts_as_pct=True, frame_on_gated=False, plot_label='acc_vs_count_grid', legend_fontsize=FS_LEGEND):
+                            sharey=True, counts_as_pct=True, frame_on_gated=False, plot_label='acc_vs_count_grid', legend_fontsize=FS_LEGEND,
+                            gated_label=GATED_LABEL):
     """Shared body of plot_gated_vs_random_grid / plot_gate_vs_sparse_grid: one panel per dataset
     of test accuracy vs. concept count for the gated sweep against one comparator curve, styled
     like the other grids (shared accuracy axis, one legend above, gated blue / comparator green /
@@ -1292,10 +1293,12 @@ def _plot_acc_vs_count_grid(results_by_dataset, comparator_label, dataset_order=
 
         # Different marker per curve as well as colour, so they stay apart in greyscale too.
         curves = [
-            (d['open_gates'], d['gated_acc'], d.get('gated_acc_std'), GATED_COLOR, 'o', '-',  GATED_LABEL),
-            (d['cmp_x'],      d['cmp_acc'],   d.get('cmp_acc_std'),   CMP_COLOR,   's', '-.', comparator_label),
+            (d['open_gates'], d['gated_acc'], d.get('gated_acc_std'), GATED_COLOR, 'o', '-',  gated_label),
+            (d.get('cmp_x'),  d.get('cmp_acc'), d.get('cmp_acc_std'), CMP_COLOR,   's', '-.', comparator_label),
         ]
         for xs, mean, std, color, marker, ls, label in curves:
+            if xs is None:  # no comparator sweep for this dataset (yet)
+                continue
             if std:
                 lo = [m - s for m, s in zip(mean, std)]
                 hi = [m + s for m, s in zip(mean, std)]
@@ -1321,16 +1324,21 @@ def _plot_acc_vs_count_grid(results_by_dataset, comparator_label, dataset_order=
 
         ax.set_xscale('log')
         if frame_on_gated:
-            ax.set_xlim(min(d['open_gates']) / 2.5, max(max(d['open_gates']), max(d['cmp_x'])) * 1.6)
+            ax.set_xlim(min(d['open_gates']) / 2.5, max(max(d['open_gates']), max(d.get('cmp_x') or [0])) * 1.6)
         if counts_as_pct:
             ax.xaxis.set_major_formatter(PercentFormatter(decimals=0))
+            ax.xaxis.set_minor_formatter(NullFormatter())  # a panel spanning < 1 decade would label minors as 2x10^1
         _style_axes(ax, dataset_name)
         ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
         ax.set_xlabel('Concepts Used (%)' if counts_as_pct else 'Concept count', fontsize=FS_LABEL, fontweight='bold')
         if i % ncols == 0:
             ax.set_ylabel(ACC_AXIS_LABEL, fontsize=FS_LABEL, fontweight='bold')
-        if legend_lines is None:
-            legend_lines, legend_labels = ax.get_legend_handles_labels()
+        # union over panels, in first-seen order, so an entry only some panels draw (e.g. the
+        # reported-model line) still reaches the legend
+        legend_lines, legend_labels = legend_lines or [], legend_labels or []
+        for h, l in zip(*ax.get_legend_handles_labels()):
+            if l not in legend_labels:
+                legend_lines.append(h); legend_labels.append(l)
 
     for ax in axes_flat[len(order):]:
         ax.axis('off')

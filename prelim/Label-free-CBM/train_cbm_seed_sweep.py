@@ -15,7 +15,8 @@ from glm_saga.elasticnet import IndexedTensorDataset, glm_saga
 from torch.utils.data import DataLoader, TensorDataset
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from gated_probe import GatedProbe, gate_temperature_schedule, prune_and_refit, masked_accuracy, evaluate_head
+from gated_probe import (GatedProbe, gate_temperature_schedule, prune_and_refit, masked_accuracy, evaluate_head,
+                         matched_random_refits)
 
 """
 Trains either the baseline (GLM-SAGA, default) or the gated linear probe (-g/--gated, with mask-and-refit) the same way
@@ -56,8 +57,11 @@ parser.add_argument("--proj_patience", type=int, default=1, help="number of cons
 parser.add_argument("--interpretability_cutoff", type=float, default=0.45, help="concepts with smaller similarity to target concept will be deleted")
 parser.add_argument("--lam", type=float, default=0.0007, help="Sparsity regularization parameter, higher->more sparse")
 parser.add_argument("--n_iters", type=int, default=1000, help="How many iterations to run the final layer solver for")
+parser.add_argument("--lams", type=float, nargs="+", default=None, help="baseline arm: GLM-SAGA sparsity sweep -- train every seed at each of these --lam values and also write <dataset>_sparse_sweep_<stamp>.json collecting all of them (the native-sparsity counterpart of --gate_lams)")
 parser.add_argument("--gate_epochs", type=int, default=20, help="How many epochs to train the gate probe for")
 parser.add_argument("--gate_lam", type=float, default=1e-4, help="Sparsity penalty on sum(gates) during gate training")
+parser.add_argument("--gate_lams", type=float, nargs="+", default=None, help="gated arm: lambda_gate sweep -- train every seed at each of these values (overrides --gate_lam) and also write <dataset>_gate_sweep_<stamp>.json collecting all of them")
+parser.add_argument("--random_control", action="store_true", help="gated arm: matched random-concept control. With K = gates > refit_tau, refit a fresh head (cold start, same recipe) on K ('gated_refit_cold') and on |K| uniformly random concepts ('random_refit'); see gating.matched_random_refits")
 parser.add_argument("--gate_temperature", type=float, default=1.0, help="Temperature T dividing gate_logits before the sigmoid. T < 1 sharpens the gate toward 0/1 (more bimodal); T = 1 is the plain sigmoid. Starting temperature of the anneal if --gate_temperature_final is also given.")
 parser.add_argument("--gate_temperature_final", type=float, default=None, help="If given, anneal the gate temperature geometrically from --gate_temperature down (or up) to this value over training, instead of keeping it fixed.")
 parser.add_argument("--print", action='store_true', help="Print all concepts being deleted in the filtering stage")
@@ -409,14 +413,37 @@ def main(args):
     n_concepts_total = shared["train_c"].shape[1]
     print("Shared concept set: {} concepts, {} classes".format(n_concepts_total, len(shared["classes"])))
 
+    # gated arm sweeps --gate_lams, baseline arm sweeps --lams; otherwise a single run
+    attr, values, kind = (("gate_lam", args.gate_lams, "gate") if args.gated else ("lam", args.lams, "sparse"))
+    if not values:
+        run_arm(shared, args, n_concepts_total)
+        return
+    points = []
+    for value in values:
+        setattr(args, attr, value)
+        print("##### {} = {:g} #####".format(attr, value))
+        points.append({"lambda_gate" if args.gated else "lam": value,
+                       **run_arm(shared, args, n_concepts_total, tag="_lam{:g}".format(value))})
+    out_path = os.path.join(args.results_dir, "{}_{}_sweep_{}.json".format(
+        args.dataset, kind, datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")))
+    meta = ({"lambda_gates": values, "refit_tau": args.refit_tau, "refit_epochs": args.refit_epochs,
+             "gate_forward": args.gate_forward} if args.gated else {"lams": values, "n_iters": args.n_iters})
+    with open(out_path, "w") as f:
+        json.dump({"model": "lfcbm", "dataset": args.dataset, "seeds": args.seeds,
+                   "n_concepts_total": n_concepts_total, **meta, "points": points}, f, indent=2)
+    print("Saved {} sweep to {}".format("lambda_gate" if args.gated else "sparsity", out_path))
+
+
+def run_arm(shared, args, n_concepts_total, tag=""):
     label = "gated" if args.gated else "baseline"
     stamp = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")
-    session_dir = os.path.join(args.results_dir, "{}_{}_seed_sweep_{}".format(args.dataset, label, stamp))
+    session_dir = os.path.join(args.results_dir, "{}_{}{}_seed_sweep_{}".format(args.dataset, label, tag, stamp))
     if args.save_probes:
         init_session_dir(session_dir, shared)
         print("Saving per-seed probes under {}".format(session_dir))
     results = {"baseline": {"acc": [], "n_open": []}, "gated": {"acc": [], "n_open": []},
-               "gated_refit": {"acc": [], "n_open": [], "masked_acc": []}}
+               "gated_refit": {"acc": [], "n_open": [], "masked_acc": []},
+               "gated_refit_cold": {"acc": [], "n_open": []}, "random_refit": {"acc": [], "n_open": []}}
 
     for seed in args.seeds:
         print("=== seed {} ===".format(seed))
@@ -451,6 +478,16 @@ def main(args):
             results["gated_refit"]["n_open"].append(int(keep.sum()))
             results["gated_refit"]["masked_acc"].append(masked_acc)
             refit = (W_r, b_r, keep)
+        if args.random_control:
+            ctrl = matched_random_refits(
+                W_gate, b_gate, gates, shared["train_c"], shared["train_y"], shared["val_c"], shared["val_y"],
+                tau=args.refit_tau, fold_gate=False, epochs=args.refit_epochs, lr=1e-3,
+                batch_size=args.saga_batch_size, device=args.device, seed=seed)
+            for arm, key in (("gated_refit_cold", "gated_cold"), ("random_refit", "random")):
+                results[arm]["acc"].append(ctrl[key]["acc"])
+                results[arm]["n_open"].append(ctrl[key]["n_concepts"])
+            print("[random control] seed={} |K|={}  gate-selected {:.4f} vs random {:.4f}".format(
+                seed, ctrl["random"]["n_concepts"], ctrl["gated_cold"]["acc"], ctrl["random"]["acc"]))
         if args.save_probes:
             save_probe(session_dir, shared, args, seed, W_gate, b_gate, gate_logits, refit)
 
@@ -476,15 +513,19 @@ def main(args):
                                            results["gated_refit"]["n_open"], n_concepts_total)
         summary["gated_refit"]["masked_acc_per_seed"] = results["gated_refit"]["masked_acc"]
         summary["gated_refit"]["masked_acc_mean"] = statistics.fmean(results["gated_refit"]["masked_acc"])
+    for arm in ("gated_refit_cold", "random_refit"):
+        if results[arm]["acc"]:
+            summary[arm] = summarize(arm, results[arm]["acc"], results[arm]["n_open"], n_concepts_total)
 
     summary["session_dir"] = session_dir if args.save_probes else None
-    out_path = os.path.join(args.results_dir, "{}_{}_seed_sweep_{}.json".format(args.dataset, label, stamp))
+    out_path = os.path.join(args.results_dir, "{}_{}{}_seed_sweep_{}.json".format(args.dataset, label, tag, stamp))
     with open(out_path, "w") as f:
         json.dump(summary, f, indent=2)
     if args.save_probes:  # a copy next to the probes it describes
         with open(os.path.join(session_dir, "seed_sweep_summary.json"), "w") as f:
             json.dump(summary, f, indent=2)
     print("Saved results to {}".format(out_path))
+    return summary
 
 
 if __name__ == '__main__':

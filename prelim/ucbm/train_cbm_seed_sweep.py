@@ -79,13 +79,20 @@ def train_one(args, seed, gated, model, training_data, test_data, act_bank_path,
 
     test_acc = info_dict["test acc"]
     n_open = count_open_concepts(ph_cbm)
+    # Adam's elastic net shrinks but never zeroes weights, so for the baseline also count concepts
+    # with max |w| > 1e-3 -- the "used concept" threshold of the DN-CBM sparse sweep
+    n_used = n_open if gated else count_open_concepts(ph_cbm, tol=1e-3)
 
     refit = None
     if gated and not args.no_refit:
         refit = ph_cbm.prune_and_refit(training_data, test_data, act_bank_path, tau=args.refit_tau,
-                                       epochs=args.refit_epochs, seed=seed)
+                                       epochs=args.refit_epochs, seed=seed, random_control=args.random_control)
         print(f"[gated_refit] seed={seed} concepts={refit['n_concepts']}/{h.shape[0]} @tau={args.refit_tau}  "
               f"hard cut {refit['masked_accuracy_no_refit']:.4f} -> refit {refit['test_accuracy']:.4f}")
+        if "random_control" in refit:
+            ctrl = refit["random_control"]
+            print(f"[random control] seed={seed} |K|={ctrl['random']['n_concepts']}  "
+                  f"gate-selected {ctrl['gated_cold']['acc']:.4f} vs random {ctrl['random']['acc']:.4f}")
         info_dict["refit"] = {k: v for k, v in refit.items() if not torch.is_tensor(v)}
 
     if args.save_classifiers:
@@ -102,7 +109,7 @@ def train_one(args, seed, gated, model, training_data, test_data, act_bank_path,
             torch.save({"weight": refit["W_refit"], "bias": refit["b_refit"], "keep": refit["keep"],
                         "tau": args.refit_tau}, path.join(class_path, "classifier_refit.pt"))
 
-    return test_acc, n_open, refit
+    return test_acc, n_open, n_used, refit
 
 
 def summarize(name, accs, n_opens):
@@ -137,29 +144,57 @@ def main(args):
         raise AttributeError(f"Concept bank {args.concept_data} does not exist")
     h = np.load(path.join(con_bank_path, "h.npy"))
 
+    # gated arm sweeps --lambda_gates, baseline arm sweeps --lam_ws; otherwise a single run
+    attr, values, kind = (("lambda_gate", args.lambda_gates, "gate") if args.gated else ("lam_w", args.lam_ws, "sparse"))
+    if not values:
+        run_arm(args, model, training_data, test_data, act_bank_path, h)
+        return
+    points = []
+    for value in values:
+        setattr(args, attr, value)
+        print(f"##### {attr} = {value:g} #####")
+        points.append({attr: value,
+                       **run_arm(args, model, training_data, test_data, act_bank_path, h, tag=f"_lam{value:g}")})
+    results_dir = path.join(plotter.get_classifier_path(), args.concept_data, "seed_sweep_results")
+    out_path = path.join(results_dir, f"{args.dataset}_{kind}_sweep_{datetime.now().strftime('%Y_%m_%d_%H_%M')}.json")
+    meta = ({"lambda_gates": values, "refit_tau": args.refit_tau, "refit_epochs": args.refit_epochs,
+             "gate_forward": args.gate_forward} if args.gated else {"lam_ws": values, "lam_pi": args.lam_pi})
+    with open(out_path, "w") as f:
+        json.dump({"model": "ucbm", "dataset": args.dataset, "seeds": args.seeds,
+                   "n_concepts_total": int(h.shape[0]), **meta, "points": points}, f, indent=2)
+    print(f"Saved {'lambda_gate' if args.gated else 'sparsity'} sweep to {out_path}")
+
+
+def run_arm(args, model, training_data, test_data, act_bank_path, h, tag=""):
     label = "gated" if args.gated else "baseline"
     stamp = datetime.now().strftime('%Y_%m_%d_%H_%M')
     session_dir = path.join(plotter.get_classifier_path(), args.concept_data,
-                            f"{args.cls_save_name}{'-' if args.cls_save_name else ''}{label}_seed_sweep_{stamp}")
+                            f"{args.cls_save_name}{'-' if args.cls_save_name else ''}{label}{tag}_seed_sweep_{stamp}")
     if args.save_classifiers:
         makedirs(session_dir, exist_ok=True)
         print(f"Saving per-seed classifiers under {session_dir}")
-    accs, n_opens = [], []
+    accs, n_opens, n_useds = [], [], []
     refit_accs, refit_n, masked_accs = [], [], []
+    control = {"gated_refit_cold": ([], []), "random_refit": ([], [])}
 
     for seed in args.seeds:
         print(f"=== seed {seed} ===")
 
-        acc, n_open, refit = train_one(args, seed, args.gated, model, training_data, test_data, act_bank_path, h,
+        acc, n_open, n_used, refit = train_one(args, seed, args.gated, model, training_data, test_data, act_bank_path, h,
                                        session_dir=session_dir)
         print(f"[{label}] seed={seed} test_acc={acc:.4f} open_concepts={n_open}/{h.shape[0]}")
 
         accs.append(acc)
+        n_useds.append(n_used)
         n_opens.append(n_open)
         if refit is not None:
             refit_accs.append(refit["test_accuracy"])
             refit_n.append(refit["n_concepts"])
             masked_accs.append(refit["masked_accuracy_no_refit"])
+            for arm, key in (("gated_refit_cold", "gated_cold"), ("random_refit", "random")):
+                if "random_control" in refit:
+                    control[arm][0].append(refit["random_control"][key]["acc"])
+                    control[arm][1].append(refit["random_control"][key]["n_concepts"])
 
     summary = {
         "dataset": args.dataset,
@@ -175,15 +210,20 @@ def main(args):
         "epochs": args.epochs,
     }
     summary[label] = summarize(label, accs, n_opens)
+    if not args.gated:
+        summary[label].update(n_used_per_seed=n_useds, n_used_mean=statistics.fmean(n_useds), used_tol=1e-3)
     if refit_accs:
         summary["refit_tau"] = args.refit_tau
         summary["gated_refit"] = summarize("gated_refit", refit_accs, refit_n)
         summary["gated_refit"]["masked_acc_per_seed"] = masked_accs
         summary["gated_refit"]["masked_acc_mean"] = statistics.fmean(masked_accs)
+    for arm, (c_accs, c_n) in control.items():
+        if c_accs:
+            summary[arm] = summarize(arm, c_accs, c_n)
 
     results_dir = path.join(plotter.get_classifier_path(), args.concept_data, "seed_sweep_results")
     makedirs(results_dir, exist_ok=True)
-    out_path = path.join(results_dir, f"{args.dataset}_{label}_seed_sweep_{stamp}.json")
+    out_path = path.join(results_dir, f"{args.dataset}_{label}{tag}_seed_sweep_{stamp}.json")
     summary["session_dir"] = session_dir if args.save_classifiers else None
     with open(out_path, "w") as f:
         json.dump(summary, f, indent=2)
@@ -191,6 +231,7 @@ def main(args):
         with open(path.join(session_dir, "seed_sweep_summary.json"), "w") as f:
             json.dump(summary, f, indent=2)
     print(f"Saved results to {out_path}")
+    return summary
 
 
 if __name__ == "__main__":
@@ -248,6 +289,17 @@ if __name__ == "__main__":
                         help="gated: keep concepts with gate > tau, drop the rest, refit the head on the survivors "
                              "(reported as 'gated_refit'; saved as classifier_refit.pt with --save_classifiers)")
     parser.add_argument("--refit_epochs", type=int, default=20)
+    parser.add_argument("--lambda_gates", type=float, nargs="+", default=None,
+                        help="gated: lambda_gate sweep -- train every seed at each of these values (overrides "
+                             "--lambda_gate) and also write <dataset>_gate_sweep_<stamp>.json collecting all of them")
+    parser.add_argument("--lam_ws", type=float, nargs="+", default=None,
+                        help="baseline: weight elastic-net sparsity sweep -- train every seed at each of these --lam_w "
+                             "values and also write <dataset>_sparse_sweep_<stamp>.json collecting all of them (the "
+                             "native-sparsity counterpart of --lambda_gates)")
+    parser.add_argument("--random_control", action="store_true",
+                        help="gated: matched random-concept control. With K = gate > refit_tau, refit a fresh head "
+                             "(cold start, same recipe) on K ('gated_refit_cold') and on |K| uniformly random "
+                             "concepts ('random_refit'); see gating.matched_random_refits")
     parser.add_argument("--no_refit", action="store_true", help="skip the mask-and-refit stage")
     parser.add_argument("-g", "--gated", action="store_true",
                         help="Train the gated probe across seeds; omit to train the baseline probe instead")

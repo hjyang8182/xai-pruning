@@ -1,0 +1,108 @@
+{
+  "dataset": "cifar100",
+  "backbone": "resnet50_v2",
+  "concept_data": "concepts_1000_64",
+  "gated": {
+    "acc_per_seed": [
+      0.5461999773979187,
+      0.5454000234603882,
+      0.5286999940872192,
+      0.5357000231742859,
+      0.5476999878883362
+    ],
+    "acc_mean": 0.5407400012016297,
+    "acc_std": 0.007352981871682555,
+    "n_open_per_seed": [
+      109,
+      109,
+      106,
+      108,
+      110
+    ],
+    "n_open_mean": 108.4,
+    "n_open_std": 1.3564659966250536
+  },
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 1000,
+  "lam_pi": 0.0001,
+  "lambda_gate": 0.003,
+  "gate_forward": "hard",
+  "lam_w": 0.0001,
+  "epochs": 20,
+  "refit_tau": 0.5,
+  "gated_refit": {
+    "acc_per_seed": [
+      0.5714,
+      0.5742,
+      0.5744,
+      0.5694,
+      0.5776
+    ],
+    "acc_mean": 0.5734,
+    "acc_std": 0.0028028556866167734,
+    "n_open_per_seed": [
+      109,
+      109,
+      106,
+      108,
+      110
+    ],
+    "n_open_mean": 108.4,
+    "n_open_std": 1.3564659966250536,
+    "masked_acc_per_seed": [
+      0.5462,
+      0.5454,
+      0.5287,
+      0.5357,
+      0.5477
+    ],
+    "masked_acc_mean": 0.54074
+  },
+  "gated_refit_cold": {
+    "acc_per_seed": [
+      0.572,
+      0.5726,
+      0.5739,
+      0.5698,
+      0.5754
+    ],
+    "acc_mean": 0.5727399999999999,
+    "acc_std": 0.0018778711350888946,
+    "n_open_per_seed": [
+      109,
+      109,
+      106,
+      108,
+      110
+    ],
+    "n_open_mean": 108.4,
+    "n_open_std": 1.3564659966250536
+  },
+  "random_refit": {
+    "acc_per_seed": [
+      0.1827,
+      0.1766,
+      0.1062,
+      0.1733,
+      0.1235
+    ],
+    "acc_mean": 0.15245999999999998,
+    "acc_std": 0.03133742810123384,
+    "n_open_per_seed": [
+      109,
+      109,
+      106,
+      108,
+      110
+    ],
+    "n_open_mean": 108.4,
+    "n_open_std": 1.3564659966250536
+  },
+  "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.003_seed_sweep_2026_10_06_10_38"
+}

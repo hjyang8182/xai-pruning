@@ -375,7 +375,7 @@ def masked_accuracy(weight, bias, gate, acts, labels, *, tau=0.5, fold_gate=True
 
 def prune_and_refit(weight, bias, gate, train_acts, y_train, *, tau=0.5, fold_gate=True,
                     epochs=20, lr=1e-3, batch_size=4096, weight_decay=0.0,
-                    device=None, acts_device="auto", seed=0):
+                    device=None, acts_device="auto", seed=0, keep=None, warm_start=True):
     """Mask the gated head at `tau` and refit the linear layer on the surviving concepts.
 
     weight    : (n_classes, n_concepts) trained final-layer weight
@@ -387,6 +387,10 @@ def prune_and_refit(weight, bias, gate, train_acts, y_train, *, tau=0.5, fold_ga
                 (LF-CBM / VLG-CBM arm C `W_g`).
     train_acts: (n, n_concepts) the exact input of the linear layer, pre-gate (i.e. the
                 raw concept activations for a GatedProbe; UCBM's post-selection signal).
+    keep      : optional (n_concepts,) bool mask to refit on instead of `gate > tau`
+                (e.g. a random subset of matched size; see `matched_random_refits`).
+    warm_start: start the head from the masked gated weights (default). False starts it from
+                nn.Linear's default init, so the refit doesn't depend on the gated head.
 
     Returns (W, b, keep):
         W    : (n_classes, n_concepts) float32 CPU, exactly zero outside `keep`
@@ -397,7 +401,7 @@ def prune_and_refit(weight, bias, gate, train_acts, y_train, *, tau=0.5, fold_ga
     device = torch.device(device) if device is not None else (
         torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu"))
     gate = gate.detach().float().cpu()
-    keep = gate > tau
+    keep = gate > tau if keep is None else keep.detach().bool().cpu()
     W0 = weight.detach().float().cpu()
     if fold_gate:
         W0 = W0 * gate[None, :]
@@ -410,9 +414,10 @@ def prune_and_refit(weight, bias, gate, train_acts, y_train, *, tau=0.5, fold_ga
 
     torch.manual_seed(seed)
     head = nn.Linear(keep_idx.numel(), n_classes).to(device)
-    with torch.no_grad():
-        head.weight.copy_(W0[:, keep_idx])
-        head.bias.copy_(b0)
+    if warm_start:
+        with torch.no_grad():
+            head.weight.copy_(W0[:, keep_idx])
+            head.bias.copy_(b0)
     opt = torch.optim.Adam(head.parameters(), lr=lr, weight_decay=weight_decay)
     crit = nn.CrossEntropyLoss()
 
@@ -427,6 +432,40 @@ def prune_and_refit(weight, bias, gate, train_acts, y_train, *, tau=0.5, fold_ga
             opt.step()
     W[:, keep_idx] = head.weight.detach().cpu()
     return W, head.bias.detach().cpu(), keep
+
+
+def random_keep(n_concepts, k, seed):
+    """(n_concepts,) bool mask with exactly k concepts drawn uniformly at random (seeded)."""
+    g = torch.Generator().manual_seed(seed)
+    keep = torch.zeros(n_concepts, dtype=torch.bool)
+    keep[torch.randperm(n_concepts, generator=g)[:k]] = True
+    return keep
+
+
+def matched_random_refits(weight, bias, gate, train_acts, y_train, test_acts, y_test, *, tau=0.5,
+                          fold_gate=True, epochs=20, lr=1e-3, batch_size=4096, device=None, seed=0):
+    """Matched random-concept control for a gated head.
+
+    K = gate > tau. Refits a fresh linear head (cold start, identical recipe) on
+      - gated_cold : the gate-selected K
+      - random     : |K| concepts drawn uniformly at random (seed-derived)
+    and returns each one's test accuracy and concept count. Both arms are trained in exactly the same
+    way, so their gap is purely about *which* concepts the gate kept. (The usual warm-started
+    `prune_and_refit` isn't a fair partner for a random subset: the random columns would inherit
+    near-zero weights from closed gates.)
+    """
+    gate_keep = gate.detach().float().cpu() > tau
+    k = int(gate_keep.sum())
+    # offset so the draw isn't the same stream as the refit's own torch.manual_seed(seed)
+    rand_keep = random_keep(gate_keep.numel(), k, seed + 7919)
+    common = dict(tau=tau, fold_gate=fold_gate, epochs=epochs, lr=lr, batch_size=batch_size,
+                  device=device, seed=seed, warm_start=False)
+    out = {}
+    for name, keep in (("gated_cold", gate_keep), ("random", rand_keep)):
+        W_r, b_r, keep = prune_and_refit(weight, bias, gate, train_acts, y_train, keep=keep, **common)
+        out[name] = {"acc": evaluate_head(W_r, b_r, test_acts, y_test, device=device),
+                     "n_concepts": int(keep.sum())}
+    return out
 
 
 def evaluate_head(W, b, acts, labels, *, device=None, batch_size=65536):

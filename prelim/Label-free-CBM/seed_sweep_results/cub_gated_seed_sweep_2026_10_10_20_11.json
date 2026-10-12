@@ -1,0 +1,68 @@
+{
+  "dataset": "cub",
+  "concept_set": "data/concept_sets/cub_filtered.txt",
+  "shared_from": "seed_sweep_results/shared_cub_20261005_225326",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 208,
+  "lam": 0.0002,
+  "gate_lam": 0.0007,
+  "gate_epochs": 150,
+  "gate_forward": "hard",
+  "arm": "gated",
+  "gated": {
+    "acc_per_seed": [
+      0.7205526828765869,
+      0.718480110168457,
+      0.7151986360549927,
+      0.7013816833496094,
+      0.7177892923355103
+    ],
+    "acc_mean": 0.7146804809570313,
+    "acc_std": 0.00686601992749842,
+    "n_open_per_seed": [
+      38,
+      40,
+      35,
+      34,
+      39
+    ],
+    "n_open_mean": 37.2,
+    "n_open_std": 2.3151673805580453
+  },
+  "refit_tau": 0.5,
+  "gated_refit": {
+    "acc_per_seed": [
+      0.7243523316062176,
+      0.7278065630397237,
+      0.7214162348877374,
+      0.7210708117443869,
+      0.7246977547495682
+    ],
+    "acc_mean": 0.7238687392055267,
+    "acc_std": 0.002460518662315464,
+    "n_open_per_seed": [
+      38,
+      40,
+      35,
+      33,
+      39
+    ],
+    "n_open_mean": 37.0,
+    "n_open_std": 2.6076809620810595,
+    "masked_acc_per_seed": [
+      0.720552677029361,
+      0.7184801381692574,
+      0.7151986183074266,
+      0.7013816925734024,
+      0.7177892918825561
+    ],
+    "masked_acc_mean": 0.7146804835924007
+  },
+  "session_dir": "seed_sweep_results/cub_gated_seed_sweep_2026_10_10_20_11"
+}

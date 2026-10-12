@@ -1,0 +1,49 @@
+{
+  "dataset": "cifar100",
+  "backbone": "resnet50_v2",
+  "concept_data": "concepts_1000_64",
+  "gated": false,
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 1000,
+  "lam_pi": 0.0001,
+  "lambda_gate": 0.0001,
+  "gate_forward": "soft",
+  "lam_w": 0.001,
+  "epochs": 20,
+  "baseline": {
+    "acc_per_seed": [
+      0.555899977684021,
+      0.5512999892234802,
+      0.5532000064849854,
+      0.5562999844551086,
+      0.5552999973297119
+    ],
+    "acc_mean": 0.5543999910354614,
+    "acc_std": 0.0018825472331879586,
+    "n_open_per_seed": [
+      260,
+      271,
+      278,
+      282,
+      277
+    ],
+    "n_open_mean": 273.6,
+    "n_open_std": 7.657675887630659,
+    "n_used_per_seed": [
+      255,
+      258,
+      268,
+      268,
+      260
+    ],
+    "n_used_mean": 261.8,
+    "used_tol": 0.001
+  },
+  "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/baseline_lam0.001_seed_sweep_2026_10_06_17_00"
+}

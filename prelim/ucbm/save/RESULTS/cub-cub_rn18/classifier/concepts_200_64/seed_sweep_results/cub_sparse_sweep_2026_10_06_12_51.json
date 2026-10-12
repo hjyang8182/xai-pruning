@@ -1,0 +1,367 @@
+{
+  "model": "ucbm",
+  "dataset": "cub",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 200,
+  "lam_ws": [
+    0.0,
+    1e-05,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01
+  ],
+  "lam_pi": 0.0001,
+  "points": [
+    {
+      "lam_w": 0.0,
+      "dataset": "cub",
+      "backbone": "cub_rn18",
+      "concept_data": "concepts_200_64",
+      "gated": false,
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 200,
+      "lam_pi": 0.0001,
+      "lambda_gate": 0.0001,
+      "gate_forward": "soft",
+      "epochs": 150,
+      "baseline": {
+        "acc_per_seed": [
+          0.7443907260894775,
+          0.7449085116386414,
+          0.7447359561920166,
+          0.7430099844932556,
+          0.7430099844932556
+        ],
+        "acc_mean": 0.7440110325813294,
+        "acc_std": 0.0008341875819079939,
+        "n_open_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_open_mean": 200.0,
+        "n_open_std": 0.0,
+        "n_used_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_used_mean": 200.0,
+        "used_tol": 0.001
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cub-cub_rn18/classifier/concepts_200_64/baseline_lam0_seed_sweep_2026_10_06_09_14"
+    },
+    {
+      "lam_w": 1e-05,
+      "dataset": "cub",
+      "backbone": "cub_rn18",
+      "concept_data": "concepts_200_64",
+      "gated": false,
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 200,
+      "lam_pi": 0.0001,
+      "lambda_gate": 0.0001,
+      "gate_forward": "soft",
+      "epochs": 150,
+      "baseline": {
+        "acc_per_seed": [
+          0.7474974393844604,
+          0.7487055659294128,
+          0.7478426098823547,
+          0.7483603954315186,
+          0.7488781213760376
+        ],
+        "acc_mean": 0.7482568264007569,
+        "acc_std": 0.0005189113835053427,
+        "n_open_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_open_mean": 200.0,
+        "n_open_std": 0.0,
+        "n_used_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_used_mean": 200.0,
+        "used_tol": 0.001
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cub-cub_rn18/classifier/concepts_200_64/baseline_lam1e-05_seed_sweep_2026_10_06_09_48"
+    },
+    {
+      "lam_w": 0.0001,
+      "dataset": "cub",
+      "backbone": "cub_rn18",
+      "concept_data": "concepts_200_64",
+      "gated": false,
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 200,
+      "lam_pi": 0.0001,
+      "lambda_gate": 0.0001,
+      "gate_forward": "soft",
+      "epochs": 150,
+      "baseline": {
+        "acc_per_seed": [
+          0.750431478023529,
+          0.7493959069252014,
+          0.7511218786239624,
+          0.7497411370277405,
+          0.749568521976471
+        ],
+        "acc_mean": 0.7500517845153809,
+        "acc_std": 0.0006402325386515962,
+        "n_open_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_open_mean": 200.0,
+        "n_open_std": 0.0,
+        "n_used_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_used_mean": 200.0,
+        "used_tol": 0.001
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cub-cub_rn18/classifier/concepts_200_64/baseline_lam0.0001_seed_sweep_2026_10_06_10_21"
+    },
+    {
+      "lam_w": 0.0003,
+      "dataset": "cub",
+      "backbone": "cub_rn18",
+      "concept_data": "concepts_200_64",
+      "gated": false,
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 200,
+      "lam_pi": 0.0001,
+      "lambda_gate": 0.0001,
+      "gate_forward": "soft",
+      "epochs": 150,
+      "baseline": {
+        "acc_per_seed": [
+          0.7480151653289795,
+          0.7492233514785767,
+          0.7473248243331909,
+          0.7492233514785767,
+          0.7471522092819214
+        ],
+        "acc_mean": 0.748187780380249,
+        "acc_std": 0.0008935000385174539,
+        "n_open_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_open_mean": 200.0,
+        "n_open_std": 0.0,
+        "n_used_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_used_mean": 200.0,
+        "used_tol": 0.001
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cub-cub_rn18/classifier/concepts_200_64/baseline_lam0.0003_seed_sweep_2026_10_06_10_53"
+    },
+    {
+      "lam_w": 0.001,
+      "dataset": "cub",
+      "backbone": "cub_rn18",
+      "concept_data": "concepts_200_64",
+      "gated": false,
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 200,
+      "lam_pi": 0.0001,
+      "lambda_gate": 0.0001,
+      "gate_forward": "soft",
+      "epochs": 150,
+      "baseline": {
+        "acc_per_seed": [
+          0.7454262971878052,
+          0.7447359561920166,
+          0.7445633411407471,
+          0.7449085116386414,
+          0.7452536821365356
+        ],
+        "acc_mean": 0.7449775576591492,
+        "acc_std": 0.0003201018080474085,
+        "n_open_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_open_mean": 200.0,
+        "n_open_std": 0.0,
+        "n_used_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_used_mean": 200.0,
+        "used_tol": 0.001
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cub-cub_rn18/classifier/concepts_200_64/baseline_lam0.001_seed_sweep_2026_10_06_11_24"
+    },
+    {
+      "lam_w": 0.003,
+      "dataset": "cub",
+      "backbone": "cub_rn18",
+      "concept_data": "concepts_200_64",
+      "gated": false,
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 200,
+      "lam_pi": 0.0001,
+      "lambda_gate": 0.0001,
+      "gate_forward": "soft",
+      "epochs": 150,
+      "baseline": {
+        "acc_per_seed": [
+          0.7369692921638489,
+          0.7380048036575317,
+          0.7383500337600708,
+          0.7380048036575317,
+          0.7366241216659546
+        ],
+        "acc_mean": 0.7375906109809875,
+        "acc_std": 0.0006693239533439223,
+        "n_open_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_open_mean": 200.0,
+        "n_open_std": 0.0,
+        "n_used_per_seed": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "n_used_mean": 200.0,
+        "used_tol": 0.001
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cub-cub_rn18/classifier/concepts_200_64/baseline_lam0.003_seed_sweep_2026_10_06_11_53"
+    },
+    {
+      "lam_w": 0.01,
+      "dataset": "cub",
+      "backbone": "cub_rn18",
+      "concept_data": "concepts_200_64",
+      "gated": false,
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 200,
+      "lam_pi": 0.0001,
+      "lambda_gate": 0.0001,
+      "gate_forward": "soft",
+      "epochs": 150,
+      "baseline": {
+        "acc_per_seed": [
+          0.7210907936096191,
+          0.720227837562561,
+          0.7195374369621277,
+          0.7214359641075134,
+          0.7207456231117249
+        ],
+        "acc_mean": 0.7206075310707092,
+        "acc_std": 0.0006675600274319834,
+        "n_open_per_seed": [
+          197,
+          197,
+          197,
+          197,
+          197
+        ],
+        "n_open_mean": 197.0,
+        "n_open_std": 0.0,
+        "n_used_per_seed": [
+          197,
+          197,
+          197,
+          197,
+          197
+        ],
+        "n_used_mean": 197.0,
+        "used_tol": 0.001
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cub-cub_rn18/classifier/concepts_200_64/baseline_lam0.01_seed_sweep_2026_10_06_12_23"
+    }
+  ]
+}

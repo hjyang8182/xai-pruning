@@ -1,0 +1,108 @@
+{
+  "dataset": "cifar100",
+  "concept_set": "data/concept_sets/cifar100_filtered.txt",
+  "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 830,
+  "lam": 0.0007,
+  "gate_lam": 0.01,
+  "gate_epochs": 150,
+  "gate_forward": "hard",
+  "arm": "gated",
+  "gated": {
+    "acc_per_seed": [
+      0.5755000114440918,
+      0.5601999759674072,
+      0.5587999820709229,
+      0.5924000144004822,
+      0.5144000053405762
+    ],
+    "acc_mean": 0.560259997844696,
+    "acc_std": 0.025963485281754163,
+    "n_open_per_seed": [
+      47,
+      45,
+      47,
+      50,
+      43
+    ],
+    "n_open_mean": 46.4,
+    "n_open_std": 2.3323807579381204
+  },
+  "refit_tau": 0.5,
+  "gated_refit": {
+    "acc_per_seed": [
+      0.6071,
+      0.6021,
+      0.5978,
+      0.6126,
+      0.5934
+    ],
+    "acc_mean": 0.6026,
+    "acc_std": 0.006755442250511802,
+    "n_open_per_seed": [
+      47,
+      45,
+      47,
+      50,
+      43
+    ],
+    "n_open_mean": 46.4,
+    "n_open_std": 2.3323807579381204,
+    "masked_acc_per_seed": [
+      0.5755,
+      0.5602,
+      0.5588,
+      0.5924,
+      0.5144
+    ],
+    "masked_acc_mean": 0.56026
+  },
+  "gated_refit_cold": {
+    "acc_per_seed": [
+      0.604,
+      0.5961,
+      0.5965,
+      0.6104,
+      0.5897
+    ],
+    "acc_mean": 0.59934,
+    "acc_std": 0.007148874037217344,
+    "n_open_per_seed": [
+      47,
+      45,
+      47,
+      50,
+      43
+    ],
+    "n_open_mean": 46.4,
+    "n_open_std": 2.3323807579381204
+  },
+  "random_refit": {
+    "acc_per_seed": [
+      0.5653,
+      0.5582,
+      0.5704,
+      0.5706,
+      0.5553
+    ],
+    "acc_mean": 0.56396,
+    "acc_std": 0.006253511013822549,
+    "n_open_per_seed": [
+      47,
+      45,
+      47,
+      50,
+      43
+    ],
+    "n_open_mean": 46.4,
+    "n_open_std": 2.3323807579381204
+  },
+  "session_dir": "seed_sweep_results/cifar100_gated_lam0.01_seed_sweep_2026_10_06_04_45"
+}
