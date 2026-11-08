@@ -1,0 +1,49 @@
+{
+  "dataset": "places365",
+  "backbone": "places365_rn18",
+  "concept_data": "concepts_3650_64",
+  "gated": false,
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 3650,
+  "lam_pi": 0.0001,
+  "lambda_gate": 0.0001,
+  "gate_forward": "soft",
+  "lam_w": 0.01,
+  "epochs": 20,
+  "baseline": {
+    "acc_per_seed": [
+      0.002739726100116968,
+      0.002739726100116968,
+      0.002739726100116968,
+      0.002739726100116968,
+      0.002739726100116968
+    ],
+    "acc_mean": 0.002739726100116968,
+    "acc_std": 0.0,
+    "n_open_per_seed": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_open_mean": 0.0,
+    "n_open_std": 0.0,
+    "n_used_per_seed": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n_used_mean": 0.0,
+    "used_tol": 0.001
+  },
+  "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/places365-places365_rn18/classifier/concepts_3650_64/baseline_lam0.01_seed_sweep_2026_10_18_20_24"
+}

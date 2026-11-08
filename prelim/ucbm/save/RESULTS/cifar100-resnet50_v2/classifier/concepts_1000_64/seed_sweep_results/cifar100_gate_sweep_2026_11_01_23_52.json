@@ -1,0 +1,5764 @@
+{
+  "model": "ucbm",
+  "dataset": "cifar100",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 1000,
+  "lambda_gates": [
+    1e-05,
+    3e-05,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01
+  ],
+  "refit_tau": 0.5,
+  "refit_epochs": 20,
+  "gate_forward": "hard",
+  "points": [
+    {
+      "lambda_gate": 1e-05,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6272000074386597,
+          0.6262999773025513,
+          0.6244000196456909,
+          0.6266999840736389,
+          0.6297000050544739
+        ],
+        "acc_mean": 0.6268599987030029,
+        "acc_std": 0.0017071594904815573,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6413,
+          0.6434,
+          0.6411,
+          0.6444,
+          0.643
+        ],
+        "acc_mean": 0.64264,
+        "acc_std": 0.001262695529413161,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275,
+        "masked_acc_per_seed": [
+          0.6272,
+          0.6263,
+          0.6244,
+          0.6267,
+          0.6297
+        ],
+        "masked_acc_mean": 0.62686
+      },
+      "gated_refit_cold": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6421,
+          0.6449,
+          0.6439,
+          0.6431,
+          0.6405
+        ],
+        "acc_mean": 0.6429,
+        "acc_std": 0.0015126136320951474,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "nec_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "nec_mean": 375.0,
+        "nec_std": 1.8973665961010275
+      },
+      "random_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.591,
+          0.5893,
+          0.586,
+          0.5803,
+          0.5668
+        ],
+        "acc_mean": 0.5826800000000001,
+        "acc_std": 0.00873965674383154,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "nec_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "nec_mean": 375.0,
+        "nec_std": 1.8973665961010275
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam1e-05_seed_sweep_2026_10_05_23_23",
+      "random_refit_zeroed": {
+        "acc_per_seed": [
+          0.5562,
+          0.55,
+          0.5512,
+          0.5473,
+          0.5361
+        ],
+        "acc_mean": 0.54816,
+        "acc_std": 0.006685087882743206,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275
+      },
+      "random_live_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.591,
+          0.5893,
+          0.586,
+          0.5803,
+          0.5668
+        ],
+        "acc_mean": 0.5826800000000001,
+        "acc_std": 0.00873965674383154,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "nec_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "nec_mean": 375.0,
+        "nec_std": 1.8973665961010275
+      },
+      "magnitude_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6421,
+          0.642,
+          0.6453,
+          0.6445,
+          0.6423
+        ],
+        "acc_mean": 0.6432399999999999,
+        "acc_std": 0.0013821722034536672,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "overlap_with_gate_per_seed": [
+          346,
+          347,
+          351,
+          352,
+          348
+        ],
+        "overlap_with_gate_mean": 348.8,
+        "overlap_with_gate_std": 2.3151673805580453,
+        "nec_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "nec_mean": 375.0,
+        "nec_std": 1.8973665961010275
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6148,
+          0.61,
+          0.6092,
+          0.6098,
+          0.605
+        ],
+        "acc_mean": 0.60976,
+        "acc_std": 0.003112298186228316,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "overlap_with_gate_per_seed": [
+          204,
+          197,
+          195,
+          197,
+          185
+        ],
+        "overlap_with_gate_mean": 195.6,
+        "overlap_with_gate_std": 6.118823416311343,
+        "nec_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "nec_mean": 375.0,
+        "nec_std": 1.8973665961010275
+      },
+      "threshold_-1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6455,
+          0.6469,
+          0.646,
+          0.6475,
+          0.6447
+        ],
+        "acc_mean": 0.64612,
+        "acc_std": 0.0009927738916792532,
+        "n_open_per_seed": [
+          486,
+          487,
+          488,
+          492,
+          491
+        ],
+        "n_open_mean": 488.8,
+        "n_open_std": 2.3151673805580453,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "n_near_zero_per_seed": [
+          6,
+          5,
+          6,
+          7,
+          7
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 0.7483314773547882,
+        "nec_per_seed": [
+          486,
+          487,
+          488,
+          492,
+          491
+        ],
+        "nec_mean": 488.8,
+        "nec_std": 2.3151673805580453
+      },
+      "threshold_-0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6431,
+          0.6443,
+          0.644,
+          0.6447,
+          0.6437
+        ],
+        "acc_mean": 0.6439600000000001,
+        "acc_std": 0.0005425863986500272,
+        "n_open_per_seed": [
+          406,
+          401,
+          403,
+          408,
+          408
+        ],
+        "n_open_mean": 405.2,
+        "n_open_std": 2.7856776554368237,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "n_near_zero_per_seed": [
+          6,
+          5,
+          6,
+          7,
+          7
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 0.7483314773547882,
+        "nec_per_seed": [
+          406,
+          401,
+          403,
+          408,
+          408
+        ],
+        "nec_mean": 405.2,
+        "nec_std": 2.7856776554368237
+      },
+      "threshold_-0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6411,
+          0.644,
+          0.6431,
+          0.6452,
+          0.6435
+        ],
+        "acc_mean": 0.64338,
+        "acc_std": 0.001340746060967548,
+        "n_open_per_seed": [
+          379,
+          377,
+          381,
+          382,
+          377
+        ],
+        "n_open_mean": 379.2,
+        "n_open_std": 2.039607805437114,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "n_near_zero_per_seed": [
+          6,
+          5,
+          6,
+          7,
+          7
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 0.7483314773547882,
+        "nec_per_seed": [
+          379,
+          377,
+          381,
+          382,
+          377
+        ],
+        "nec_mean": 379.2,
+        "nec_std": 2.039607805437114
+      },
+      "threshold_0_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6421,
+          0.6449,
+          0.6439,
+          0.6431,
+          0.6405
+        ],
+        "acc_mean": 0.6429,
+        "acc_std": 0.0015126136320951474,
+        "n_open_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_open_mean": 375.0,
+        "n_open_std": 1.8973665961010275,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "n_near_zero_per_seed": [
+          6,
+          5,
+          6,
+          7,
+          7
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 0.7483314773547882,
+        "nec_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "nec_mean": 375.0,
+        "nec_std": 1.8973665961010275
+      },
+      "threshold_0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6421,
+          0.6434,
+          0.645,
+          0.6432,
+          0.6446
+        ],
+        "acc_mean": 0.64366,
+        "acc_std": 0.00103846039885977,
+        "n_open_per_seed": [
+          373,
+          372,
+          375,
+          375,
+          370
+        ],
+        "n_open_mean": 373.0,
+        "n_open_std": 1.8973665961010275,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "n_near_zero_per_seed": [
+          6,
+          5,
+          6,
+          7,
+          7
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 0.7483314773547882,
+        "nec_per_seed": [
+          373,
+          372,
+          375,
+          375,
+          370
+        ],
+        "nec_mean": 373.0,
+        "nec_std": 1.8973665961010275
+      },
+      "threshold_0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6425,
+          0.6413,
+          0.644,
+          0.6439,
+          0.6414
+        ],
+        "acc_mean": 0.64262,
+        "acc_std": 0.001165160933090382,
+        "n_open_per_seed": [
+          349,
+          352,
+          351,
+          355,
+          357
+        ],
+        "n_open_mean": 352.8,
+        "n_open_std": 2.85657137141714,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "n_near_zero_per_seed": [
+          6,
+          5,
+          6,
+          7,
+          7
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 0.7483314773547882,
+        "nec_per_seed": [
+          349,
+          352,
+          351,
+          355,
+          357
+        ],
+        "nec_mean": 352.8,
+        "nec_std": 2.85657137141714
+      },
+      "threshold_1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6239,
+          0.6217,
+          0.6189,
+          0.6224,
+          0.6207
+        ],
+        "acc_mean": 0.6215200000000001,
+        "acc_std": 0.0016737980762326081,
+        "n_open_per_seed": [
+          214,
+          207,
+          212,
+          210,
+          212
+        ],
+        "n_open_mean": 211.0,
+        "n_open_std": 2.3664319132398464,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          375,
+          374,
+          377,
+          377,
+          372
+        ],
+        "n_k_live_mean": 375.0,
+        "n_k_live_std": 1.8973665961010275,
+        "n_near_zero_per_seed": [
+          6,
+          5,
+          6,
+          7,
+          7
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 0.7483314773547882,
+        "nec_per_seed": [
+          214,
+          207,
+          212,
+          210,
+          212
+        ],
+        "nec_mean": 211.0,
+        "nec_std": 2.3664319132398464
+      }
+    },
+    {
+      "lambda_gate": 3e-05,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6262999773025513,
+          0.6269000172615051,
+          0.6233000159263611,
+          0.626800000667572,
+          0.630299985408783
+        ],
+        "acc_mean": 0.6267199993133545,
+        "acc_std": 0.0022238620451216955,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6438,
+          0.6408,
+          0.6425,
+          0.6421,
+          0.644
+        ],
+        "acc_mean": 0.64264,
+        "acc_std": 0.0011740528097151344,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146,
+        "masked_acc_per_seed": [
+          0.6263,
+          0.6269,
+          0.6233,
+          0.6268,
+          0.6303
+        ],
+        "masked_acc_mean": 0.6267199999999999
+      },
+      "gated_refit_cold": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6426,
+          0.6408,
+          0.6419,
+          0.6419,
+          0.6433
+        ],
+        "acc_mean": 0.6421,
+        "acc_std": 0.000831865373723392,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "nec_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "nec_mean": 361.4,
+        "nec_std": 2.4166091947189146
+      },
+      "random_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5894,
+          0.5893,
+          0.5876,
+          0.5813,
+          0.5672
+        ],
+        "acc_mean": 0.58296,
+        "acc_std": 0.008418218338817304,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "nec_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "nec_mean": 361.4,
+        "nec_std": 2.4166091947189146
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam3e-05_seed_sweep_2026_10_06_02_28",
+      "random_refit_zeroed": {
+        "acc_per_seed": [
+          0.5549,
+          0.5474,
+          0.5501,
+          0.5419,
+          0.5325
+        ],
+        "acc_mean": 0.54536,
+        "acc_std": 0.0076810415960337,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146
+      },
+      "random_live_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5894,
+          0.5893,
+          0.5876,
+          0.5813,
+          0.5672
+        ],
+        "acc_mean": 0.58296,
+        "acc_std": 0.008418218338817304,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "nec_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "nec_mean": 361.4,
+        "nec_std": 2.4166091947189146
+      },
+      "magnitude_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6447,
+          0.6416,
+          0.6428,
+          0.6436,
+          0.6437
+        ],
+        "acc_mean": 0.6432800000000001,
+        "acc_std": 0.00103421467790786,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "overlap_with_gate_per_seed": [
+          336,
+          337,
+          337,
+          339,
+          339
+        ],
+        "overlap_with_gate_mean": 337.6,
+        "overlap_with_gate_std": 1.2,
+        "nec_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "nec_mean": 361.4,
+        "nec_std": 2.4166091947189146
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6103,
+          0.6104,
+          0.6054,
+          0.6083,
+          0.6045
+        ],
+        "acc_mean": 0.60778,
+        "acc_std": 0.002445730974575884,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "overlap_with_gate_per_seed": [
+          192,
+          186,
+          182,
+          186,
+          174
+        ],
+        "overlap_with_gate_mean": 184.0,
+        "overlap_with_gate_std": 5.932958789676531,
+        "nec_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "nec_mean": 361.4,
+        "nec_std": 2.4166091947189146
+      },
+      "threshold_-1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6455,
+          0.6471,
+          0.6451,
+          0.646,
+          0.6424
+        ],
+        "acc_mean": 0.6452199999999999,
+        "acc_std": 0.0015612815249019122,
+        "n_open_per_seed": [
+          430,
+          429,
+          423,
+          432,
+          428
+        ],
+        "n_open_mean": 428.4,
+        "n_open_std": 3.006659275674582,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "n_near_zero_per_seed": [
+          5,
+          7,
+          6,
+          8,
+          5
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 1.16619037896906,
+        "nec_per_seed": [
+          430,
+          429,
+          423,
+          432,
+          428
+        ],
+        "nec_mean": 428.4,
+        "nec_std": 3.006659275674582
+      },
+      "threshold_-0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6413,
+          0.6431,
+          0.6426,
+          0.6432,
+          0.6438
+        ],
+        "acc_mean": 0.6428,
+        "acc_std": 0.0008414273587185234,
+        "n_open_per_seed": [
+          379,
+          387,
+          389,
+          394,
+          388
+        ],
+        "n_open_mean": 387.4,
+        "n_open_std": 4.841487374764082,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "n_near_zero_per_seed": [
+          5,
+          7,
+          6,
+          8,
+          5
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 1.16619037896906,
+        "nec_per_seed": [
+          379,
+          387,
+          389,
+          394,
+          388
+        ],
+        "nec_mean": 387.4,
+        "nec_std": 4.841487374764082
+      },
+      "threshold_-0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6406,
+          0.6431,
+          0.6441,
+          0.6459,
+          0.6443
+        ],
+        "acc_mean": 0.6436,
+        "acc_std": 0.0017481418706729972,
+        "n_open_per_seed": [
+          359,
+          366,
+          363,
+          367,
+          367
+        ],
+        "n_open_mean": 364.4,
+        "n_open_std": 3.0724582991474434,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "n_near_zero_per_seed": [
+          5,
+          7,
+          6,
+          8,
+          5
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 1.16619037896906,
+        "nec_per_seed": [
+          359,
+          366,
+          363,
+          367,
+          367
+        ],
+        "nec_mean": 364.4,
+        "nec_std": 3.0724582991474434
+      },
+      "threshold_0_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6426,
+          0.6408,
+          0.6419,
+          0.6419,
+          0.6433
+        ],
+        "acc_mean": 0.6421,
+        "acc_std": 0.000831865373723392,
+        "n_open_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_open_mean": 361.4,
+        "n_open_std": 2.4166091947189146,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "n_near_zero_per_seed": [
+          5,
+          7,
+          6,
+          8,
+          5
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 1.16619037896906,
+        "nec_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "nec_mean": 361.4,
+        "nec_std": 2.4166091947189146
+      },
+      "threshold_0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6424,
+          0.6419,
+          0.6428,
+          0.6419,
+          0.6409
+        ],
+        "acc_mean": 0.64198,
+        "acc_std": 0.0006368673331236224,
+        "n_open_per_seed": [
+          354,
+          359,
+          357,
+          359,
+          362
+        ],
+        "n_open_mean": 358.2,
+        "n_open_std": 2.6381811916545836,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "n_near_zero_per_seed": [
+          5,
+          7,
+          6,
+          8,
+          5
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 1.16619037896906,
+        "nec_per_seed": [
+          354,
+          359,
+          357,
+          359,
+          362
+        ],
+        "nec_mean": 358.2,
+        "nec_std": 2.6381811916545836
+      },
+      "threshold_0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6386,
+          0.6415,
+          0.6419,
+          0.6394,
+          0.6422
+        ],
+        "acc_mean": 0.64072,
+        "acc_std": 0.001444160655882876,
+        "n_open_per_seed": [
+          336,
+          331,
+          332,
+          332,
+          334
+        ],
+        "n_open_mean": 333.0,
+        "n_open_std": 1.7888543819998317,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "n_near_zero_per_seed": [
+          5,
+          7,
+          6,
+          8,
+          5
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 1.16619037896906,
+        "nec_per_seed": [
+          336,
+          331,
+          332,
+          332,
+          334
+        ],
+        "nec_mean": 333.0,
+        "nec_std": 1.7888543819998317
+      },
+      "threshold_1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6191,
+          0.6185,
+          0.6183,
+          0.6184,
+          0.6195
+        ],
+        "acc_mean": 0.61876,
+        "acc_std": 0.0004630334761116328,
+        "n_open_per_seed": [
+          197,
+          200,
+          200,
+          202,
+          199
+        ],
+        "n_open_mean": 199.6,
+        "n_open_std": 1.624807680927192,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          357,
+          362,
+          361,
+          364,
+          363
+        ],
+        "n_k_live_mean": 361.4,
+        "n_k_live_std": 2.4166091947189146,
+        "n_near_zero_per_seed": [
+          5,
+          7,
+          6,
+          8,
+          5
+        ],
+        "n_near_zero_mean": 6.2,
+        "n_near_zero_std": 1.16619037896906,
+        "nec_per_seed": [
+          197,
+          200,
+          200,
+          202,
+          199
+        ],
+        "nec_mean": 199.6,
+        "nec_std": 1.624807680927192
+      }
+    },
+    {
+      "lambda_gate": 0.0001,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6255000233650208,
+          0.6255999803543091,
+          0.6218000054359436,
+          0.6237000226974487,
+          0.6281999945640564
+        ],
+        "acc_mean": 0.6249600052833557,
+        "acc_std": 0.002134098091065905,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.639,
+          0.639,
+          0.6402,
+          0.6384,
+          0.6398
+        ],
+        "acc_mean": 0.6392800000000001,
+        "acc_std": 0.00064000000000001,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424,
+        "masked_acc_per_seed": [
+          0.6255,
+          0.6256,
+          0.6218,
+          0.6237,
+          0.6282
+        ],
+        "masked_acc_mean": 0.62496
+      },
+      "gated_refit_cold": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6383,
+          0.6389,
+          0.6409,
+          0.6395,
+          0.6386
+        ],
+        "acc_mean": 0.63924,
+        "acc_std": 0.0009200000000000169,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "nec_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "nec_mean": 322.6,
+        "nec_std": 1.9595917942265424
+      },
+      "random_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5894,
+          0.5817,
+          0.5813,
+          0.5733,
+          0.5649
+        ],
+        "acc_mean": 0.57812,
+        "acc_std": 0.008344674948732296,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "nec_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "nec_mean": 322.6,
+        "nec_std": 1.9595917942265424
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.0001_seed_sweep_2026_10_06_04_05",
+      "random_refit_zeroed": {
+        "acc_per_seed": [
+          0.541,
+          0.514,
+          0.5233,
+          0.5073,
+          0.5076
+        ],
+        "acc_mean": 0.51864,
+        "acc_std": 0.012599142827986362,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424
+      },
+      "random_live_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5894,
+          0.5817,
+          0.5813,
+          0.5733,
+          0.5649
+        ],
+        "acc_mean": 0.57812,
+        "acc_std": 0.008344674948732296,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "nec_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "nec_mean": 322.6,
+        "nec_std": 1.9595917942265424
+      },
+      "magnitude_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6415,
+          0.6402,
+          0.6408,
+          0.6404,
+          0.643
+        ],
+        "acc_mean": 0.64118,
+        "acc_std": 0.0010127191120937798,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "overlap_with_gate_per_seed": [
+          302,
+          303,
+          306,
+          301,
+          306
+        ],
+        "overlap_with_gate_mean": 303.6,
+        "overlap_with_gate_std": 2.0591260281974,
+        "nec_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "nec_mean": 322.6,
+        "nec_std": 1.9595917942265424
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6047,
+          0.6058,
+          0.6057,
+          0.6031,
+          0.5947
+        ],
+        "acc_mean": 0.6028,
+        "acc_std": 0.00416461282714252,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "overlap_with_gate_per_seed": [
+          165,
+          166,
+          160,
+          163,
+          154
+        ],
+        "overlap_with_gate_mean": 161.6,
+        "overlap_with_gate_std": 4.317406628984581,
+        "nec_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "nec_mean": 322.6,
+        "nec_std": 1.9595917942265424
+      },
+      "threshold_-1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6404,
+          0.6455,
+          0.6454,
+          0.6438,
+          0.6427
+        ],
+        "acc_mean": 0.64356,
+        "acc_std": 0.0018937792902025245,
+        "n_open_per_seed": [
+          372,
+          377,
+          377,
+          379,
+          376
+        ],
+        "n_open_mean": 376.2,
+        "n_open_std": 2.3151673805580453,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "n_near_zero_per_seed": [
+          8,
+          13,
+          14,
+          10,
+          9
+        ],
+        "n_near_zero_mean": 10.8,
+        "n_near_zero_std": 2.3151673805580453,
+        "nec_per_seed": [
+          372,
+          377,
+          377,
+          379,
+          376
+        ],
+        "nec_mean": 376.2,
+        "nec_std": 2.3151673805580453
+      },
+      "threshold_-0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6398,
+          0.6403,
+          0.6442,
+          0.6424,
+          0.6439
+        ],
+        "acc_mean": 0.64212,
+        "acc_std": 0.001803773821741516,
+        "n_open_per_seed": [
+          342,
+          352,
+          348,
+          353,
+          350
+        ],
+        "n_open_mean": 349.0,
+        "n_open_std": 3.8987177379235853,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "n_near_zero_per_seed": [
+          8,
+          13,
+          14,
+          10,
+          9
+        ],
+        "n_near_zero_mean": 10.8,
+        "n_near_zero_std": 2.3151673805580453,
+        "nec_per_seed": [
+          342,
+          352,
+          348,
+          353,
+          350
+        ],
+        "nec_mean": 349.0,
+        "nec_std": 3.8987177379235853
+      },
+      "threshold_-0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6388,
+          0.6421,
+          0.6413,
+          0.6419,
+          0.6411
+        ],
+        "acc_mean": 0.64104,
+        "acc_std": 0.0011791522378386847,
+        "n_open_per_seed": [
+          327,
+          329,
+          328,
+          326,
+          332
+        ],
+        "n_open_mean": 328.4,
+        "n_open_std": 2.0591260281974,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "n_near_zero_per_seed": [
+          8,
+          13,
+          14,
+          10,
+          9
+        ],
+        "n_near_zero_mean": 10.8,
+        "n_near_zero_std": 2.3151673805580453,
+        "nec_per_seed": [
+          327,
+          329,
+          328,
+          326,
+          332
+        ],
+        "nec_mean": 328.4,
+        "nec_std": 2.0591260281974
+      },
+      "threshold_0_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6383,
+          0.6389,
+          0.6409,
+          0.6395,
+          0.6386
+        ],
+        "acc_mean": 0.63924,
+        "acc_std": 0.0009200000000000169,
+        "n_open_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_open_mean": 322.6,
+        "n_open_std": 1.9595917942265424,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "n_near_zero_per_seed": [
+          8,
+          13,
+          14,
+          10,
+          9
+        ],
+        "n_near_zero_mean": 10.8,
+        "n_near_zero_std": 2.3151673805580453,
+        "nec_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "nec_mean": 322.6,
+        "nec_std": 1.9595917942265424
+      },
+      "threshold_0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6407,
+          0.6396,
+          0.6402,
+          0.6395,
+          0.6383
+        ],
+        "acc_mean": 0.6396599999999999,
+        "acc_std": 0.0008064738061462588,
+        "n_open_per_seed": [
+          319,
+          316,
+          314,
+          316,
+          323
+        ],
+        "n_open_mean": 317.6,
+        "n_open_std": 3.1368774282716245,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "n_near_zero_per_seed": [
+          8,
+          13,
+          14,
+          10,
+          9
+        ],
+        "n_near_zero_mean": 10.8,
+        "n_near_zero_std": 2.3151673805580453,
+        "nec_per_seed": [
+          319,
+          316,
+          314,
+          316,
+          323
+        ],
+        "nec_mean": 317.6,
+        "nec_std": 3.1368774282716245
+      },
+      "threshold_0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6336,
+          0.6366,
+          0.6373,
+          0.6352,
+          0.6361
+        ],
+        "acc_mean": 0.63576,
+        "acc_std": 0.0012784365451597363,
+        "n_open_per_seed": [
+          286,
+          288,
+          285,
+          287,
+          287
+        ],
+        "n_open_mean": 286.6,
+        "n_open_std": 1.019803902718557,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "n_near_zero_per_seed": [
+          8,
+          13,
+          14,
+          10,
+          9
+        ],
+        "n_near_zero_mean": 10.8,
+        "n_near_zero_std": 2.3151673805580453,
+        "nec_per_seed": [
+          286,
+          288,
+          285,
+          287,
+          287
+        ],
+        "nec_mean": 286.6,
+        "nec_std": 1.019803902718557
+      },
+      "threshold_1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.603,
+          0.6027,
+          0.6064,
+          0.6055,
+          0.6052
+        ],
+        "acc_mean": 0.60456,
+        "acc_std": 0.0014540976583434977,
+        "n_open_per_seed": [
+          148,
+          153,
+          156,
+          156,
+          154
+        ],
+        "n_open_mean": 153.4,
+        "n_open_std": 2.939387691339814,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          322,
+          323,
+          322,
+          320,
+          326
+        ],
+        "n_k_live_mean": 322.6,
+        "n_k_live_std": 1.9595917942265424,
+        "n_near_zero_per_seed": [
+          8,
+          13,
+          14,
+          10,
+          9
+        ],
+        "n_near_zero_mean": 10.8,
+        "n_near_zero_std": 2.3151673805580453,
+        "nec_per_seed": [
+          148,
+          153,
+          156,
+          156,
+          154
+        ],
+        "nec_mean": 153.4,
+        "nec_std": 2.939387691339814
+      }
+    },
+    {
+      "lambda_gate": 0.0003,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6211000084877014,
+          0.621399998664856,
+          0.6208999752998352,
+          0.620199978351593,
+          0.6209999918937683
+        ],
+        "acc_mean": 0.6209199905395508,
+        "acc_std": 0.00039699688646652897,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6323,
+          0.627,
+          0.6314,
+          0.6305,
+          0.6321
+        ],
+        "acc_mean": 0.63066,
+        "acc_std": 0.0019355619339096253,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252,
+        "masked_acc_per_seed": [
+          0.6211,
+          0.6214,
+          0.6209,
+          0.6202,
+          0.621
+        ],
+        "masked_acc_mean": 0.62092
+      },
+      "gated_refit_cold": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6331,
+          0.6286,
+          0.6338,
+          0.6322,
+          0.6343
+        ],
+        "acc_mean": 0.6324,
+        "acc_std": 0.002026820169625299,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "nec_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "nec_mean": 257.4,
+        "nec_std": 2.5768197453450252
+      },
+      "random_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5745,
+          0.5648,
+          0.564,
+          0.5579,
+          0.5536
+        ],
+        "acc_mean": 0.56296,
+        "acc_std": 0.007083106663039896,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "nec_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "nec_mean": 257.4,
+        "nec_std": 2.5768197453450252
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.0003_seed_sweep_2026_10_06_06_20",
+      "random_refit_zeroed": {
+        "acc_per_seed": [
+          0.4918,
+          0.441,
+          0.4661,
+          0.4466,
+          0.4465
+        ],
+        "acc_mean": 0.4584,
+        "acc_std": 0.018753453015378264,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252
+      },
+      "random_live_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5745,
+          0.5648,
+          0.564,
+          0.5579,
+          0.5536
+        ],
+        "acc_mean": 0.56296,
+        "acc_std": 0.007083106663039896,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "nec_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "nec_mean": 257.4,
+        "nec_std": 2.5768197453450252
+      },
+      "magnitude_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6355,
+          0.6299,
+          0.6317,
+          0.6299,
+          0.6348
+        ],
+        "acc_mean": 0.63236,
+        "acc_std": 0.00238126017058194,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "overlap_with_gate_per_seed": [
+          237,
+          240,
+          237,
+          231,
+          245
+        ],
+        "overlap_with_gate_mean": 238.0,
+        "overlap_with_gate_std": 4.560701700396552,
+        "nec_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "nec_mean": 257.4,
+        "nec_std": 2.5768197453450252
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5838,
+          0.5833,
+          0.5794,
+          0.5873,
+          0.5837
+        ],
+        "acc_mean": 0.5835,
+        "acc_std": 0.0025067907770693625,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "overlap_with_gate_per_seed": [
+          114,
+          118,
+          113,
+          100,
+          117
+        ],
+        "overlap_with_gate_mean": 112.4,
+        "overlap_with_gate_std": 6.468384651518491,
+        "nec_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "nec_mean": 257.4,
+        "nec_std": 2.5768197453450252
+      },
+      "threshold_-1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6384,
+          0.6405,
+          0.6374,
+          0.6378,
+          0.6354
+        ],
+        "acc_mean": 0.6378999999999999,
+        "acc_std": 0.0016443843832875543,
+        "n_open_per_seed": [
+          303,
+          307,
+          305,
+          302,
+          300
+        ],
+        "n_open_mean": 303.4,
+        "n_open_std": 2.4166091947189146,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "n_near_zero_per_seed": [
+          12,
+          12,
+          16,
+          17,
+          14
+        ],
+        "n_near_zero_mean": 14.2,
+        "n_near_zero_std": 2.039607805437114,
+        "nec_per_seed": [
+          303,
+          307,
+          305,
+          302,
+          300
+        ],
+        "nec_mean": 303.4,
+        "nec_std": 2.4166091947189146
+      },
+      "threshold_-0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6319,
+          0.633,
+          0.6374,
+          0.6344,
+          0.6358
+        ],
+        "acc_mean": 0.6345,
+        "acc_std": 0.0019555050498528395,
+        "n_open_per_seed": [
+          283,
+          279,
+          285,
+          282,
+          285
+        ],
+        "n_open_mean": 282.8,
+        "n_open_std": 2.227105745132009,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "n_near_zero_per_seed": [
+          12,
+          12,
+          16,
+          17,
+          14
+        ],
+        "n_near_zero_mean": 14.2,
+        "n_near_zero_std": 2.039607805437114,
+        "nec_per_seed": [
+          283,
+          279,
+          285,
+          282,
+          285
+        ],
+        "nec_mean": 282.8,
+        "nec_std": 2.227105745132009
+      },
+      "threshold_-0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.632,
+          0.6317,
+          0.6315,
+          0.6321,
+          0.6347
+        ],
+        "acc_mean": 0.6324,
+        "acc_std": 0.001169615321377095,
+        "n_open_per_seed": [
+          262,
+          262,
+          265,
+          264,
+          265
+        ],
+        "n_open_mean": 263.6,
+        "n_open_std": 1.3564659966250536,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "n_near_zero_per_seed": [
+          12,
+          12,
+          16,
+          17,
+          14
+        ],
+        "n_near_zero_mean": 14.2,
+        "n_near_zero_std": 2.039607805437114,
+        "nec_per_seed": [
+          262,
+          262,
+          265,
+          264,
+          265
+        ],
+        "nec_mean": 263.6,
+        "nec_std": 1.3564659966250536
+      },
+      "threshold_0_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6331,
+          0.6286,
+          0.6338,
+          0.6322,
+          0.6343
+        ],
+        "acc_mean": 0.6324,
+        "acc_std": 0.002026820169625299,
+        "n_open_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_open_mean": 257.4,
+        "n_open_std": 2.5768197453450252,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "n_near_zero_per_seed": [
+          12,
+          12,
+          16,
+          17,
+          14
+        ],
+        "n_near_zero_mean": 14.2,
+        "n_near_zero_std": 2.039607805437114,
+        "nec_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "nec_mean": 257.4,
+        "nec_std": 2.5768197453450252
+      },
+      "threshold_0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6287,
+          0.6303,
+          0.6285,
+          0.6314,
+          0.6326
+        ],
+        "acc_mean": 0.6303,
+        "acc_std": 0.0015684387141358263,
+        "n_open_per_seed": [
+          250,
+          250,
+          249,
+          247,
+          251
+        ],
+        "n_open_mean": 249.4,
+        "n_open_std": 1.3564659966250536,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "n_near_zero_per_seed": [
+          12,
+          12,
+          16,
+          17,
+          14
+        ],
+        "n_near_zero_mean": 14.2,
+        "n_near_zero_std": 2.039607805437114,
+        "nec_per_seed": [
+          250,
+          250,
+          249,
+          247,
+          251
+        ],
+        "nec_mean": 249.4,
+        "nec_std": 1.3564659966250536
+      },
+      "threshold_0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6241,
+          0.621,
+          0.6213,
+          0.6225,
+          0.62
+        ],
+        "acc_mean": 0.62178,
+        "acc_std": 0.0014076931483814274,
+        "n_open_per_seed": [
+          205,
+          204,
+          203,
+          212,
+          202
+        ],
+        "n_open_mean": 205.2,
+        "n_open_std": 3.54400902933387,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "n_near_zero_per_seed": [
+          12,
+          12,
+          16,
+          17,
+          14
+        ],
+        "n_near_zero_mean": 14.2,
+        "n_near_zero_std": 2.039607805437114,
+        "nec_per_seed": [
+          205,
+          204,
+          203,
+          212,
+          202
+        ],
+        "nec_mean": 205.2,
+        "nec_std": 3.54400902933387
+      },
+      "threshold_1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5306,
+          0.5349,
+          0.5438,
+          0.5358,
+          0.5428
+        ],
+        "acc_mean": 0.53758,
+        "acc_std": 0.005000159997440062,
+        "n_open_per_seed": [
+          71,
+          72,
+          78,
+          75,
+          78
+        ],
+        "n_open_mean": 74.8,
+        "n_open_std": 2.925747767665559,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          257,
+          257,
+          257,
+          254,
+          262
+        ],
+        "n_k_live_mean": 257.4,
+        "n_k_live_std": 2.5768197453450252,
+        "n_near_zero_per_seed": [
+          12,
+          12,
+          16,
+          17,
+          14
+        ],
+        "n_near_zero_mean": 14.2,
+        "n_near_zero_std": 2.039607805437114,
+        "nec_per_seed": [
+          71,
+          72,
+          78,
+          75,
+          78
+        ],
+        "nec_mean": 74.8,
+        "nec_std": 2.925747767665559
+      }
+    },
+    {
+      "lambda_gate": 0.001,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.6008999943733215,
+          0.5978999733924866,
+          0.597599983215332,
+          0.5990999937057495,
+          0.5950999855995178
+        ],
+        "acc_mean": 0.5981199860572814,
+        "acc_std": 0.001904104646363012,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6063,
+          0.6057,
+          0.6063,
+          0.6096,
+          0.6103
+        ],
+        "acc_mean": 0.60764,
+        "acc_std": 0.0019116485032557673,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253,
+        "masked_acc_per_seed": [
+          0.6009,
+          0.5979,
+          0.5976,
+          0.5991,
+          0.5951
+        ],
+        "masked_acc_mean": 0.59812
+      },
+      "gated_refit_cold": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.612,
+          0.6132,
+          0.6145,
+          0.6163,
+          0.6129
+        ],
+        "acc_mean": 0.61378,
+        "acc_std": 0.0014931845163944032,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "nec_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "nec_mean": 168.8,
+        "nec_std": 1.7204650534085253
+      },
+      "random_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5269,
+          0.534,
+          0.5195,
+          0.5213,
+          0.5105
+        ],
+        "acc_mean": 0.52244,
+        "acc_std": 0.007823451923543754,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "nec_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "nec_mean": 168.8,
+        "nec_std": 1.7204650534085253
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.001_seed_sweep_2026_10_06_08_11",
+      "random_refit_zeroed": {
+        "acc_per_seed": [
+          0.3607,
+          0.2777,
+          0.3207,
+          0.3153,
+          0.3192
+        ],
+        "acc_mean": 0.31872,
+        "acc_std": 0.026308964251752675,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253
+      },
+      "random_live_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5269,
+          0.534,
+          0.5195,
+          0.5213,
+          0.5105
+        ],
+        "acc_mean": 0.52244,
+        "acc_std": 0.007823451923543754,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "nec_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "nec_mean": 168.8,
+        "nec_std": 1.7204650534085253
+      },
+      "magnitude_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6035,
+          0.6101,
+          0.6072,
+          0.6085,
+          0.6076
+        ],
+        "acc_mean": 0.60738,
+        "acc_std": 0.00218119233448129,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "overlap_with_gate_per_seed": [
+          143,
+          149,
+          141,
+          144,
+          145
+        ],
+        "overlap_with_gate_mean": 144.4,
+        "overlap_with_gate_std": 2.6532998322843198,
+        "nec_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "nec_mean": 168.8,
+        "nec_std": 1.7204650534085253
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5509,
+          0.554,
+          0.5566,
+          0.5588,
+          0.5605
+        ],
+        "acc_mean": 0.55616,
+        "acc_std": 0.003415611219093887,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "overlap_with_gate_per_seed": [
+          68,
+          63,
+          65,
+          65,
+          66
+        ],
+        "overlap_with_gate_mean": 65.4,
+        "overlap_with_gate_std": 1.624807680927192,
+        "nec_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "nec_mean": 168.8,
+        "nec_std": 1.7204650534085253
+      },
+      "threshold_-1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6192,
+          0.6245,
+          0.6218,
+          0.62,
+          0.6224
+        ],
+        "acc_mean": 0.62158,
+        "acc_std": 0.0018659046063505174,
+        "n_open_per_seed": [
+          204,
+          210,
+          205,
+          204,
+          205
+        ],
+        "n_open_mean": 205.6,
+        "n_open_std": 2.244994432064365,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "n_near_zero_per_seed": [
+          30,
+          38,
+          30,
+          42,
+          28
+        ],
+        "n_near_zero_mean": 33.6,
+        "n_near_zero_std": 5.4258639865002145,
+        "nec_per_seed": [
+          204,
+          210,
+          205,
+          204,
+          205
+        ],
+        "nec_mean": 205.6,
+        "nec_std": 2.244994432064365
+      },
+      "threshold_-0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6149,
+          0.6222,
+          0.6176,
+          0.6196,
+          0.6202
+        ],
+        "acc_mean": 0.6189,
+        "acc_std": 0.0024803225596683877,
+        "n_open_per_seed": [
+          189,
+          197,
+          193,
+          194,
+          195
+        ],
+        "n_open_mean": 193.6,
+        "n_open_std": 2.6532998322843198,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "n_near_zero_per_seed": [
+          30,
+          38,
+          30,
+          42,
+          28
+        ],
+        "n_near_zero_mean": 33.6,
+        "n_near_zero_std": 5.4258639865002145,
+        "nec_per_seed": [
+          189,
+          197,
+          193,
+          194,
+          195
+        ],
+        "nec_mean": 193.6,
+        "nec_std": 2.6532998322843198
+      },
+      "threshold_-0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6148,
+          0.6175,
+          0.6171,
+          0.6175,
+          0.6173
+        ],
+        "acc_mean": 0.61684,
+        "acc_std": 0.001030727898138013,
+        "n_open_per_seed": [
+          178,
+          184,
+          179,
+          186,
+          179
+        ],
+        "n_open_mean": 181.2,
+        "n_open_std": 3.1874754901018454,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "n_near_zero_per_seed": [
+          30,
+          38,
+          30,
+          42,
+          28
+        ],
+        "n_near_zero_mean": 33.6,
+        "n_near_zero_std": 5.4258639865002145,
+        "nec_per_seed": [
+          178,
+          184,
+          179,
+          186,
+          179
+        ],
+        "nec_mean": 181.2,
+        "nec_std": 3.1874754901018454
+      },
+      "threshold_0_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.612,
+          0.6132,
+          0.6145,
+          0.6163,
+          0.6129
+        ],
+        "acc_mean": 0.61378,
+        "acc_std": 0.0014931845163944032,
+        "n_open_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_open_mean": 168.8,
+        "n_open_std": 1.7204650534085253,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "n_near_zero_per_seed": [
+          30,
+          38,
+          30,
+          42,
+          28
+        ],
+        "n_near_zero_mean": 33.6,
+        "n_near_zero_std": 5.4258639865002145,
+        "nec_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "nec_mean": 168.8,
+        "nec_std": 1.7204650534085253
+      },
+      "threshold_0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.6033,
+          0.6017,
+          0.606,
+          0.6041,
+          0.6041
+        ],
+        "acc_mean": 0.6038399999999999,
+        "acc_std": 0.0013908270920570895,
+        "n_open_per_seed": [
+          148,
+          146,
+          149,
+          144,
+          151
+        ],
+        "n_open_mean": 147.6,
+        "n_open_std": 2.4166091947189146,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "n_near_zero_per_seed": [
+          30,
+          38,
+          30,
+          42,
+          28
+        ],
+        "n_near_zero_mean": 33.6,
+        "n_near_zero_std": 5.4258639865002145,
+        "nec_per_seed": [
+          148,
+          146,
+          149,
+          144,
+          151
+        ],
+        "nec_mean": 147.6,
+        "nec_std": 2.4166091947189146
+      },
+      "threshold_0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5108,
+          0.4804,
+          0.4856,
+          0.493,
+          0.4979
+        ],
+        "acc_mean": 0.49354,
+        "acc_std": 0.010515816658728906,
+        "n_open_per_seed": [
+          60,
+          52,
+          54,
+          54,
+          56
+        ],
+        "n_open_mean": 55.2,
+        "n_open_std": 2.7129319932501073,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "n_near_zero_per_seed": [
+          30,
+          38,
+          30,
+          42,
+          28
+        ],
+        "n_near_zero_mean": 33.6,
+        "n_near_zero_std": 5.4258639865002145,
+        "nec_per_seed": [
+          60,
+          52,
+          54,
+          54,
+          56
+        ],
+        "nec_mean": 55.2,
+        "nec_std": 2.7129319932501073
+      },
+      "threshold_1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.1602,
+          0.1683,
+          0.1444,
+          0.1533,
+          0.162
+        ],
+        "acc_mean": 0.15764,
+        "acc_std": 0.008164949479329315,
+        "n_open_per_seed": [
+          8,
+          9,
+          7,
+          8,
+          8
+        ],
+        "n_open_mean": 8.0,
+        "n_open_std": 0.6324555320336759,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          167,
+          172,
+          168,
+          169,
+          168
+        ],
+        "n_k_live_mean": 168.8,
+        "n_k_live_std": 1.7204650534085253,
+        "n_near_zero_per_seed": [
+          30,
+          38,
+          30,
+          42,
+          28
+        ],
+        "n_near_zero_mean": 33.6,
+        "n_near_zero_std": 5.4258639865002145,
+        "nec_per_seed": [
+          8,
+          9,
+          7,
+          8,
+          8
+        ],
+        "nec_mean": 8.0,
+        "nec_std": 0.6324555320336759
+      }
+    },
+    {
+      "lambda_gate": 0.003,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.5461999773979187,
+          0.5454000234603882,
+          0.5286999940872192,
+          0.5357000231742859,
+          0.5476999878883362
+        ],
+        "acc_mean": 0.5407400012016297,
+        "acc_std": 0.007352981871682555,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.5714,
+          0.5742,
+          0.5744,
+          0.5694,
+          0.5776
+        ],
+        "acc_mean": 0.5734,
+        "acc_std": 0.0028028556866167734,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536,
+        "masked_acc_per_seed": [
+          0.5462,
+          0.5454,
+          0.5287,
+          0.5357,
+          0.5477
+        ],
+        "masked_acc_mean": 0.54074
+      },
+      "gated_refit_cold": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5722,
+          0.5761,
+          0.5736,
+          0.5761,
+          0.5776
+        ],
+        "acc_mean": 0.57512,
+        "acc_std": 0.0019446336415890554,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "nec_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "nec_mean": 108.4,
+        "nec_std": 1.3564659966250536
+      },
+      "random_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.4799,
+          0.4779,
+          0.4346,
+          0.4674,
+          0.4506
+        ],
+        "acc_mean": 0.46208,
+        "acc_std": 0.01722247368992039,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "nec_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "nec_mean": 108.4,
+        "nec_std": 1.3564659966250536
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.003_seed_sweep_2026_10_06_10_38",
+      "random_refit_zeroed": {
+        "acc_per_seed": [
+          0.1827,
+          0.1766,
+          0.1062,
+          0.1733,
+          0.1235
+        ],
+        "acc_mean": 0.15245999999999998,
+        "acc_std": 0.03133742810123384,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536
+      },
+      "random_live_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.4799,
+          0.4779,
+          0.4346,
+          0.4674,
+          0.4506
+        ],
+        "acc_mean": 0.46208,
+        "acc_std": 0.01722247368992039,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "nec_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "nec_mean": 108.4,
+        "nec_std": 1.3564659966250536
+      },
+      "magnitude_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5601,
+          0.5594,
+          0.5587,
+          0.5592,
+          0.5609
+        ],
+        "acc_mean": 0.55966,
+        "acc_std": 0.000765767588763058,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "overlap_with_gate_per_seed": [
+          80,
+          80,
+          72,
+          77,
+          78
+        ],
+        "overlap_with_gate_mean": 77.4,
+        "overlap_with_gate_std": 2.939387691339814,
+        "nec_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "nec_mean": 108.4,
+        "nec_std": 1.3564659966250536
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.497,
+          0.5094,
+          0.5088,
+          0.5197,
+          0.4999
+        ],
+        "acc_mean": 0.5069600000000001,
+        "acc_std": 0.008008645328643304,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "overlap_with_gate_per_seed": [
+          41,
+          39,
+          34,
+          42,
+          30
+        ],
+        "overlap_with_gate_mean": 37.2,
+        "overlap_with_gate_std": 4.534313619501853,
+        "nec_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "nec_mean": 108.4,
+        "nec_std": 1.3564659966250536
+      },
+      "threshold_-1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5966,
+          0.5951,
+          0.5959,
+          0.5998,
+          0.5974
+        ],
+        "acc_mean": 0.5969599999999999,
+        "acc_std": 0.0016107141273360827,
+        "n_open_per_seed": [
+          137,
+          136,
+          139,
+          140,
+          134
+        ],
+        "n_open_mean": 137.2,
+        "n_open_std": 2.1354156504062622,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "n_near_zero_per_seed": [
+          52,
+          55,
+          58,
+          56,
+          54
+        ],
+        "n_near_zero_mean": 55.0,
+        "n_near_zero_std": 2.0,
+        "nec_per_seed": [
+          137,
+          136,
+          139,
+          140,
+          134
+        ],
+        "nec_mean": 137.2,
+        "nec_std": 2.1354156504062622
+      },
+      "threshold_-0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5939,
+          0.5951,
+          0.5971,
+          0.6002,
+          0.5974
+        ],
+        "acc_mean": 0.5967399999999999,
+        "acc_std": 0.002158332689832591,
+        "n_open_per_seed": [
+          134,
+          133,
+          136,
+          136,
+          134
+        ],
+        "n_open_mean": 134.6,
+        "n_open_std": 1.2,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "n_near_zero_per_seed": [
+          52,
+          55,
+          58,
+          56,
+          54
+        ],
+        "n_near_zero_mean": 55.0,
+        "n_near_zero_std": 2.0,
+        "nec_per_seed": [
+          134,
+          133,
+          136,
+          136,
+          134
+        ],
+        "nec_mean": 134.6,
+        "nec_std": 1.2
+      },
+      "threshold_-0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5922,
+          0.5879,
+          0.5968,
+          0.5959,
+          0.59
+        ],
+        "acc_mean": 0.59256,
+        "acc_std": 0.0033921084888311067,
+        "n_open_per_seed": [
+          131,
+          125,
+          133,
+          130,
+          127
+        ],
+        "n_open_mean": 129.2,
+        "n_open_std": 2.85657137141714,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "n_near_zero_per_seed": [
+          52,
+          55,
+          58,
+          56,
+          54
+        ],
+        "n_near_zero_mean": 55.0,
+        "n_near_zero_std": 2.0,
+        "nec_per_seed": [
+          131,
+          125,
+          133,
+          130,
+          127
+        ],
+        "nec_mean": 129.2,
+        "nec_std": 2.85657137141714
+      },
+      "threshold_0_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5722,
+          0.5761,
+          0.5736,
+          0.5761,
+          0.5776
+        ],
+        "acc_mean": 0.57512,
+        "acc_std": 0.0019446336415890554,
+        "n_open_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_open_mean": 108.4,
+        "n_open_std": 1.3564659966250536,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "n_near_zero_per_seed": [
+          52,
+          55,
+          58,
+          56,
+          54
+        ],
+        "n_near_zero_mean": 55.0,
+        "n_near_zero_std": 2.0,
+        "nec_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "nec_mean": 108.4,
+        "nec_std": 1.3564659966250536
+      },
+      "threshold_0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5348,
+          0.5176,
+          0.5214,
+          0.5303,
+          0.5175
+        ],
+        "acc_mean": 0.52432,
+        "acc_std": 0.007011248105722723,
+        "n_open_per_seed": [
+          79,
+          70,
+          75,
+          74,
+          73
+        ],
+        "n_open_mean": 74.2,
+        "n_open_std": 2.925747767665559,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "n_near_zero_per_seed": [
+          52,
+          55,
+          58,
+          56,
+          54
+        ],
+        "n_near_zero_mean": 55.0,
+        "n_near_zero_std": 2.0,
+        "nec_per_seed": [
+          79,
+          70,
+          75,
+          74,
+          73
+        ],
+        "nec_mean": 74.2,
+        "nec_std": 2.925747767665559
+      },
+      "threshold_0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.0439,
+          0.0454,
+          0.0458,
+          0.0446,
+          0.0445
+        ],
+        "acc_mean": 0.044840000000000005,
+        "acc_std": 0.0006770524351924306,
+        "n_open_per_seed": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "n_open_mean": 2.0,
+        "n_open_std": 0.0,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "n_near_zero_per_seed": [
+          52,
+          55,
+          58,
+          56,
+          54
+        ],
+        "n_near_zero_mean": 55.0,
+        "n_near_zero_std": 2.0,
+        "nec_per_seed": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "nec_mean": 2.0,
+        "nec_std": 0.0
+      },
+      "threshold_1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582
+        ],
+        "acc_mean": 0.009999999776482582,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_open_mean": 0.0,
+        "n_open_std": 0.0,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          109,
+          109,
+          106,
+          108,
+          110
+        ],
+        "n_k_live_mean": 108.4,
+        "n_k_live_std": 1.3564659966250536,
+        "n_near_zero_per_seed": [
+          52,
+          55,
+          58,
+          56,
+          54
+        ],
+        "n_near_zero_mean": 55.0,
+        "n_near_zero_std": 2.0,
+        "nec_per_seed": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "nec_mean": 0.0,
+        "nec_std": 0.0
+      }
+    },
+    {
+      "lambda_gate": 0.01,
+      "dataset": "cifar100",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_1000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.45570001006126404,
+          0.4309999942779541,
+          0.4336000084877014,
+          0.44510000944137573,
+          0.42890000343322754
+        ],
+        "acc_mean": 0.43886000514030454,
+        "acc_std": 0.010111106655178422,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593
+      },
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 1000,
+      "lam_pi": 0.0001,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.4915,
+          0.4958,
+          0.4916,
+          0.4923,
+          0.4811
+        ],
+        "acc_mean": 0.49046,
+        "acc_std": 0.004937448733911061,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593,
+        "masked_acc_per_seed": [
+          0.4557,
+          0.431,
+          0.4336,
+          0.4451,
+          0.4289
+        ],
+        "masked_acc_mean": 0.43886000000000003
+      },
+      "gated_refit_cold": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.496,
+          0.4974,
+          0.4906,
+          0.4951,
+          0.4838
+        ],
+        "acc_mean": 0.49257999999999996,
+        "acc_std": 0.004945462566838413,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "nec_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "nec_mean": 56.6,
+        "nec_std": 2.4979991993593593
+      },
+      "random_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.3667,
+          0.3656,
+          0.3419,
+          0.3816,
+          0.3619
+        ],
+        "acc_mean": 0.36354,
+        "acc_std": 0.012738696950630396,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "nec_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "nec_mean": 56.6,
+        "nec_std": 2.4979991993593593
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/gated_lam0.01_seed_sweep_2026_10_06_12_53",
+      "random_refit_zeroed": {
+        "acc_per_seed": [
+          0.0611,
+          0.0434,
+          0.0291,
+          0.0741,
+          0.052
+        ],
+        "acc_mean": 0.05194,
+        "acc_std": 0.015294260361325094,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593
+      },
+      "random_live_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.3667,
+          0.3656,
+          0.3419,
+          0.3816,
+          0.3619
+        ],
+        "acc_mean": 0.36354,
+        "acc_std": 0.012738696950630396,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "nec_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "nec_mean": 56.6,
+        "nec_std": 2.4979991993593593
+      },
+      "magnitude_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.4781,
+          0.4712,
+          0.4688,
+          0.4789,
+          0.4689
+        ],
+        "acc_mean": 0.47318,
+        "acc_std": 0.0044350422771378475,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "overlap_with_gate_per_seed": [
+          40,
+          40,
+          38,
+          45,
+          37
+        ],
+        "overlap_with_gate_mean": 40.0,
+        "overlap_with_gate_std": 2.756809750418044,
+        "nec_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "nec_mean": 56.6,
+        "nec_std": 2.4979991993593593
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.4314,
+          0.4142,
+          0.4176,
+          0.4353,
+          0.4157
+        ],
+        "acc_mean": 0.42284000000000005,
+        "acc_std": 0.008736269226620708,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "overlap_with_gate_per_seed": [
+          21,
+          18,
+          20,
+          21,
+          19
+        ],
+        "overlap_with_gate_mean": 19.8,
+        "overlap_with_gate_std": 1.1661903789690602,
+        "nec_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "nec_mean": 56.6,
+        "nec_std": 2.4979991993593593
+      },
+      "threshold_-1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5472,
+          0.5446,
+          0.5502,
+          0.5491,
+          0.5456
+        ],
+        "acc_mean": 0.5473399999999999,
+        "acc_std": 0.002089593261857459,
+        "n_open_per_seed": [
+          78,
+          77,
+          78,
+          80,
+          79
+        ],
+        "n_open_mean": 78.4,
+        "n_open_std": 1.019803902718557,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "n_near_zero_per_seed": [
+          54,
+          45,
+          51,
+          55,
+          49
+        ],
+        "n_near_zero_mean": 50.8,
+        "n_near_zero_std": 3.6,
+        "nec_per_seed": [
+          78,
+          77,
+          78,
+          80,
+          79
+        ],
+        "nec_mean": 78.4,
+        "nec_std": 1.019803902718557
+      },
+      "threshold_-0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5472,
+          0.5446,
+          0.5502,
+          0.5486,
+          0.5456
+        ],
+        "acc_mean": 0.5472400000000001,
+        "acc_std": 0.0020135540717845296,
+        "n_open_per_seed": [
+          78,
+          77,
+          78,
+          79,
+          79
+        ],
+        "n_open_mean": 78.2,
+        "n_open_std": 0.7483314773547883,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "n_near_zero_per_seed": [
+          54,
+          45,
+          51,
+          55,
+          49
+        ],
+        "n_near_zero_mean": 50.8,
+        "n_near_zero_std": 3.6,
+        "nec_per_seed": [
+          78,
+          77,
+          78,
+          79,
+          79
+        ],
+        "nec_mean": 78.2,
+        "nec_std": 0.7483314773547883
+      },
+      "threshold_-0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.5371,
+          0.5435,
+          0.5468,
+          0.543,
+          0.5412
+        ],
+        "acc_mean": 0.5423199999999999,
+        "acc_std": 0.003175783367926702,
+        "n_open_per_seed": [
+          75,
+          74,
+          75,
+          76,
+          75
+        ],
+        "n_open_mean": 75.0,
+        "n_open_std": 0.6324555320336759,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "n_near_zero_per_seed": [
+          54,
+          45,
+          51,
+          55,
+          49
+        ],
+        "n_near_zero_mean": 50.8,
+        "n_near_zero_std": 3.6,
+        "nec_per_seed": [
+          75,
+          74,
+          75,
+          76,
+          75
+        ],
+        "nec_mean": 75.0,
+        "nec_std": 0.6324555320336759
+      },
+      "threshold_0_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.496,
+          0.4974,
+          0.4906,
+          0.4951,
+          0.4838
+        ],
+        "acc_mean": 0.49257999999999996,
+        "acc_std": 0.004945462566838413,
+        "n_open_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_open_mean": 56.6,
+        "n_open_std": 2.4979991993593593,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "n_near_zero_per_seed": [
+          54,
+          45,
+          51,
+          55,
+          49
+        ],
+        "n_near_zero_mean": 50.8,
+        "n_near_zero_std": 3.6,
+        "nec_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "nec_mean": 56.6,
+        "nec_std": 2.4979991993593593
+      },
+      "threshold_0.001_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.2914,
+          0.3617,
+          0.3291,
+          0.307,
+          0.3309
+        ],
+        "acc_mean": 0.32402000000000003,
+        "acc_std": 0.023860712478884626,
+        "n_open_per_seed": [
+          21,
+          29,
+          24,
+          21,
+          26
+        ],
+        "n_open_mean": 24.2,
+        "n_open_std": 3.059411708155671,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "n_near_zero_per_seed": [
+          54,
+          45,
+          51,
+          55,
+          49
+        ],
+        "n_near_zero_mean": 50.8,
+        "n_near_zero_std": 3.6,
+        "nec_per_seed": [
+          21,
+          29,
+          24,
+          21,
+          26
+        ],
+        "nec_mean": 24.2,
+        "nec_std": 3.059411708155671
+      },
+      "threshold_0.1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582
+        ],
+        "acc_mean": 0.009999999776482582,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_open_mean": 0.0,
+        "n_open_std": 0.0,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "n_near_zero_per_seed": [
+          54,
+          45,
+          51,
+          55,
+          49
+        ],
+        "n_near_zero_mean": 50.8,
+        "n_near_zero_std": 3.6,
+        "nec_per_seed": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "nec_mean": 0.0,
+        "nec_std": 0.0
+      },
+      "threshold_1_refit": {
+        "seeds": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "acc_per_seed": [
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582
+        ],
+        "acc_mean": 0.009999999776482582,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_open_mean": 0.0,
+        "n_open_std": 0.0,
+        "n_live_per_seed": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "n_live_mean": 1000.0,
+        "n_live_std": 0.0,
+        "n_k_live_per_seed": [
+          59,
+          56,
+          54,
+          60,
+          54
+        ],
+        "n_k_live_mean": 56.6,
+        "n_k_live_std": 2.4979991993593593,
+        "n_near_zero_per_seed": [
+          54,
+          45,
+          51,
+          55,
+          49
+        ],
+        "n_near_zero_mean": 50.8,
+        "n_near_zero_std": 3.6,
+        "nec_per_seed": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "nec_mean": 0.0,
+        "nec_std": 0.0
+      }
+    }
+  ],
+  "random_control_rerun_of": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/seed_sweep_results/cifar100_gate_sweep_2026_10_06_15_12.json",
+  "random_control_refit_epochs": 20,
+  "size_controls_of": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/seed_sweep_results/cifar100_gate_sweep_2026_10_13_05_54.json",
+  "size_controls": [
+    "magnitude",
+    "group_lasso"
+  ],
+  "size_controls_refit_epochs": 20,
+  "threshold_refits_of": "/home/hy381/project/prelim/ucbm/save/RESULTS/cifar100-resnet50_v2/classifier/concepts_1000_64/seed_sweep_results/cifar100_gate_sweep_2026_10_19_21_57.json",
+  "logit_thresholds": [
+    -1.0,
+    -0.1,
+    -0.001,
+    0.0,
+    0.001,
+    0.1,
+    1.0
+  ],
+  "threshold_refit_epochs": 20
+}

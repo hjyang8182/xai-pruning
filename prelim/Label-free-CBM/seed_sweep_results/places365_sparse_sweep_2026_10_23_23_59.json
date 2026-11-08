@@ -1,0 +1,302 @@
+{
+  "model": "lfcbm",
+  "dataset": "places365",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 2166,
+  "lams": [
+    1e-05,
+    3e-05,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01
+  ],
+  "n_iters": 80,
+  "points": [
+    {
+      "lam": 1e-05,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.48117807507514954,
+          0.4809862971305847,
+          0.4816712439060211,
+          0.47994521260261536,
+          0.47898629307746887
+        ],
+        "acc_mean": 0.4805534243583679,
+        "acc_std": 0.0009646667701777592,
+        "n_open_per_seed": [
+          2166,
+          2166,
+          2166,
+          2166,
+          2166
+        ],
+        "n_open_mean": 2166.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/places365_baseline_lam1e-05_seed_sweep_2026_10_18_20_25"
+    },
+    {
+      "lam": 3e-05,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.47219178080558777,
+          0.47131505608558655,
+          0.47057533264160156,
+          0.4716986417770386,
+          0.4718630015850067
+        ],
+        "acc_mean": 0.47152876257896426,
+        "acc_std": 0.0005540517908471801,
+        "n_open_per_seed": [
+          2166,
+          2166,
+          2166,
+          2166,
+          2166
+        ],
+        "n_open_mean": 2166.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/places365_baseline_lam3e-05_seed_sweep_2026_10_22_07_39"
+    },
+    {
+      "lam": 0.0001,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.4461095929145813,
+          0.4536164402961731,
+          0.4538356065750122,
+          0.4538904130458832,
+          0.4535616338253021
+        ],
+        "acc_mean": 0.4522027373313904,
+        "acc_std": 0.003049133513703447,
+        "n_open_per_seed": [
+          2166,
+          2166,
+          2166,
+          2166,
+          2166
+        ],
+        "n_open_mean": 2166.0,
+        "n_open_std": 0.0
+      },
+      "session_dir": "seed_sweep_results/places365_baseline_lam0.0001_seed_sweep_2026_10_23_03_23"
+    },
+    {
+      "lam": 0.0003,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.43567124009132385,
+          0.43569862842559814,
+          0.43539726734161377,
+          0.4357808232307434,
+          0.435095876455307
+        ],
+        "acc_mean": 0.43552876710891725,
+        "acc_std": 0.0002519405536845608,
+        "n_open_per_seed": [
+          2166,
+          2165,
+          2052,
+          2166,
+          2165
+        ],
+        "n_open_mean": 2142.8,
+        "n_open_std": 45.402202589742274
+      },
+      "session_dir": "seed_sweep_results/places365_baseline_lam0.0003_seed_sweep_2026_10_18_20_26"
+    },
+    {
+      "lam": 0.001,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.40808218717575073,
+          0.40802741050720215,
+          0.408109575510025,
+          0.40808218717575073,
+          0.40805479884147644
+        ],
+        "acc_mean": 0.408071231842041,
+        "acc_std": 2.793073018188339e-05,
+        "n_open_per_seed": [
+          1393,
+          1410,
+          1404,
+          1399,
+          1407
+        ],
+        "n_open_mean": 1402.6,
+        "n_open_std": 6.019966777316965
+      },
+      "session_dir": "seed_sweep_results/places365_baseline_lam0.001_seed_sweep_2026_10_22_07_28"
+    },
+    {
+      "lam": 0.003,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.3491232991218567,
+          0.34928765892982483,
+          0.3493972718715668,
+          0.3493424654006958,
+          0.34945204854011536
+        ],
+        "acc_mean": 0.3493205487728119,
+        "acc_std": 0.00011282564232910979,
+        "n_open_per_seed": [
+          835,
+          837,
+          835,
+          830,
+          833
+        ],
+        "n_open_mean": 834.0,
+        "n_open_std": 2.3664319132398464
+      },
+      "session_dir": "seed_sweep_results/places365_baseline_lam0.003_seed_sweep_2026_10_18_20_27"
+    },
+    {
+      "lam": 0.01,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.07671232521533966,
+          0.076630137860775,
+          0.07646575570106506,
+          0.07652054727077484,
+          0.07646575570106506
+        ],
+        "acc_mean": 0.07655890434980392,
+        "acc_std": 9.740306165865082e-05,
+        "n_open_per_seed": [
+          70,
+          71,
+          71,
+          72,
+          71
+        ],
+        "n_open_mean": 71.0,
+        "n_open_std": 0.6324555320336759
+      },
+      "session_dir": "seed_sweep_results/places365_baseline_lam0.01_seed_sweep_2026_10_19_16_52"
+    }
+  ],
+  "merged_from": [
+    "places365_sparse_sweep_2026_10_20_01_21.json",
+    "places365_sparse_sweep_2026_10_22_13_45.json",
+    "places365_sparse_sweep_2026_10_23_18_35.json"
+  ]
+}

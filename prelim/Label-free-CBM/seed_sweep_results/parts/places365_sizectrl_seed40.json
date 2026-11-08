@@ -1,0 +1,1051 @@
+{
+  "model": "lfcbm",
+  "dataset": "places365",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 2166,
+  "lambda_gates": [
+    1e-05,
+    3e-05,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01
+  ],
+  "refit_tau": 0.5,
+  "refit_epochs": 20,
+  "gate_forward": "hard",
+  "points": [
+    {
+      "lambda_gate": 1e-05,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "lam": 0.0003,
+      "gate_lam": 1e-05,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.42046576738357544,
+          0.40967124700546265,
+          0.4053698778152466,
+          0.4130136966705322,
+          0.41528767347335815
+        ],
+        "acc_mean": 0.41276165246963503,
+        "acc_std": 0.005098757367671094,
+        "n_open_per_seed": [
+          186,
+          182,
+          183,
+          187,
+          186
+        ],
+        "n_open_mean": 184.8,
+        "n_open_std": 1.9390719429665315
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.43334246575342467,
+          0.4326575342465753,
+          0.43531506849315066,
+          0.4376164383561644,
+          0.4359178082191781
+        ],
+        "acc_mean": 0.4349698630136986,
+        "acc_std": 0.0017898275977867829,
+        "n_open_per_seed": [
+          186,
+          182,
+          182,
+          187,
+          186
+        ],
+        "n_open_mean": 184.6,
+        "n_open_std": 2.1540659228538015,
+        "masked_acc_per_seed": [
+          0.42046575342465753,
+          0.4096712328767123,
+          0.40536986301369865,
+          0.413013698630137,
+          0.4152876712328767
+        ],
+        "masked_acc_mean": 0.4127616438356164
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.4333698630136986,
+          0.4328767123287671,
+          0.4347945205479452,
+          0.4377260273972603,
+          0.4357260273972603
+        ],
+        "acc_mean": 0.4348986301369863,
+        "acc_std": 0.0017386708049934735,
+        "n_open_per_seed": [
+          186,
+          182,
+          182,
+          187,
+          186
+        ],
+        "n_open_mean": 184.6,
+        "n_open_std": 2.1540659228538015
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.42627397260273975,
+          0.42441095890410957,
+          0.4295068493150685,
+          0.4293150684931507,
+          0.42975342465753424
+        ],
+        "acc_mean": 0.4278520547945206,
+        "acc_std": 0.0021366069210133508,
+        "n_open_per_seed": [
+          186,
+          182,
+          182,
+          187,
+          186
+        ],
+        "n_open_mean": 184.6,
+        "n_open_std": 2.1540659228538015
+      },
+      "session_dir": "seed_sweep_results/places365_gated_lam1e-05_seed_sweep_2026_10_06_08_44",
+      "magnitude_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.43095890410958904
+        ],
+        "acc_mean": 0.43095890410958904,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          186
+        ],
+        "n_open_mean": 186.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          26
+        ]
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.42961643835616437
+        ],
+        "acc_mean": 0.42961643835616437,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          186
+        ],
+        "n_open_mean": 186.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          3
+        ]
+      }
+    },
+    {
+      "lambda_gate": 3e-05,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "lam": 0.0003,
+      "gate_lam": 3e-05,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.41950684785842896,
+          0.40520548820495605,
+          0.410712331533432,
+          0.4175616502761841,
+          0.408164381980896
+        ],
+        "acc_mean": 0.4122301399707794,
+        "acc_std": 0.0054691012558680295,
+        "n_open_per_seed": [
+          181,
+          167,
+          181,
+          183,
+          175
+        ],
+        "n_open_mean": 177.4,
+        "n_open_std": 5.851495535331117
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.4343835616438356,
+          0.4313698630136986,
+          0.43673972602739725,
+          0.4372054794520548,
+          0.4343013698630137
+        ],
+        "acc_mean": 0.43479999999999996,
+        "acc_std": 0.002085030509052983,
+        "n_open_per_seed": [
+          181,
+          167,
+          181,
+          183,
+          175
+        ],
+        "n_open_mean": 177.4,
+        "n_open_std": 5.851495535331117,
+        "masked_acc_per_seed": [
+          0.4195068493150685,
+          0.4052054794520548,
+          0.41071232876712327,
+          0.41756164383561645,
+          0.40816438356164386
+        ],
+        "masked_acc_mean": 0.41223013698630134
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.4344383561643836,
+          0.4312876712328767,
+          0.4368767123287671,
+          0.43704109589041096,
+          0.4341917808219178
+        ],
+        "acc_mean": 0.43476712328767125,
+        "acc_std": 0.0021055645654403828,
+        "n_open_per_seed": [
+          181,
+          167,
+          181,
+          183,
+          175
+        ],
+        "n_open_mean": 177.4,
+        "n_open_std": 5.851495535331117
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.42534246575342466,
+          0.42334246575342466,
+          0.42961643835616437,
+          0.42863013698630137,
+          0.4278082191780822
+        ],
+        "acc_mean": 0.4269479452054794,
+        "acc_std": 0.0022920620646402373,
+        "n_open_per_seed": [
+          181,
+          167,
+          181,
+          183,
+          175
+        ],
+        "n_open_mean": 177.4,
+        "n_open_std": 5.851495535331117
+      },
+      "session_dir": "seed_sweep_results/places365_gated_lam3e-05_seed_sweep_2026_10_07_13_06",
+      "magnitude_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.42882191780821916
+        ],
+        "acc_mean": 0.42882191780821916,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          175
+        ],
+        "n_open_mean": 175.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          22
+        ]
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.42504109589041095
+        ],
+        "acc_mean": 0.42504109589041095,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          175
+        ],
+        "n_open_mean": 175.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          4
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.0001,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "lam": 0.0003,
+      "gate_lam": 0.0001,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.41926026344299316,
+          0.4083287715911865,
+          0.40432876348495483,
+          0.41032877564430237,
+          0.40090411901474
+        ],
+        "acc_mean": 0.40863013863563535,
+        "acc_std": 0.0062316763486569005,
+        "n_open_per_seed": [
+          170,
+          159,
+          157,
+          163,
+          164
+        ],
+        "n_open_mean": 162.6,
+        "n_open_std": 4.498888751680797
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.431013698630137,
+          0.43197260273972604,
+          0.4335068493150685,
+          0.43402739726027395,
+          0.4343013698630137
+        ],
+        "acc_mean": 0.4329643835616438,
+        "acc_std": 0.0012649585359130412,
+        "n_open_per_seed": [
+          170,
+          159,
+          157,
+          163,
+          164
+        ],
+        "n_open_mean": 162.6,
+        "n_open_std": 4.498888751680797,
+        "masked_acc_per_seed": [
+          0.41926027397260274,
+          0.4083287671232877,
+          0.4043287671232877,
+          0.4103287671232877,
+          0.4009041095890411
+        ],
+        "masked_acc_mean": 0.40863013698630135
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.43095890410958904,
+          0.432,
+          0.43345205479452054,
+          0.434,
+          0.4342739726027397
+        ],
+        "acc_mean": 0.43293698630136984,
+        "acc_std": 0.0012628205361457853,
+        "n_open_per_seed": [
+          170,
+          159,
+          157,
+          163,
+          164
+        ],
+        "n_open_mean": 162.6,
+        "n_open_std": 4.498888751680797
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.4242191780821918,
+          0.4226027397260274,
+          0.4252876712328767,
+          0.42668493150684933,
+          0.42747945205479454
+        ],
+        "acc_mean": 0.425254794520548,
+        "acc_std": 0.0017378935446691636,
+        "n_open_per_seed": [
+          170,
+          159,
+          157,
+          163,
+          164
+        ],
+        "n_open_mean": 162.6,
+        "n_open_std": 4.498888751680797
+      },
+      "session_dir": "seed_sweep_results/places365_gated_lam0.0001_seed_sweep_2026_10_08_02_04",
+      "magnitude_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.4284109589041096
+        ],
+        "acc_mean": 0.4284109589041096,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          164
+        ],
+        "n_open_mean": 164.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          20
+        ]
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.4240821917808219
+        ],
+        "acc_mean": 0.4240821917808219,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          164
+        ],
+        "n_open_mean": 164.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          3
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.0003,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "lam": 0.0003,
+      "gate_lam": 0.0003,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.41742464900016785,
+          0.4032328724861145,
+          0.4111780822277069,
+          0.415479451417923,
+          0.4046027362346649
+        ],
+        "acc_mean": 0.4103835582733154,
+        "acc_std": 0.005669683669287943,
+        "n_open_per_seed": [
+          150,
+          134,
+          138,
+          145,
+          143
+        ],
+        "n_open_mean": 142.0,
+        "n_open_std": 5.549774770204643
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.4306027397260274,
+          0.4273972602739726,
+          0.43035616438356167,
+          0.43432876712328766,
+          0.4326575342465753
+        ],
+        "acc_mean": 0.43106849315068496,
+        "acc_std": 0.002339090735348427,
+        "n_open_per_seed": [
+          150,
+          134,
+          138,
+          145,
+          143
+        ],
+        "n_open_mean": 142.0,
+        "n_open_std": 5.549774770204643,
+        "masked_acc_per_seed": [
+          0.41742465753424657,
+          0.40323287671232877,
+          0.4111780821917808,
+          0.41547945205479453,
+          0.4046027397260274
+        ],
+        "masked_acc_mean": 0.41038356164383566
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.4306027397260274,
+          0.4270958904109589,
+          0.4305753424657534,
+          0.4343835616438356,
+          0.4325205479452055
+        ],
+        "acc_mean": 0.43103561643835614,
+        "acc_std": 0.002422165734536353,
+        "n_open_per_seed": [
+          150,
+          134,
+          138,
+          145,
+          143
+        ],
+        "n_open_mean": 142.0,
+        "n_open_std": 5.549774770204643
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.42084931506849316,
+          0.41632876712328765,
+          0.4222191780821918,
+          0.4262191780821918,
+          0.4224383561643836
+        ],
+        "acc_mean": 0.4216109589041096,
+        "acc_std": 0.00318659229051524,
+        "n_open_per_seed": [
+          150,
+          134,
+          138,
+          145,
+          143
+        ],
+        "n_open_mean": 142.0,
+        "n_open_std": 5.549774770204643
+      },
+      "session_dir": "seed_sweep_results/places365_gated_lam0.0003_seed_sweep_2026_10_08_14_36",
+      "magnitude_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.42375342465753424
+        ],
+        "acc_mean": 0.42375342465753424,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          143
+        ],
+        "n_open_mean": 143.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          19
+        ]
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.4187123287671233
+        ],
+        "acc_mean": 0.4187123287671233,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          143
+        ],
+        "n_open_mean": 143.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          2
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.001,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "lam": 0.0003,
+      "gate_lam": 0.001,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.4106849431991577,
+          0.4008767008781433,
+          0.3978082239627838,
+          0.401589035987854,
+          0.39465752243995667
+        ],
+        "acc_mean": 0.4011232852935791,
+        "acc_std": 0.00537584877749896,
+        "n_open_per_seed": [
+          112,
+          107,
+          107,
+          116,
+          107
+        ],
+        "n_open_mean": 109.8,
+        "n_open_std": 3.655133376499413
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.42254794520547945,
+          0.42046575342465753,
+          0.423013698630137,
+          0.4251506849315069,
+          0.4223013698630137
+        ],
+        "acc_mean": 0.4226958904109589,
+        "acc_std": 0.0015018697298057645,
+        "n_open_per_seed": [
+          112,
+          107,
+          107,
+          116,
+          107
+        ],
+        "n_open_mean": 109.8,
+        "n_open_std": 3.655133376499413,
+        "masked_acc_per_seed": [
+          0.4106849315068493,
+          0.40087671232876715,
+          0.3978082191780822,
+          0.4015890410958904,
+          0.39465753424657535
+        ],
+        "masked_acc_mean": 0.4011232876712329
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.4224383561643836,
+          0.42063013698630136,
+          0.42306849315068495,
+          0.4252328767123288,
+          0.42232876712328765
+        ],
+        "acc_mean": 0.4227397260273973,
+        "acc_std": 0.0014855278588192943,
+        "n_open_per_seed": [
+          112,
+          107,
+          107,
+          116,
+          107
+        ],
+        "n_open_mean": 109.8,
+        "n_open_std": 3.655133376499413
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.4123835616438356,
+          0.4073972602739726,
+          0.4111780821917808,
+          0.41704109589041094,
+          0.4116164383561644
+        ],
+        "acc_mean": 0.4119232876712329,
+        "acc_std": 0.0030834469286062306,
+        "n_open_per_seed": [
+          112,
+          107,
+          107,
+          116,
+          107
+        ],
+        "n_open_mean": 109.8,
+        "n_open_std": 3.655133376499413
+      },
+      "session_dir": "seed_sweep_results/places365_gated_lam0.001_seed_sweep_2026_10_09_02_59",
+      "magnitude_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.41276712328767123
+        ],
+        "acc_mean": 0.41276712328767123,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          107
+        ],
+        "n_open_mean": 107.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          13
+        ]
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.4081917808219178
+        ],
+        "acc_mean": 0.4081917808219178,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          107
+        ],
+        "n_open_mean": 107.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          1
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.003,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "lam": 0.0003,
+      "gate_lam": 0.003,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.3814794421195984,
+          0.3838082253932953,
+          0.3426027297973633,
+          0.3767397403717041,
+          0.36353424191474915
+        ],
+        "acc_mean": 0.369632875919342,
+        "acc_std": 0.015228994201111972,
+        "n_open_per_seed": [
+          78,
+          79,
+          67,
+          79,
+          70
+        ],
+        "n_open_mean": 74.6,
+        "n_open_std": 5.083306010855534
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.4056712328767123,
+          0.407041095890411,
+          0.3952876712328767,
+          0.40884931506849315,
+          0.3991232876712329
+        ],
+        "acc_mean": 0.40319452054794525,
+        "acc_std": 0.005138095953210174,
+        "n_open_per_seed": [
+          78,
+          79,
+          67,
+          79,
+          70
+        ],
+        "n_open_mean": 74.6,
+        "n_open_std": 5.083306010855534,
+        "masked_acc_per_seed": [
+          0.3814794520547945,
+          0.38380821917808217,
+          0.3426027397260274,
+          0.37673972602739725,
+          0.36353424657534245
+        ],
+        "masked_acc_mean": 0.36963287671232875
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.4056986301369863,
+          0.40693150684931506,
+          0.3952876712328767,
+          0.408986301369863,
+          0.3991232876712329
+        ],
+        "acc_mean": 0.40320547945205476,
+        "acc_std": 0.005155054980878755,
+        "n_open_per_seed": [
+          78,
+          79,
+          67,
+          79,
+          70
+        ],
+        "n_open_mean": 74.6,
+        "n_open_std": 5.083306010855534
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.3913150684931507,
+          0.38915068493150684,
+          0.38202739726027396,
+          0.3943835616438356,
+          0.3852876712328767
+        ],
+        "acc_mean": 0.38843287671232873,
+        "acc_std": 0.004362462923021601,
+        "n_open_per_seed": [
+          78,
+          79,
+          67,
+          79,
+          70
+        ],
+        "n_open_mean": 74.6,
+        "n_open_std": 5.083306010855534
+      },
+      "session_dir": "seed_sweep_results/places365_gated_lam0.003_seed_sweep_2026_10_09_14_21",
+      "magnitude_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.3934246575342466
+        ],
+        "acc_mean": 0.3934246575342466,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          70
+        ],
+        "n_open_mean": 70.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          8
+        ]
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.38517808219178085
+        ],
+        "acc_mean": 0.38517808219178085,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          70
+        ],
+        "n_open_mean": 70.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          1
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.01,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "lam": 0.0003,
+      "gate_lam": 0.01,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.16394519805908203,
+          0.1056712344288826,
+          0.07986301183700562,
+          0.15895889699459076,
+          0.05569862946867943
+        ],
+        "acc_mean": 0.11282739415764809,
+        "acc_std": 0.042761436618600525,
+        "n_open_per_seed": [
+          15,
+          11,
+          8,
+          15,
+          6
+        ],
+        "n_open_mean": 11.0,
+        "n_open_std": 3.63318042491699
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.16386301369863013,
+          0.12073972602739726,
+          0.08410958904109589,
+          0.16873972602739726,
+          0.05635616438356164
+        ],
+        "acc_mean": 0.11876164383561642,
+        "acc_std": 0.043888640533444385,
+        "n_open_per_seed": [
+          15,
+          11,
+          8,
+          15,
+          6
+        ],
+        "n_open_mean": 11.0,
+        "n_open_std": 3.63318042491699,
+        "masked_acc_per_seed": [
+          0.16394520547945204,
+          0.10567123287671233,
+          0.07986301369863014,
+          0.15895890410958904,
+          0.0556986301369863
+        ],
+        "masked_acc_mean": 0.11282739726027398
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.16386301369863013,
+          0.12076712328767124,
+          0.08410958904109589,
+          0.16871232876712328,
+          0.05635616438356164
+        ],
+        "acc_mean": 0.11876164383561642,
+        "acc_std": 0.0438826507941417,
+        "n_open_per_seed": [
+          15,
+          11,
+          8,
+          15,
+          6
+        ],
+        "n_open_mean": 11.0,
+        "n_open_std": 3.63318042491699
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.19082191780821917,
+          0.14665753424657535,
+          0.09671232876712328,
+          0.2063013698630137,
+          0.06827397260273972
+        ],
+        "acc_mean": 0.14175342465753424,
+        "acc_std": 0.05296439319858533,
+        "n_open_per_seed": [
+          15,
+          11,
+          8,
+          15,
+          6
+        ],
+        "n_open_mean": 11.0,
+        "n_open_std": 3.63318042491699
+      },
+      "session_dir": "seed_sweep_results/places365_gated_lam0.01_seed_sweep_2026_10_10_01_30",
+      "magnitude_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.08164383561643836
+        ],
+        "acc_mean": 0.08164383561643836,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          6
+        ],
+        "n_open_mean": 6.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          0
+        ]
+      },
+      "group_lasso_refit": {
+        "seeds": [
+          40
+        ],
+        "acc_per_seed": [
+          0.0853972602739726
+        ],
+        "acc_mean": 0.0853972602739726,
+        "acc_std": 0.0,
+        "n_open_per_seed": [
+          6
+        ],
+        "n_open_mean": 6.0,
+        "n_open_std": 0.0,
+        "overlap_with_gate_per_seed": [
+          0
+        ]
+      }
+    }
+  ],
+  "size_controls_of": "/home/hy381/project/prelim/Label-free-CBM/seed_sweep_results/places365_gate_sweep_2026_10_10_12_43.json",
+  "size_controls": [
+    "magnitude",
+    "group_lasso"
+  ],
+  "size_controls_recipe": {
+    "epochs": 20,
+    "batch_size": 64,
+    "lr": 0.001
+  }
+}

@@ -1263,6 +1263,9 @@ def plot_gated_vs_random(open_gates, gated_test_acc, gated_test_acc_std,
     return _save_plot(dataset_name, 'gated_vs_random')
 
 
+EXTRA_CURVE_STYLES = [('#C44E52', '^', '--'), ('#8172B2', 'D', ':'), ('#937860', 'v', '-.')]
+
+
 def _plot_acc_vs_count_grid(results_by_dataset, comparator_label, dataset_order=None, ncols=None,
                             sharey=True, counts_as_pct=True, frame_on_gated=False, plot_label='acc_vs_count_grid', legend_fontsize=FS_LEGEND,
                             gated_label=GATED_LABEL):
@@ -1296,6 +1299,9 @@ def _plot_acc_vs_count_grid(results_by_dataset, comparator_label, dataset_order=
             (d['open_gates'], d['gated_acc'], d.get('gated_acc_std'), GATED_COLOR, 'o', '-',  gated_label),
             (d.get('cmp_x'),  d.get('cmp_acc'), d.get('cmp_acc_std'), CMP_COLOR,   's', '-.', comparator_label),
         ]
+        # optional further comparators: [(xs, mean, std, label)], e.g. size-matched controls
+        for (xs, mean, std, label), (color, marker, ls) in zip(d.get('extra_curves', []), EXTRA_CURVE_STYLES):
+            curves.append((xs, mean, std, color, marker, ls, label))
         for xs, mean, std, color, marker, ls, label in curves:
             if xs is None:  # no comparator sweep for this dataset (yet)
                 continue

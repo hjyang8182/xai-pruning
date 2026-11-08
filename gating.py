@@ -468,6 +468,171 @@ def matched_random_refits(weight, bias, gate, train_acts, y_train, test_acts, y_
     return out
 
 
+def _feature_std(acts, batch_size=65536):
+    """Per-column std of (n, d) `acts`, streamed so a CPU-resident Places-365 matrix is fine."""
+    n, s, s2 = acts.shape[0], 0.0, 0.0
+    for i in range(0, n, batch_size):
+        xb = acts[i:i + batch_size].double()
+        s, s2 = s + xb.sum(0), s2 + (xb * xb).sum(0)
+    mean = s / n
+    return (s2 / n - mean * mean).clamp_min(0).sqrt().float().cpu()
+
+
+def magnitude_keeps(train_acts, y_train, ks, *, epochs=20, lr=1e-3, batch_size=4096, device=None, seed=0):
+    """Size-matched magnitude control: train one dense head (cold start, the refit recipe) on every
+    concept, score concept j by ||W[:, j]|| * std(c_j) (its weight scaled to the feature's spread, so
+    the ranking doesn't depend on how each concept is normalised), and keep the top k.
+
+    Returns ({k: (n_concepts,) bool mask}, the dense head's W)."""
+    n_concepts = train_acts.shape[1]
+    n_classes = int(y_train.max()) + 1
+    every = torch.ones(n_concepts, dtype=torch.bool)
+    W, _, _ = prune_and_refit(torch.zeros(n_classes, n_concepts), None, torch.ones(n_concepts), train_acts, y_train,
+                              keep=every, fold_gate=False, epochs=epochs, lr=lr, batch_size=batch_size,
+                              device=device, seed=seed, warm_start=False)
+    score = W.norm(dim=0) * _feature_std(train_acts)
+    order = score.argsort(descending=True)
+    keeps = {}
+    for k in ks:
+        keep = torch.zeros(n_concepts, dtype=torch.bool)
+        keep[order[:k]] = True
+        keeps[k] = keep
+    return keeps, W
+
+
+def group_lasso_keeps(train_acts, y_train, ks, *, n_lams=40, lam_ratio=1e-3, steps_per_lam=300, lr=0.1,
+                      batch_size=1024, device=None, seed=0):
+    """Size-matched l1 control: the group-lasso (one l2 group per concept column, i.e. l1 over
+    concepts) regularisation path of a multinomial logistic head on standardised concepts, the
+    concept-level counterpart of LF-CBM's / VLG-CBM's GLM-SAGA elastic net (which is sparse per class
+    entry, so its union of concepts barely shrinks). Proximal minibatch SGD, warm-started down a
+    geometric lambda grid from lambda_max (where no column survives) to lambda_max * lam_ratio. For a
+    target k the support is read at the first lambda with >= k surviving columns, trimmed to the k
+    largest column norms (padded from the last lambda's norms if the path never reaches k).
+
+    Returns {k: (n_concepts,) bool mask}; the caller refits on each with its own recipe."""
+    device = torch.device(device) if device is not None else (
+        torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu"))
+    n, d = train_acts.shape
+    n_classes = int(y_train.max()) + 1
+    std = _feature_std(train_acts).clamp_min(1e-8)
+    mean = torch.zeros(d, dtype=torch.float64)
+    for i in range(0, n, 65536):
+        mean += train_acts[i:i + 65536].double().sum(0)
+    mean = (mean / n).float()
+    store = resolve_store_device((train_acts, y_train), device, "auto")
+    acts, y = stage_acts(train_acts, y_train, store)
+    mean_d, std_d = mean.to(device), std.to(device)
+    gen = torch.Generator(device="cpu").manual_seed(seed)
+
+    def batch():
+        idx = torch.randint(0, n, (min(batch_size, n),), generator=gen)
+        xb = acts[idx.to(acts.device)].to(device).float()
+        return (xb - mean_d) / std_d, y[idx.to(y.device)].to(device)
+
+    W = torch.zeros(n_classes, d, device=device)
+    b = torch.zeros(n_classes, device=device)
+    # lambda_max: the largest per-column gradient norm at W = 0 (with the bias at the class prior)
+    counts = torch.bincount(y_train.cpu(), minlength=n_classes).float().to(device)
+    b.copy_((counts / n).clamp_min(1e-12).log())
+    g = torch.zeros(n_classes, d, device=device)
+    with torch.no_grad():
+        for i in range(0, n, 65536):
+            xb = (acts[i:i + 65536].to(device).float() - mean_d) / std_d
+            p = torch.softmax(b.expand(xb.shape[0], -1), 1)
+            p[torch.arange(xb.shape[0], device=device), y[i:i + 65536].to(device)] -= 1
+            g += p.T @ xb
+    lam_max = float((g / n).norm(dim=0).max())
+    lams = torch.logspace(0, torch.log10(torch.tensor(lam_ratio)), n_lams) * lam_max
+
+    path = []  # (n_surviving, column norms) per lambda
+    for lam in lams.tolist():
+        for _ in range(steps_per_lam):
+            xb, yb = batch()
+            with torch.no_grad():
+                p = torch.softmax(xb @ W.T + b, 1)
+                p[torch.arange(xb.shape[0], device=device), yb] -= 1
+                W -= lr * (p.T @ xb) / xb.shape[0]
+                b -= lr * p.mean(0)
+                norms = W.norm(dim=0)
+                W *= (1 - lr * lam / norms.clamp_min(1e-12)).clamp_min(0)
+        norms = W.norm(dim=0).cpu()
+        path.append((int((norms > 0).sum()), norms))
+    keeps = {}
+    for k in ks:
+        norms = next((nm for cnt, nm in path if cnt >= k), path[-1][1])
+        keep = torch.zeros(d, dtype=torch.bool)
+        keep[norms.argsort(descending=True)[:k]] = True
+        keeps[k] = keep
+    return keeps
+
+
+SIZE_CONTROLS = ("magnitude", "group_lasso")
+
+
+def size_matched_refits(train_acts, y_train, test_acts, y_test, ks, *, methods=SIZE_CONTROLS, epochs=20, lr=1e-3,
+                        batch_size=4096, device=None, seed=0):
+    """Stronger size-matched controls for a gate sweep: for every |K| in `ks`, a fresh head (cold start,
+    the same recipe as matched_random_refits' arms) on the k concepts picked by
+      magnitude   : the top-k of a dense head's scaled column norms (magnitude_keeps)
+      group_lasso : the l1-over-concepts regularisation path at size k (group_lasso_keeps)
+    Returns {method: {k: {"acc", "n_concepts", "keep"}}}."""
+    ks = sorted({int(k) for k in ks})
+    keeps = {}
+    if "magnitude" in methods:
+        keeps["magnitude"], _ = magnitude_keeps(train_acts, y_train, ks, epochs=epochs, lr=lr, batch_size=batch_size,
+                                                device=device, seed=seed)
+    if "group_lasso" in methods:
+        keeps["group_lasso"] = group_lasso_keeps(train_acts, y_train, ks, device=device, seed=seed)
+    n_classes, n_concepts = int(y_train.max()) + 1, train_acts.shape[1]
+    out = {}
+    for method, by_k in keeps.items():
+        out[method] = {}
+        for k, keep in by_k.items():
+            W, b, keep = prune_and_refit(torch.zeros(n_classes, n_concepts), None, torch.ones(n_concepts), train_acts,
+                                         y_train, keep=keep, fold_gate=False, epochs=epochs, lr=lr,
+                                         batch_size=batch_size, device=device, seed=seed, warm_start=False)
+            out[method][k] = {"acc": evaluate_head(W, b, test_acts, y_test, device=device),
+                              "n_concepts": int(keep.sum()), "keep": keep}
+    return out
+
+
+# gate-logit cut points for threshold_refits: sigmoid(t) = 0.27, 0.48, 0.49975, 0.5, 0.50025, 0.52, 0.73
+LOGIT_THRESHOLDS = (-1.0, -0.1, -1e-3, 0.0, 1e-3, 0.1, 1.0)
+NEAR_ZERO = 1e-3  # |gate logit| below this: a hard-STE gate the forward pass treats as open or closed by noise
+
+
+def threshold_arm(t):
+    return f"threshold_{t:g}_refit"
+
+
+def threshold_refits(train_acts, y_train, test_acts, y_test, gate_logits, *, thresholds=LOGIT_THRESHOLDS, epochs=20,
+                     lr=1e-3, batch_size=4096, device=None, seed=0):
+    """Threshold selection on a trained gate: for every gate-logit cut t, K_t = {j : logit_j > t} (gate
+    sigmoid(logit) > sigmoid(t)), and a fresh head (cold start, matched_random_refits' recipe) on K_t, so
+    accuracy is read against |K_t| without the gated head's own weights deciding. Under a hard-STE gate many
+    logits chatter at ~0, so the cuts straddle 0 closely. Identical K_t share one refit.
+    Returns {t: {"acc", "n_concepts"}} and the number of |logit| < NEAR_ZERO."""
+    logits = gate_logits.detach().float().cpu()
+    n_classes, n_concepts = int(y_train.max()) + 1, train_acts.shape[1]
+    out, done = {}, {}
+    for t in thresholds:
+        keep = logits > t
+        key = keep.numpy().tobytes()
+        if key not in done:
+            if keep.sum() == 0:  # no concepts: the best a head can do is the training-majority class
+                majority = torch.bincount(y_train.long().cpu()).argmax()
+                done[key] = {"acc": float((y_test.cpu() == majority).float().mean()), "n_concepts": 0}
+            else:
+                W, b, keep = prune_and_refit(torch.zeros(n_classes, n_concepts), None, torch.ones(n_concepts),
+                                             train_acts, y_train, keep=keep, fold_gate=False, epochs=epochs, lr=lr,
+                                             batch_size=batch_size, device=device, seed=seed, warm_start=False)
+                done[key] = {"acc": evaluate_head(W, b, test_acts, y_test, device=device),
+                             "n_concepts": int(keep.sum())}
+        out[t] = done[key]
+    return out, int((logits.abs() < NEAR_ZERO).sum())
+
+
 def evaluate_head(W, b, acts, labels, *, device=None, batch_size=65536):
     """Top-1 accuracy of a plain linear head `acts @ W.T + b` (what `prune_and_refit` returns)."""
     device = torch.device(device) if device is not None else (

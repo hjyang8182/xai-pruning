@@ -1,0 +1,97 @@
+{
+  "model": "lfcbm",
+  "dataset": "places365",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 2166,
+  "lams": [
+    0.003,
+    0.01
+  ],
+  "n_iters": 80,
+  "points": [
+    {
+      "lam": 0.003,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.3491232991218567,
+          0.34928765892982483,
+          0.3493972718715668,
+          0.3493424654006958,
+          0.34945204854011536
+        ],
+        "acc_mean": 0.3493205487728119,
+        "acc_std": 0.00011282564232910979,
+        "n_open_per_seed": [
+          835,
+          837,
+          835,
+          830,
+          833
+        ],
+        "n_open_mean": 834.0,
+        "n_open_std": 2.3664319132398464
+      },
+      "session_dir": "seed_sweep_results/places365_baseline_lam0.003_seed_sweep_2026_10_18_20_27"
+    },
+    {
+      "lam": 0.01,
+      "dataset": "places365",
+      "concept_set": "data/concept_sets/places365_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 2166,
+      "gate_lam": 0.0001,
+      "gate_epochs": 20,
+      "gate_forward": "soft",
+      "arm": "baseline",
+      "baseline": {
+        "acc_per_seed": [
+          0.07671232521533966,
+          0.076630137860775,
+          0.07646575570106506,
+          0.07652054727077484,
+          0.07646575570106506
+        ],
+        "acc_mean": 0.07655890434980392,
+        "acc_std": 9.740306165865082e-05,
+        "n_open_per_seed": [
+          70,
+          71,
+          71,
+          72,
+          71
+        ],
+        "n_open_mean": 71.0,
+        "n_open_std": 0.6324555320336759
+      },
+      "session_dir": "seed_sweep_results/places365_baseline_lam0.01_seed_sweep_2026_10_19_16_52"
+    }
+  ]
+}

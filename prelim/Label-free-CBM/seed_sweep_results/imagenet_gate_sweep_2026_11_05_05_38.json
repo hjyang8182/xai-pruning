@@ -1,0 +1,107 @@
+{
+  "model": "lfcbm",
+  "dataset": "imagenet",
+  "seeds": [
+    0,
+    10,
+    20
+  ],
+  "n_concepts_total": 4520,
+  "lambda_gates": [
+    0.001
+  ],
+  "refit_tau": 0.5,
+  "refit_epochs": 20,
+  "gate_forward": "hard",
+  "points": [
+    {
+      "lambda_gate": 0.001,
+      "dataset": "imagenet",
+      "concept_set": "data/concept_sets/imagenet_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_imagenet",
+      "seeds": [
+        0,
+        10,
+        20
+      ],
+      "n_concepts_total": 4520,
+      "lam": 0.0001,
+      "gate_lam": 0.001,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.6744599938392639,
+          0.6805800199508667,
+          0.6830800175666809
+        ],
+        "acc_mean": 0.6793733437856039,
+        "acc_std": 0.0036210728420518405,
+        "n_open_per_seed": [
+          148,
+          156,
+          156
+        ],
+        "n_open_mean": 153.33333333333334,
+        "n_open_std": 3.7712361663282534
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.7101,
+          0.71202,
+          0.7114
+        ],
+        "acc_mean": 0.7111733333333333,
+        "acc_std": 0.0008000555536266962,
+        "n_open_per_seed": [
+          148,
+          156,
+          156
+        ],
+        "n_open_mean": 153.33333333333334,
+        "n_open_std": 3.7712361663282534,
+        "masked_acc_per_seed": [
+          0.67446,
+          0.68058,
+          0.68308
+        ],
+        "masked_acc_mean": 0.6793733333333334
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.71082,
+          0.71244,
+          0.71164
+        ],
+        "acc_mean": 0.7116333333333333,
+        "acc_std": 0.0006613790306792302,
+        "n_open_per_seed": [
+          148,
+          156,
+          156
+        ],
+        "n_open_mean": 153.33333333333334,
+        "n_open_std": 3.7712361663282534
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.70964,
+          0.71004,
+          0.7101
+        ],
+        "acc_mean": 0.7099266666666667,
+        "acc_std": 0.00020417857108147902,
+        "n_open_per_seed": [
+          148,
+          156,
+          156
+        ],
+        "n_open_mean": 153.33333333333334,
+        "n_open_std": 3.7712361663282534
+      },
+      "session_dir": "seed_sweep_results/imagenet_gated_lam0.001_seed_sweep_2026_11_04_10_39"
+    }
+  ]
+}

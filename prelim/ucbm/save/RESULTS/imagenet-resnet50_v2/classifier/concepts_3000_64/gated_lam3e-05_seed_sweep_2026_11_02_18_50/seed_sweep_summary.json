@@ -1,0 +1,88 @@
+{
+  "dataset": "imagenet",
+  "backbone": "resnet50_v2",
+  "concept_data": "concepts_3000_64",
+  "gated": {
+    "acc_per_seed": [
+      0.7788000106811523,
+      0.7782999873161316,
+      0.7805799841880798
+    ],
+    "acc_mean": 0.7792266607284546,
+    "acc_std": 0.0009784747079581563,
+    "n_open_per_seed": [
+      1990,
+      1989,
+      1984
+    ],
+    "n_open_mean": 1987.6666666666667,
+    "n_open_std": 2.6246692913372702
+  },
+  "seeds": [
+    0,
+    10,
+    20
+  ],
+  "n_concepts_total": 3000,
+  "lam_pi": 0.0,
+  "lambda_gate": 3e-05,
+  "gate_forward": "hard",
+  "lam_w": 0.0001,
+  "epochs": 20,
+  "refit_tau": 0.5,
+  "gated_refit": {
+    "acc_per_seed": [
+      0.7079,
+      0.7088,
+      0.70826
+    ],
+    "acc_mean": 0.70832,
+    "acc_std": 0.0003698648401781423,
+    "n_open_per_seed": [
+      1990,
+      1989,
+      1984
+    ],
+    "n_open_mean": 1987.6666666666667,
+    "n_open_std": 2.6246692913372702,
+    "masked_acc_per_seed": [
+      0.7788,
+      0.7783,
+      0.78058
+    ],
+    "masked_acc_mean": 0.7792266666666667
+  },
+  "gated_refit_cold": {
+    "acc_per_seed": [
+      0.70688,
+      0.70844,
+      0.70694
+    ],
+    "acc_mean": 0.7074199999999999,
+    "acc_std": 0.000721664742106738,
+    "n_open_per_seed": [
+      1990,
+      1989,
+      1984
+    ],
+    "n_open_mean": 1987.6666666666667,
+    "n_open_std": 2.6246692913372702
+  },
+  "random_refit": {
+    "acc_per_seed": [
+      0.68306,
+      0.68524,
+      0.6863
+    ],
+    "acc_mean": 0.6848666666666666,
+    "acc_std": 0.0013488101752614778,
+    "n_open_per_seed": [
+      1990,
+      1989,
+      1984
+    ],
+    "n_open_mean": 1987.6666666666667,
+    "n_open_std": 2.6246692913372702
+  },
+  "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/imagenet-resnet50_v2/classifier/concepts_3000_64/gated_lam3e-05_seed_sweep_2026_11_02_18_50"
+}

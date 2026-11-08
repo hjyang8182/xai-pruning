@@ -1,0 +1,106 @@
+{
+  "model": "ucbm",
+  "dataset": "imagenet",
+  "seeds": [
+    0,
+    10,
+    20
+  ],
+  "n_concepts_total": 3000,
+  "lambda_gates": [
+    0.0001
+  ],
+  "refit_tau": 0.5,
+  "refit_epochs": 20,
+  "gate_forward": "hard",
+  "points": [
+    {
+      "lambda_gate": 0.0001,
+      "dataset": "imagenet",
+      "backbone": "resnet50_v2",
+      "concept_data": "concepts_3000_64",
+      "gated": {
+        "acc_per_seed": [
+          0.775160014629364,
+          0.772819995880127,
+          0.7752799987792969
+        ],
+        "acc_mean": 0.7744200030962626,
+        "acc_std": 0.0011324358312426708,
+        "n_open_per_seed": [
+          1672,
+          1667,
+          1673
+        ],
+        "n_open_mean": 1670.6666666666667,
+        "n_open_std": 2.6246692913372702
+      },
+      "seeds": [
+        0,
+        10,
+        20
+      ],
+      "n_concepts_total": 3000,
+      "lam_pi": 0.0,
+      "gate_forward": "hard",
+      "lam_w": 0.0001,
+      "epochs": 20,
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.70886,
+          0.70786,
+          0.70966
+        ],
+        "acc_mean": 0.7087933333333334,
+        "acc_std": 0.0007363574011457832,
+        "n_open_per_seed": [
+          1672,
+          1667,
+          1673
+        ],
+        "n_open_mean": 1670.6666666666667,
+        "n_open_std": 2.6246692913372702,
+        "masked_acc_per_seed": [
+          0.77516,
+          0.77282,
+          0.77528
+        ],
+        "masked_acc_mean": 0.77442
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.70994,
+          0.70918,
+          0.71054
+        ],
+        "acc_mean": 0.7098866666666667,
+        "acc_std": 0.0005564969801255457,
+        "n_open_per_seed": [
+          1672,
+          1667,
+          1673
+        ],
+        "n_open_mean": 1670.6666666666667,
+        "n_open_std": 2.6246692913372702
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.67182,
+          0.67456,
+          0.676
+        ],
+        "acc_mean": 0.6741266666666667,
+        "acc_std": 0.0017337691759734537,
+        "n_open_per_seed": [
+          1672,
+          1667,
+          1673
+        ],
+        "n_open_mean": 1670.6666666666667,
+        "n_open_std": 2.6246692913372702
+      },
+      "session_dir": "/home/hy381/project/prelim/ucbm/save/RESULTS/imagenet-resnet50_v2/classifier/concepts_3000_64/gated_lam0.0001_seed_sweep_2026_11_03_21_16"
+    }
+  ]
+}

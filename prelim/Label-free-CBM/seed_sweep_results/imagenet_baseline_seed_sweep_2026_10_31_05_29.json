@@ -1,0 +1,27 @@
+{
+  "dataset": "imagenet",
+  "concept_set": "data/concept_sets/imagenet_filtered.txt",
+  "shared_from": null,
+  "seeds": [
+    0
+  ],
+  "n_concepts_total": 4520,
+  "lam": 0.0001,
+  "gate_lam": 0.0001,
+  "gate_epochs": 20,
+  "gate_forward": "soft",
+  "arm": "baseline",
+  "baseline": {
+    "acc_per_seed": [
+      0.6365000009536743
+    ],
+    "acc_mean": 0.6365000009536743,
+    "acc_std": 0.0,
+    "n_open_per_seed": [
+      4520
+    ],
+    "n_open_mean": 4520.0,
+    "n_open_std": 0.0
+  },
+  "session_dir": "seed_sweep_results/imagenet_baseline_seed_sweep_2026_10_31_05_29"
+}

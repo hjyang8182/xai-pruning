@@ -100,6 +100,11 @@ RECIPES = {
                                '--concept_set', 'data/concept_sets/places365_filtered.txt',
                                '--clip_cutoff', '0.28', '--n_iters', '80', '--lam', '0.0003'],
                           gated_args=['--gate_epochs', '150'], lambda_gate=5e-4),
+        # LF-CBM's training_commands.txt; train = ILSVRC-2012 train, eval = its val (data_utils.DATASET_ROOTS)
+        'imagenet':  dict(args=['--dataset', 'imagenet', '--backbone', 'resnet50',
+                               '--concept_set', 'data/concept_sets/imagenet_filtered.txt',
+                               '--clip_cutoff', '0.28', '--n_iters', '80', '--lam', '0.0001'],
+                          gated_args=['--gate_epochs', '150'], lambda_gate=5e-4),
     },
     'ucbm': {
         'cifar100':  dict(args=['-d', 'cifar100', '-b', 'resnet50_v2', '-c', 'concepts_1000_64',

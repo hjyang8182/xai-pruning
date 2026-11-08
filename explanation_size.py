@@ -38,6 +38,12 @@ k_mass[p](x)   Smallest k whose top-k |W[yhat,j] a_j(x)| sum to >= p of the tota
                absolute contribution to z_yhat. Reader-facing "how many concepts
                explain p of the logit".
 
+NCC (number_of_contributing_concepts)
+-------------------------------------
+NCC_tau of De Santis et al. (ICLR 2026): per image and class, the fewest concepts covering tau
+of the absolute contribution, averaged over all classes (ncc) or the predicted one (ncc_pred,
+= k_mass[tau]). Batched in torch for every point of a sweep (ncc_sweep.py per pipeline).
+
 Set sizes
 ---------
 global:  n_union (any class non-zero), n_intersection (every class non-zero), nec,
@@ -264,6 +270,72 @@ def local_explanation_sizes(weight, bias, acts, labels=None, *, gate=None, fold_
             report[name]["correct"] = _size_stats(arr[correct], size_thresholds) if correct.any() else None
             report[name]["incorrect"] = _size_stats(arr[~correct], size_thresholds) if (~correct).any() else None
     return report
+
+
+def number_of_contributing_concepts(weight, acts, bias=None, labels=None, *, tau=0.95, max_examples=None,
+                                    seed=0, device=None, chunk_elems=200_000_000):
+    """NCC_tau (De Santis et al., ICLR 2026, "Learning Concept Bottleneck Models from Mechanistic
+    Explanations", Sec. 4): with u_{k,r}(x) = |a_k(x) W[r,k]|, the smallest number of concepts whose
+    largest contributions cover >= tau of sum_k u_{k,r}(x), averaged over images and
+
+      ncc       every class r (the paper's definition)
+      ncc_pred  the predicted class only (the paper's variant; k_mass[tau] of local_explanation_sizes)
+
+    A class with no contribution at all on an image counts 0 concepts. `weight` must already carry any
+    gate (W * mask), `acts` the exact head inputs. `max_examples` scores a fixed random subset of the
+    images (NCC is a mean over images; for Places-365's 36.5k x 365 x 2k contributions). Also returns
+    the head's accuracy on the same images when `labels` is given, so NCC and accuracy are paired.
+    """
+    if torch is None:
+        raise ImportError("number_of_contributing_concepts needs torch")
+    device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+    W = torch.as_tensor(weight).float().to(device)
+    A = torch.as_tensor(acts).float()
+    y = torch.as_tensor(labels) if labels is not None else None
+    n_total = A.shape[0]
+    if max_examples is not None and n_total > max_examples:
+        idx = torch.randperm(n_total, generator=torch.Generator().manual_seed(seed))[:max_examples]
+        A, y = A[idx], (y[idx] if y is not None else None)
+    used = (W != 0).any(0)  # concepts no class uses contribute nothing: drop them before the sort
+    W, A = W[:, used], A[:, used.cpu()]
+    n_classes, k = W.shape
+    b = torch.as_tensor(bias).float().to(device) if bias is not None else torch.zeros(n_classes, device=device)
+    per_all, per_pred, correct = [], [], []
+    step = max(1, chunk_elems // max(1, n_classes * k))
+    for s in range(0, A.shape[0], step):
+        a = A[s:s + step].to(device)
+        logits = a @ W.T + b
+        pred = logits.argmax(1)
+        if k == 0:
+            counts = torch.zeros(a.shape[0], n_classes, device=device)
+        else:
+            u = (a[:, None, :] * W[None, :, :]).abs()  # (n, C, K)
+            total = u.sum(-1, keepdim=True)
+            cum = u.sort(-1, descending=True).values.cumsum(-1)
+            # cum is non-decreasing: the count of prefixes still short of tau, +1, is the first that reaches it
+            counts = ((cum < tau * total * (1 - 1e-6)).sum(-1) + 1).float()
+            counts[total.squeeze(-1) <= 0] = 0.0
+        per_all.append(counts.mean(1).cpu())
+        per_pred.append(counts.gather(1, pred[:, None]).squeeze(1).cpu())
+        if y is not None:
+            correct.append((pred.cpu() == y[s:s + step]).float())
+    per_all, per_pred = torch.cat(per_all), torch.cat(per_pred)
+    return {"tau": tau, "ncc": float(per_all.mean()), "ncc_pred": float(per_pred.mean()),
+            "ncc_pred_median": float(per_pred.median()), "n_examples": int(len(per_all)),
+            "n_examples_total": int(n_total), "n_concepts_used": int(used.sum()),
+            "acc": float(torch.cat(correct).mean()) if correct else None}
+
+
+def summarise_ncc(rows):
+    """Seed rows of number_of_contributing_concepts (+ "seed", "reported_acc") -> one sweep point."""
+    out = {"seeds": [r["seed"] for r in rows], "tau": rows[0]["tau"]}
+    for key in ("acc", "reported_acc", "ncc", "ncc_pred", "n_concepts_used"):
+        vals = [r[key] for r in rows if r.get(key) is not None]
+        if vals:
+            out[f"{key}_per_seed"] = vals
+            out[f"{key}_mean"] = float(np.mean(vals))
+            out[f"{key}_std"] = float(np.std(vals))
+    return out
 
 
 def mean_explanation_report(reports):

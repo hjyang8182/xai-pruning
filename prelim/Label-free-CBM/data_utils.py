@@ -8,8 +8,9 @@ from pytorchcv.model_provider import get_model as ptcv_get_model
 DATA_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "dataset"))
 
 DATASET_ROOTS = {
-    "imagenet_train": "YOUR_PATH/CLS-LOC/train/",
-    "imagenet_val": "YOUR_PATH/ImageNet_val/",
+    # ILSVRC-2012 train (ImageFolder of 1000 wnid dirs) and val sorted into the same 1000 wnid dirs
+    "imagenet_train": os.environ.get("IMAGENET_TRAIN", "/home/ogh22/datasets/imagenet/ILSVRC/Data/CLS-LOC/train/"),
+    "imagenet_val": os.environ.get("IMAGENET_VAL", "/home/datasets/imagenet/isv/val/"),
     "cub_train": os.path.join(DATA_ROOT, "CUB_200_2011", "train"),
     "cub_test": os.path.join(DATA_ROOT, "CUB_200_2011", "test")
 }

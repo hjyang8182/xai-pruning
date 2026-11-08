@@ -1,19 +1,23 @@
 """Concepts-task leakage (CTL) and interconcept leakage (ICL), Parisini et al. (arXiv:2504.14094),
-for the LF-CBM / UCBM / VLG-CBM CUB models: sparse baseline vs. gated (GCG) concept sets.
+for the DN-CBM / LF-CBM / UCBM / VLG-CBM CUB models: sparse baseline vs. gated (GCG) concept sets.
 
-The DN-CBM counterpart is concept_leakage.py; this reuses its MI estimators and score definitions
+DN-CBM's input comes from export_dncbm_leakage_data.py (its older percentile-matching analysis is
+concept_leakage.py). This reuses its MI estimators and score definitions
 (plug-in, Miller-Madow corrected, on discretised variables) and differs in two places:
 
   * Input: the .npz each pipeline's export_leakage_data.py writes (concept activations for CUB
     train/test keyed by CUB image id, plus every seed's baseline weight and gated open set), so
     nothing here depends on a pipeline's own code or conda env.
-  * Concept -> attribute matching is data-driven, the same for every pipeline (UCBM's concepts are
+  * Concept -> attribute matching (--matching data, the default) is data-driven, the same for every pipeline (UCBM's concepts are
     unnamed): on the *train* images, each concept is paired with the CUB attribute its activation
     ranks best -- max |z| of the Mann-Whitney statistic (AUROC standardised by its null variance,
     so the ~50 attributes present in <1% of images, whose raw AUROC is very noisy, don't win by
     chance) -- and kept only if that beats the `--match-percentile` of the same max-|z| under
     shuffled attribute rows. All scores are then
     taken on the *test* images, so the matching never sees the data it is scored on.
+    --matching name instead pairs each named concept (LF-CBM / VLG-CBM phrases, DN-CBM words) with the
+    attribute whose description it is closest to in CLIP text space (concept_accuracy_pipelines.py);
+    the data-driven matching keeps every LF-CBM / UCBM / VLG-CBM concept, so it barely filters.
 
 Sets compared, per seed (CTL/ICL are properties of the concept layer, so the probes differ only
 through which concepts they use):
@@ -37,11 +41,12 @@ import os
 from datetime import datetime
 
 import numpy as np
+from scipy.stats import rankdata
 
 from concept_leakage import concepts_task_leakage, discretise_soft, entropy, mutual_information
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-MODELS = ("lfcbm", "ucbm", "vlgcbm")
+MODELS = ("dncbm", "lfcbm", "ucbm", "vlgcbm")
 
 
 def load_cub_attributes(cub_root):
@@ -57,16 +62,22 @@ def load_cub_attributes(cub_root):
 
 def auroc_matrix(acts, attrs):
     """(|z|, AUROC) of every concept (column of acts) for every attribute, via rank sums: z is the
-    Mann-Whitney U standardised by its null s.d. sqrt(n_pos n_neg (n + 1) / 12)."""
+    Mann-Whitney U standardised by its tie-corrected null s.d.
+    sqrt(n_pos n_neg / 12 * ((n + 1) - sum_t (t^3 - t) / (n (n - 1)))). Ties get average ranks:
+    DN-CBM's SAE activations are mostly exact zeros, and breaking those ties by row order (CUB rows
+    are sorted by class) would make even never-firing concepts look attribute-specific. A concept
+    that is constant gets z = 0 (never matched)."""
     n = acts.shape[0]
-    ranks = acts.argsort(0).argsort(0).astype(np.float64) + 1  # ties are rare for float activations
+    ranks = rankdata(acts, method="average", axis=0)
+    tie_term = np.array([((t := np.unique(col, return_counts=True)[1].astype(np.float64)) ** 3 - t).sum()
+                         for col in acts.T]) / (n * (n - 1))  # 0 for tie-free (continuous) columns
     pos = attrs.sum(0).astype(np.float64)
     neg = n - pos
     rank_sum = attrs.T.astype(np.float64) @ ranks  # (n_attr, n_concepts)
     with np.errstate(divide="ignore", invalid="ignore"):
         u = rank_sum - pos[:, None] * (pos[:, None] + 1) / 2
         auc = u / (pos[:, None] * neg[:, None])
-        z = (u - pos[:, None] * neg[:, None] / 2) / np.sqrt(pos[:, None] * neg[:, None] * (n + 1) / 12)
+        z = (u - pos[:, None] * neg[:, None] / 2) / np.sqrt(pos[:, None] * neg[:, None] / 12 * ((n + 1) - tie_term[None, :]))
     return np.nan_to_num(np.abs(z)).T, np.nan_to_num(auc, nan=0.5).T  # (n_concepts, n_attr) each
 
 
@@ -81,6 +92,24 @@ def match_concepts(acts, attrs, percentile, n_shuffles, seed):
     matched = {int(k): int(best_attr[k]) for k in np.flatnonzero(best > threshold)}
     match_auc = {k: float(auc[k, a]) for k, a in matched.items()}
     return matched, threshold, match_auc
+
+
+def get_matching(d, attrs, attr_names, args):
+    """(matched {concept: attribute}, threshold, AUROC per matched pair) by --matching: `data` (match_concepts)
+    or `name` (concept_accuracy_pipelines.name_matching: CLIP text similarity of the concept phrase to the
+    attribute description vs. a Places-365-phrase null; needs named concepts, so not UCBM)."""
+    train_attrs = attrs[d["train_ids"]]
+    if args.matching == "data":
+        return match_concepts(d["train_acts"], train_attrs, args.match_percentile, args.n_shuffles, args.seed)
+    if str(d["model"]) == "ucbm":
+        raise ValueError("UCBM's concepts are unnamed (concept_000, ...): use --matching data")
+    from concept_accuracy_pipelines import name_matching  # lazy: it imports this module, and CLIP
+    from src.models import load_clip
+    clip_model, _ = load_clip()
+    matched, threshold, _ = name_matching(clip_model, d["concepts"], attr_names, args.match_percentile)
+    ks = list(matched)
+    _, auc = auroc_matrix(d["train_acts"][:, ks], train_attrs)
+    return matched, threshold, {k: float(auc[i, matched[k]]) for i, k in enumerate(ks)}
 
 
 def hard_threshold(x, truth):
@@ -112,9 +141,10 @@ def encode(d, attrs, matched, encoding, n_bins):
     return predicted, truth
 
 
-def icl_matrix(predicted, truth, order):
+def icl_matrix_loop(predicted, truth, order):
     """Pairwise ICL (concept_leakage.interconcept_leakage's definition) for every pair in `order`,
-    as a symmetric matrix with NaN where undefined (a constant variable on either side)."""
+    as a symmetric matrix with NaN where undefined (a constant variable on either side). Reference
+    implementation; icl_matrix computes the same thing in blocks."""
     h_pred = np.array([entropy(predicted[k]) for k in order])
     h_true = np.array([entropy(truth[k]) for k in order])
     m = np.full((len(order), len(order)), np.nan)
@@ -127,6 +157,45 @@ def icl_matrix(predicted, truth, order):
             nmi_true = mutual_information(truth[a], truth[b]) / np.sqrt(h_true[i] * h_true[j])
             m[i, j] = m[j, i] = max(0.0, nmi_pred - nmi_true)
     return m
+
+
+def pairwise_mi(codes, block=64):
+    """Miller-Madow MI (concept_leakage.mutual_information) between every pair of discrete columns,
+    with each pair's joint counts read off a one-hot Gram matrix, so DN-CBM's thousands of matched
+    concepts take seconds instead of a ~10^7-pair Python loop. Returns (MI matrix, entropies)."""
+    import torch
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    dense = [np.unique(c, return_inverse=True)[1] for c in codes]
+    n, k, m = len(dense[0]), len(dense), max(int(c.max()) + 1 for c in dense)
+    onehot = torch.zeros(n, k, m, device=device)
+    onehot.scatter_(2, torch.as_tensor(np.stack(dense, 1), device=device).unsqueeze(2), 1.0)
+    onehot = onehot.view(n, k * m)
+    h = np.array([entropy(c) for c in codes])
+
+    def plogp_entropy(counts):  # counts (..., cells) -> Miller-Madow entropy in bits over the last axis
+        p = counts / n
+        nz = (counts > 0).sum(-1)
+        return -(torch.where(p > 0, p * torch.log2(p), torch.zeros_like(p))).sum(-1) + (nz - 1) / (2 * n * np.log(2))
+
+    mi = np.empty((k, k))
+    for s in range(0, k, block):
+        e = min(k, s + block)
+        joint = (onehot[:, s * m:e * m].T @ onehot).view(e - s, m, k, m).permute(0, 2, 1, 3)
+        h_joint = plogp_entropy(joint.reshape(e - s, k, m * m).double()).cpu().numpy()
+        mi[s:e] = np.maximum(0.0, h[s:e, None] + h[None, :] - h_joint)
+    return mi, h
+
+
+def icl_matrix(predicted, truth, order):
+    """Same matrix as icl_matrix_loop (NaN on the diagonal and where any entropy is zero)."""
+    mi_pred, h_pred = pairwise_mi([predicted[k] for k in order])
+    mi_true, h_true = pairwise_mi([truth[k] for k in order])
+    with np.errstate(divide="ignore", invalid="ignore"):
+        icl = np.maximum(0.0, mi_pred / np.sqrt(np.outer(h_pred, h_pred)) - mi_true / np.sqrt(np.outer(h_true, h_true)))
+    undefined = (h_pred <= 0) | (h_true <= 0)
+    icl[undefined, :] = icl[:, undefined] = np.nan
+    np.fill_diagonal(icl, np.nan)
+    return icl
 
 
 def set_means(idx, ctl_vec, icl):
@@ -162,15 +231,14 @@ def mean_std(values):
 def analyse(path, attrs, attr_names, args):
     d = dict(np.load(path, allow_pickle=True))
     model = str(d["model"])
-    matched, threshold, match_auc = match_concepts(d["train_acts"], attrs[d["train_ids"]], args.match_percentile,
-                                              args.n_shuffles, args.seed)
-    print(f"\n=== {model}: {len(matched)}/{d['train_acts'].shape[1]} concepts matched "
-          f"(|z| > {threshold:.2f}, null {args.match_percentile}th pct; matched AUROC median "
+    matched, threshold, match_auc = get_matching(d, attrs, attr_names, args)
+    print(f"\n=== {model} [{args.matching} matching]: {len(matched)}/{d['train_acts'].shape[1]} concepts matched "
+          f"(score > {threshold:.4f}, null {args.match_percentile}th pct; matched AUROC median "
           f"{np.median([abs(a - 0.5) + 0.5 for a in match_auc.values()]) if matched else float('nan'):.3f})")
 
     base_norm = np.linalg.norm(d["baseline_W"], axis=1).mean(0)  # mean over baseline seeds, per concept
     base_used = np.flatnonzero((np.abs(d["baseline_W"]) > 1e-5).any(axis=(0, 1)))
-    result = {"model": model, "npz": os.path.relpath(path, ROOT), "match_threshold": threshold,
+    result = {"model": model, "npz": os.path.relpath(path, ROOT), "matching": args.matching, "match_threshold": threshold,
               "n_concepts": int(d["train_acts"].shape[1]), "n_matched": len(matched),
               "matched": {str(k): {"attribute": attr_names[a], "auroc": match_auc[k]} for k, a in matched.items()},
               "encodings": {}}
@@ -221,7 +289,7 @@ def main(args):
             continue
         results["models"][model] = analyse(path, attrs, attr_names, args)
     os.makedirs(args.data_dir, exist_ok=True)
-    out = os.path.join(args.data_dir, f"leakage_pipelines_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
+    out = os.path.join(args.data_dir, f"leakage_pipelines{'_name' if args.matching == 'name' else ''}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
     with open(out, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\nSaved results to {out}")
@@ -234,6 +302,7 @@ if __name__ == "__main__":
     p.add_argument("--cub-root", default=os.path.join(ROOT, "dataset", "CUB_200_2011"))
     p.add_argument("--encodings", nargs="+", default=["hard", "soft"], choices=["hard", "soft"])
     p.add_argument("--n-bins", type=int, default=8, help="soft encoding: nonzero quantile bins (+1 zero bin)")
+    p.add_argument("--matching", default="data", choices=["data", "name"], help="concept -> attribute matching (see get_matching)")
     p.add_argument("--match-percentile", type=float, default=95)
     p.add_argument("--n-shuffles", type=int, default=5, help="attribute-row shuffles for the matching null")
     p.add_argument("--n-random", type=int, default=1000, help="random same-size subsets per seed (chance reference)")

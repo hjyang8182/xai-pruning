@@ -1,0 +1,88 @@
+{
+  "dataset": "imagenet",
+  "concept_set": "data/concept_sets/imagenet_filtered.txt",
+  "shared_from": "seed_sweep_results/shared_imagenet",
+  "seeds": [
+    0,
+    10,
+    20
+  ],
+  "n_concepts_total": 4520,
+  "lam": 0.0001,
+  "gate_lam": 3e-05,
+  "gate_epochs": 150,
+  "gate_forward": "hard",
+  "arm": "gated",
+  "gated": {
+    "acc_per_seed": [
+      0.6991999745368958,
+      0.7007799744606018,
+      0.7053200006484985
+    ],
+    "acc_mean": 0.7017666498819987,
+    "acc_std": 0.0025940735265943564,
+    "n_open_per_seed": [
+      240,
+      242,
+      245
+    ],
+    "n_open_mean": 242.33333333333334,
+    "n_open_std": 2.0548046676563256
+  },
+  "refit_tau": 0.5,
+  "gated_refit": {
+    "acc_per_seed": [
+      0.71474,
+      0.71652,
+      0.71554
+    ],
+    "acc_mean": 0.7155999999999999,
+    "acc_std": 0.0007279194094586794,
+    "n_open_per_seed": [
+      240,
+      242,
+      245
+    ],
+    "n_open_mean": 242.33333333333334,
+    "n_open_std": 2.0548046676563256,
+    "masked_acc_per_seed": [
+      0.6992,
+      0.70078,
+      0.70532
+    ],
+    "masked_acc_mean": 0.7017666666666665
+  },
+  "gated_refit_cold": {
+    "acc_per_seed": [
+      0.71544,
+      0.71834,
+      0.71644
+    ],
+    "acc_mean": 0.71674,
+    "acc_std": 0.0012027745701779203,
+    "n_open_per_seed": [
+      240,
+      242,
+      245
+    ],
+    "n_open_mean": 242.33333333333334,
+    "n_open_std": 2.0548046676563256
+  },
+  "random_refit": {
+    "acc_per_seed": [
+      0.71686,
+      0.7142,
+      0.71752
+    ],
+    "acc_mean": 0.7161933333333333,
+    "acc_std": 0.00143502226076428,
+    "n_open_per_seed": [
+      240,
+      242,
+      245
+    ],
+    "n_open_mean": 242.33333333333334,
+    "n_open_std": 2.0548046676563256
+  },
+  "session_dir": "seed_sweep_results/imagenet_gated_lam3e-05_seed_sweep_2026_11_01_21_03"
+}

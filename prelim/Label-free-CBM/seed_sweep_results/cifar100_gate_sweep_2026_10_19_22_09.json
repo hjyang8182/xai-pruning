@@ -1,0 +1,1177 @@
+{
+  "model": "lfcbm",
+  "dataset": "cifar100",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 830,
+  "lambda_gates": [
+    1e-05,
+    3e-05,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01
+  ],
+  "refit_tau": 0.5,
+  "refit_epochs": 20,
+  "gate_forward": "hard",
+  "points": [
+    {
+      "lambda_gate": 1e-05,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "lam": 0.0007,
+      "gate_lam": 1e-05,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.6665999889373779,
+          0.6699000000953674,
+          0.6669999957084656,
+          0.6646999716758728,
+          0.6632000207901001
+        ],
+        "acc_mean": 0.6662799954414368,
+        "acc_std": 0.0022675073922291517,
+        "n_open_per_seed": [
+          704,
+          706,
+          704,
+          697,
+          699
+        ],
+        "n_open_mean": 702.0,
+        "n_open_std": 3.4058772731852804
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6664,
+          0.6664,
+          0.6655,
+          0.6676,
+          0.6678
+        ],
+        "acc_mean": 0.66674,
+        "acc_std": 0.0008522910301064892,
+        "n_open_per_seed": [
+          704,
+          706,
+          704,
+          697,
+          699
+        ],
+        "n_open_mean": 702.0,
+        "n_open_std": 3.4058772731852804,
+        "masked_acc_per_seed": [
+          0.6666,
+          0.6699,
+          0.667,
+          0.6647,
+          0.6632
+        ],
+        "masked_acc_mean": 0.66628
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6689,
+          0.6711,
+          0.6729,
+          0.6716,
+          0.6707
+        ],
+        "acc_mean": 0.67104,
+        "acc_std": 0.0013016912076218373,
+        "n_open_per_seed": [
+          704,
+          706,
+          704,
+          697,
+          699
+        ],
+        "n_open_mean": 702.0,
+        "n_open_std": 3.4058772731852804
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.6679,
+          0.6688,
+          0.6724,
+          0.6694,
+          0.6685
+        ],
+        "acc_mean": 0.6694,
+        "acc_std": 0.0015760710643876392,
+        "n_open_per_seed": [
+          704,
+          706,
+          704,
+          697,
+          699
+        ],
+        "n_open_mean": 702.0,
+        "n_open_std": 3.4058772731852804
+      },
+      "session_dir": "seed_sweep_results/cifar100_gated_lam1e-05_seed_sweep_2026_10_06_01_24",
+      "magnitude_refit": {
+        "acc_per_seed": [
+          0.669,
+          0.6714,
+          0.6738,
+          0.6709,
+          0.6701
+        ],
+        "acc_mean": 0.67104,
+        "acc_std": 0.001600749824301069,
+        "n_open_per_seed": [
+          704,
+          706,
+          704,
+          697,
+          699
+        ],
+        "n_open_mean": 702.0,
+        "n_open_std": 3.4058772731852804,
+        "overlap_with_gate_per_seed": [
+          682,
+          683,
+          679,
+          674,
+          675
+        ]
+      },
+      "group_lasso_refit": {
+        "acc_per_seed": [
+          0.6675,
+          0.67,
+          0.6713,
+          0.6704,
+          0.6696
+        ],
+        "acc_mean": 0.6697599999999999,
+        "acc_std": 0.0012626955294131779,
+        "n_open_per_seed": [
+          704,
+          706,
+          704,
+          697,
+          699
+        ],
+        "n_open_mean": 702.0,
+        "n_open_std": 3.4058772731852804,
+        "overlap_with_gate_per_seed": [
+          585,
+          596,
+          593,
+          583,
+          587
+        ]
+      }
+    },
+    {
+      "lambda_gate": 3e-05,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "lam": 0.0007,
+      "gate_lam": 3e-05,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.6668000221252441,
+          0.6675000190734863,
+          0.6682000160217285,
+          0.6665999889373779,
+          0.6700999736785889
+        ],
+        "acc_mean": 0.6678400039672852,
+        "acc_std": 0.0012626845219243761,
+        "n_open_per_seed": [
+          671,
+          667,
+          668,
+          669,
+          673
+        ],
+        "n_open_mean": 669.6,
+        "n_open_std": 2.1540659228538015
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6677,
+          0.6669,
+          0.6677,
+          0.6674,
+          0.6695
+        ],
+        "acc_mean": 0.66784,
+        "acc_std": 0.0008799999999999868,
+        "n_open_per_seed": [
+          671,
+          667,
+          668,
+          669,
+          673
+        ],
+        "n_open_mean": 669.6,
+        "n_open_std": 2.1540659228538015,
+        "masked_acc_per_seed": [
+          0.6668,
+          0.6675,
+          0.6682,
+          0.6666,
+          0.6701
+        ],
+        "masked_acc_mean": 0.66784
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6698,
+          0.6715,
+          0.6745,
+          0.6727,
+          0.6713
+        ],
+        "acc_mean": 0.67196,
+        "acc_std": 0.0015692036196746492,
+        "n_open_per_seed": [
+          671,
+          667,
+          668,
+          669,
+          673
+        ],
+        "n_open_mean": 669.6,
+        "n_open_std": 2.1540659228538015
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.6689,
+          0.6686,
+          0.6716,
+          0.6672,
+          0.6692
+        ],
+        "acc_mean": 0.6691,
+        "acc_std": 0.0014254823744964248,
+        "n_open_per_seed": [
+          671,
+          667,
+          668,
+          669,
+          673
+        ],
+        "n_open_mean": 669.6,
+        "n_open_std": 2.1540659228538015
+      },
+      "session_dir": "seed_sweep_results/cifar100_gated_lam3e-05_seed_sweep_2026_10_06_02_02",
+      "magnitude_refit": {
+        "acc_per_seed": [
+          0.6709,
+          0.6714,
+          0.6735,
+          0.6722,
+          0.6713
+        ],
+        "acc_mean": 0.67186,
+        "acc_std": 0.0009221713506718658,
+        "n_open_per_seed": [
+          671,
+          667,
+          668,
+          669,
+          673
+        ],
+        "n_open_mean": 669.6,
+        "n_open_std": 2.1540659228538015,
+        "overlap_with_gate_per_seed": [
+          642,
+          642,
+          644,
+          646,
+          641
+        ]
+      },
+      "group_lasso_refit": {
+        "acc_per_seed": [
+          0.6687,
+          0.6722,
+          0.6724,
+          0.6715,
+          0.6709
+        ],
+        "acc_mean": 0.6711400000000001,
+        "acc_std": 0.001330563790278406,
+        "n_open_per_seed": [
+          671,
+          667,
+          668,
+          669,
+          673
+        ],
+        "n_open_mean": 669.6,
+        "n_open_std": 2.1540659228538015,
+        "overlap_with_gate_per_seed": [
+          526,
+          522,
+          532,
+          531,
+          543
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.0001,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "lam": 0.0007,
+      "gate_lam": 0.0001,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.6694999933242798,
+          0.6646000146865845,
+          0.671999990940094,
+          0.6685000061988831,
+          0.6657000184059143
+        ],
+        "acc_mean": 0.6680600047111511,
+        "acc_std": 0.0026582598191453007,
+        "n_open_per_seed": [
+          536,
+          534,
+          532,
+          537,
+          533
+        ],
+        "n_open_mean": 534.4,
+        "n_open_std": 1.8547236990991407
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6691,
+          0.6727,
+          0.6719,
+          0.6713,
+          0.6727
+        ],
+        "acc_mean": 0.67154,
+        "acc_std": 0.001329059818066872,
+        "n_open_per_seed": [
+          536,
+          534,
+          532,
+          537,
+          533
+        ],
+        "n_open_mean": 534.4,
+        "n_open_std": 1.8547236990991407,
+        "masked_acc_per_seed": [
+          0.6695,
+          0.6646,
+          0.672,
+          0.6685,
+          0.6657
+        ],
+        "masked_acc_mean": 0.66806
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6722,
+          0.6746,
+          0.6773,
+          0.6746,
+          0.6749
+        ],
+        "acc_mean": 0.67472,
+        "acc_std": 0.0016166632302368974,
+        "n_open_per_seed": [
+          536,
+          534,
+          532,
+          537,
+          533
+        ],
+        "n_open_mean": 534.4,
+        "n_open_std": 1.8547236990991407
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.669,
+          0.674,
+          0.675,
+          0.6717,
+          0.6729
+        ],
+        "acc_mean": 0.67252,
+        "acc_std": 0.0020759576103572142,
+        "n_open_per_seed": [
+          536,
+          534,
+          532,
+          537,
+          533
+        ],
+        "n_open_mean": 534.4,
+        "n_open_std": 1.8547236990991407
+      },
+      "session_dir": "seed_sweep_results/cifar100_gated_lam0.0001_seed_sweep_2026_10_06_02_40",
+      "magnitude_refit": {
+        "acc_per_seed": [
+          0.6737,
+          0.6744,
+          0.6778,
+          0.6746,
+          0.6762
+        ],
+        "acc_mean": 0.67534,
+        "acc_std": 0.0014772948250095497,
+        "n_open_per_seed": [
+          536,
+          534,
+          532,
+          537,
+          533
+        ],
+        "n_open_mean": 534.4,
+        "n_open_std": 1.8547236990991407,
+        "overlap_with_gate_per_seed": [
+          507,
+          501,
+          502,
+          508,
+          501
+        ]
+      },
+      "group_lasso_refit": {
+        "acc_per_seed": [
+          0.6723,
+          0.6728,
+          0.6748,
+          0.6725,
+          0.6712
+        ],
+        "acc_mean": 0.67272,
+        "acc_std": 0.0011720068259186674,
+        "n_open_per_seed": [
+          536,
+          534,
+          532,
+          537,
+          533
+        ],
+        "n_open_mean": 534.4,
+        "n_open_std": 1.8547236990991407,
+        "overlap_with_gate_per_seed": [
+          318,
+          319,
+          310,
+          322,
+          315
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.0003,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "lam": 0.0007,
+      "gate_lam": 0.0003,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.6608999967575073,
+          0.6643999814987183,
+          0.671500027179718,
+          0.6704999804496765,
+          0.6668000221252441
+        ],
+        "acc_mean": 0.6668200016021728,
+        "acc_std": 0.003907639634511795,
+        "n_open_per_seed": [
+          292,
+          302,
+          304,
+          299,
+          303
+        ],
+        "n_open_mean": 300.0,
+        "n_open_std": 4.33589667773576
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6765,
+          0.6761,
+          0.6763,
+          0.6758,
+          0.6724
+        ],
+        "acc_mean": 0.67542,
+        "acc_std": 0.0015276125163142665,
+        "n_open_per_seed": [
+          292,
+          302,
+          304,
+          299,
+          303
+        ],
+        "n_open_mean": 300.0,
+        "n_open_std": 4.33589667773576,
+        "masked_acc_per_seed": [
+          0.6609,
+          0.6644,
+          0.6715,
+          0.6705,
+          0.6668
+        ],
+        "masked_acc_mean": 0.66682
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.679,
+          0.6772,
+          0.6778,
+          0.6783,
+          0.6769
+        ],
+        "acc_mean": 0.67784,
+        "acc_std": 0.0007552483035399944,
+        "n_open_per_seed": [
+          292,
+          302,
+          304,
+          299,
+          303
+        ],
+        "n_open_mean": 300.0,
+        "n_open_std": 4.33589667773576
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.6673,
+          0.6702,
+          0.6724,
+          0.6691,
+          0.6698
+        ],
+        "acc_mean": 0.6697599999999999,
+        "acc_std": 0.0016523922052587843,
+        "n_open_per_seed": [
+          292,
+          302,
+          304,
+          299,
+          303
+        ],
+        "n_open_mean": 300.0,
+        "n_open_std": 4.33589667773576
+      },
+      "session_dir": "seed_sweep_results/cifar100_gated_lam0.0003_seed_sweep_2026_10_06_03_10",
+      "magnitude_refit": {
+        "acc_per_seed": [
+          0.6774,
+          0.6782,
+          0.6781,
+          0.6738,
+          0.6765
+        ],
+        "acc_mean": 0.6768,
+        "acc_std": 0.001618641405623892,
+        "n_open_per_seed": [
+          292,
+          302,
+          304,
+          299,
+          303
+        ],
+        "n_open_mean": 300.0,
+        "n_open_std": 4.33589667773576,
+        "overlap_with_gate_per_seed": [
+          243,
+          258,
+          255,
+          253,
+          258
+        ]
+      },
+      "group_lasso_refit": {
+        "acc_per_seed": [
+          0.6675,
+          0.6697,
+          0.6709,
+          0.6656,
+          0.667
+        ],
+        "acc_mean": 0.66814,
+        "acc_std": 0.0019085072700935808,
+        "n_open_per_seed": [
+          292,
+          302,
+          304,
+          299,
+          303
+        ],
+        "n_open_mean": 300.0,
+        "n_open_std": 4.33589667773576,
+        "overlap_with_gate_per_seed": [
+          74,
+          75,
+          77,
+          71,
+          88
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.001,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "lam": 0.0007,
+      "gate_lam": 0.001,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.6312999725341797,
+          0.6516000032424927,
+          0.6608999967575073,
+          0.6571999788284302,
+          0.6330999732017517
+        ],
+        "acc_mean": 0.6468199849128723,
+        "acc_std": 0.012312181675492332,
+        "n_open_per_seed": [
+          126,
+          135,
+          138,
+          137,
+          130
+        ],
+        "n_open_mean": 133.2,
+        "n_open_std": 4.534313619501853
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6645,
+          0.6681,
+          0.6688,
+          0.6672,
+          0.6663
+        ],
+        "acc_mean": 0.66698,
+        "acc_std": 0.001498532615594334,
+        "n_open_per_seed": [
+          126,
+          135,
+          138,
+          137,
+          130
+        ],
+        "n_open_mean": 133.2,
+        "n_open_std": 4.534313619501853,
+        "masked_acc_per_seed": [
+          0.6313,
+          0.6516,
+          0.6609,
+          0.6572,
+          0.6331
+        ],
+        "masked_acc_mean": 0.64682
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6638,
+          0.6665,
+          0.6673,
+          0.6639,
+          0.6647
+        ],
+        "acc_mean": 0.66524,
+        "acc_std": 0.001413647763765787,
+        "n_open_per_seed": [
+          126,
+          135,
+          138,
+          137,
+          130
+        ],
+        "n_open_mean": 133.2,
+        "n_open_std": 4.534313619501853
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.6434,
+          0.6487,
+          0.6568,
+          0.6463,
+          0.6446
+        ],
+        "acc_mean": 0.64796,
+        "acc_std": 0.004765123293263284,
+        "n_open_per_seed": [
+          126,
+          135,
+          138,
+          137,
+          130
+        ],
+        "n_open_mean": 133.2,
+        "n_open_std": 4.534313619501853
+      },
+      "session_dir": "seed_sweep_results/cifar100_gated_lam0.001_seed_sweep_2026_10_06_03_41",
+      "magnitude_refit": {
+        "acc_per_seed": [
+          0.6504,
+          0.6541,
+          0.6582,
+          0.6544,
+          0.6542
+        ],
+        "acc_mean": 0.6542600000000001,
+        "acc_std": 0.0024686838598735245,
+        "n_open_per_seed": [
+          126,
+          135,
+          138,
+          137,
+          130
+        ],
+        "n_open_mean": 133.2,
+        "n_open_std": 4.534313619501853,
+        "overlap_with_gate_per_seed": [
+          70,
+          78,
+          86,
+          80,
+          72
+        ]
+      },
+      "group_lasso_refit": {
+        "acc_per_seed": [
+          0.6398,
+          0.6399,
+          0.6436,
+          0.6427,
+          0.6391
+        ],
+        "acc_mean": 0.6410199999999999,
+        "acc_std": 0.0017837040113202504,
+        "n_open_per_seed": [
+          126,
+          135,
+          138,
+          137,
+          130
+        ],
+        "n_open_mean": 133.2,
+        "n_open_std": 4.534313619501853,
+        "overlap_with_gate_per_seed": [
+          15,
+          19,
+          14,
+          15,
+          11
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.003,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "lam": 0.0007,
+      "gate_lam": 0.003,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.5803999900817871,
+          0.6150000095367432,
+          0.6011000275611877,
+          0.6050000190734863,
+          0.6032999753952026
+        ],
+        "acc_mean": 0.6009600043296814,
+        "acc_std": 0.011328307219624094,
+        "n_open_per_seed": [
+          68,
+          75,
+          71,
+          75,
+          74
+        ],
+        "n_open_mean": 72.6,
+        "n_open_std": 2.727636339397171
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6364,
+          0.6472,
+          0.6392,
+          0.6445,
+          0.6418
+        ],
+        "acc_mean": 0.64182,
+        "acc_std": 0.0038044184838158957,
+        "n_open_per_seed": [
+          68,
+          75,
+          71,
+          75,
+          74
+        ],
+        "n_open_mean": 72.6,
+        "n_open_std": 2.727636339397171,
+        "masked_acc_per_seed": [
+          0.5804,
+          0.615,
+          0.6011,
+          0.605,
+          0.6033
+        ],
+        "masked_acc_mean": 0.6009599999999999
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.6321,
+          0.6444,
+          0.6361,
+          0.6402,
+          0.6379
+        ],
+        "acc_mean": 0.63814,
+        "acc_std": 0.004101999512432923,
+        "n_open_per_seed": [
+          68,
+          75,
+          71,
+          75,
+          74
+        ],
+        "n_open_mean": 72.6,
+        "n_open_std": 2.727636339397171
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.6027,
+          0.6139,
+          0.6121,
+          0.6125,
+          0.6111
+        ],
+        "acc_mean": 0.61046,
+        "acc_std": 0.003982762860126118,
+        "n_open_per_seed": [
+          68,
+          75,
+          71,
+          75,
+          74
+        ],
+        "n_open_mean": 72.6,
+        "n_open_std": 2.727636339397171
+      },
+      "session_dir": "seed_sweep_results/cifar100_gated_lam0.003_seed_sweep_2026_10_06_04_11",
+      "magnitude_refit": {
+        "acc_per_seed": [
+          0.5981,
+          0.6117,
+          0.6074,
+          0.6117,
+          0.6118
+        ],
+        "acc_mean": 0.60814,
+        "acc_std": 0.005293240973165704,
+        "n_open_per_seed": [
+          68,
+          75,
+          71,
+          75,
+          74
+        ],
+        "n_open_mean": 72.6,
+        "n_open_std": 2.727636339397171,
+        "overlap_with_gate_per_seed": [
+          27,
+          28,
+          30,
+          29,
+          35
+        ]
+      },
+      "group_lasso_refit": {
+        "acc_per_seed": [
+          0.5857,
+          0.5985,
+          0.5966,
+          0.5997,
+          0.601
+        ],
+        "acc_mean": 0.5963,
+        "acc_std": 0.005494360745346087,
+        "n_open_per_seed": [
+          68,
+          75,
+          71,
+          75,
+          74
+        ],
+        "n_open_mean": 72.6,
+        "n_open_std": 2.727636339397171,
+        "overlap_with_gate_per_seed": [
+          2,
+          6,
+          6,
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "lambda_gate": 0.01,
+      "dataset": "cifar100",
+      "concept_set": "data/concept_sets/cifar100_filtered.txt",
+      "shared_from": "seed_sweep_results/shared_cifar100_20261005_225323",
+      "seeds": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "n_concepts_total": 830,
+      "lam": 0.0007,
+      "gate_lam": 0.01,
+      "gate_epochs": 150,
+      "gate_forward": "hard",
+      "arm": "gated",
+      "gated": {
+        "acc_per_seed": [
+          0.5755000114440918,
+          0.5601999759674072,
+          0.5587999820709229,
+          0.5924000144004822,
+          0.5144000053405762
+        ],
+        "acc_mean": 0.560259997844696,
+        "acc_std": 0.025963485281754163,
+        "n_open_per_seed": [
+          47,
+          45,
+          47,
+          50,
+          43
+        ],
+        "n_open_mean": 46.4,
+        "n_open_std": 2.3323807579381204
+      },
+      "refit_tau": 0.5,
+      "gated_refit": {
+        "acc_per_seed": [
+          0.6071,
+          0.6021,
+          0.5978,
+          0.6126,
+          0.5934
+        ],
+        "acc_mean": 0.6026,
+        "acc_std": 0.006755442250511802,
+        "n_open_per_seed": [
+          47,
+          45,
+          47,
+          50,
+          43
+        ],
+        "n_open_mean": 46.4,
+        "n_open_std": 2.3323807579381204,
+        "masked_acc_per_seed": [
+          0.5755,
+          0.5602,
+          0.5588,
+          0.5924,
+          0.5144
+        ],
+        "masked_acc_mean": 0.56026
+      },
+      "gated_refit_cold": {
+        "acc_per_seed": [
+          0.604,
+          0.5961,
+          0.5965,
+          0.6104,
+          0.5897
+        ],
+        "acc_mean": 0.59934,
+        "acc_std": 0.007148874037217344,
+        "n_open_per_seed": [
+          47,
+          45,
+          47,
+          50,
+          43
+        ],
+        "n_open_mean": 46.4,
+        "n_open_std": 2.3323807579381204
+      },
+      "random_refit": {
+        "acc_per_seed": [
+          0.5653,
+          0.5582,
+          0.5704,
+          0.5706,
+          0.5553
+        ],
+        "acc_mean": 0.56396,
+        "acc_std": 0.006253511013822549,
+        "n_open_per_seed": [
+          47,
+          45,
+          47,
+          50,
+          43
+        ],
+        "n_open_mean": 46.4,
+        "n_open_std": 2.3323807579381204
+      },
+      "session_dir": "seed_sweep_results/cifar100_gated_lam0.01_seed_sweep_2026_10_06_04_45",
+      "magnitude_refit": {
+        "acc_per_seed": [
+          0.5527,
+          0.5465,
+          0.553,
+          0.5588,
+          0.5366
+        ],
+        "acc_mean": 0.54952,
+        "acc_std": 0.007541723940850665,
+        "n_open_per_seed": [
+          47,
+          45,
+          47,
+          50,
+          43
+        ],
+        "n_open_mean": 46.4,
+        "n_open_std": 2.3323807579381204,
+        "overlap_with_gate_per_seed": [
+          14,
+          13,
+          15,
+          15,
+          13
+        ]
+      },
+      "group_lasso_refit": {
+        "acc_per_seed": [
+          0.5444,
+          0.5428,
+          0.5424,
+          0.5632,
+          0.5417
+        ],
+        "acc_mean": 0.5468999999999999,
+        "acc_std": 0.008198048548282719,
+        "n_open_per_seed": [
+          47,
+          45,
+          47,
+          50,
+          43
+        ],
+        "n_open_mean": 46.4,
+        "n_open_std": 2.3323807579381204,
+        "overlap_with_gate_per_seed": [
+          2,
+          3,
+          3,
+          3,
+          1
+        ]
+      }
+    }
+  ],
+  "size_controls_of": "/home/hy381/project/prelim/Label-free-CBM/seed_sweep_results/cifar100_gate_sweep_2026_10_06_05_37.json",
+  "size_controls": [
+    "magnitude",
+    "group_lasso"
+  ],
+  "size_controls_recipe": {
+    "epochs": 20,
+    "batch_size": 64,
+    "lr": 0.001
+  }
+}

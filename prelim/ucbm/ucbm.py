@@ -1416,10 +1416,24 @@ class UCBM:
         out = {"tau": tau, "n_concepts": int(keep.sum()), "masked_accuracy_no_refit": masked_acc,
                "test_accuracy": acc, "W_refit": W_r, "b_refit": b_r, "keep": keep}
         if random_control:
+            # Not pre_train/pre_test: under gate_forward="hard" the closed concepts are exactly zero
+            # after the gate, so dividing it back out leaves them zero and a random |K| draw would
+            # mostly refit on empty columns. The matched control needs the real pre-gate signal.
+            true_train = self.get_pre_gate_activations(training_data, saved_activation_path, "train")
+            true_test = self.get_pre_gate_activations(test_data, saved_activation_path, "test")
             out["random_control"] = _matched_random_refits(
-                W, b, gate, pre_train, y_train, pre_test, y_test, tau=tau, fold_gate=True,
+                W, b, gate, true_train, y_train, true_test, y_test, tau=tau, fold_gate=True,
                 epochs=epochs, lr=lr, batch_size=self._batch_size, device=self._device, seed=seed)
         return out
+
+    def get_pre_gate_activations(self, dataset, saved_activation_path, data_label):
+        """The concept signal the gate multiplies: _get_concept_activations with the gate switched
+        off (selection -- relu / jumpReLU / TopK -- still applied)."""
+        gated, self._classifier.gated = self._classifier.gated, False
+        try:
+            return self._get_concept_activations(dataset, saved_activation_path, data_label)
+        finally:
+            self._classifier.gated = gated
 
     def get_info_dict(self,
                       training_data: ImageFolder, 

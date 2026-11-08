@@ -1,0 +1,39 @@
+{
+  "dataset": "places365",
+  "concept_set": "data/concept_sets/places365_filtered.txt",
+  "shared_from": "seed_sweep_results/shared_places365_20261005_225314",
+  "seeds": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "n_concepts_total": 2166,
+  "lam": 0.0003,
+  "gate_lam": 0.0001,
+  "gate_epochs": 20,
+  "gate_forward": "soft",
+  "arm": "baseline",
+  "baseline": {
+    "acc_per_seed": [
+      0.43567124009132385,
+      0.43569862842559814,
+      0.43539726734161377,
+      0.4357808232307434,
+      0.435095876455307
+    ],
+    "acc_mean": 0.43552876710891725,
+    "acc_std": 0.0002519405536845608,
+    "n_open_per_seed": [
+      2166,
+      2165,
+      2052,
+      2166,
+      2165
+    ],
+    "n_open_mean": 2142.8,
+    "n_open_std": 45.402202589742274
+  },
+  "session_dir": "seed_sweep_results/places365_baseline_lam0.0003_seed_sweep_2026_10_18_20_26"
+}

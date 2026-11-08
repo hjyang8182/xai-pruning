@@ -5,4 +5,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from gating import (  # noqa: F401 (re-exported for `from gated_probe import ...`)
     GatedProbe, gate_temperature_schedule, resolve_penalty_temp,
     prune_and_refit, masked_accuracy, evaluate_head, matched_random_refits,
+    magnitude_keeps, group_lasso_keeps, size_matched_refits, SIZE_CONTROLS,
+    threshold_refits, threshold_arm, LOGIT_THRESHOLDS, NEAR_ZERO,
 )

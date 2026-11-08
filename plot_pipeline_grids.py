@@ -4,7 +4,9 @@
                                    the pipeline's own sparsity sweep (LF-CBM / VLG-CBM: GLM-SAGA
                                    elastic net; UCBM: weight elastic net), one panel per dataset
   gate_vs_random_<model>           same axes, mask-and-refit on the gate-selected concepts against the
-                                   same recipe on an equal number of random concepts
+                                   same recipe on an equal number of random concepts, and (when the
+                                   sweep has them) on the top-|K| by dense-head weight magnitude and the
+                                   group-lasso support at |K|
   leakage_vs_random_<encoding>     CTL / ICL (Parisini et al.) of the GCG open set and the baseline's
                                    size-matched top-k, relative to random same-size concept sets
 
@@ -29,9 +31,13 @@ from src import visualise as V
 from plot_gate_sweep_vs_random_subset import ROOT, SWEEP_GLOBS
 
 MODEL_NAMES = {"lfcbm": "LF-CBM", "ucbm": "UCBM", "vlgcbm": "VLG-CBM"}
+# the leakage figure also covers DN-CBM (export_dncbm_leakage_data.py); its sweep grids are plotted elsewhere
+LEAKAGE_NAMES = {"dncbm": "DN-CBM", **MODEL_NAMES}
 DATASET_NAMES = {"cifar100": "CIFAR-100", "cub": "CUB", "places365": "Places-365"}
 SPARSE_LABELS = {"lfcbm": "(Original) GLM-SAGA Sparse Layer", "vlgcbm": "(Original) GLM-SAGA Sparse Layer",
                  "ucbm": "(Original) Elastic-Net Head"}
+# stronger size-matched controls (gating.size_matched_refits), drawn on the gate-vs-random grid when present
+CONTROL_LABELS = {"magnitude_refit": "Top-|K| by weight magnitude (refit)", "group_lasso_refit": "Group-lasso at |K| (refit)"}
 SPARSE_ARM = {"lfcbm": "baseline", "ucbm": "baseline", "vlgcbm": "sparse"}
 # deployed lambda_gate per (model, dataset): paper/tab_hyperparams.tex
 DEPLOYED = {("lfcbm", "cifar100"): 1e-4, ("lfcbm", "cub"): 7e-4, ("lfcbm", "places365"): 5e-4,
@@ -146,13 +152,19 @@ def model_panels(model, kind):
         else:  # random-subset control: both arms refit with the same cold-start recipe at |K|
             x, acc, std = curve(gate["points"], "gated_refit_cold", "n_open_mean", scale)
             cmp = curve(gate["points"], "random_refit", "n_open_mean", scale)
+        extra = []
+        if kind == "random":
+            for arm, label in CONTROL_LABELS.items():
+                c = curve(gate["points"], arm, "n_open_mean", scale)
+                if c[0] is not None:
+                    extra.append((*c, label))
         base = baseline_acc(model, dataset, gate)
         op = operating_point(model, dataset, gate)
         panels[DATASET_NAMES[dataset]] = {
             "open_gates": x, "gated_acc": acc, "gated_acc_std": std,
             "cmp_x": cmp[0], "cmp_acc": cmp[1], "cmp_acc_std": cmp[2],
             "baseline_acc": base[0] if base else None, "baseline_acc_std": base[1] if base else None,
-            "operating_point": op * scale if op is not None else None,
+            "operating_point": op * scale if op is not None else None, "extra_curves": extra,
         }
         print(f"  {model}/{dataset}: gate {os.path.relpath(gpath, ROOT)}"
               + (f", baseline {base[0]:.4f}" if base else ", no baseline")
@@ -185,12 +197,13 @@ def plot_leakage(encoding):
         print("no data/leakage/leakage_pipelines_*.json; run concept_leakage_pipelines.py")
         return
     res = load(paths[-1])["models"]
-    models = [m for m in MODEL_NAMES if m in res]
+    models = [m for m in LEAKAGE_NAMES if m in res]
     print(f"[leakage_vs_random_{encoding}] {os.path.relpath(paths[-1], ROOT)}")
 
     GATED_COLOR, BASE_COLOR = "#4C72B0", "#55A868"
     plt.rcParams["font.family"] = "sans-serif"
-    fig, axes = plt.subplots(1, 2, figsize=(V.PANEL_W * 2, V.PANEL_H + 0.9), layout="constrained")
+    fig, axes = plt.subplots(1, 2, figsize=(V.PANEL_W * 2 * max(1.0, len(models) / 3), V.PANEL_H + 0.9),
+                             layout="constrained")
     for ax, (metric, title) in zip(axes, (("ctl", "Concepts-Task Leakage"), ("icl", "Interconcept Leakage"))):
         for i, model in enumerate(models):
             sets = res[model]["encodings"][encoding]["sets"]
@@ -208,7 +221,7 @@ def plot_leakage(encoding):
                             elinewidth=V.LW_REF, capsize=4, zorder=3, label=lab if i == 0 else None)
         ax.axhline(1.0, color="#555555", linestyle="--", linewidth=V.LW_REF, zorder=2, label="Random mean")
         ax.set_xticks(range(len(models)))
-        ax.set_xticklabels([f"{MODEL_NAMES[m]}\n({res[m]['encodings'][encoding]['sets']['gated']['n']:.0f}"
+        ax.set_xticklabels([f"{LEAKAGE_NAMES[m]}\n({res[m]['encodings'][encoding]['sets']['gated']['n']:.0f}"
                             f"/{res[m]['n_concepts']})" for m in models])
         V._style_axes(ax, title)
         ax.set_xlim(-0.6, len(models) - 0.4)
