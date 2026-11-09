@@ -1,7 +1,7 @@
 """Re-run an LF-CBM gate sweep's cold-start refits (gate-selected vs. matched random) from its saved gates.
 
 train_cbm_seed_sweep.py --random_control refits both cold-start arms for --refit_epochs (20) at
---saga_batch_size (64). On CUB that is ~1.9k Adam steps, not quite converged, and the random arm
+--gate_batch_size (64). On CUB that is ~1.9k Adam steps, not quite converged, and the random arm
 (weaker features) lags furthest: at lambda_gate 1e-3 the gate-vs-random gap is 1.3 points at 20
 epochs and 0.8 at 300. This reloads the sweep's shared stage (shared_from: train_c / val_c, the
 exact head inputs) and, for every point's session_dir/seed<s>/{W_g,b_g,gate_logits}.pt, redoes

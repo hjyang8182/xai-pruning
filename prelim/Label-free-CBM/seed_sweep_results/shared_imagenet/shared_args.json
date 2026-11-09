@@ -1,0 +1,12 @@
+{
+  "dataset": "imagenet",
+  "concept_set": "data/concept_sets/imagenet_filtered.txt",
+  "backbone": "resnet50",
+  "clip_name": "ViT-B/16",
+  "proj_batch_size": 50000,
+  "feature_layer": "layer4",
+  "clip_cutoff": 0.28,
+  "proj_steps": 1000,
+  "interpretability_cutoff": 0.45,
+  "no_filter": false
+}

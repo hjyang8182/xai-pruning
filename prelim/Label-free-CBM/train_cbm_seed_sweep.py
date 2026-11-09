@@ -36,7 +36,8 @@ parser.add_argument("--clip_name", type=str, default="ViT-B/16", help="Which CLI
 
 parser.add_argument("--device", type=str, default="cuda", help="Which device to use")
 parser.add_argument("--batch_size", type=int, default=64, help="Batch size used when saving model/CLIP activations")
-parser.add_argument("--saga_batch_size", type=int, default=64, help="Batch size used when fitting final layer")
+parser.add_argument("--saga_batch_size", type=int, default=256, help="Batch size of the baseline GLM-SAGA fit (256, the original LF-CBM train_cbm.py setting)")
+parser.add_argument("--gate_batch_size", type=int, default=64, help="Batch size of the gated probe's Adam training and its mask-and-refit (and the matched random refits)")
 parser.add_argument("--proj_batch_size", type=int, default=50000, help="Batch size to use when learning projection layer")
 
 parser.add_argument("--feature_layer", type=str, default='layer4',
@@ -298,7 +299,7 @@ def train_baseline_probe(shared, args, seed):
 def train_gated_probe(shared, args, seed):
     torch.manual_seed(seed)
     indexed_train_ds = IndexedTensorDataset(shared["train_c"], shared["train_y"])
-    indexed_train_loader = DataLoader(indexed_train_ds, batch_size=args.saga_batch_size, shuffle=True)
+    indexed_train_loader = DataLoader(indexed_train_ds, batch_size=args.gate_batch_size, shuffle=True)
 
     gate_probe = GatedProbe(shared["train_c"].shape[1], len(shared["classes"]),
                             gate_temperature=args.gate_temperature, gate_forward=args.gate_forward).to(args.device)
@@ -332,7 +333,7 @@ def refit_gated_probe(shared, args, seed, W_g, b_g, gates):
                                  tau=args.refit_tau, fold_gate=False, device=args.device)
     W_r, b_r, keep = prune_and_refit(
         W_g, b_g, gates, shared["train_c"], shared["train_y"], tau=args.refit_tau, fold_gate=False,
-        epochs=args.refit_epochs, lr=1e-3, batch_size=args.saga_batch_size, device=args.device, seed=seed)
+        epochs=args.refit_epochs, lr=1e-3, batch_size=args.gate_batch_size, device=args.device, seed=seed)
     return W_r, b_r, keep, masked_acc
 
 
@@ -482,7 +483,7 @@ def run_arm(shared, args, n_concepts_total, tag=""):
             ctrl = matched_random_refits(
                 W_gate, b_gate, gates, shared["train_c"], shared["train_y"], shared["val_c"], shared["val_y"],
                 tau=args.refit_tau, fold_gate=False, epochs=args.refit_epochs, lr=1e-3,
-                batch_size=args.saga_batch_size, device=args.device, seed=seed)
+                batch_size=args.gate_batch_size, device=args.device, seed=seed)
             for arm, key in (("gated_refit_cold", "gated_cold"), ("random_refit", "random")):
                 results[arm]["acc"].append(ctrl[key]["acc"])
                 results[arm]["n_open"].append(ctrl[key]["n_concepts"])

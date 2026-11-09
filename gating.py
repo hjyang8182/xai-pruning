@@ -162,7 +162,7 @@ def stage_acts(acts, labels, store_device):
     per-batch `.to(device, non_blocking=True)` in the training loop overlaps with compute."""
     acts = acts.to(store_device)
     labels = labels.to(store_device)
-    if store_device.type == "cpu":
+    if store_device.type == "cpu" and torch.cuda.is_available():  # pinning needs a CUDA driver
         acts, labels = acts.pin_memory(), labels.pin_memory()
     return acts, labels
 
